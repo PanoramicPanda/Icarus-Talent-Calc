@@ -46,7 +46,7 @@ export default function TalentIcon({ talentName, currentPoints, isUnlocked }: Ta
         >
             <Box
                 component="img"
-                src={`images/talent_icons/${imageName}.png`}
+                src={`images/talent_icons/${imageName}.webp`}
                 alt={talentName}
                 sx={{
                     width: '100%',

@@ -31,7 +31,7 @@ export default function RankIcon({ rank, pointsSpent }: RankIconProps) {
         >
             <Box
                 component="img"
-                src={`images/rank_icons/Talent-Rank-${rank - 1}.png`}
+                src={`images/rank_icons/Talent-Rank-${rank - 1}.webp`}
                 alt={`Rank ${rank - 1}`}
                 sx={{
                     width: 16,

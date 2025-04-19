@@ -18,13 +18,13 @@ export function preloadAllTalentImages() {
         for (const talent of tree.talents) {
             const imageName = sanitizeTalentName(talent.name);
             if (!seen.has(imageName)) {
-                preloadImage(`images/talent_icons/${imageName}.png`);
+                preloadImage(`images/talent_icons/${imageName}.webp`);
                 seen.add(imageName);
             }
         }
     }
 
     for (let rank = 1; rank <= 3; rank++) {
-        preloadImage(`images/rank_icons/Talent-Rank-${rank}.png`);
+        preloadImage(`images/rank_icons/Talent-Rank-${rank}.webp`);
     }
 }

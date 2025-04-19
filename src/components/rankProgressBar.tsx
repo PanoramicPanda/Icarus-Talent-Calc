@@ -6,9 +6,9 @@ interface RankProgressBarProps {
 
 export default function RankProgressBar({ pointsSpent }: RankProgressBarProps) {
     const rankIcons: Record<number, string> = {
-        2: 'images/rank_icons/Talent-Rank-1.png',
-        3: 'images/rank_icons/Talent-Rank-2.png',
-        4: 'images/rank_icons/Talent-Rank-3.png',
+        2: 'images/rank_icons/Talent-Rank-1.webp',
+        3: 'images/rank_icons/Talent-Rank-2.webp',
+        4: 'images/rank_icons/Talent-Rank-3.webp',
     };
 
     const currentRank = Math.min(4, Math.floor(pointsSpent / 4) + 1);
