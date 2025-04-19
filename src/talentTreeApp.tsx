@@ -64,7 +64,7 @@ export default function TalentTreeApp() {
             const imported = importFromQueryParam(buildParam);
             if (imported) {
                 if (isVersionMismatch(imported.gameVersion)) {
-                    setSnackbarMessage("Version mismatch. We'll match what we can, but review your talentTrees.");
+                    setSnackbarMessage("Version mismatch. We'll match what we can, but review your Trees.");
                     setSnackbarOpen(true);
                 }
 
@@ -419,7 +419,7 @@ export default function TalentTreeApp() {
                                         let completedMessage;
 
                                         if (parsed.gameVersion !== GAME_VERSION) {
-                                            completedMessage = "Version mismatch. We'll match what we can, but review your talentTrees.";
+                                            completedMessage = "Version mismatch. We'll match what we can, but review your Trees.";
                                         } else {
                                             completedMessage = "Build imported successfully.";
                                         }
