@@ -1,28 +1,38 @@
-import {useEffect, useRef, useState} from 'react';
+import {useEffect, useState} from 'react';
 import {Categories, talentTreeMap, Trees} from "./data/talentTreeMap.ts";
-import {Alert, Box, Button, Typography, Snackbar, Stack, Dialog, DialogTitle, TextField, DialogActions, DialogContent} from '@mui/material';
+import {
+    Alert,
+    Box,
+    Button,
+    Dialog,
+    DialogActions,
+    DialogContent,
+    DialogTitle,
+    Snackbar,
+    Stack,
+    TextField,
+    Typography
+} from '@mui/material';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
-import Talent from "./components/talent.tsx";
 import RankProgressBar from "./components/rankProgressBar";
-import TalentTrack from "./components/talentTrack";
 import PointTotals from './components/pointTotals';
 import {getPoolForTree, pointPools} from "./data/points.ts";
 import ConfirmDialog from "./components/confirmDialog";
-import { GAME_VERSION } from './constants/gameVersion';
+import {GAME_VERSION} from './constants/gameVersion';
 import ChangelogDialog from './components/changelogDialog';
 import {
+    calculatePointsSpent,
+    ExportedTalentState,
     exportToJson,
     exportToQueryParam,
-    isVersionMismatch,
     importFromQueryParam,
-    ExportedTalentState, calculatePointsSpent
+    isVersionMismatch
 } from './utils/exportImport';
 import {Download, Upload} from '@mui/icons-material';
 import SummaryBox from "./components/summaryBox.tsx";
-import { preloadAllTalentImages } from './utils/imagePreload';
-import { prerequisiteMet} from "./utils/refund";
+import {preloadAllTalentImages} from './utils/imagePreload';
 import './talentTree.css'
-import {TalentData} from "./constants/treeStructures.ts";
+import {TalentTree} from "./components/talentTree.tsx";
 
 
 export default function TalentTreeApp() {
@@ -54,9 +64,6 @@ export default function TalentTreeApp() {
             requestAnimationFrame(runAfterPaint);
         });
     }, []);
-
-
-
 
     useEffect(() => {
         const buildParam = new URLSearchParams(window.location.search).get('build');
@@ -457,90 +464,3 @@ export default function TalentTreeApp() {
 }
 
 
-function TalentTree({
-                        treeKey,
-                        talents,
-                        tracks,
-                        pointsSpent,
-                        talentPoints,
-                        onRankChange,
-                        onShowError
-                    }: {
-    treeKey: keyof typeof Trees,
-    talents: TalentData[],
-    tracks: any[],
-    pointsSpent: number,
-    talentPoints: Record<string, Record<string, number>>,
-    onRankChange: (talentName: string, rank: number) => void,
-    onShowError: (message: string) => void;
-}) {
-
-    const canAccessTalent = (talent: TalentData): boolean => {
-        const requiredPoints = (talent.rank - 1) * 4;
-        const hasEnoughPoints = pointsSpent >= requiredPoints;
-
-        const hasMetPrereqs =
-            talent.prerequisites.length === 0 ||
-            prerequisiteMet(talent.prerequisites, talentPoints, treeKey);
-
-        return hasEnoughPoints && hasMetPrereqs;
-    };
-
-
-    // Determine grid size
-    const maxRow = Math.max(...talents.map(t => t.position[0]));
-    const maxCol = Math.max(...talents.map(t => t.position[1]));
-
-    // Refs for layout mapping
-    const gridRef = useRef<HTMLDivElement>(null);
-    const tileRefs = useRef<Record<string, HTMLDivElement | null>>({});
-
-    return (
-        <Box sx={{ position: 'relative' }} ref={gridRef}>
-            <TalentTrack
-                tracks={tracks}
-                talents={talents}
-                talentPoints={talentPoints}
-                treeKey={treeKey}
-            />
-
-
-            <div className="talent-tree-grid" style={{
-                display: 'grid',
-                gridTemplateRows: `repeat(${maxRow + 1}, 100px)`,
-                gridTemplateColumns: `repeat(${maxCol + 1}, 60px)`,
-                gap: '8px'
-            }}>
-                {talents.map(talent => {
-                    const currentPoints = talentPoints[treeKey]?.[talent.name] || 0;
-                    const maxPoints = talent.benefits.length;
-                    const isUnlocked = canAccessTalent(talent);
-                    // const [row, col] = talent.position;
-
-                    return (
-                        <div
-                            key={talent.name}
-                            ref={(el) => { tileRefs.current[talent.name] = el }}
-                            style={{
-                                gridRow: talent.position[0] + 1,
-                                gridColumn: talent.position[1] + 1
-                            }}
-                        >
-                            <Talent
-                                talent={talent}
-                                currentPoints={currentPoints}
-                                maxPoints={maxPoints}
-                                pointsSpent={pointsSpent}
-                                isUnlocked={isUnlocked}
-                                allTalents={talents}
-                                talentPoints={talentPoints}
-                                onRankChange={onRankChange}
-                                onShowError={onShowError}
-                            />
-                        </div>
-                    );
-                })}
-            </div>
-        </Box>
-    );
-}
