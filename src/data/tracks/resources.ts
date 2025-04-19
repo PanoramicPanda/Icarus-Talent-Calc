@@ -1,11 +1,11 @@
-import {Track} from "./trackStructure.ts";
+import {Track} from "../../constants/trackStructure.ts";
 
 export const resourcesTreeTracks: Track[] = [
     {from: "Lumber Yield", to: "Wood Breakdown"},
     {from: "Wood Breakdown", to: [3, 0]},
     {from: [3, 0], to: "Movin' Wood"},
     {from: [3, 0], to: "Seasoned Logsman"},
-    {from: "Seasoned Logsman", to: "Friend of the Trees"},
+    {from: "Seasoned Logsman", to: "Friend Of The Trees"},
     {from: "Seasoned Logsman", to: "Peerless Lumberjack"},
     {from: "Skilled Picker", to: "All The Good Stuff"},
     {from: "Rock Star", to: [2, 4]},

@@ -1,6 +1,6 @@
 import { Box } from '@mui/material';
-import { TalentData } from '../constants/talents/talentStructure';
-import { Track } from '../constants/tracks/trackStructure';
+import { TalentData } from '../constants/talentStructure.ts';
+import { Track } from '../constants/trackStructure.ts';
 
 type Coord = [number, number];
 
@@ -98,9 +98,7 @@ export default function TalentTrack({ tracks, talents, talentPoints }: TalentTra
 
 
     const drawElbowPath = (x1: number, y1: number, x2: number, y2: number): string => {
-        const midX = x2;
-        const midY = y1;
-        return `M${x1},${y1} L${midX},${midY} L${x2},${y2}`;
+        return `M${x1},${y1} L${x2},${y1} L${x2},${y2}`;
     };
 
     return (

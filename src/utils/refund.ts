@@ -1,4 +1,4 @@
-import { TalentData } from '../constants/talents/talentStructure';
+import { TalentData } from '../constants/talentStructure.ts';
 
 /**
  * Determines whether a talent can be refunded without breaking any rules.

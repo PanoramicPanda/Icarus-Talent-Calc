@@ -1,7 +1,7 @@
 // src/components/PointTotals.tsx
 import { Box, Typography } from '@mui/material';
 import { pointPools, TalentPool } from '../constants/points';
-import { Trees } from '../constants/talents/talentStructure';
+import { Trees } from '../constants/talentStructure.ts';
 
 interface PointTotalsProps {
     pointsSpent: Record<string, number>;

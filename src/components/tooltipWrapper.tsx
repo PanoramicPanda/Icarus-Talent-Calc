@@ -1,6 +1,6 @@
 import { Box, Tooltip, Typography } from '@mui/material';
 import { ReactElement } from 'react';
-import { TalentData } from '../constants/talents/talentStructure';
+import { TalentData } from '../constants/talentStructure.ts';
 
 interface TooltipWrapperProps {
     talent: TalentData;

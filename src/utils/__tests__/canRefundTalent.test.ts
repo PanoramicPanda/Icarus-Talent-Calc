@@ -1,5 +1,5 @@
 import { canRefundTalent } from '../refund.ts';
-import { TalentData } from '../../constants/talents/talentStructure';
+import { TalentData } from '../../constants/talentStructure.ts';
 
 const makeTalent = (name: string, rank: number): TalentData => ({
     name,

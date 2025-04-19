@@ -1,4 +1,4 @@
-import {defineTalentTree} from "./talentStructure.ts";
+import {defineTalentTree} from "../../constants/talentStructure.ts";
 
 export const resourcesTalents = defineTalentTree("Resources", [
     {
@@ -34,7 +34,7 @@ export const resourcesTalents = defineTalentTree("Resources", [
         rank: 1,
         prerequisites: [],
         benefits: ["+5%", "+10%", "+20%"],
-        benefitsDesc: "Inventory weight capacity",
+        benefitsDesc: "Weight Capacity",
         position: [0, 6]
     },
     {
@@ -114,7 +114,7 @@ export const resourcesTalents = defineTalentTree("Resources", [
         rank: 3,
         prerequisites: ["Dense Packing I"],
         benefits: ["+5%", "+10%", "+20%"],
-        benefitsDesc: "Inventory weight capacity",
+        benefitsDesc: "Weight Capacity",
         position: [3, 6]
     },
     {
