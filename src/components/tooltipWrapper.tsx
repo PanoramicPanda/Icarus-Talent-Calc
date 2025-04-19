@@ -69,7 +69,7 @@ export default function TooltipWrapper({
                     </Box>
                 </Box>
             }
-            placement="top"
+            placement="right"
             arrow
             slotProps={{
                 tooltip: {
