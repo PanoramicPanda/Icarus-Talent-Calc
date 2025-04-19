@@ -1,9 +1,10 @@
-import { Box } from '@mui/material';
+import {Box} from '@mui/material';
 import TalentIcon from './talentIcon';
 import RankIcon from './rankIcon';
 import PointsLabel from './pointsLabel';
 import TooltipWrapper from './tooltipWrapper';
-import { TalentData } from '../constants/talents/talentStructure';
+import {TalentData} from '../constants/talents/talentStructure';
+import {canRefundTalent} from '../utils/refund';
 
 interface TalentProps {
     talent: TalentData;
@@ -16,6 +17,31 @@ interface TalentProps {
     onRankChange: (talentName: string, delta: number) => void;
     onShowError: (msg: string) => void;
 }
+
+// function wouldInvalidatePrereq(
+//     req: string | string[],
+//     talentName: string,
+//     nextPoints: number,
+//     talentPoints: Record<string, number>
+// ): boolean {
+//     if (typeof req === 'string') {
+//         // Block only if this exact talent is the sole requirement and we're dropping to 0
+//         return req === talentName && nextPoints === 0;
+//     }
+//
+//     // It's an AND-group
+//     if (Array.isArray(req)) {
+//         // Every one must still be owned (including the talent being refunded)
+//         return req.every(inner =>
+//             inner === talentName
+//                 ? nextPoints === 0
+//                 : (talentPoints[inner] || 0) > 0
+//         );
+//     }
+//
+//     return false;
+// }
+
 
 export default function Talent({
                                    talent,
@@ -39,14 +65,36 @@ export default function Talent({
         const nextPoints = currentPoints - 1;
         if (currentPoints === 0) return;
 
-        // Check if talent is a blocking prerequisite
         const isBlockedByDownstream = nextPoints === 0 && allTalents.some((other) => {
             const otherPoints = talentPoints[other.name] || 0;
             if (otherPoints === 0) return false;
-            const otherPrereqs = other.prerequisites.flat();
-            const stillActive = otherPrereqs.filter(prereq => prereq !== talent.name && (talentPoints[prereq] || 0) > 0);
-            return otherPrereqs.includes(talent.name) && stillActive.length === 0;
+
+            const prerequisites = other.prerequisites || [];
+
+            // If this talent isn't referenced at all, skip
+            const referencesTalent = prerequisites.some(req =>
+                typeof req === 'string'
+                    ? req === talent.name
+                    : Array.isArray(req) && req.includes(talent.name)
+            );
+            if (!referencesTalent) return false;
+
+            // Check if this refund would make *all* clauses fail
+            const isClauseSatisfied = (req: string | string[]) => {
+                if (typeof req === 'string') {
+                    return req === talent.name ? nextPoints > 0 : (talentPoints[req] || 0) > 0;
+                }
+                // AND clause: all inner elements must be true
+                return req.every(inner =>
+                    inner === talent.name ? nextPoints > 0 : (talentPoints[inner] || 0) > 0
+                );
+            };
+
+            const atLeastOneClauseStillValid = prerequisites.some(isClauseSatisfied);
+
+            return !atLeastOneClauseStillValid;
         });
+
 
         if (isBlockedByDownstream) {
             onShowError(`${talent.name} is a prerequisite for another talent you still own.`);
@@ -60,6 +108,8 @@ export default function Talent({
 
         onRankChange(talent.name, -1);
     };
+
+
 
     return (
         <div
@@ -90,6 +140,4 @@ export default function Talent({
         </div>
     );
 }
-
-import { canRefundTalent } from '../utils/refund';
 
