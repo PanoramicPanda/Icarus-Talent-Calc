@@ -13,11 +13,9 @@ import {
     TextField,
     Typography
 } from '@mui/material';
-import RestartAltIcon from '@mui/icons-material/RestartAlt';
 import RankProgressBar from "./components/rankProgressBar";
 import PointTotals from './components/pointTotals';
 import {getPoolForTree, pointPools} from "./data/points.ts";
-import ConfirmDialog from "./components/confirmDialog";
 import {GAME_VERSION} from './constants/gameVersion';
 import ChangelogDialog from './components/changelogDialog';
 import {
@@ -33,6 +31,7 @@ import SummaryBox from "./components/summaryBox.tsx";
 import {preloadAllTalentImages} from './utils/imagePreload';
 import './talentTree.css'
 import {TalentTree} from "./components/talentTree.tsx";
+import ResetButtons from "./components/resetButtons.tsx";
 
 
 export default function TalentTreeApp() {
@@ -131,15 +130,40 @@ export default function TalentTreeApp() {
             <Box sx={{width: 600}}>
                 <PointTotals pointsSpent={talentPointsSpent} />
 
-                {/* Reset All */}
-                <Button
-                    variant="outlined"
-                    color="warning"
-                    startIcon={<RestartAltIcon />}
-                    onClick={() => setConfirmResetAllOpen(true)}
-                >
-                    Reset All
-                </Button>
+                {/* Reset Buttons */}
+                <ResetButtons
+                    selectedTree={selectedTree}
+                    onResetAll={() => {
+                        setTalentPoints({});
+                        setTalentPointsSpent({});
+                        setSnackbarMessage("All points have been reset.");
+                    }}
+                    onResetTree={(treeKey) => {
+                        const treeData = talentTreeMap[treeKey];
+                        if (!treeData) return;
+
+                        const talentsInTree = treeData.talents;
+                        setTalentPoints(prev => {
+                            const updated = { ...prev };
+                            for (const talent of talentsInTree) {
+                                delete updated[treeKey][talent.name];
+                            }
+                            return updated;
+                        });
+
+                        setTalentPointsSpent(prev => ({
+                            ...prev,
+                            [treeKey]: 0,
+                        }));
+
+                        setSnackbarMessage(`Reset all points from the ${Trees[treeKey].name} tree.`);
+                    }}
+                    confirmResetAllOpen={confirmResetAllOpen}
+                    confirmResetTreeOpen={confirmResetTreeOpen}
+                    setConfirmResetAllOpen={setConfirmResetAllOpen}
+                    setConfirmResetTreeOpen={setConfirmResetTreeOpen}
+                />
+
 
                 {/* Export/Import Buttons */}
                 <Box sx={{ display: 'flex', gap: 2, mb: 2 }}>
@@ -227,21 +251,6 @@ export default function TalentTreeApp() {
                     )}
 
 
-                    {selectedTree && (
-                        <Box sx={{ display: 'flex', justifyContent: 'flex-end', mb: 1 }}>
-                            <Button
-                                variant="outlined"
-                                color="warning"
-                                size="small"
-                                startIcon={<RestartAltIcon />}
-                                onClick={() => setConfirmResetTreeOpen(true)}
-                            >
-                                Reset Tree
-                            </Button>
-                        </Box>
-                    )}
-
-
                     {/*Rank Progress Bar*/}
                     {selectedTree && (
                         <RankProgressBar pointsSpent={talentPointsSpent[selectedTree] || 0}/>
@@ -318,58 +327,7 @@ export default function TalentTreeApp() {
                         </Alert>
                     </Snackbar>
 
-                    {/* ✅ Add confirmation dialogs HERE */}
-                    <ConfirmDialog
-                        open={confirmResetAllOpen}
-                        title="Reset All Trees?"
-                        message="Are you sure you want to reset all talent trees? This cannot be undone."
-                        onConfirm={() => {
-                            setTalentPoints({});
-                            setTalentPointsSpent({});
-                            setSnackbarMessage("All points have been reset.");
-                            setConfirmResetAllOpen(false);
-                        }}
-                        onCancel={() => setConfirmResetAllOpen(false)}
-                    />
-
-                    <ConfirmDialog
-                        open={confirmResetTreeOpen}
-                        title="Reset This Tree?"
-                        message={
-                            selectedTree
-                                ? `Are you sure you want to reset the ${Trees[selectedTree].name} tree?`
-                                : ''
-                        }                        onConfirm={() => {
-                            if (!selectedTree) return;
-
-                            const treeKey = selectedTree;
-                            const treeData = talentTreeMap[treeKey];
-
-                            if (!treeData) return;
-
-                            const talentsInTree = treeData.talents;
-
-                            setTalentPoints(prev => {
-                                const updated = { ...prev };
-                                for (const talent of talentsInTree) {
-                                    delete updated[treeKey][talent.name];
-                                }
-                                return updated;
-                            });
-
-                            setTalentPointsSpent(prev => ({
-                                ...prev,
-                                [treeKey]: 0,
-                            }));
-
-                            setSnackbarMessage(`Reset all points from the ${Trees[treeKey].name} tree.`);
-                            setConfirmResetTreeOpen(false);
-                        }}
-
-
-
-                        onCancel={() => setConfirmResetTreeOpen(false)}
-                    />
+                    {/* Changelog Dialog */}
                     <ChangelogDialog open={changelogOpen} onClose={() => setChangelogOpen(false)} />
 
                     <Dialog open={exportDialogOpen} onClose={() => setExportDialogOpen(false)} maxWidth="sm" fullWidth>
