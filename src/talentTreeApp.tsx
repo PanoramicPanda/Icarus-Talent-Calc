@@ -54,6 +54,21 @@ export default function TalentTreeApp() {
         }
     }, []);
 
+    useEffect(() => {
+        const allCategories = Object.values(Categories);
+        if (allCategories.length === 1) {
+            const onlyCategory = allCategories[0];
+            setSelectedCategory(onlyCategory);
+
+            const treesInCategory = Object.keys(Trees)
+                .filter(tree => Trees[tree as keyof typeof Trees].category === onlyCategory);
+
+            if (treesInCategory.length === 1) {
+                setSelectedTree(treesInCategory[0] as keyof typeof Trees);
+            }
+        }
+    }, []);
+
 
     return (
         <Box
@@ -132,27 +147,38 @@ export default function TalentTreeApp() {
 
                 <div>
                     {/* Category Selection */}
-                    <Box sx={{mb: 3}}>
-                        <Stack direction="row" spacing={2}>
-                            {Object.values(Categories).map(category => (
-                                <Button
-                                    key={category}
-                                    variant={selectedCategory === category ? 'contained' : 'outlined'}
-                                    onClick={() => {
-                                        setSelectedCategory(category);
-                                        setSelectedTree(null);
-                                    }}
-                                >
-                                    {category}
-                                </Button>
-                            ))}
-                        </Stack>
-                    </Box>
+                    {Object.values(Categories).length > 1 && (
+                        <Box sx={{ mb: 3 }}>
+                            <Stack direction="row" spacing={2}>
+                                {Object.values(Categories).map(category => (
+                                    <Button
+                                        key={category}
+                                        variant={selectedCategory === category ? 'contained' : 'outlined'}
+                                        onClick={() => {
+                                            const treesInCategory = Object.keys(Trees)
+                                                .filter(tree => Trees[tree as keyof typeof Trees].category === category);
+
+                                            setSelectedCategory(category);
+
+                                            if (treesInCategory.length === 1) {
+                                                setSelectedTree(treesInCategory[0] as keyof typeof Trees);
+                                            } else {
+                                                setSelectedTree(null);
+                                            }
+                                        }}
+                                    >
+                                        {category}
+                                    </Button>
+                                ))}
+                            </Stack>
+                        </Box>
+                    )}
 
 
                     {/*Tree Selection*/}
-                    {selectedCategory && (
-                        <Box sx={{mb: 2}}>
+                    {selectedCategory && Object.keys(Trees)
+                        .filter(tree => Trees[tree as keyof typeof Trees].category === selectedCategory).length > 1 && (
+                        <Box sx={{ mb: 2 }}>
                             <Typography variant="h6" gutterBottom>
                                 Select a Tree
                             </Typography>
@@ -171,6 +197,7 @@ export default function TalentTreeApp() {
                             </Stack>
                         </Box>
                     )}
+
 
                     {selectedTree && (
                         <Box sx={{ display: 'flex', justifyContent: 'flex-end', mb: 1 }}>
