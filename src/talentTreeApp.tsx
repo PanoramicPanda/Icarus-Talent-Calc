@@ -21,6 +21,7 @@ import {
 import {Download, Upload} from '@mui/icons-material';
 import SummaryBox from "./components/summaryBox.tsx";
 import { preloadAllTalentImages } from './utils/imagePreload';
+import './talentTree.css'
 
 
 export default function TalentTreeApp() {
