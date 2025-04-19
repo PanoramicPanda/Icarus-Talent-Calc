@@ -118,6 +118,8 @@ export default function TalentTreeApp() {
             >
                 View Changelog
             </Button>
+            <SummaryBox talentPoints={talentPoints} allTalents={talentTreeMap} />
+
             <Box sx={{width: 600}}>
                 <PointTotals pointsSpent={talentPointsSpent} />
 
@@ -162,10 +164,6 @@ export default function TalentTreeApp() {
                         Copy URL
                     </Button>
                 </Box>
-
-                <SummaryBox talentPoints={talentPoints} allTalents={talentTreeMap} />
-
-
 
                 <div>
                     {/* Category Selection */}
