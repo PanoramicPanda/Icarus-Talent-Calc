@@ -13,35 +13,10 @@ interface TalentProps {
     pointsSpent: number;
     isUnlocked: boolean;
     allTalents: TalentData[];
-    talentPoints: Record<string, number>;
+    talentPoints: Record<string, Record<string, number>>;
     onRankChange: (talentName: string, delta: number) => void;
     onShowError: (msg: string) => void;
 }
-
-// function wouldInvalidatePrereq(
-//     req: string | string[],
-//     talentName: string,
-//     nextPoints: number,
-//     talentPoints: Record<string, number>
-// ): boolean {
-//     if (typeof req === 'string') {
-//         // Block only if this exact talent is the sole requirement and we're dropping to 0
-//         return req === talentName && nextPoints === 0;
-//     }
-//
-//     // It's an AND-group
-//     if (Array.isArray(req)) {
-//         // Every one must still be owned (including the talent being refunded)
-//         return req.every(inner =>
-//             inner === talentName
-//                 ? nextPoints === 0
-//                 : (talentPoints[inner] || 0) > 0
-//         );
-//     }
-//
-//     return false;
-// }
-
 
 export default function Talent({
                                    talent,
@@ -66,7 +41,7 @@ export default function Talent({
         if (currentPoints === 0) return;
 
         const isBlockedByDownstream = nextPoints === 0 && allTalents.some((other) => {
-            const otherPoints = talentPoints[other.name] || 0;
+            const otherPoints = talentPoints[other.tree]?.[other.name] || 0;
             if (otherPoints === 0) return false;
 
             const prerequisites = other.prerequisites || [];
@@ -82,13 +57,18 @@ export default function Talent({
             // Check if this refund would make *all* clauses fail
             const isClauseSatisfied = (req: string | string[]) => {
                 if (typeof req === 'string') {
-                    return req === talent.name ? nextPoints > 0 : (talentPoints[req] || 0) > 0;
+                    return req === talent.name
+                        ? nextPoints > 0
+                        : (talentPoints[talent.tree]?.[req] || 0) > 0;
                 }
                 // AND clause: all inner elements must be true
                 return req.every(inner =>
-                    inner === talent.name ? nextPoints > 0 : (talentPoints[inner] || 0) > 0
+                    inner === talent.name
+                        ? nextPoints > 0
+                        : (talentPoints[talent.tree]?.[inner] || 0) > 0
                 );
             };
+
 
             const atLeastOneClauseStillValid = prerequisites.some(isClauseSatisfied);
 

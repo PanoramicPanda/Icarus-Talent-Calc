@@ -11,71 +11,53 @@ import { TalentData } from '../constants/talentStructure.ts';
 export function canRefundTalent(
     talentToRefund: TalentData,
     currentPoints: number,
-    talentPoints: Record<string, number>,
+    talentPoints: Record<string, Record<string, number>>,
     allTalentsInTree: TalentData[]
 ): boolean {
+    const treeKey = talentToRefund.tree;
+    const currentTreePoints = talentPoints[treeKey] || {};
     const nextPointsInTalent = currentPoints - 1;
 
-    // Simulate what the talentPoints would look like if we refund this one point
+    // Simulate talentPoints after refund
     const simulatedPoints: Record<string, number> = {
-        ...talentPoints,
+        ...currentTreePoints,
         [talentToRefund.name]: nextPointsInTalent,
     };
 
-    // List of talents that will still have points after the refund
     const remainingTalents = allTalentsInTree.filter(
         t => (simulatedPoints[t.name] || 0) > 0
     );
 
-    // If refunding this would leave no talents, always allow
     if (remainingTalents.length === 0) return true;
 
     for (const talent of remainingTalents) {
-        // Skip if it's rank 1, no requirements needed
         if (talent.rank <= 1) continue;
 
-        // Skip threshold check if we're refunding the last remaining talent of this rank
         if (
             talent.name === talentToRefund.name &&
             nextPointsInTalent === 0 &&
             allTalentsInTree
                 .filter(t => t.rank === talent.rank)
-                .every(t => (t.name === talent.name ? nextPointsInTalent : simulatedPoints[t.name] || 0) === 0)
+                .every(t =>
+                    t.name === talent.name
+                        ? nextPointsInTalent === 0
+                        : (simulatedPoints[t.name] || 0) === 0
+                )
         ) {
             continue;
         }
 
-        console.log('Refunding:', talentToRefund.name);
-        console.log('Simulated Points:', simulatedPoints);
-
-        for (const talent of allTalentsInTree) {
-            console.log(`Talent: ${talent.name}, Rank: ${talent.rank}`);
-        }
-
-        let lowerPoints = 0;
-
-        for (const t of allTalentsInTree) {
+        const lowerPoints = allTalentsInTree.reduce((sum, t) => {
             const p = simulatedPoints[t.name] || 0;
-            if (t.rank < talent.rank) {
-                console.log(`  Including ${t.name} (rank ${t.rank}) with ${p} points`);
-                lowerPoints += p;
-            }
-        }
-
-
-        // // How many points are still spent in ranks *below* this one
-        // const lowerPoints = allTalentsInTree.reduce((sum, t) => {
-        //     const points = simulatedPoints[t.name] || 0;
-        //     return t.rank < talent.rank ? sum + points : sum;
-        // }, 0);
+            return t.rank < talent.rank ? sum + p : sum;
+        }, 0);
 
         const requiredLowerPoints = (talent.rank - 1) * 4;
-
-        // If we still own this higher-rank talent, and refunding would break its lower-rank support...
         if (lowerPoints < requiredLowerPoints) {
-            return false; // ❌ Invalid refund
+            return false;
         }
     }
 
-    return true; // ✅ All higher ranks still supported
+    return true;
 }
+

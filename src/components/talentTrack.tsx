@@ -7,10 +7,11 @@ type Coord = [number, number];
 interface TalentTrackProps {
     tracks: Track[];
     talents: TalentData[];
-    talentPoints: Record<string, number>;
+    talentPoints: Record<string, Record<string, number>>;
+    treeKey: string;
 }
 
-export default function TalentTrack({ tracks, talents, talentPoints }: TalentTrackProps) {
+export default function TalentTrack({ tracks, talents, talentPoints, treeKey }: TalentTrackProps) {
     const getTalentByName = (name: string) =>
         talents.find(t => t.name === name);
 
@@ -54,10 +55,12 @@ export default function TalentTrack({ tracks, talents, talentPoints }: TalentTra
         coordToTrackIndices.get(toStr)!.push(idx);
     });
 
+    const treeTalentPoints = talentPoints[treeKey] || {};
+
     // 🧠 Build a list of all active talent coords to start propagation
     const activeTalentCoords = new Set<string>();
     talents.forEach(t => {
-        if ((talentPoints[t.name] || 0) > 0) {
+        if (((treeTalentPoints[t.name] || 0) || 0) > 0) {
             activeTalentCoords.add(getCoordString(t.position));
         }
     });
