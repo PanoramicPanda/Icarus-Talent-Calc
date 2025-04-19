@@ -1,4 +1,4 @@
-import { canRefundTalent } from '../refund.ts';
+import { canRefundTalent, prerequisiteMet } from '../refund.ts';
 import { TalentData } from '../../constants/talentStructure.ts';
 
 const makeTalent = (name: string, rank: number): TalentData => ({
@@ -111,5 +111,87 @@ describe('canRefundTalent', () => {
            'R4-A': 1,
         }}, allTalents);
         expect(result).toBe(false);
+    });
+});
+
+
+describe('prerequisiteMet', () => {
+    const treeKey = 'Resources';
+
+    it('returns true if a single prerequisite is met', () => {
+        const prerequisites = ['TalentA'];
+        const talentPoints = {
+            Resources: {
+                TalentA: 1,
+            },
+        };
+
+        expect(prerequisiteMet(prerequisites, talentPoints, treeKey)).toBe(true);
+    });
+
+    it('returns false if a single prerequisite is not met', () => {
+        const prerequisites = ['TalentA'];
+        const talentPoints = {
+            Resources: {
+                TalentA: 0,
+            },
+        };
+
+        expect(prerequisiteMet(prerequisites, talentPoints, treeKey)).toBe(false);
+    });
+
+    it('returns true if at least one OR prerequisite is met', () => {
+        const prerequisites = ['TalentA', 'TalentB'];
+        const talentPoints = {
+            Resources: {
+                TalentB: 1,
+            },
+        };
+
+        expect(prerequisiteMet(prerequisites, talentPoints, treeKey)).toBe(true);
+    });
+
+    it('returns false if no OR prerequisites are met', () => {
+        const prerequisites = ['TalentA', 'TalentB'];
+        const talentPoints = {
+            Resources: {},
+        };
+
+        expect(prerequisiteMet(prerequisites, talentPoints, treeKey)).toBe(false);
+    });
+
+    it('returns true if an AND clause is fully satisfied', () => {
+        const prerequisites = [['TalentA', 'TalentB']];
+        const talentPoints = {
+            Resources: {
+                TalentA: 1,
+                TalentB: 1,
+            },
+        };
+
+        expect(prerequisiteMet(prerequisites, talentPoints, treeKey)).toBe(true);
+    });
+
+    it('returns false if an AND clause is only partially satisfied', () => {
+        const prerequisites = [['TalentA', 'TalentB']];
+        const talentPoints = {
+            Resources: {
+                TalentA: 1,
+                TalentB: 0,
+            },
+        };
+
+        expect(prerequisiteMet(prerequisites, talentPoints, treeKey)).toBe(false);
+    });
+
+    it('returns true if any one clause (including AND groups) is satisfied', () => {
+        const prerequisites = [['TalentA', 'TalentB'], 'TalentC'];
+        const talentPoints = {
+            Resources: {
+                TalentC: 1,
+            },
+        };
+
+        expect(prerequisiteMet(prerequisites, talentPoints, treeKey)).toBe(true);
     });
 });

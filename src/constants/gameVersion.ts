@@ -1,1 +1,1 @@
-export const GAME_VERSION = 'Week 174';
+export const GAME_VERSION: string = 'Week 174';
