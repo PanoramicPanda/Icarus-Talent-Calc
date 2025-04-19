@@ -1,6 +1,6 @@
 // src/components/PointTotals.tsx
 import { Box, Typography } from '@mui/material';
-import { pointPools, TalentPool } from '../constants/points';
+import { pointPools, TalentPool } from '../data/points.ts';
 import { Trees } from '../constants/talentStructure.ts';
 
 interface PointTotalsProps {

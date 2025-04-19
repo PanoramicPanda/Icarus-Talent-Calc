@@ -7,7 +7,7 @@ import Talent from "./components/talent.tsx";
 import RankProgressBar from "./components/rankProgressBar";
 import TalentTrack from "./components/talentTrack";
 import PointTotals from './components/pointTotals';
-import {getPoolForTree, pointPools} from "./constants/points";
+import {getPoolForTree, pointPools} from "./data/points.ts";
 import ConfirmDialog from "./components/confirmDialog";
 import { GAME_VERSION } from './constants/gameVersion';
 import ChangelogDialog from './components/changelogDialog';
