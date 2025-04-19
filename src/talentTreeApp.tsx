@@ -19,6 +19,7 @@ import {
     ExportedTalentState, calculatePointsSpent
 } from './utils/exportImport';
 import {Download, Upload} from '@mui/icons-material';
+import SummaryBox from "./components/summaryBox.tsx";
 
 
 export default function TalentTreeApp() {
@@ -143,6 +144,9 @@ export default function TalentTreeApp() {
                         Copy URL
                     </Button>
                 </Box>
+
+                <SummaryBox talentPoints={talentPoints} allTalents={talentTreeMap} />
+
 
 
                 <div>
