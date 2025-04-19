@@ -48,6 +48,8 @@ Access the local app at http://localhost:5173
 ## 📁 Project Structure
 
 ```bash
+public/
+  ├── images/             # Images and icons
 src/
   ├── components/         # Reusable UI components
   ├── constants/          # Static enums and mappings
