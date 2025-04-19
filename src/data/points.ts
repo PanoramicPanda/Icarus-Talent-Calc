@@ -1,4 +1,4 @@
-import {Trees} from "../constants/talentStructure.ts";
+import {Trees} from "./talentTreeMap.ts";
 
 export type TalentPool = 'General' | 'Solo';
 

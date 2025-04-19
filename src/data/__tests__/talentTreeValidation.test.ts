@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { talentTreeMap } from '../talentTreeMap.ts';
-import { Track } from '../../constants/trackStructure.ts';
+import { Track } from '../../constants/treeStructures.ts';
 
 // Utility to detect cycles using DFS
 function hasCycle(graph: Record<string, string[]>): boolean {

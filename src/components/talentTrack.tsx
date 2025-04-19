@@ -1,6 +1,5 @@
 import { Box } from '@mui/material';
-import { TalentData } from '../constants/talentStructure.ts';
-import { Track } from '../constants/trackStructure.ts';
+import {TalentData, Track} from '../constants/treeStructures.ts';
 
 type Coord = [number, number];
 

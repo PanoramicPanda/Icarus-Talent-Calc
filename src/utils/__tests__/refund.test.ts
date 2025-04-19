@@ -1,5 +1,6 @@
 import { canRefundTalent, prerequisiteMet } from '../refund.ts';
-import { TalentData } from '../../constants/talentStructure.ts';
+
+import {TalentData} from "../../constants/treeStructures.ts";
 
 const makeTalent = (name: string, rank: number): TalentData => ({
     name,

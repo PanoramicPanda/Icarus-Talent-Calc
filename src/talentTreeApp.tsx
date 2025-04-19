@@ -1,6 +1,5 @@
 import {useEffect, useRef, useState} from 'react';
-import {Categories, Trees, TalentData} from "./constants/talentStructure.ts";
-import {talentTreeMap} from "./data/talentTreeMap.ts";
+import {Categories, talentTreeMap, Trees} from "./data/talentTreeMap.ts";
 import {Alert, Box, Button, Typography, Snackbar, Stack, Dialog, DialogTitle, TextField, DialogActions, DialogContent} from '@mui/material';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
 import Talent from "./components/talent.tsx";
@@ -23,6 +22,7 @@ import SummaryBox from "./components/summaryBox.tsx";
 import { preloadAllTalentImages } from './utils/imagePreload';
 import { prerequisiteMet} from "./utils/refund";
 import './talentTree.css'
+import {TalentData} from "./constants/treeStructures.ts";
 
 
 export default function TalentTreeApp() {

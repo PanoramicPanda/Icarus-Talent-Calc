@@ -3,8 +3,8 @@ import TalentIcon from './talentIcon';
 import RankIcon from './rankIcon';
 import PointsLabel from './pointsLabel';
 import TooltipWrapper from './tooltipWrapper';
-import {TalentData} from '../constants/talentStructure.ts';
 import {canRefundTalent} from '../utils/refund';
+import {TalentData} from "../constants/treeStructures.ts";
 
 interface TalentProps {
     talent: TalentData;
