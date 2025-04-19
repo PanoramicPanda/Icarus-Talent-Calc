@@ -21,6 +21,7 @@ import {
 import {Download, Upload} from '@mui/icons-material';
 import SummaryBox from "./components/summaryBox.tsx";
 import { preloadAllTalentImages } from './utils/imagePreload';
+import { prerequisiteMet} from "./utils/refund";
 import './talentTree.css'
 
 
@@ -473,24 +474,6 @@ function TalentTree({
     onRankChange: (talentName: string, rank: number) => void,
     onShowError: (message: string) => void;
 }) {
-    const prerequisiteMet = (
-        prerequisites: (string | string[])[],
-        talentPoints: Record<string, Record<string, number>>,
-        treeKey: string
-    ): boolean => {
-        const pointsInTree = talentPoints[treeKey] || {};
-
-        return prerequisites.some(req => {
-            if (typeof req === 'string') {
-                return (pointsInTree[req] || 0) > 0;
-            } else if (Array.isArray(req)) {
-                return req.every(inner => (pointsInTree[inner] || 0) > 0);
-            }
-            return false;
-        });
-    };
-
-
 
     const canAccessTalent = (talent: TalentData): boolean => {
         const requiredPoints = (talent.rank - 1) * 4;

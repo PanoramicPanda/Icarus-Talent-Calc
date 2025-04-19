@@ -61,3 +61,19 @@ export function canRefundTalent(
     return true;
 }
 
+export function prerequisiteMet(
+    prerequisites: (string | string[])[],
+    talentPoints: Record<string, Record<string, number>>,
+    treeKey: string
+): boolean {
+    const pointsInTree = talentPoints[treeKey] || {};
+
+    return prerequisites.some(req => {
+        if (typeof req === 'string') {
+            return (pointsInTree[req] || 0) > 0;
+        } else if (Array.isArray(req)) {
+            return req.every(inner => (pointsInTree[inner] || 0) > 0);
+        }
+        return false;
+    });
+}
