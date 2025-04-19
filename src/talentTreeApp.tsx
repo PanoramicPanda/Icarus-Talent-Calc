@@ -103,12 +103,15 @@ export default function TalentTreeApp() {
                 boxSizing: 'border-box'
             }}
         >
+            {/* Game Version Display */}
             <Typography
                 variant="caption"
-                sx={{ position: 'absolute', top: 8, right: 12, color: '#aaa' }}
+                sx={{position: 'absolute', top: 8, right: 12, color: '#aaa'}}
             >
                 Game Version: {GAME_VERSION}
             </Typography>
+
+            {/* Changelog Button */}
             <Button
                 variant="outlined"
                 size="small"
@@ -117,10 +120,13 @@ export default function TalentTreeApp() {
             >
                 View Changelog
             </Button>
-            <SummaryBox talentPoints={talentPoints} allTalents={talentTreeMap} />
+
+            {/* Summary Box */}
+            <SummaryBox talentPoints={talentPoints} allTalents={talentTreeMap}/>
 
             <Box sx={{width: 600}}>
-                <PointTotals pointsSpent={talentPointsSpent} />
+                {/* Point Totals */}
+                <PointTotals pointsSpent={talentPointsSpent}/>
 
                 {/* Reset Buttons */}
                 <ResetButtons
@@ -136,7 +142,7 @@ export default function TalentTreeApp() {
 
                         const talentsInTree = treeData.talents;
                         setTalentPoints(prev => {
-                            const updated = { ...prev };
+                            const updated = {...prev};
                             for (const talent of talentsInTree) {
                                 delete updated[treeKey][talent.name];
                             }
@@ -162,7 +168,7 @@ export default function TalentTreeApp() {
                     talentPoints={talentPoints}
                     setTalentPoints={setTalentPoints}
                     setTalentPointsSpent={setTalentPointsSpent}
-                    snackbar={{ setMessage: setSnackbarMessage, setOpen: setSnackbarOpen }}
+                    snackbar={{setMessage: setSnackbarMessage, setOpen: setSnackbarOpen}}
                     importDialogOpen={importDialogOpen}
                     setImportDialogOpen={setImportDialogOpen}
                     exportDialogOpen={exportDialogOpen}
@@ -176,7 +182,7 @@ export default function TalentTreeApp() {
                 <div>
                     {/* Category Selection */}
                     {Object.values(Categories).length > 1 && (
-                        <Box sx={{ mb: 3 }}>
+                        <Box sx={{mb: 3}}>
                             <Stack direction="row" spacing={2}>
                                 {Object.values(Categories).map(category => (
                                     <Button
@@ -206,7 +212,7 @@ export default function TalentTreeApp() {
                     {/*Tree Selection*/}
                     {selectedCategory && Object.keys(Trees)
                         .filter(tree => Trees[tree as keyof typeof Trees].category === selectedCategory).length > 1 && (
-                        <Box sx={{ mb: 2 }}>
+                        <Box sx={{mb: 2}}>
                             <Typography variant="h6" gutterBottom>
                                 Select a Tree
                             </Typography>
@@ -284,7 +290,7 @@ export default function TalentTreeApp() {
                                 setTalentPointsSpent(prev => {
                                     const current = prev[selectedTree!] || 0;
                                     const next = Math.max(0, current + delta);
-                                    return { ...prev, [selectedTree!]: next };
+                                    return {...prev, [selectedTree!]: next};
                                 });
                             }}
 
@@ -304,7 +310,7 @@ export default function TalentTreeApp() {
                     </Snackbar>
 
                     {/* Changelog Dialog */}
-                    <ChangelogDialog open={changelogOpen} onClose={() => setChangelogOpen(false)} />
+                    <ChangelogDialog open={changelogOpen} onClose={() => setChangelogOpen(false)}/>
 
                 </div>
             </Box>
