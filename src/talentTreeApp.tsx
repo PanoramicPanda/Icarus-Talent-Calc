@@ -20,6 +20,7 @@ import {
 } from './utils/exportImport';
 import {Download, Upload} from '@mui/icons-material';
 import SummaryBox from "./components/summaryBox.tsx";
+import { preloadAllTalentImages } from './utils/imagePreload';
 
 
 export default function TalentTreeApp() {
@@ -38,6 +39,10 @@ export default function TalentTreeApp() {
     const [importText, setImportText] = useState('');
     const [exportText, setExportText] = useState('');
 
+    useEffect(() => {
+        preloadAllTalentImages();
+    }, []);
+
 
     useEffect(() => {
         const buildParam = new URLSearchParams(window.location.search).get('build');
@@ -45,7 +50,7 @@ export default function TalentTreeApp() {
             const imported = importFromQueryParam(buildParam);
             if (imported) {
                 if (isVersionMismatch(imported.gameVersion)) {
-                    setSnackbarMessage("Version mismatch. We'll match what we can, but review your trees.");
+                    setSnackbarMessage("Version mismatch. We'll match what we can, but review your talentTrees.");
                     setSnackbarOpen(true);
                 }
 
@@ -402,7 +407,7 @@ export default function TalentTreeApp() {
                                         let completedMessage;
 
                                         if (parsed.gameVersion !== GAME_VERSION) {
-                                            completedMessage = "Version mismatch. We'll match what we can, but review your trees.";
+                                            completedMessage = "Version mismatch. We'll match what we can, but review your talentTrees.";
                                         } else {
                                             completedMessage = "Build imported successfully.";
                                         }

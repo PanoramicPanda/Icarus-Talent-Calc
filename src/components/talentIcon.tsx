@@ -1,4 +1,5 @@
 import {Box} from "@mui/material";
+import { sanitizeTalentName} from "../utils/imagePreload.ts";
 
 
 interface TalentIconProps {
@@ -8,7 +9,7 @@ interface TalentIconProps {
 }
 
 export default function TalentIcon({ talentName, currentPoints, isUnlocked }: TalentIconProps) {
-    const imageName = talentName.replace(/[^a-zA-Z0-9 ]/g, '').replace(/ /g, '_');
+    const imageName = sanitizeTalentName(talentName);
 
     return (
         <Box
