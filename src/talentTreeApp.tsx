@@ -41,8 +41,20 @@ export default function TalentTreeApp() {
     const [exportText, setExportText] = useState('');
 
     useEffect(() => {
-        preloadAllTalentImages();
+        const runAfterPaint = () => {
+            if ('requestIdleCallback' in window) {
+                requestIdleCallback(() => preloadAllTalentImages());
+            } else {
+                setTimeout(() => preloadAllTalentImages(), 500); // Slight delay to let UI paint
+            }
+        };
+
+        requestAnimationFrame(() => {
+            requestAnimationFrame(runAfterPaint);
+        });
     }, []);
+
+
 
 
     useEffect(() => {
