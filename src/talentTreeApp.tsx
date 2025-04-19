@@ -4,13 +4,8 @@ import {
     Alert,
     Box,
     Button,
-    Dialog,
-    DialogActions,
-    DialogContent,
-    DialogTitle,
     Snackbar,
     Stack,
-    TextField,
     Typography
 } from '@mui/material';
 import RankProgressBar from "./components/rankProgressBar";
@@ -20,18 +15,15 @@ import {GAME_VERSION} from './constants/gameVersion';
 import ChangelogDialog from './components/changelogDialog';
 import {
     calculatePointsSpent,
-    ExportedTalentState,
-    exportToJson,
-    exportToQueryParam,
     importFromQueryParam,
     isVersionMismatch
 } from './utils/exportImport';
-import {Download, Upload} from '@mui/icons-material';
 import SummaryBox from "./components/summaryBox.tsx";
 import {preloadAllTalentImages} from './utils/imagePreload';
 import './talentTree.css'
 import {TalentTree} from "./components/talentTree.tsx";
 import ResetButtons from "./components/resetButtons.tsx";
+import ImportExportButtons from './components/importExportButtons.tsx';
 
 
 export default function TalentTreeApp() {
@@ -166,36 +158,20 @@ export default function TalentTreeApp() {
 
 
                 {/* Export/Import Buttons */}
-                <Box sx={{ display: 'flex', gap: 2, mb: 2 }}>
-
-                    <Button
-                        startIcon={<Upload />}
-                        onClick={() => setImportDialogOpen(true)}
-                    >
-                        Import Build
-                    </Button>
-
-                    <Button
-                        startIcon={<Download />}
-                        onClick={() => {
-                            const data = exportToJson(talentPoints);
-                            setExportText(data);
-                            setExportDialogOpen(true);
-                        }}
-                    >
-                        Export Build
-                    </Button>
-
-                    <Button variant="outlined" onClick={() => {
-                        const encoded = exportToQueryParam(talentPoints);
-                        const url = `${window.location.origin}${window.location.pathname}?build=${encoded}`;
-                        navigator.clipboard.writeText(url);
-                        setSnackbarMessage('Build URL copied to clipboard!');
-                        setSnackbarOpen(true);
-                    }}>
-                        Copy URL
-                    </Button>
-                </Box>
+                <ImportExportButtons
+                    talentPoints={talentPoints}
+                    setTalentPoints={setTalentPoints}
+                    setTalentPointsSpent={setTalentPointsSpent}
+                    snackbar={{ setMessage: setSnackbarMessage, setOpen: setSnackbarOpen }}
+                    importDialogOpen={importDialogOpen}
+                    setImportDialogOpen={setImportDialogOpen}
+                    exportDialogOpen={exportDialogOpen}
+                    setExportDialogOpen={setExportDialogOpen}
+                    importText={importText}
+                    setImportText={setImportText}
+                    exportText={exportText}
+                    setExportText={setExportText}
+                />
 
                 <div>
                     {/* Category Selection */}
@@ -329,91 +305,6 @@ export default function TalentTreeApp() {
 
                     {/* Changelog Dialog */}
                     <ChangelogDialog open={changelogOpen} onClose={() => setChangelogOpen(false)} />
-
-                    <Dialog open={exportDialogOpen} onClose={() => setExportDialogOpen(false)} maxWidth="sm" fullWidth>
-                        <DialogTitle>Export Build</DialogTitle>
-                        <DialogContent>
-                            <TextField
-                                value={exportText}
-                                multiline
-                                fullWidth
-                                minRows={10}
-                                slotProps={{ input: { readOnly: true } }}
-                                sx={{ mt: 1 }}
-                            />
-                        </DialogContent>
-                        <DialogActions>
-                            <Button
-                                onClick={() => {
-                                    navigator.clipboard.writeText(exportText);
-                                    setSnackbarMessage('Build copied to clipboard!');
-                                    setSnackbarOpen(true);
-                                }}
-                            >
-                                Copy to Clipboard
-                            </Button>
-                            <Button onClick={() => setExportDialogOpen(false)}>Close</Button>
-                        </DialogActions>
-                    </Dialog>
-
-                    <Dialog open={importDialogOpen} onClose={() => setImportDialogOpen(false)} maxWidth="sm" fullWidth>
-                        <DialogTitle>Import Build</DialogTitle>
-                        <DialogContent>
-                            <TextField
-                                value={importText}
-                                onChange={e => setImportText(e.target.value)}
-                                multiline
-                                fullWidth
-                                minRows={10}
-                                placeholder="Paste your exported build JSON here..."
-                                sx={{ mt: 1 }}
-                            />
-                        </DialogContent>
-                        <DialogActions>
-                            <Button
-                                onClick={() => {
-                                    try {
-                                        const parsed = JSON.parse(importText) as ExportedTalentState;
-
-                                        if (!parsed.talentPoints || !parsed.gameVersion) {
-                                            setSnackbarMessage('Invalid JSON. Please check your input.');
-                                            setSnackbarOpen(true);
-                                            return;
-                                        }
-
-                                        let completedMessage;
-
-                                        if (parsed.gameVersion !== GAME_VERSION) {
-                                            completedMessage = "Version mismatch. We'll match what we can, but review your Trees.";
-                                        } else {
-                                            completedMessage = "Build imported successfully.";
-                                        }
-
-                                        setTalentPoints(parsed.talentPoints);
-
-                                        // Rebuild talentPointsSpent from imported talentPoints
-                                        const newSpent: Record<string, number> = {};
-                                        for (const [treeKey, talents] of Object.entries(parsed.talentPoints)) {
-                                            newSpent[treeKey] = Object.values(talents as Record<string, number>).reduce((sum, pts) => sum + pts, 0);
-                                        }
-                                        setTalentPointsSpent(newSpent);
-
-                                        setImportDialogOpen(false);
-                                        setSnackbarMessage(completedMessage);
-                                        setSnackbarOpen(true);
-                                    } catch (err) {
-                                        setSnackbarMessage('Invalid JSON. Please check your input.');
-                                        setSnackbarOpen(true);
-                                    }
-                                }}
-                            >
-                                Load Build
-                            </Button>
-                            <Button onClick={() => setImportDialogOpen(false)}>Cancel</Button>
-                        </DialogActions>
-                    </Dialog>
-
-
 
                 </div>
             </Box>
