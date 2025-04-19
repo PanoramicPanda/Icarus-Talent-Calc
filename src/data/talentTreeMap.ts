@@ -1,17 +1,4 @@
 import {TalentData} from "../constants/treeStructures.ts";
-
-export function defineTalentTree<K extends keyof typeof Trees>(
-    treeKey: K,
-    talents: Omit<TalentData, "tree">[]
-): TalentData[] {
-    return talents.map(t => ({...t, tree: treeKey}))
-}
-
-export interface TreeInfo {
-    name: string
-    category: Categories
-}
-
 import {resourcesTree} from "./talentTrees/resources.ts";
 import {explorationTree} from "./talentTrees/exploration.ts";
 import {huntingTree} from "./talentTrees/hunting.ts";
@@ -26,6 +13,11 @@ import {spearsTree} from "./talentTrees/spears.ts";
 import {bladesTree} from "./talentTrees/blades.ts";
 import {firearmsTree} from "./talentTrees/firearms.ts";
 import {soloTree} from "./talentTrees/solo.ts";
+
+export interface TreeInfo {
+    name: string
+    category: Categories
+}
 
 
 export enum Categories {

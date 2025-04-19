@@ -1,5 +1,6 @@
 import {Track} from "../../constants/treeStructures.ts";
-import {defineTalentTree} from "../talentTreeMap.ts";
+
+import {defineTalentTree} from "../../utils/defineTalentTree.ts";
 
 export const fishingTree = {
     talents: defineTalentTree("Fishing", [
