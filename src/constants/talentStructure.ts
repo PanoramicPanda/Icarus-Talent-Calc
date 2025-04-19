@@ -21,7 +21,7 @@ export const Trees: Record<string, TreeInfo> = {
     Repairing: { name: "Repairing", category: Categories.Habitation },
     Tools: { name: "Tools", category: Categories.Habitation },
     Building: { name: "Building", category: Categories.Habitation },
-    Bows: { name: "Bows / Crossbows", category: Categories.Combat },
+    BowsCrossbows: { name: "Bows/Crossbows", category: Categories.Combat },
     Spears: { name: "Spears", category: Categories.Combat },
     Blades: { name: "Blades", category: Categories.Combat },
     Firearms: { name: "Firearms", category: Categories.Combat },

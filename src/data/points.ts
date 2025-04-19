@@ -12,7 +12,7 @@ export const pointPools: Record<TalentPool, {
             'Resources', 'Hunting', 'CookingFarming',
             'Exploration', 'Husbandry', 'Fishing',
             'Repairing', 'Tools', 'Building',
-            'Bows', 'Spears', 'Blades', 'Firearms'
+            'Bows/Crossbows', 'Spears', 'Blades', 'Firearms'
         ]
     },
     Solo: {

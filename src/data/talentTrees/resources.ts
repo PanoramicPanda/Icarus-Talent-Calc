@@ -5,11 +5,11 @@ export const resourcesTree = {
     talents: defineTalentTree("Resources", [
         {
             name: "Lumber Yield",
-            description: "Increased yield from felling trees",
+            description: "Increased yield from felling talentTrees",
             rank: 1,
             prerequisites: [],
             benefits: ["+5%", "+10%", "+20%"],
-            benefitsDesc: "Yield from felling trees",
+            benefitsDesc: "Yield from felling talentTrees",
             position: [0, 0]
         },
         {
@@ -156,7 +156,7 @@ export const resourcesTree = {
         },
         {
             name: "Friend Of The Trees",
-            description: "Reduced damage from falling trees (+50% Falling Tree Resistance)",
+            description: "Reduced damage from falling talentTrees (+50% Falling Tree Resistance)",
             rank: 4,
             prerequisites: ["Seasoned Logsman"],
             benefits: ["+50%"],
@@ -169,7 +169,7 @@ export const resourcesTree = {
             rank: 4,
             prerequisites: ["Seasoned Logsman"],
             benefits: ["+1%"],
-            benefitsDesc: "Chance to instantly fell trees",
+            benefitsDesc: "Chance to instantly fell talentTrees",
             position: [6, 0]
         },
         {
