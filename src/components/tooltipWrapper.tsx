@@ -71,7 +71,9 @@ export default function TooltipWrapper({
                 </Box>
             }
             placement="right"
-            arrow
+            followCursor
+            enterDelay={0}
+            leaveDelay={0}
             slotProps={{
                 tooltip: {
                     sx: {
