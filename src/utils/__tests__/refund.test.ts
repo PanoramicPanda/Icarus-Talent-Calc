@@ -7,7 +7,7 @@ const makeTalent = (name: string, rank: number): TalentData => ({
     description: '',
     rank,
     prerequisites: [],
-    benefits: ['+1','+1','+1','+1','+1','+1','+1','+1','+1','+1','+1','+1','+1','+1'],
+    benefits: new Array(14).fill([{ value: '+1' }]),
     position: [0, 0],
     tree: 'Resources'
 });
