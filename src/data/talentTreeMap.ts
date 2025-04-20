@@ -28,6 +28,18 @@ export enum Categories {
     Solo = "Solo"
 }
 
+export const CategoryIcons: Record<string, string> = {
+    Survival: 'images/category_icons/Category-Icon_Survival.webp',
+    Adventure: 'images/category_icons/Category-Icon_Adventure.webp',
+    Habitation: 'images/category_icons/Category-Icon_Habitation.webp',
+    Combat: 'images/category_icons/Category-Icon_Combat.webp',
+    Solo: 'images/category_icons/Category-Icon_Solo.webp'
+};
+
+export function getCategoryIcon(category: string): string | undefined {
+    return CategoryIcons[category];
+}
+
 export const Trees: Record<string, TreeInfo> = {
     Resources: {name: "Resources", category: Categories.Survival},
     Hunting: {name: "Hunting", category: Categories.Survival},

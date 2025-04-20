@@ -24,6 +24,7 @@ import './talentTree.css'
 import {TalentTree} from "./components/talentTree/talentTree.tsx";
 import ResetButtons from "./components/resetButtons.tsx";
 import ImportExportButtons from './components/importExportButtons.tsx';
+import CategoryRibbon from "./components/categoryRibbon.tsx";
 
 
 export default function TalentTreeApp() {
@@ -191,32 +192,11 @@ export default function TalentTreeApp() {
 
                 <div>
                     {/* Category Selection */}
-                    {Object.values(Categories).length > 1 && (
-                        <Box sx={{mb: 3}}>
-                            <Stack direction="row" spacing={2}>
-                                {Object.values(Categories).map(category => (
-                                    <Button
-                                        key={category}
-                                        variant={selectedCategory === category ? 'contained' : 'outlined'}
-                                        onClick={() => {
-                                            const treesInCategory = Object.keys(Trees)
-                                                .filter(tree => Trees[tree as keyof typeof Trees].category === category);
-
-                                            setSelectedCategory(category);
-
-                                            if (treesInCategory.length === 1) {
-                                                setSelectedTree(treesInCategory[0] as keyof typeof Trees);
-                                            } else {
-                                                setSelectedTree(null);
-                                            }
-                                        }}
-                                    >
-                                        {category}
-                                    </Button>
-                                ))}
-                            </Stack>
-                        </Box>
-                    )}
+                    <CategoryRibbon
+                        selectedCategory={selectedCategory}
+                        setSelectedCategory={setSelectedCategory}
+                        setSelectedTree={setSelectedTree}
+                    />
 
 
                     {/*Tree Selection*/}
