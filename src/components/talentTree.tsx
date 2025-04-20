@@ -13,7 +13,8 @@ export function TalentTree({
                                pointsSpent,
                                talentPoints,
                                onRankChange,
-                               onShowError
+                               onShowError,
+                               blockingTalents
                            }: {
     treeKey: keyof typeof Trees,
     talents: TalentData[],
@@ -22,6 +23,7 @@ export function TalentTree({
     talentPoints: Record<string, Record<string, number>>,
     onRankChange: (talentName: string, rank: number) => void,
     onShowError: (message: string) => void;
+    blockingTalents: Set<string>;
 }) {
 
     const canAccessTalent = (talent: TalentData): boolean => {
@@ -87,6 +89,7 @@ export function TalentTree({
                                 talentPoints={talentPoints}
                                 onRankChange={onRankChange}
                                 onShowError={onShowError}
+                                blockingTalents={blockingTalents}
                             />
                         </div>
                     );

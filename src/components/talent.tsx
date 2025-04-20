@@ -18,6 +18,7 @@ interface TalentProps {
     talentPoints: Record<string, Record<string, number>>;
     onRankChange: (talentName: string, delta: number) => void;
     onShowError: (msg: string) => void;
+    blockingTalents: Set<string>;
 }
 
 export default function Talent({
@@ -29,7 +30,8 @@ export default function Talent({
                                    allTalents,
                                    talentPoints,
                                    onRankChange,
-                                   onShowError
+                                   onShowError,
+                                   blockingTalents,
                                }: TalentProps) {
     const handleClick = () => {
         if (currentPoints < maxPoints && isUnlocked) {
@@ -79,9 +81,51 @@ export default function Talent({
 
 
         if (isBlockedByDownstream) {
-            onShowError(`${talent.name} is a prerequisite for another talent you still own.`);
+            const blocking = allTalents
+                .filter(other => {
+                    const otherPoints = talentPoints[other.tree]?.[other.name] || 0;
+                    if (otherPoints === 0) return false;
+
+                    const referencesTalent = other.prerequisites?.some(req =>
+                        typeof req === 'string'
+                            ? req === talent.name
+                            : Array.isArray(req) && req.includes(talent.name)
+                    );
+
+                    if (!referencesTalent) return false;
+
+                    const nextPoints = currentPoints - 1;
+                    const isClauseSatisfied = (req: string | string[]) => {
+                        if (typeof req === 'string') {
+                            return req === talent.name
+                                ? nextPoints > 0
+                                : (talentPoints[talent.tree]?.[req] || 0) > 0;
+                        }
+                        return req.every(inner =>
+                            inner === talent.name
+                                ? nextPoints > 0
+                                : (talentPoints[talent.tree]?.[inner] || 0) > 0
+                        );
+                    };
+
+                    const atLeastOneClauseStillValid = other.prerequisites.some(isClauseSatisfied);
+                    return !atLeastOneClauseStillValid;
+                })
+                .map(t => t.name);
+
+            if (typeof onShowError === 'function') {
+                onShowError(`${talent.name} is a prerequisite for another talent you still own.`);
+            }
+
+            // Call the setter from props or context
+            if ((window as any).setBlockingTalents) {
+                (window as any).setBlockingTalents(new Set(blocking));
+                setTimeout(() => (window as any).setBlockingTalents(new Set()), 3000);
+            }
+
             return;
         }
+
 
         if (!canRefundTalent(talent, currentPoints, talentPoints, allTalents)) {
             onShowError(`You must maintain enough points in lower ranks to support your current rank.`);
@@ -125,6 +169,7 @@ export default function Talent({
                         currentPoints={currentPoints}
                         isUnlocked={isUnlocked}
                         hasPointsToSpend={hasPointsToSpend}
+                        isBlocking={blockingTalents?.has(talent.name)}
                     />
                 </Box>
             </TooltipWrapper>

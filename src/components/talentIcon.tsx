@@ -8,6 +8,7 @@ interface TalentIconProps {
     currentPoints: number;
     isUnlocked: boolean;
     hasPointsToSpend: boolean;
+    isBlocking?: boolean;
 }
 
 export default function TalentIcon({
@@ -15,6 +16,7 @@ export default function TalentIcon({
                                        currentPoints,
                                        isUnlocked,
                                        hasPointsToSpend,
+                                       isBlocking = false,
                                    }: TalentIconProps) {
     const imageName = talent.imageName || sanitizeTalentName(talent.name);
     const [isHovered, setIsHovered] = useState(false);
@@ -49,10 +51,12 @@ export default function TalentIcon({
                 justifyContent: 'center',
                 position: 'relative',
                 overflow: 'visible', // allow corner indicators outside
-                boxShadow:
-                    currentPoints > 0
-                        ? "0 0 4px 1px rgba(252, 234, 44, 0.6)"
+                boxShadow: isBlocking
+                    ? '0 0 6px 2px rgba(255, 0, 0, 0.8)'
+                    : currentPoints > 0
+                        ? '0 0 4px 1px rgba(252, 234, 44, 0.6)'
                         : undefined,
+                animation: isBlocking ? 'pulseRed 1s ease-in-out infinite' : undefined,
                 '&::after': {
                     content: '""',
                     position: 'absolute',
@@ -202,6 +206,12 @@ export default function TalentIcon({
                         0% { opacity: 1; transform: scale(1); }
                         50% { opacity: 0.5; transform: scale(1.2); }
                         100% { opacity: 1; transform: scale(1); }
+                    }
+            
+                    @keyframes pulseRed {
+                        0% { box-shadow: 0 0 4px 2px rgba(255, 0, 0, 0.6); }
+                        50% { box-shadow: 0 0 8px 4px rgba(255, 0, 0, 1); }
+                        100% { box-shadow: 0 0 4px 2px rgba(255, 0, 0, 0.6); }
                     }
                 `}
             </style>

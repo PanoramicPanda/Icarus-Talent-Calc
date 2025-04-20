@@ -41,6 +41,16 @@ export default function TalentTreeApp() {
     const [importDialogOpen, setImportDialogOpen] = useState(false);
     const [importText, setImportText] = useState('');
     const [exportText, setExportText] = useState('');
+    // @ts-ignore
+    const [blockingTalents, setBlockingTalents] = useState<Set<string>>(new Set());
+
+    useEffect(() => {
+        (window as any).setBlockingTalents = setBlockingTalents;
+        return () => {
+            delete (window as any).setBlockingTalents;
+        };
+    }, []);
+
 
     useEffect(() => {
         const runAfterPaint = () => {
@@ -293,7 +303,7 @@ export default function TalentTreeApp() {
                                     return {...prev, [selectedTree!]: next};
                                 });
                             }}
-
+                            blockingTalents={blockingTalents}
                         />
                     )}
 
@@ -301,7 +311,10 @@ export default function TalentTreeApp() {
                     <Snackbar
                         open={!!snackbarMessage}
                         autoHideDuration={4000}
-                        onClose={() => setSnackbarMessage(null)}
+                        onClose={() => {
+                            setSnackbarMessage(null);
+                            setBlockingTalents(new Set());
+                        }}
                         anchorOrigin={{vertical: 'bottom', horizontal: 'center'}}
                     >
                         <Alert severity="warning" variant="filled" onClose={() => setSnackbarMessage(null)}>
