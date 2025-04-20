@@ -63,7 +63,7 @@ export default function RankProgressBar({ pointsSpent }: RankProgressBarProps) {
                         borderRadius: 5,
                         backgroundColor: '#333',
                         '& .MuiLinearProgress-bar': {
-                            backgroundColor: '#fcea2c',
+                            backgroundColor: '#ffba27',
                         },
                     }}
                 />

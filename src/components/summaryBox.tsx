@@ -64,7 +64,7 @@ export default function SummaryBox({ allTalents, talentPoints }: SummaryBoxProps
                 return (
                     <Box key={poolName} sx={{ mb: 2 }}>
                         {multiplePools && (
-                            <Typography variant="subtitle2" sx={{ color: '#fcea2c', fontWeight: 'bold', mb: 1 }}>
+                            <Typography variant="subtitle2" sx={{ color: '#ffba27', fontWeight: 'bold', mb: 1 }}>
                                 {poolName}
                             </Typography>
                         )}

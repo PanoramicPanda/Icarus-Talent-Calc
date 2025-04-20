@@ -30,7 +30,7 @@ export default function TooltipWrapper({
                             mb: 1,
                         }}
                     >
-                        <Typography variant="subtitle2" sx={{ color: '#fcea2c', fontWeight: 'bold' }}>
+                        <Typography variant="subtitle2" sx={{ color: '#ffba27', fontWeight: 'bold' }}>
                             {talent.name}
                         </Typography>
                     </Box>
@@ -51,7 +51,7 @@ export default function TooltipWrapper({
                                     key={i}
                                     variant="body2"
                                     sx={{
-                                        color: idx === currentPoints - 1 ? '#fcea2c' : '#777',
+                                        color: idx === currentPoints - 1 ? '#ffba27' : '#777',
                                         fontWeight: idx === currentPoints - 1 ? 600 : 400,
                                     }}
                                 >

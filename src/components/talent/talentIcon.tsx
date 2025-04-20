@@ -23,14 +23,14 @@ export default function TalentIcon({
 
     const borderColor =
         currentPoints > 0
-            ? "#fcea2c"
+            ? "#ffba27"
             : isUnlocked && hasPointsToSpend
                 ? "#cccdcc"
                 : "#484947";
 
     const afterBackground =
         currentPoints > 0
-            ? "linear-gradient(135deg, transparent 75%, #fcea2c 50%)"
+            ? "linear-gradient(135deg, transparent 75%, #ffba27 50%)"
             : isUnlocked && hasPointsToSpend
                 ? "linear-gradient(135deg, transparent 75%, #cccdcc 50%)"
                 : "linear-gradient(135deg, transparent 75%, #484947 50%)";

@@ -7,8 +7,8 @@ interface PointsLabelProps {
 }
 
 export default function PointsLabel({ currentPoints, maxPoints, isUnlocked }: PointsLabelProps) {
-    const bg = currentPoints > 0 ? '#fcea2c' : isUnlocked ? '#212221' : '#222222';
-    const border = currentPoints > 0 ? '#fcea2c' : isUnlocked ? '#cccdcc' : '#484947';
+    const bg = currentPoints > 0 ? '#ffba27' : isUnlocked ? '#212221' : '#222222';
+    const border = currentPoints > 0 ? '#ffba27' : isUnlocked ? '#cccdcc' : '#484947';
     const color = currentPoints > 0 ? 'black' : isUnlocked ? '#cccdcc' : '#7b7b7b';
 
     return (

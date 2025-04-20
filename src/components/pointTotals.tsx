@@ -36,7 +36,7 @@ export default function PointTotals({ talentPoints }: PointTotalsProps) {
                             variant="body1"
                             sx={{
                                 fontWeight: 'bold',
-                                color: spent > pool.cap ? 'red' : '#fcea2c'
+                                color: spent >= pool.cap ? 'red' : '#ffba27'
                             }}
                         >
                             {spent} / {pool.cap}
