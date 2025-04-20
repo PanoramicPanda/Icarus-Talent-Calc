@@ -107,6 +107,7 @@ export default function TalentTreeApp() {
                 bgcolor: 'background.default',
                 color: 'text.primary',
                 display: 'flex',
+                flexDirection: 'row',
                 justifyContent: 'center', // horizontally center
                 alignItems: 'flex-start', // top-aligned
                 px: 2,
@@ -133,7 +134,9 @@ export default function TalentTreeApp() {
             </Button>
 
             {/* Summary Box */}
-            <SummaryBox talentPoints={talentPoints} allTalents={talentTreeMap}/>
+            <Box sx={{ width: 300, flexShrink: 0, mr: 4 }}>
+                <SummaryBox talentPoints={talentPoints} allTalents={talentTreeMap} />
+            </Box>
 
             <Box sx={{width: 600}}>
                 {/* Point Totals */}
