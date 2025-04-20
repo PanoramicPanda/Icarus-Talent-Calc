@@ -1,6 +1,7 @@
 import { Box, Typography } from '@mui/material';
 import { getPoolForTree } from '../data/points.ts';
 import {TalentData} from "../constants/treeStructures.ts";
+import { normalizeBenefits } from '../utils/normalizeBenefits';
 
 interface SummaryBoxProps {
     allTalents: Partial<Record<string, { talents: TalentData[]; tracks: any[] }>>;
@@ -41,15 +42,16 @@ export default function SummaryBox({ allTalents, talentPoints }: SummaryBoxProps
                     const spent = talentPoints[talent.tree]?.[talent.name] || 0;
                     if (spent === 0) continue;
 
-                    const benefit = talent.benefits[spent - 1] || '';
-                    const desc = talent.benefitsDesc;
-
-                    if (desc) {
-                        if (!benefitMap[desc]) benefitMap[desc] = [];
-                        benefitMap[desc].push(benefit);
-                    } else {
-                        soloBenefits.push(benefit);
-                    }
+                    const normalized = normalizeBenefits(talent.benefits);
+                    const tier = normalized[spent - 1] || [];
+                    tier.forEach(({ value, desc }) => {
+                        if (desc) {
+                            if (!benefitMap[desc]) benefitMap[desc] = [];
+                            benefitMap[desc].push(value);
+                        } else {
+                            soloBenefits.push(value);
+                        }
+                    });
                 }
 
                 const benefitLines = [

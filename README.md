@@ -75,13 +75,35 @@ export const combatTree = defineTalentTree("Combat", [
     rank: 2,
     position: [0, 0],
     prerequisites: [],
-    benefits: ["+5%", "+10%", "+15%"],
-    benefitsDesc: "Headshot Damage"
+    benefits: [
+      [{ value: "+5%", desc: "Headshot Damage" }],
+      [{ value: "+10%" }], // Without a description, it will inherit the most recent one
+      [{ value: "+15%" }]
+    ]
   },
   ...
 ])
 ```
-3. Add your tree to `talentTreeMap.ts`:
+3. For talents with **multiple benefits at the same point**, just add multiple entries inside the inner array:
+```ts
+{
+  name: "Bring A Gun To A Gun Fight",
+  description: "Increased Damage and Reload Speed with Firearms",
+  rank: 2,
+  position: [5, 7],
+  prerequisites: ["Heavy Hitter"],
+  benefits: [
+    [
+      { value: "+5%", desc: "Damage with Firearms" },
+    ],
+    [
+      { value: "+10%", desc: "Damage with Firearms" },
+      { value: "+10%", desc: "Reload Speed with Firearms" }
+    ]
+  ]
+}
+```
+4. Add your tree to `talentTreeMap.ts`:
 
 ```ts
 import { combatTree } from './data/combat';
@@ -92,14 +114,21 @@ export const talentTreeMap = {
 };
 ```
 
-4. Define any track connections using [from, to] positions or talent names within the tracks property of the tree file. The coordinates are treated like a two dimensional grid, with the origin at the top left corner, and the rows going downwards.
+5. Define any track connections using `{from:, to:}` pairs either by:
+- Talent names (e.g., `{from: "Iron Miner", to: "Lucky Strike"}`)
+- Coordinate references (e.g., `{from: [3, 0], to: "Seasoned Logsman"}`)
 
+Coordinates are treated as `[row, column]` on a grid, with (0, 0) in the top-left.
 
 ### 🛡 Talent Data Guidelines
 
 - Talent `name` must be unique within a tree
 - `rank` should be 1–4, with appropriate gating
-- Use `benefits` and `benefitsDesc` to group effects in the summary
+- benefits is an array of arrays of { value, desc } objects
+  - Each outer array represents a point spent
+  - Each inner array can hold multiple effects for that rank
+  - The total amount of outer arrays equals the number of points available for that talent
+  - If a `{ value }` is provided with no desc, the most recent previous desc will be used automatically
 - `prerequisites` can be:
   - Single string = requires any one
   - Array of strings = requires any one

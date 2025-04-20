@@ -1,6 +1,5 @@
-import {Track} from "../../constants/treeStructures.ts";
-
-import {defineTalentTree} from "../../utils/defineTalentTree.ts";
+import { Track } from "../../constants/treeStructures.ts";
+import { defineTalentTree } from "../../utils/defineTalentTree.ts";
 
 export const soloTree = {
     talents: defineTalentTree("Solo", [
@@ -9,8 +8,10 @@ export const soloTree = {
             description: "Increased maximum stamina",
             rank: 1,
             prerequisites: [],
-            benefits: ["+20", "+50"],
-            benefitsDesc: "Maximum Stamina",
+            benefits: [
+                [{ value: "+20", desc: "Maximum Stamina" }],
+                [{ value: "+50" }]
+            ],
             position: [0, 1]
         },
         {
@@ -18,8 +19,10 @@ export const soloTree = {
             description: "Increased movement speed",
             rank: 1,
             prerequisites: [],
-            benefits: ["%5", "+10%"],
-            benefitsDesc: "Increased movement speed",
+            benefits: [
+                [{ value: "%5", desc: "Increased movement speed" }],
+                [{ value: "+10%" }]
+            ],
             position: [0, 4]
         },
         {
@@ -27,8 +30,10 @@ export const soloTree = {
             description: "Increased maximum health",
             rank: 1,
             prerequisites: [],
-            benefits: ["+50", "+100"],
-            benefitsDesc: "Maximum Health",
+            benefits: [
+                [{ value: "+50", desc: "Maximum Health" }],
+                [{ value: "+100" }]
+            ],
             position: [0, 6]
         },
         {
@@ -36,8 +41,10 @@ export const soloTree = {
             description: "Increased melee damage",
             rank: 1,
             prerequisites: [],
-            benefits: ["+5%", "+10%"],
-            benefitsDesc: "Increased melee damage",
+            benefits: [
+                [{ value: "+5%", desc: "Increased melee damage" }],
+                [{ value: "+10%" }]
+            ],
             position: [0, 8]
         },
         {
@@ -45,8 +52,10 @@ export const soloTree = {
             description: "Increased stamina regeneration",
             rank: 1,
             prerequisites: ["Marathon Runner"],
-            benefits: ["+10%", "+20%"],
-            benefitsDesc: "Stamina Regeneration",
+            benefits: [
+                [{ value: "+10%", desc: "Stamina Regeneration" }],
+                [{ value: "+20%" }]
+            ],
             position: [1, 1]
         },
         {
@@ -54,8 +63,11 @@ export const soloTree = {
             description: "Reduced damage from animals",
             rank: 1,
             prerequisites: ["Fleet Footed"],
-            benefits: ["+5", "+10", "+15"],
-            benefitsDesc: "Reduced damage from animals",
+            benefits: [
+                [{ value: "+5", desc: "Reduced damage from animals" }],
+                [{ value: "+10" }],
+                [{ value: "+15" }]
+            ],
             position: [1, 3]
         },
         {
@@ -63,8 +75,11 @@ export const soloTree = {
             description: "Reduced chance of sprain from fall damage",
             rank: 1,
             prerequisites: ["Fleet Footed"],
-            benefits: ["5%", "10%", "20%"],
-            benefitsDesc: "Less chance of sprain from fall damage",
+            benefits: [
+                [{ value: "5%", desc: "Less chance of sprain from fall damage" }],
+                [{ value: "10%" }],
+                [{ value: "20%" }]
+            ],
             position: [1, 5]
         },
         {
@@ -72,8 +87,10 @@ export const soloTree = {
             description: "Increased health regeneration",
             rank: 1,
             prerequisites: ["Healthy Maverick", "Heavy Hitter"],
-            benefits: ["+10%", "+20%"],
-            benefitsDesc: "Health Regeneration",
+            benefits: [
+                [{ value: "+10%", desc: "Health Regeneration" }],
+                [{ value: "+20%" }]
+            ],
             position: [1, 6]
         },
         {
@@ -81,8 +98,10 @@ export const soloTree = {
             description: "Increased yield from felling trees",
             rank: 2,
             prerequisites: ["Lightning Recovery"],
-            benefits: ["+5%", "+10%"],
-            benefitsDesc: "Yield from felling trees",
+            benefits: [
+                [{ value: "+5%", desc: "Yield from felling trees" }],
+                [{ value: "+10%" }]
+            ],
             position: [2, 0]
         },
         {
@@ -90,8 +109,18 @@ export const soloTree = {
             description: "Decreased Water, Food, and Oxygen consumption",
             rank: 2,
             prerequisites: ["Lightning Recovery", "'Tis But A Scratch"],
-            benefits: ["-10%", "-20%"],
-            benefitsDesc: "Consumption",
+            benefits: [
+                [
+                    { value: '-10%', desc: 'Water Consumption' },
+                    { value: '-10%', desc: 'Food Consumption' },
+                    { value: '-10%', desc: 'Oxygen Consumption' }
+                ],
+                [
+                    { value: '-20%', desc: 'Water Consumption' },
+                    { value: '-20%', desc: 'Food Consumption' },
+                    { value: '-20%', desc: 'Oxygen Consumption' }
+                ]
+            ],
             position: [3, 2]
         },
         {
@@ -99,8 +128,9 @@ export const soloTree = {
             description: "-15% Perceived threat while stealthed",
             rank: 2,
             prerequisites: ["Fleet Footed"],
-            benefits: ["-15%"],
-            benefitsDesc: "Perceived threat while stealthed",
+            benefits: [
+                [{ value: "-15%", desc: "Perceived threat while stealthed" }]
+            ],
             position: [3, 4]
         },
         {
@@ -108,8 +138,9 @@ export const soloTree = {
             description: "+10% Food Effects Duration ",
             rank: 2,
             prerequisites: ["Bounce Back"],
-            benefits: ["+10%"],
-            benefitsDesc: "Food Effects Duration",
+            benefits: [
+                [{ value: "+10%", desc: "Food Effects Duration" }]
+            ],
             position: [3, 5]
         },
         {
@@ -117,8 +148,10 @@ export const soloTree = {
             description: "Increased Damage with Bows/Crossbows",
             rank: 2,
             prerequisites: ["Heavy Hitter"],
-            benefits: ["+5%", "+10%"],
-            benefitsDesc: "Damage and Reload Speed with Bows/Crossbows",
+            benefits: [
+                [{ value: "+5%", desc: "Damage and Reload Speed with Bows/Crossbows" }],
+                [{ value: "+10%" }]
+            ],
             position: [3, 7]
         },
         {
@@ -126,8 +159,10 @@ export const soloTree = {
             description: "Increased Damage with Knives",
             rank: 2,
             prerequisites: ["Heavy Hitter"],
-            benefits: ["+5%", "+10%"],
-            benefitsDesc: "Damage with Knives",
+            benefits: [
+                [{ value: "+5%", desc: "Damage with Knives" }],
+                [{ value: "+10%" }]
+            ],
             position: [3, 9]
         },
         {
@@ -135,8 +170,10 @@ export const soloTree = {
             description: "Increased yield from mining ore deposits",
             rank: 2,
             prerequisites: ["Precision Logging"],
-            benefits: ["+5%", "+10%"],
-            benefitsDesc: "Yield from mining ore deposits",
+            benefits: [
+                [{ value: "+5%", desc: "Yield from mining ore deposits" }],
+                [{ value: "+10%", desc: "Yield from mining ore deposits" }]
+            ],
             position: [4, 0]
         },
         {
@@ -144,8 +181,13 @@ export const soloTree = {
             description: "Increased Yield from felling trees, mining and harvesting ",
             rank: 2,
             prerequisites: ["Miner Rewards", "Low Maintenance"],
-            benefits: ["+15%"],
-            benefitsDesc: "Yield from felling trees, mining and harvesting",
+            benefits: [
+                [
+                    { value: '+15%', desc: 'Yield from felling trees' },
+                    { value: '+15%', desc: 'Yield from mining' },
+                    { value: '+15%', desc: 'Yield from harvesting' }
+                ]
+            ],
             position: [5, 1]
         },
         {
@@ -153,8 +195,9 @@ export const soloTree = {
             description: "More Weight capacity",
             rank: 2,
             prerequisites: ["Low Maintenance", "Bounce Back"],
-            benefits: ["+25%"],
-            benefitsDesc: "Weight capacity",
+            benefits: [
+                [{ value: "+25%", desc: "Weight capacity" }]
+            ],
             position: [5, 4]
         },
         {
@@ -162,8 +205,13 @@ export const soloTree = {
             description: "Increased Damage with Firearms",
             rank: 2,
             prerequisites: ["Heavy Hitter"],
-            benefits: ["+5%", "+10%"],
-            benefitsDesc: "Damage with Firearms",
+            benefits: [
+                [{ value: '+5%', desc: 'Damage with Firearms' }],
+                [
+                    { value: '+10%', desc: 'Damage with Firearms' },
+                    { value: '+10%', desc: 'Reload Speed with Firearms' }
+                ]
+            ],
             position: [5, 7]
         },
         {
@@ -171,17 +219,23 @@ export const soloTree = {
             description: "Increased Damage with Spears",
             rank: 2,
             prerequisites: ["Heavy Hitter"],
-            benefits: ["+5%", "+10%"],
-            benefitsDesc: "Damage with Spears",
+            benefits: [
+                [{ value: "+5%", desc: "Damage with Spears" }],
+                [{ value: "+10%" }]
+            ],
             position: [5, 9]
         },
         {
             name: "Efficient Home Maintenance",
-            description: "Increased Stamina Regeneration with a Fire Whacker Equipped",
+            description: "Decreased stamina cost for Firewhacker use and faster repair time with hammers",
             rank: 2,
             prerequisites: ["Bounce Back", "Pack Horse"],
-            benefits: ["+5%"],
-            benefitsDesc: "Staming Regeration with a Fire Whacker Equipped",
+            benefits: [
+                [
+                    { value: "+5%", desc: "Staming Regeration with a Fire Whacker Equipped" },
+                    { value: "-5%", desc: "Repair Tool Action Hold Time" }
+                ]
+            ],
             position: [6, 6]
         },
         {
@@ -189,8 +243,10 @@ export const soloTree = {
             description: "Increased yield from Butchering Animals and Creature Bones",
             rank: 3,
             prerequisites: ["The Big Three"],
-            benefits: ["+25%", "+50%"],
-            benefitsDesc: "Yield from Butchering Animals and Creature Bones",
+            benefits: [
+                [{ value: "+25%", desc: "Yield from Butchering Animals and Creature Bones" }],
+                [{ value: "+50%" }]
+            ],
             position: [6, 0]
         },
         {
@@ -198,8 +254,10 @@ export const soloTree = {
             description: "Increased yield from harvesting by hand",
             rank: 3,
             prerequisites: ["The Big Three"],
-            benefits: ["+5%", "+10%"],
-            benefitsDesc: "Yield from harvesting by hand",
+            benefits: [
+                [{ value: "+5%", desc: "Yield from harvesting by hand" }],
+                [{ value: "+10%" }]
+            ],
             position: [6, 2]
         },
         {
@@ -207,8 +265,9 @@ export const soloTree = {
             description: "Reduce Carry Weight of Wood, Stone and Ores",
             rank: 3,
             prerequisites: ["Pack Horse"],
-            benefits: ["-20%"],
-            benefitsDesc: "Carry Weight of Wood, Stone and Ores",
+            benefits: [
+                [{ value: "-20%", desc: "Carry Weight of Wood, Stone and Ores" }]
+            ],
             position: [6, 4]
         },
         {
@@ -216,8 +275,9 @@ export const soloTree = {
             description: "Increased Damage of Crafted Hedgehogs",
             rank: 3,
             prerequisites: ["Efficient Home Maintenance"],
-            benefits: ["+25%"],
-            benefitsDesc: "Damage of Crafted Hedgehogs",
+            benefits: [
+                [{ value: "+25%", desc: "Damage of Crafted Hedgehogs" }]
+            ],
             position: [7, 6]
         },
         {
@@ -225,7 +285,9 @@ export const soloTree = {
             description: "Can see Creature Alert Level and Health",
             rank: 3,
             prerequisites: ["Heavy Hitter"],
-            benefits: ["Can see Creature Alert Level and Health"],
+            benefits: [
+                [{ value: "Can see Creature Alert Level and Health" }]
+            ],
             position: [6, 8]
         },
         {
@@ -233,8 +295,10 @@ export const soloTree = {
             description: "Increased yield from Skinning Leather and Skinning Fur",
             rank: 4,
             prerequisites: ["Savage Hunter I"],
-            benefits: ["+25%", "+50%"],
-            benefitsDesc: "Yield from Skinning Leather and Skinning Fur",
+            benefits: [
+                [{ value: "+25%", desc: "Yield from Skinning Leather and Skinning Fur" }],
+                [{ value: "+50%" }]
+            ],
             position: [7, 0]
         },
         {
@@ -242,8 +306,10 @@ export const soloTree = {
             description: "Increased XP gain when not in a party",
             rank: 4,
             prerequisites: ["The Big Three", "Pack Horse"],
-            benefits: ["+8%", "+15%"],
-            benefitsDesc: "XP gain when not in a party",
+            benefits: [
+                [{ value: "+8%", desc: "XP gain when not in a party" }],
+                [{ value: "+15%" }]
+            ],
             position: [7, 3]
         },
         {
@@ -251,51 +317,53 @@ export const soloTree = {
             description: "Thatch, Wood, Stone, and Concrete building pieces weigh less in your inventory",
             rank: 4,
             prerequisites: ["Mobile Stockpile"],
-            benefits: ["-15%", "-30%"],
-            benefitsDesc: "Thatch, Wood, Stone, and Concrete building pieces weight",
+            benefits: [
+                [{ value: "-15%", desc: "Thatch, Wood, Stone, and Concrete building pieces weight" }],
+                [{ value: "-30%" }]
+            ],
             position: [7, 4]
-        },
+        }
     ]),
     tracks: [
-        {from: "Marathon Runner", to: "Lightning Recovery"},
-        {from: "Lightning Recovery", to: [1,0]},
-        {from: "Lightning Recovery", to: [1,2]},
-        {from: [1,0], to: "Precision Logging"},
-        {from: "Precision Logging", to: "Miner Rewards"},
-        {from: "Miner Rewards", to: [5,0]},
-        {from: [5,0], to: "The Big Three"},
-        {from: "Fleet Footed", to: [1,4]},
-        {from: [1,4], to: "'Tis But A Scratch"},
-        {from: [1,4], to: "Steel Ankles"},
-        {from: [1,4], to: "Very, Very Quiet"},
-        {from: "'Tis But A Scratch", to: [1,2]},
-        {from: [1,2], to: "Low Maintenance"},
-        {from: [5,2], to: "Low Maintenance"},
-        {from: [5,2], to: [5,3]},
-        {from: [5,2], to: "The Big Three"},
-        {from: [5,3], to: "Pack Horse"},
-        {from: [5,3], to: "Lone Wolf"},
-        {from: "The Big Three", to: [6,1]},
-        {from: [6,1], to: "Savage Hunter I"},
-        {from: [6,1], to: "More Than A Handful"},
-        {from: "Savage Hunter I", to: "Savage Hunter II"},
-        {from: "Pack Horse", to: "Mobile Stockpile"},
-        {from: "Mobile Stockpile", to: "Basic Move"},
-        {from: "Healthy Maverick", to: "Bounce Back"}, // Fucking up
-        {from: "Bounce Back", to: [3,6]},
-        {from: [3,6], to: "Sweet, Savoury, Satisfied"},
-        {from: [3,6], to: [5,6]},
-        {from: [5,6], to: "Efficient Home Maintenance"},
-        {from: "Efficient Home Maintenance", to: "Gotta Damage Fast"},
-        {from: [5,6], to: "Pack Horse"},
-        {from: "Heavy Hitter", to: [1,8]},
-        {from: [1,8], to: "Bounce Back"},
-        {from: [1,8], to: [3,8]},
-        {from: [3,8], to: "Honed Heads"},
-        {from: [3,8], to: "Slice and Dice"}, // Stopping Short
-        {from: [3,8], to: [5,8]},
-        {from: [5,8], to: "Bring A Gun To A Gun Fight"},
-        {from: [5,8], to: "Stick Of Destiny"}, //Stopping Short
-        {from: [5,8], to: "Health Monitor"},
+        { from: "Marathon Runner", to: "Lightning Recovery" },
+        { from: "Lightning Recovery", to: [1, 0] },
+        { from: "Lightning Recovery", to: [1, 2] },
+        { from: [1, 0], to: "Precision Logging" },
+        { from: "Precision Logging", to: "Miner Rewards" },
+        { from: "Miner Rewards", to: [5, 0] },
+        { from: [5, 0], to: "The Big Three" },
+        { from: "Fleet Footed", to: [1, 4] },
+        { from: [1, 4], to: "'Tis But A Scratch" },
+        { from: [1, 4], to: "Steel Ankles" },
+        { from: [1, 4], to: "Very, Very Quiet" },
+        { from: "'Tis But A Scratch", to: [1, 2] },
+        { from: [1, 2], to: "Low Maintenance" },
+        { from: [5, 2], to: "Low Maintenance" },
+        { from: [5, 2], to: [5, 3] },
+        { from: [5, 2], to: "The Big Three" },
+        { from: [5, 3], to: "Pack Horse" },
+        { from: [5, 3], to: "Lone Wolf" },
+        { from: "The Big Three", to: [6, 1] },
+        { from: [6, 1], to: "Savage Hunter I" },
+        { from: [6, 1], to: "More Than A Handful" },
+        { from: "Savage Hunter I", to: "Savage Hunter II" },
+        { from: "Pack Horse", to: "Mobile Stockpile" },
+        { from: "Mobile Stockpile", to: "Basic Move" },
+        { from: "Healthy Maverick", to: "Bounce Back" },
+        { from: "Bounce Back", to: [3, 6] },
+        { from: [3, 6], to: "Sweet, Savoury, Satisfied" },
+        { from: [3, 6], to: [5, 6] },
+        { from: [5, 6], to: "Efficient Home Maintenance" },
+        { from: "Efficient Home Maintenance", to: "Gotta Damage Fast" },
+        { from: [5, 6], to: "Pack Horse" },
+        { from: "Heavy Hitter", to: [1, 8] },
+        { from: [1, 8], to: "Bounce Back" },
+        { from: [1, 8], to: [3, 8] },
+        { from: [3, 8], to: "Honed Heads" },
+        { from: [3, 8], to: "Slice and Dice" },
+        { from: [3, 8], to: [5, 8] },
+        { from: [5, 8], to: "Bring A Gun To A Gun Fight" },
+        { from: [5, 8], to: "Stick Of Destiny" },
+        { from: [5, 8], to: "Health Monitor" }
     ] as Track[]
 };

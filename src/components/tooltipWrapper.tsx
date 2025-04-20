@@ -1,5 +1,6 @@
 import { Box, Tooltip, Typography } from '@mui/material';
 import { ReactElement } from 'react';
+import { normalizeBenefits} from "../utils/normalizeBenefits.ts";
 
 import {TalentData} from "../constants/treeStructures.ts";
 
@@ -43,17 +44,21 @@ export default function TooltipWrapper({
                     <Box sx={{ height: '1px', backgroundColor: '#444', mb: 1 }} />
 
                     {/* Benefits */}
-                    {talent.benefits.map((benefit, idx) => (
-                        <Typography
-                            key={idx}
-                            variant="body2"
-                            sx={{
-                                color: idx === currentPoints - 1 ? '#fcea2c' : '#777',
-                                fontWeight: idx === currentPoints - 1 ? 600 : 400,
-                            }}
-                        >
-                            {benefit}{talent.benefitsDesc ? ` ${talent.benefitsDesc}` : ''}
-                        </Typography>
+                    {normalizeBenefits(talent.benefits).map((tier, idx) => (
+                        <Box key={idx}>
+                            {tier.map((b, i) => (
+                                <Typography
+                                    key={i}
+                                    variant="body2"
+                                    sx={{
+                                        color: idx === currentPoints - 1 ? '#fcea2c' : '#777',
+                                        fontWeight: idx === currentPoints - 1 ? 600 : 400,
+                                    }}
+                                >
+                                    {`${b.value} ${b.desc}`}
+                                </Typography>
+                            ))}
+                        </Box>
                     ))}
 
                     {/* Thick Rule */}
