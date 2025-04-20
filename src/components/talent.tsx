@@ -7,9 +7,11 @@ import {canRefundTalent} from '../utils/refund';
 import {TalentData} from "../constants/treeStructures.ts";
 import {getPoolForTree, pointPools} from '../data/points.ts';
 import { getPointsSpentInPool } from '../utils/pointsSpent.ts';
+import {Trees} from "../data/talentTreeMap.ts";
 
 interface TalentProps {
     talent: TalentData;
+    treeKey: keyof typeof Trees;
     currentPoints: number;
     maxPoints: number;
     pointsSpent: number;
@@ -19,10 +21,12 @@ interface TalentProps {
     onRankChange: (talentName: string, delta: number) => void;
     onShowError: (msg: string) => void;
     blockingTalents: Set<string>;
+    setBlockingTalents: (talents: Set<string>) => void;
 }
 
 export default function Talent({
                                    talent,
+                                   treeKey,
                                    currentPoints,
                                    maxPoints,
                                    pointsSpent,
@@ -32,6 +36,7 @@ export default function Talent({
                                    onRankChange,
                                    onShowError,
                                    blockingTalents,
+                                   setBlockingTalents
                                }: TalentProps) {
     const handleClick = () => {
         if (currentPoints < maxPoints && isUnlocked) {
@@ -118,10 +123,8 @@ export default function Talent({
             }
 
             // Call the setter from props or context
-            if ((window as any).setBlockingTalents) {
-                (window as any).setBlockingTalents(new Set(blocking));
-                setTimeout(() => (window as any).setBlockingTalents(new Set()), 3000);
-            }
+            setBlockingTalents(new Set(blocking));
+            setTimeout(() => setBlockingTalents(new Set()), 3000);
 
             return;
         }
@@ -129,6 +132,19 @@ export default function Talent({
 
         if (!canRefundTalent(talent, currentPoints, talentPoints, allTalents)) {
             onShowError(`You must maintain enough points in lower ranks to support your current rank.`);
+            // Find the highest rank that is still owned
+            const remainingTalents = allTalents.filter(t => (talentPoints[treeKey]?.[t.name] || 0) > 0);
+            const highestRank = Math.max(...remainingTalents.map(t => t.rank));
+
+            // If the refund would break the threshold, we highlight all talents of that highest rank
+            const blockingByRankGate = allTalents
+                .filter(t => t.rank === highestRank && (talentPoints[treeKey]?.[t.name] || 0) > 0)
+                .map(t => t.name);
+
+            setBlockingTalents(new Set(blockingByRankGate));
+
+            setTimeout(() => setBlockingTalents(new Set()), 3000);
+
             return;
         }
 

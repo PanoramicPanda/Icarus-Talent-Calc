@@ -304,6 +304,7 @@ export default function TalentTreeApp() {
                                 });
                             }}
                             blockingTalents={blockingTalents}
+                            setBlockingTalents={setBlockingTalents}
                         />
                     )}
 
