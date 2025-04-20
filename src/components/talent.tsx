@@ -114,7 +114,7 @@ export default function Talent({
                 >
                     <PointsLabel currentPoints={currentPoints} maxPoints={maxPoints} isUnlocked={isUnlocked} />
                     <RankIcon rank={talent.rank} pointsSpent={pointsSpent} />
-                    <TalentIcon talentName={talent.name} currentPoints={currentPoints} isUnlocked={isUnlocked} />
+                    <TalentIcon talent={talent} currentPoints={currentPoints} isUnlocked={isUnlocked} />
                 </Box>
             </TooltipWrapper>
         </div>

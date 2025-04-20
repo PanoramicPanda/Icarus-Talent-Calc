@@ -15,5 +15,6 @@ export interface TalentData {
     benefits: string[]
     benefitsDesc?: string
     tree: keyof typeof Trees
-    position: [number, number]
+    position: [number, number],
+    imageName?: string
 }

@@ -1,15 +1,16 @@
 import {Box} from "@mui/material";
 import { sanitizeTalentName} from "../utils/imagePreload.ts";
+import {TalentData} from "../constants/treeStructures.ts";
 
 
 interface TalentIconProps {
-    talentName: string;
+    talent: TalentData;
     currentPoints: number;
     isUnlocked: boolean;
 }
 
-export default function TalentIcon({ talentName, currentPoints, isUnlocked }: TalentIconProps) {
-    const imageName = sanitizeTalentName(talentName);
+export default function TalentIcon({ talent, currentPoints, isUnlocked }: TalentIconProps) {
+    const imageName = talent.imageName ||sanitizeTalentName(talent.name);
 
     return (
         <Box
@@ -47,7 +48,7 @@ export default function TalentIcon({ talentName, currentPoints, isUnlocked }: Ta
             <Box
                 component="img"
                 src={`images/talent_icons/${imageName}.webp`}
-                alt={talentName}
+                alt={talent.name}
                 sx={{
                     width: '100%',
                     height: '100%',
