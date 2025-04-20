@@ -14,7 +14,7 @@ import {getPoolForTree, pointPools} from "./data/points.ts";
 import {GAME_VERSION} from './constants/gameVersion';
 import ChangelogDialog from './components/changelogDialog';
 import {
-    calculatePointsSpent,
+    calculatePointsSpent, exportToQueryParam,
     importFromQueryParam,
     isVersionMismatch
 } from './utils/exportImport';
@@ -45,6 +45,7 @@ export default function TalentTreeApp() {
     // @ts-ignore
     const [blockingTalents, setBlockingTalents] = useState<Set<string>>(new Set());
 
+    // Keep track of Blocking talents
     useEffect(() => {
         (window as any).setBlockingTalents = setBlockingTalents;
         return () => {
@@ -52,7 +53,23 @@ export default function TalentTreeApp() {
         };
     }, []);
 
+    // Dynamically update the URL with the talent points
+    useEffect(() => {
+        const hasPoints = Object.values(talentPoints).some(tree =>
+            Object.values(tree).some(points => points > 0)
+        );
 
+        if (hasPoints) {
+            const param = exportToQueryParam(talentPoints);
+            const newUrl = `${window.location.pathname}?build=${param}`;
+            window.history.replaceState({}, '', newUrl);
+        } else {
+            // Remove `build` parameter if no points are spent
+            window.history.replaceState({}, '', window.location.pathname);
+        }
+    }, [talentPoints]);
+
+    // Preload all talent images after the first paint
     useEffect(() => {
         const runAfterPaint = () => {
             if ('requestIdleCallback' in window) {
@@ -67,6 +84,7 @@ export default function TalentTreeApp() {
         });
     }, []);
 
+    // Import Talent Points from URL
     useEffect(() => {
         const buildParam = new URLSearchParams(window.location.search).get('build');
         if (buildParam) {
@@ -83,6 +101,7 @@ export default function TalentTreeApp() {
         }
     }, []);
 
+    // Set initial state for selected category and tree
     useEffect(() => {
         const allCategories = Object.values(Categories);
         if (allCategories.length === 1) {
