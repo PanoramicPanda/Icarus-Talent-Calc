@@ -52,7 +52,7 @@ export default function TalentIcon({ talent, currentPoints, isUnlocked }: Talent
                 sx={{
                     width: '100%',
                     height: '100%',
-                    filter: currentPoints === 0 ? 'grayscale(100%)' : 'none',
+                    filter: isUnlocked ? 'none' : 'grayscale(100%)',
                 }}
             />
         </Box>

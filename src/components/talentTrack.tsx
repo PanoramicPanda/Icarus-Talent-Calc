@@ -123,7 +123,7 @@ export default function TalentTrack({ tracks, talents, talentPoints, treeKey }: 
                     const [x1, y1] = getTalentCenter(fromCoord);
                     const [x2, y2] = getTalentCenter(toCoord);
 
-                    const strokeColor = highlightedTrackIndices.has(idx) ? '#fcea2c' : '#444';
+                    const strokeColor = highlightedTrackIndices.has(idx) ? '#ffffff' : '#444';
 
                     return (
                         <path
