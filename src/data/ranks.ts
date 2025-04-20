@@ -1,12 +1,13 @@
 export interface RankGate {
     rank: number;       // e.g. 2, 3, 4
     requiredPoints: number; // e.g. 4, 8, 12
+    title: string; // e.g. "Novice Rank", "Apprentice Rank", "Master Rank"
 }
 
 export const RANK_GATES: RankGate[] = [
-    { rank: 2, requiredPoints: 4 },
-    { rank: 3, requiredPoints: 8 },
-    { rank: 4, requiredPoints: 12 },
+    { rank: 2, requiredPoints: 4, title: 'Novice Rank' },
+    { rank: 3, requiredPoints: 8, title: 'Apprentice Rank' },
+    { rank: 4, requiredPoints: 12, title: 'Master Rank' },
 ];
 
 export const RANK_ICONS: Record<number, string> = {

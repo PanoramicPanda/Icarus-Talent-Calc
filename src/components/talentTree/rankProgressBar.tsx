@@ -1,4 +1,5 @@
-import { Box, LinearProgress } from '@mui/material';
+import { Box, LinearProgress, Typography } from '@mui/material';
+import { useState } from 'react';
 import { getRankIcon, RANK_GATES } from '../../data/ranks.ts';
 
 interface RankProgressBarProps {
@@ -6,7 +7,8 @@ interface RankProgressBarProps {
 }
 
 export default function RankProgressBar({ pointsSpent }: RankProgressBarProps) {
-    // Determine current and next gate based on dynamic gates
+    const [hover, setHover] = useState(false);
+
     let currentRank = 1;
     let nextGate = RANK_GATES[0];
 
@@ -23,13 +25,19 @@ export default function RankProgressBar({ pointsSpent }: RankProgressBarProps) {
     const nextRank = nextGate ? nextGate.rank : null;
 
     let progressPercent = 100;
+    let pointsToNext = 0;
+
     if (nextGate) {
-        const previousGatePoints =
-            RANK_GATES.find(g => g.rank === currentRank)?.requiredPoints || 0;
+        const previousGatePoints = RANK_GATES.find(g => g.rank === currentRank)?.requiredPoints || 0;
         const needed = nextGate.requiredPoints - previousGatePoints;
         const progress = pointsSpent - previousGatePoints;
         progressPercent = (progress / needed) * 100;
+        pointsToNext = nextGate.requiredPoints - pointsSpent;
     }
+
+    const message = nextGate
+        ? `${pointsToNext} point${pointsToNext !== 1 ? 's' : ''} to ${nextGate.title}`
+        : 'Max Rank Reached';
 
     return (
         <Box
@@ -40,6 +48,8 @@ export default function RankProgressBar({ pointsSpent }: RankProgressBarProps) {
                 alignItems: 'center',
                 my: 2,
             }}
+            onMouseEnter={() => setHover(true)}
+            onMouseLeave={() => setHover(false)}
         >
             {/* Left Icon */}
             {currentRank > 1 ? (
@@ -53,8 +63,8 @@ export default function RankProgressBar({ pointsSpent }: RankProgressBarProps) {
                 <Box sx={{ width: 24, height: 24, mr: 1 }} />
             )}
 
-            {/* Progress Bar */}
-            <Box sx={{ flexGrow: 1 }}>
+            {/* Progress Bar with optional message */}
+            <Box sx={{ flexGrow: 1, position: 'relative' }}>
                 <LinearProgress
                     variant="determinate"
                     value={progressPercent}
@@ -67,6 +77,24 @@ export default function RankProgressBar({ pointsSpent }: RankProgressBarProps) {
                         },
                     }}
                 />
+                {hover && (
+                    <Typography
+                        variant="caption"
+                        sx={{
+                            position: 'absolute',
+                            top: '50%',
+                            left: '50%',
+                            transform: 'translate(-50%, -50%)',
+                            color: '#fff',
+                            fontWeight: 'bold',
+                            pointerEvents: 'none',
+                            whiteSpace: 'nowrap',
+                            textShadow: '1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;',
+                        }}
+                    >
+                        {message}
+                    </Typography>
+                )}
             </Box>
 
             {/* Right Icon */}
