@@ -1,5 +1,7 @@
 import { Box } from '@mui/material';
 import {TalentData, Track} from '../constants/treeStructures.ts';
+import { getPoolForTree, pointPools } from '../data/points.ts';
+import {Trees} from "../data/talentTreeMap.ts";
 
 type Coord = [number, number];
 
@@ -69,12 +71,27 @@ export default function TalentTrack({ tracks, talents, talentPoints, treeKey }: 
     const pointsSpentInTree = Object.values(treeTalentPoints).reduce((sum, pts) => sum + pts, 0);
 
     const isTalentReachable = (talent: TalentData): boolean => {
+        const pointsInTree = talentPoints[treeKey] || {};
         const requiredPoints = (talent.rank - 1) * 4;
+
+        // 🔒 Not enough spent to unlock by rank?
         if (pointsSpentInTree < requiredPoints) return false;
 
-        const pointsInTree = talentPoints[treeKey] || {};
-        const prereqs = talent.prerequisites ?? [];
+        // 🔒 No points available to actually spend in this pool
+        const pool = getPoolForTree(treeKey as keyof typeof pointPools);
+        if (pool) {
+            const poolCap = pointPools[pool].cap;
+            const totalSpentInPool = Object.entries(talentPoints)
+                .filter(([tree]) => pointPools[pool].trees.includes(tree as keyof typeof Trees))
+                .flatMap(([, treeTalents]) => Object.values(treeTalents))
+                .reduce((a, b) => a + b, 0);
 
+            const unspentPoints = poolCap - totalSpentInPool;
+            if (unspentPoints <= 0) return false; // 🛑 No points left in this pool
+        }
+
+        // ✅ Prerequisite logic
+        const prereqs = talent.prerequisites ?? [];
         return prereqs.length === 0 || prereqs.some(req => {
             if (typeof req === 'string') {
                 return (pointsInTree[req] || 0) > 0;
@@ -84,6 +101,7 @@ export default function TalentTrack({ tracks, talents, talentPoints, treeKey }: 
             return false;
         });
     };
+
 
     const leadsToReachableTalent = (coordStr: string, visited = new Set<string>()): boolean => {
         if (visited.has(coordStr)) return false;
