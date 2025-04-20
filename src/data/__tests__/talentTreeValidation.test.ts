@@ -3,27 +3,45 @@ import { talentTreeMap } from '../talentTreeMap.ts';
 import { Track } from '../../constants/treeStructures.ts';
 
 // Utility to detect cycles using DFS
-function hasCycle(graph: Record<string, string[]>): boolean {
+function hasCycle(graph: Record<string, string[]>): { hasCycle: boolean, path?: string[] } {
     const visited = new Set<string>();
     const recStack = new Set<string>();
+    const pathStack: string[] = [];
 
     function visit(node: string): boolean {
-        if (recStack.has(node)) return true;
+        if (recStack.has(node)) {
+            // Cycle detected — return the slice of path where the cycle starts
+            const cycleStartIndex = pathStack.indexOf(node);
+            return cycleStartIndex !== -1
+                ? (cyclePath.push(...pathStack.slice(cycleStartIndex)), true)
+                : true;
+        }
         if (visited.has(node)) return false;
 
         visited.add(node);
         recStack.add(node);
+        pathStack.push(node);
 
         for (const neighbor of graph[node] || []) {
             if (visit(neighbor)) return true;
         }
 
+        pathStack.pop();
         recStack.delete(node);
         return false;
     }
 
-    return Object.keys(graph).some(visit);
+    const cyclePath: string[] = [];
+
+    for (const node of Object.keys(graph)) {
+        if (visit(node)) {
+            return { hasCycle: true, path: [...cyclePath, cyclePath[0]] }; // Closing the loop
+        }
+    }
+
+    return { hasCycle: false };
 }
+
 
 describe('Talent Tree Validation', () => {
     Object.entries(talentTreeMap).forEach(([treeKey, treeData]) => {
@@ -52,7 +70,13 @@ describe('Talent Tree Validation', () => {
                     );
                     graph[talent.name] = flatPrereqs;
                 }
-                expect(hasCycle(graph)).toBe(false);
+                const result = hasCycle(graph);
+
+                if (result.hasCycle) {
+                    console.error('❌ Cycle detected:', result.path?.join(' → '));
+                }
+
+                expect(result.hasCycle).toBe(false);
             });
 
             it('does not have circular track paths', () => {
@@ -63,7 +87,13 @@ describe('Talent Tree Validation', () => {
                     if (!graph[fromKey]) graph[fromKey] = [];
                     graph[fromKey].push(toKey);
                 }
-                expect(hasCycle(graph)).toBe(false);
+                const result = hasCycle(graph);
+
+                if (result.hasCycle) {
+                    console.error('❌ Cycle detected:', result.path?.join(' → '));
+                }
+
+                expect(result.hasCycle).toBe(false);
             });
         });
     });
