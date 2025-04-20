@@ -1,4 +1,5 @@
 import { Box } from '@mui/material';
+import {getGateRequirement, getRankIcon} from "../data/ranks.ts";
 
 interface RankIconProps {
     rank: number;
@@ -10,7 +11,7 @@ export default function RankIcon({ rank, pointsSpent }: RankIconProps) {
         return <Box sx={{ position: 'absolute', top: 4, right: 4, width: 20, height: 20 }} />;
     }
 
-    const threshold = (rank - 1) * 4;
+    const threshold = getGateRequirement(rank);
     const isGrayscale = pointsSpent < threshold;
 
     return (
@@ -31,7 +32,7 @@ export default function RankIcon({ rank, pointsSpent }: RankIconProps) {
         >
             <Box
                 component="img"
-                src={`images/rank_icons/Talent-Rank-${rank - 1}.webp`}
+                src={getRankIcon(rank)}
                 alt={`Rank ${rank - 1}`}
                 sx={{
                     width: 16,

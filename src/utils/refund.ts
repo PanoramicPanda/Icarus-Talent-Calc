@@ -1,4 +1,5 @@
 import {TalentData} from "../constants/treeStructures.ts";
+import {getGateRequirement} from "../data/ranks.ts";
 
 /**
  * Determines whether a talent can be refunded without breaking any rules.
@@ -52,7 +53,7 @@ export function canRefundTalent(
             return t.rank < talent.rank ? sum + p : sum;
         }, 0);
 
-        const requiredLowerPoints = (talent.rank - 1) * 4;
+        const requiredLowerPoints = getGateRequirement(talent.rank);
         if (lowerPoints < requiredLowerPoints) {
             return false;
         }

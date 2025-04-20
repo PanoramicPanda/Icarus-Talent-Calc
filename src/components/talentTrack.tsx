@@ -2,6 +2,7 @@ import { Box } from '@mui/material';
 import {TalentData, Track} from '../constants/treeStructures.ts';
 import { getPoolForTree, pointPools } from '../data/points.ts';
 import { getPointsSpentInPool } from '../utils/pointsSpent.ts';
+import {getGateRequirement} from "../data/ranks.ts";
 
 type Coord = [number, number];
 
@@ -72,7 +73,7 @@ export default function TalentTrack({ tracks, talents, talentPoints, treeKey }: 
 
     const isTalentReachable = (talent: TalentData): boolean => {
         const pointsInTree = talentPoints[treeKey] || {};
-        const requiredPoints = (talent.rank - 1) * 4;
+        const requiredPoints = getGateRequirement(talent.rank);
 
         // 🔒 Not enough spent to unlock by rank?
         if (pointsSpentInTree < requiredPoints) return false;

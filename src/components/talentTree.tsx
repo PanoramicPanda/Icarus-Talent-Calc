@@ -5,6 +5,7 @@ import {useRef} from "react";
 import {Box} from "@mui/material";
 import TalentTrack from "./talentTrack.tsx";
 import Talent from "./talent.tsx";
+import {getGateRequirement} from "../data/ranks.ts";
 
 export function TalentTree({
                                treeKey,
@@ -29,7 +30,7 @@ export function TalentTree({
 }) {
 
     const canAccessTalent = (talent: TalentData): boolean => {
-        const requiredPoints = (talent.rank - 1) * 4;
+        const requiredPoints = getGateRequirement(talent.rank);
         const hasEnoughPoints = pointsSpent >= requiredPoints;
 
         const hasMetPrereqs =

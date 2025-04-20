@@ -1,19 +1,35 @@
 import { Box, LinearProgress } from '@mui/material';
+import { getRankIcon, RANK_GATES } from '../data/ranks';
 
 interface RankProgressBarProps {
     pointsSpent: number;
 }
 
 export default function RankProgressBar({ pointsSpent }: RankProgressBarProps) {
-    const rankIcons: Record<number, string> = {
-        2: 'images/rank_icons/Talent-Rank-1.webp',
-        3: 'images/rank_icons/Talent-Rank-2.webp',
-        4: 'images/rank_icons/Talent-Rank-3.webp',
-    };
+    // Determine current and next gate based on dynamic gates
+    let currentRank = 1;
+    let nextGate = RANK_GATES[0];
 
-    const currentRank = Math.min(4, Math.floor(pointsSpent / 4) + 1);
-    const nextRank = currentRank < 4 ? currentRank + 1 : null;
-    const progressPercent = nextRank ? ((pointsSpent % 4) / 4) * 100 : 100;
+    for (let i = 0; i < RANK_GATES.length; i++) {
+        if (pointsSpent >= RANK_GATES[i].requiredPoints) {
+            currentRank = RANK_GATES[i].rank;
+            nextGate = RANK_GATES[i + 1];
+        } else {
+            nextGate = RANK_GATES[i];
+            break;
+        }
+    }
+
+    const nextRank = nextGate ? nextGate.rank : null;
+
+    let progressPercent = 100;
+    if (nextGate) {
+        const previousGatePoints =
+            RANK_GATES.find(g => g.rank === currentRank)?.requiredPoints || 0;
+        const needed = nextGate.requiredPoints - previousGatePoints;
+        const progress = pointsSpent - previousGatePoints;
+        progressPercent = (progress / needed) * 100;
+    }
 
     return (
         <Box
@@ -29,7 +45,7 @@ export default function RankProgressBar({ pointsSpent }: RankProgressBarProps) {
             {currentRank > 1 ? (
                 <Box
                     component="img"
-                    src={rankIcons[currentRank]}
+                    src={getRankIcon(currentRank)}
                     alt={`Rank ${currentRank}`}
                     sx={{ width: 24, height: 24, mr: 1 }}
                 />
@@ -57,7 +73,7 @@ export default function RankProgressBar({ pointsSpent }: RankProgressBarProps) {
             {nextRank ? (
                 <Box
                     component="img"
-                    src={rankIcons[nextRank]}
+                    src={getRankIcon(nextRank)}
                     alt={`Rank ${nextRank}`}
                     sx={{ width: 24, height: 24, ml: 1 }}
                 />
