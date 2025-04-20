@@ -75,7 +75,7 @@ export default function TooltipWrapper({
                     </Box>
                 </Box>
             }
-            placement="right"
+            placement="right-start"
             followCursor
             enterDelay={0}
             leaveDelay={0}
@@ -87,6 +87,16 @@ export default function TooltipWrapper({
                         borderRadius: 1,
                         p: 0,
                     },
+                },
+                popper: {
+                    modifiers: [
+                        {
+                            name: 'offset',
+                            options: {
+                                offset: [0, 15],
+                            },
+                        },
+                    ],
                 },
             }}
         >
