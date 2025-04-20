@@ -338,7 +338,7 @@ export const soloTree = {
         { from: [1, 4], to: "Very, Very Quiet" },
         { from: "'Tis But A Scratch", to: [1, 2] },
         { from: [1, 2], to: "Low Maintenance" },
-        { from: [5, 2], to: "Low Maintenance" },
+        { from: "Low Maintenance", to: [5, 2] },
         { from: [5, 2], to: [5, 3] },
         { from: [5, 2], to: "The Big Three" },
         { from: [5, 3], to: "Pack Horse" },
