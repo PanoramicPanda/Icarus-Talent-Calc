@@ -7,10 +7,23 @@ interface TalentIconProps {
     talent: TalentData;
     currentPoints: number;
     isUnlocked: boolean;
+    hasPointsToSpend: boolean;
 }
 
-export default function TalentIcon({ talent, currentPoints, isUnlocked }: TalentIconProps) {
+export default function TalentIcon({ talent, currentPoints, isUnlocked, hasPointsToSpend }: TalentIconProps) {
     const imageName = talent.imageName ||sanitizeTalentName(talent.name);
+
+    const borderColor = currentPoints > 0
+        ? '#fcea2c'
+        : isUnlocked && hasPointsToSpend
+            ? '#cccdcc'
+            : '#484947';
+
+    const afterBackground = currentPoints > 0
+        ? 'linear-gradient(135deg, transparent 75%, #fcea2c 50%)'
+        : isUnlocked && hasPointsToSpend
+            ? 'linear-gradient(135deg, transparent 75%, #cccdcc 50%)'
+            : 'linear-gradient(135deg, transparent 75%, #484947 50%)';
 
     return (
         <Box
@@ -18,10 +31,7 @@ export default function TalentIcon({ talent, currentPoints, isUnlocked }: Talent
                 width: 55,
                 height: 55,
                 border: 2,
-                borderColor:
-                    currentPoints > 0 ? '#fcea2c' :
-                        isUnlocked ? '#cccdcc' :
-                            '#484947',
+                borderColor,
                 borderStyle: 'ridge',
                 borderRadius: '4px',
                 display: 'flex',
@@ -36,11 +46,7 @@ export default function TalentIcon({ talent, currentPoints, isUnlocked }: Talent
                     right: 0,
                     width: 18,
                     height: 18,
-                    background: currentPoints > 0
-                        ? 'linear-gradient(135deg, transparent 75%, #fcea2c 50%)'
-                        : isUnlocked
-                            ? 'linear-gradient(135deg, transparent 75%, #cccdcc 50%)'
-                            : 'linear-gradient(135deg, transparent 75%, #484947 50%)',
+                    background: afterBackground,
                     zIndex: 3,
                 },
             }}
@@ -52,7 +58,7 @@ export default function TalentIcon({ talent, currentPoints, isUnlocked }: Talent
                 sx={{
                     width: '100%',
                     height: '100%',
-                    filter: isUnlocked ? 'none' : 'grayscale(100%)',
+                    filter: currentPoints > 0 || (isUnlocked && hasPointsToSpend) ? 'none' : 'grayscale(100%)',
                 }}
             />
         </Box>

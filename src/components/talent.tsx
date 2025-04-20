@@ -5,6 +5,8 @@ import PointsLabel from './pointsLabel';
 import TooltipWrapper from './tooltipWrapper';
 import {canRefundTalent} from '../utils/refund';
 import {TalentData} from "../constants/treeStructures.ts";
+import {getPoolForTree, pointPools} from '../data/points.ts';
+import { getPointsSpentInPool } from '../utils/pointsSpent.ts';
 
 interface TalentProps {
     talent: TalentData;
@@ -89,6 +91,10 @@ export default function Talent({
         onRankChange(talent.name, -1);
     };
 
+    // Get the pool this talent belongs to
+    const pool = getPoolForTree(talent.tree);
+    const unspentPoints = pool ? pointPools[pool].cap - getPointsSpentInPool(pool, talentPoints) : 0;
+    const hasPointsToSpend = unspentPoints > 0;
 
 
     return (
@@ -114,7 +120,12 @@ export default function Talent({
                 >
                     <PointsLabel currentPoints={currentPoints} maxPoints={maxPoints} isUnlocked={isUnlocked} />
                     <RankIcon rank={talent.rank} pointsSpent={pointsSpent} />
-                    <TalentIcon talent={talent} currentPoints={currentPoints} isUnlocked={isUnlocked} />
+                    <TalentIcon
+                        talent={talent}
+                        currentPoints={currentPoints}
+                        isUnlocked={isUnlocked}
+                        hasPointsToSpend={hasPointsToSpend}
+                    />
                 </Box>
             </TooltipWrapper>
         </div>
