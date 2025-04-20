@@ -1,11 +1,11 @@
-import {Trees} from "../data/talentTreeMap.ts";
-import {TalentData} from "../constants/treeStructures.ts";
-import {prerequisiteMet} from "../utils/refund.ts";
+import {Trees} from "../../data/talentTreeMap.ts";
+import {TalentData} from "../../constants/treeStructures.ts";
+import {prerequisiteMet} from "../../utils/refund.ts";
 import {useRef} from "react";
 import {Box} from "@mui/material";
 import TalentTrack from "./talentTrack.tsx";
-import Talent from "./talent.tsx";
-import {getGateRequirement} from "../data/ranks.ts";
+import Talent from "../talent/talent.tsx";
+import {getGateRequirement} from "../../data/ranks.ts";
 
 export function TalentTree({
                                treeKey,

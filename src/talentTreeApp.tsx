@@ -8,7 +8,7 @@ import {
     Stack,
     Typography
 } from '@mui/material';
-import RankProgressBar from "./components/rankProgressBar";
+import RankProgressBar from "./components/talentTree/rankProgressBar.tsx";
 import PointTotals from './components/pointTotals';
 import {getPoolForTree, pointPools} from "./data/points.ts";
 import {GAME_VERSION} from './constants/gameVersion';
@@ -21,7 +21,7 @@ import {
 import SummaryBox from "./components/summaryBox.tsx";
 import {preloadAllTalentImages} from './utils/imagePreload';
 import './talentTree.css'
-import {TalentTree} from "./components/talentTree.tsx";
+import {TalentTree} from "./components/talentTree/talentTree.tsx";
 import ResetButtons from "./components/resetButtons.tsx";
 import ImportExportButtons from './components/importExportButtons.tsx';
 

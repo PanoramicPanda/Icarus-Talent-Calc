@@ -1,13 +1,13 @@
 import {Box} from '@mui/material';
-import TalentIcon from './talentIcon';
-import RankIcon from './rankIcon';
-import PointsLabel from './pointsLabel';
-import TooltipWrapper from './tooltipWrapper';
-import {canRefundTalent} from '../utils/refund';
-import {TalentData} from "../constants/treeStructures.ts";
-import {getPoolForTree, pointPools} from '../data/points.ts';
-import { getPointsSpentInPool } from '../utils/pointsSpent.ts';
-import {Trees} from "../data/talentTreeMap.ts";
+import TalentIcon from './talentIcon.tsx';
+import RankIcon from './rankIcon.tsx';
+import PointsLabel from './pointsLabel.tsx';
+import TooltipWrapper from './tooltipWrapper.tsx';
+import {canRefundTalent} from '../../utils/refund.ts';
+import {TalentData} from "../../constants/treeStructures.ts";
+import {getPoolForTree, pointPools} from '../../data/points.ts';
+import { getPointsSpentInPool } from '../../utils/pointsSpent.ts';
+import {Trees} from "../../data/talentTreeMap.ts";
 
 interface TalentProps {
     talent: TalentData;

@@ -1,5 +1,5 @@
 import { Box, LinearProgress } from '@mui/material';
-import { getRankIcon, RANK_GATES } from '../data/ranks';
+import { getRankIcon, RANK_GATES } from '../../data/ranks.ts';
 
 interface RankProgressBarProps {
     pointsSpent: number;

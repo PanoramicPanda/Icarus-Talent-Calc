@@ -1,8 +1,8 @@
 import { Box, Tooltip, Typography } from '@mui/material';
 import { ReactElement } from 'react';
-import { normalizeBenefits} from "../utils/normalizeBenefits.ts";
+import { normalizeBenefits} from "../../utils/normalizeBenefits.ts";
 
-import {TalentData} from "../constants/treeStructures.ts";
+import {TalentData} from "../../constants/treeStructures.ts";
 
 interface TooltipWrapperProps {
     talent: TalentData;

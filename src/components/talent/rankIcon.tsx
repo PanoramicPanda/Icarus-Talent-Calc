@@ -1,5 +1,5 @@
 import { Box } from '@mui/material';
-import {getGateRequirement, getRankIcon} from "../data/ranks.ts";
+import {getGateRequirement, getRankIcon} from "../../data/ranks.ts";
 
 interface RankIconProps {
     rank: number;

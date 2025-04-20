@@ -1,8 +1,8 @@
 import { Box } from '@mui/material';
-import {TalentData, Track} from '../constants/treeStructures.ts';
-import { getPoolForTree, pointPools } from '../data/points.ts';
-import { getPointsSpentInPool } from '../utils/pointsSpent.ts';
-import {getGateRequirement} from "../data/ranks.ts";
+import {TalentData, Track} from '../../constants/treeStructures.ts';
+import { getPoolForTree, pointPools } from '../../data/points.ts';
+import { getPointsSpentInPool } from '../../utils/pointsSpent.ts';
+import {getGateRequirement} from "../../data/ranks.ts";
 
 type Coord = [number, number];
 

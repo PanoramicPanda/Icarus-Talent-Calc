@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
-import { sanitizeTalentName } from "../utils/imagePreload.ts";
-import { TalentData } from "../constants/treeStructures.ts";
+import { sanitizeTalentName } from "../../utils/imagePreload.ts";
+import { TalentData } from "../../constants/treeStructures.ts";
 import { useState } from "react";
 
 interface TalentIconProps {
