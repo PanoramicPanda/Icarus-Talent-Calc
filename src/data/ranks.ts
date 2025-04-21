@@ -5,8 +5,8 @@ export interface RankGate {
 }
 
 export const RANK_GATES: RankGate[] = [
-    { rank: 2, requiredPoints: 4, title: 'Novice Rank' },
-    { rank: 3, requiredPoints: 8, title: 'Apprentice Rank' },
+    { rank: 2, requiredPoints: 4, title: 'Apprentice Rank' },
+    { rank: 3, requiredPoints: 8, title: 'Journeyman Rank' },
     { rank: 4, requiredPoints: 12, title: 'Master Rank' },
 ];
 
