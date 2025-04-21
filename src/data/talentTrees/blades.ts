@@ -209,7 +209,7 @@ export const bladesTree = {
             rank: 3,
             prerequisites: ["Trained Skinner", "Deadly Stab"],
             benefits: [
-                [{value: 1, desc: "No description", category: "Misc"}],
+                [{value: 20, desc: "Felling damage with crafted knives", category: "Misc"}],
             ],
             position: [5, 4],
             imageName: "Blades/Talent_Blades_IfItWorks",
@@ -220,7 +220,7 @@ export const bladesTree = {
             rank: 1,
             prerequisites: ["Running with Knives"],
             benefits: [
-                [{value: 1, desc: "No description", category: "Misc"}],
+                [{value: 25, desc: "+{0}% Maximum durability of crafted knives", category: "Misc"}],
             ],
             position: [1, 2],
             imageName: "Blades/Talent_Blades_DiscountBlades2",

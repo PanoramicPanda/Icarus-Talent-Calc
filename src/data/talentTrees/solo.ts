@@ -258,7 +258,7 @@ export const soloTree = {
             rank: 3,
             prerequisites: ["Efficient Home Maintenance"],
             benefits: [
-                [{value: 1, desc: "No description", category: "Misc"}],
+                [{value: 25, desc: "+{0}% Damage of Crafted Hedgehogs", category: "Misc"}],
             ],
             position: [7, 6],
             imageName: "Building/Talent_Building_EnhancedDefences",

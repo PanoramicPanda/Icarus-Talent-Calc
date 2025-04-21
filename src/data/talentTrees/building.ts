@@ -95,8 +95,8 @@ export const buildingTree = {
             rank: 1,
             prerequisites: [],
             benefits: [
-                [{value: 1, desc: "No description", category: "Misc"}],
-                [{value: 2, desc: "No description", category: "Misc"}],
+                [{value: 3, desc: "+{0} Extra Space in crafted Deployables", category: "Misc"}],
+                [{value: 5, desc: "+{0} Extra Space in crafted Deployables", category: "Misc"}],
             ],
             position: [4, 2],
             imageName: "Building/Talent_Building_ExtraSpace",
@@ -107,7 +107,7 @@ export const buildingTree = {
             rank: 4,
             prerequisites: ["Weatherproof Cladding"],
             benefits: [
-                [{value: 1, desc: "No description", category: "Misc"}],
+                [{value: -25, desc: "-{0}% Chance for Crafted Wood Buildables to set Fire", category: "Misc"}],
             ],
             position: [3, 0],
             imageName: "Building/Talent_Building_FireproofingSealant",
@@ -118,7 +118,7 @@ export const buildingTree = {
             rank: 3,
             prerequisites: ["Fortified Wood"],
             benefits: [
-                [{value: 1, desc: "No description", category: "Misc"}],
+                [{value: 25, desc: "+{0}% Wind Resistance for Crafted Wood Buildables", category: "Misc"}],
             ],
             position: [2, 0],
             imageName: "Building/Talent_Building_WeatherProofCladding",
@@ -129,7 +129,7 @@ export const buildingTree = {
             rank: 3,
             prerequisites: ["Deployable Engineering"],
             benefits: [
-                [{value: 1, desc: "No description", category: "Misc"}],
+                [{value: 25, desc: "+{0}% Damage of Crafted Hedgehogs", category: "Misc"}],
             ],
             position: [6, 3],
             imageName: "Building/Talent_Building_EnhancedDefences",
@@ -140,9 +140,9 @@ export const buildingTree = {
             rank: 3,
             prerequisites: ["Discount Rod"],
             benefits: [
-                [{value: 1, desc: "No description", category: "Misc"}],
-                [{value: 2, desc: "No description", category: "Misc"}],
-                [{value: 3, desc: "No description", category: "Misc"}],
+                [{value: 100, desc: "+{0}% Durability of Crafted Lightning Rods", category: "Misc"}],
+                [{value: 300, desc: "+{0}% Durability of Crafted Lightning Rods", category: "Misc"}],
+                [{value: 500, desc: "+{0}% Durability of Crafted Lightning Rods", category: "Misc"}],
             ],
             position: [6, 1],
             imageName: "Building/Talent_Building_FortifiedRod",
@@ -164,8 +164,8 @@ export const buildingTree = {
             rank: 2,
             prerequisites: ["Discount Wood"],
             benefits: [
-                [{value: 1, desc: "No description", category: "Misc"}],
-                [{value: 2, desc: "No description", category: "Misc"}],
+                [{value: 10, desc: "+{0}% Durability of Crafted Wood Buildables", category: "Misc"}],
+                [{value: 20, desc: "+{0}% Durability of Crafted Wood Buildables", category: "Misc"}],
             ],
             position: [1, 0],
             imageName: "Building/Talent_Building_FortifiedWood",
@@ -176,8 +176,8 @@ export const buildingTree = {
             rank: 1,
             prerequisites: ["Extra Space I"],
             benefits: [
-                [{value: 1, desc: "No description", category: "Misc"}],
-                [{value: 2, desc: "No description", category: "Misc"}],
+                [{value: 10, desc: "+{0}% Smelting Speed of Crafted Furnaces", category: "Misc"}],
+                [{value: 15, desc: "+{0}% Smelting Speed of Crafted Furnaces", category: "Misc"}],
             ],
             position: [5, 2],
             imageName: "Building/Talent_Building_StokingTheFlames",
@@ -227,8 +227,8 @@ export const buildingTree = {
             rank: 3,
             prerequisites: ["Stoking the Flames"],
             benefits: [
-                [{value: 1, desc: "No description", category: "Misc"}],
-                [{value: 2, desc: "No description", category: "Misc"}],
+                [{value: 3, desc: "+{0} Extra Space in crafted Deployables", category: "Misc"}],
+                [{value: 5, desc: "+{0} Extra Space in crafted Deployables", category: "Misc"}],
             ],
             position: [6, 2],
             imageName: "Building/Talent_Building_ExtraSpace2",

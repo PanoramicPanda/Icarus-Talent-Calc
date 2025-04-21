@@ -144,7 +144,7 @@ export const bowsTree = {
             rank: 2,
             prerequisites: ["Increased Arrow Damage I", "Bow Quick Draw", "More For Less I"],
             benefits: [
-                [{value: 1, desc: "Alters Crafted Bows to Provide a Bonus to Health", category: "Misc"}],
+                [{value: 15, desc: "+{0}% Durability of crafted Bows", category: "Misc"}],
             ],
             position: [2, 1],
             imageName: "Bows/Talent_Bow_CraftyFletcher1",
@@ -253,9 +253,9 @@ export const bowsTree = {
             rank: 4,
             prerequisites: ["Hindering Shot"],
             benefits: [
-                [{value: 1, desc: "No description", category: "Misc"}],
-                [{value: 2, desc: "No description", category: "Misc"}],
-                [{value: 3, desc: "No description", category: "Misc"}],
+                [{value: 2, desc: "+{0}% Crafted arrow/bolt damage", category: "Misc"}],
+                [{value: 5, desc: "+{0}% Crafted arrow/bolt damage", category: "Misc"}],
+                [{value: 10, desc: "+{0}% Crafted arrow/bolt damage", category: "Misc"}],
             ],
             position: [7, 0],
             imageName: "Bows/Talent_Bow_SupplyDemand",

@@ -82,8 +82,8 @@ export const toolsTree = {
             rank: 3,
             prerequisites: ["Picksmith II"],
             benefits: [
-                [{value: 1, desc: "No description", category: "Misc"}],
-                [{value: 2, desc: "No description", category: "Misc"}],
+                [{value: 10, desc: "+{0}% Durability of Crafted Pickaxes", category: "Misc"}],
+                [{value: 20, desc: "+{0}% Durability of Crafted Pickaxes", category: "Misc"}],
             ],
             position: [5, 0],
             imageName: "Tools/Talent_Tools_Picksmith2",
@@ -179,8 +179,8 @@ export const toolsTree = {
             rank: 3,
             prerequisites: ["Discount Axes II"],
             benefits: [
-                [{value: 1, desc: "No description", category: "Misc"}],
-                [{value: 2, desc: "No description", category: "Misc"}],
+                [{value: 10, desc: "+{0}% Durability of Crafted Axes", category: "Misc"}],
+                [{value: 25, desc: "+{0}% Durability of Crafted Axes", category: "Misc"}],
             ],
             position: [5, 4],
             imageName: "Tools/Talent_Tools_DiscountAxes2",

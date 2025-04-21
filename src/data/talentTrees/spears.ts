@@ -170,7 +170,7 @@ export const spearsTree = {
             rank: 3,
             prerequisites: ["Deadly Thrust I"],
             benefits: [
-                [{value: 1, desc: "No description", category: "Misc"}],
+                [{value: 25, desc: "+{0}% Durability of Crafted Spears", category: "Misc"}],
             ],
             position: [4, 3],
             imageName: "Spears/Talent_Spear_ExcellentCrafter",
@@ -240,7 +240,7 @@ export const spearsTree = {
             rank: 4,
             prerequisites: ["Excellent Crafter I"],
             benefits: [
-                [{value: 1, desc: "No description", category: "Misc"}],
+                [{value: 25, desc: "+{0}% Durability of Crafted Spears", category: "Misc"}],
             ],
             position: [5, 3],
             imageName: "Spears/Talent_Spear_ExcellentCrafter2",
