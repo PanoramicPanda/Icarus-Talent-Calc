@@ -152,8 +152,8 @@ export const repairingTree = {
             rank: 1,
             prerequisites: ["First Responder", "Hammer Time I"],
             benefits: [
-                [{value: 10, desc: "+{0}% Damage vs Creature Bones", category: "Generic_Damage"}],
-                [{value: 20, desc: "+{0}% Damage vs Creature Bones", category: "Generic_Damage"}],
+                [{value: 10, desc: "+{0}% Damage vs Creature Bones", category: "Generic Damage"}],
+                [{value: 20, desc: "+{0}% Damage vs Creature Bones", category: "Generic Damage"}],
             ],
             position: [2, 1],
             imageName: "Repairing/Talent_Repairing_BluntForceTrauma",

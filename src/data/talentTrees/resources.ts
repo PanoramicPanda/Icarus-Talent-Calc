@@ -46,9 +46,9 @@ export const resourcesTree = {
             rank: 2,
             prerequisites: ["Skilled Picker"],
             benefits: [
-                [{value: 10, desc: "{0}% chance to find additional Resources in Plants", category: "Generic_Harvesting"}],
-                [{value: 20, desc: "{0}% chance to find additional Resources in Plants", category: "Generic_Harvesting"}],
-                [{value: 30, desc: "{0}% chance to find additional Resources in Plants", category: "Generic_Harvesting"}],
+                [{value: 10, desc: "{0}% chance to find additional Resources in Plants", category: "Generic Harvesting"}],
+                [{value: 20, desc: "{0}% chance to find additional Resources in Plants", category: "Generic Harvesting"}],
+                [{value: 30, desc: "{0}% chance to find additional Resources in Plants", category: "Generic Harvesting"}],
             ],
             position: [1, 2],
             imageName: "Resources/Talent_Resources_AllThGoodStuff",

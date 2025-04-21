@@ -177,9 +177,9 @@ export const cookingFarmingTree = {
             rank: 1,
             prerequisites: ["Long Lasting Effects"],
             benefits: [
-                [{value: 2, desc: "+{0}% Melee Damage", category: "Melee_DMG"}],
-                [{value: 5, desc: "+{0}% Melee Damage", category: "Melee_DMG"}],
-                [{value: 10, desc: "+{0}% Melee Damage", category: "Melee_DMG"}],
+                [{value: 2, desc: "+{0}% Melee Damage", category: "Melee DMG"}],
+                [{value: 5, desc: "+{0}% Melee Damage", category: "Melee DMG"}],
+                [{value: 10, desc: "+{0}% Melee Damage", category: "Melee DMG"}],
             ],
             position: [4, 3],
             imageName: "Cooking/Talent_TheOldOneTwo",

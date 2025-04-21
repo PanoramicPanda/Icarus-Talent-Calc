@@ -264,8 +264,8 @@ export const huntingTree = {
             rank: 3,
             prerequisites: ["Careful Skinner", "Sense Medium Animals"],
             benefits: [
-                [{value: 15, desc: "+{0}% Damage vs Creature Bones", category: "Generic_Damage"}],
-                [{value: 30, desc: "+{0}% Damage vs Creature Bones", category: "Generic_Damage"}],
+                [{value: 15, desc: "+{0}% Damage vs Creature Bones", category: "Generic Damage"}],
+                [{value: 30, desc: "+{0}% Damage vs Creature Bones", category: "Generic Damage"}],
             ],
             position: [5, 2],
             imageName: "Tools/Talent_Tools_StrongBack",

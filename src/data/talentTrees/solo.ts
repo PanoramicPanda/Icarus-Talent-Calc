@@ -127,7 +127,7 @@ export const soloTree = {
             rank: 2,
             prerequisites: ["Low Maintenance", "Miner Rewards"],
             benefits: [
-                [{value: 15, desc: "+{0}% Yield from Felling Trees", category: "Felling"}, {value: 15, desc: "+{0}% Yield from Mining Stone", category: "Mining"}, {value: 15, desc: "+{0}% Yield from Harvesting", category: "Generic_Harvesting"}],
+                [{value: 15, desc: "+{0}% Yield from Felling Trees", category: "Felling"}, {value: 15, desc: "+{0}% Yield from Mining Stone", category: "Mining"}, {value: 15, desc: "+{0}% Yield from Harvesting", category: "Generic Harvesting"}],
             ],
             position: [5, 1],
             imageName: "Solo/Talent_Solo_TheBig3",
@@ -199,8 +199,8 @@ export const soloTree = {
             rank: 1,
             prerequisites: [],
             benefits: [
-                [{value: 5, desc: "+{0}% Melee Damage", category: "Melee_DMG"}],
-                [{value: 10, desc: "+{0}% Melee Damage", category: "Melee_DMG"}],
+                [{value: 5, desc: "+{0}% Melee Damage", category: "Melee DMG"}],
+                [{value: 10, desc: "+{0}% Melee Damage", category: "Melee DMG"}],
             ],
             position: [0, 8],
             imageName: "Tools/Talent_Tools_StrongBack",
@@ -269,8 +269,8 @@ export const soloTree = {
             rank: 2,
             prerequisites: ["Heavy Hitter"],
             benefits: [
-                [{value: 5, desc: "+{0}% Damage with Bows/Crossbows", category: "Ranged_Weapon"}],
-                [{value: 10, desc: "+{0}% Damage with Bows/Crossbows", category: "Ranged_Weapon"}, {value: 10, desc: "+{0}% Reload Speed of Bows/Crossbows", category: "Ranged_Weapon"}],
+                [{value: 5, desc: "+{0}% Damage with Bows/Crossbows", category: "Ranged Weapon"}],
+                [{value: 10, desc: "+{0}% Damage with Bows/Crossbows", category: "Ranged Weapon"}, {value: 10, desc: "+{0}% Reload Speed of Bows/Crossbows", category: "Ranged Weapon"}],
             ],
             position: [3, 7],
             imageName: "Bows/Talent_Bow_IncreasedArrowDamage1",
@@ -281,8 +281,8 @@ export const soloTree = {
             rank: 2,
             prerequisites: ["Heavy Hitter"],
             benefits: [
-                [{value: 5, desc: "+{0}% Damage with Firearms", category: "Ranged_Weapon"}],
-                [{value: 10, desc: "+{0}% Damage with Firearms", category: "Ranged_Weapon"}, {value: 10, desc: "+{0}% Reload Speed of Firearms", category: "Ranged_Weapon"}],
+                [{value: 5, desc: "+{0}% Damage with Firearms", category: "Ranged Weapon"}],
+                [{value: 10, desc: "+{0}% Damage with Firearms", category: "Ranged Weapon"}, {value: 10, desc: "+{0}% Reload Speed of Firearms", category: "Ranged Weapon"}],
             ],
             position: [5, 7],
             imageName: "Firearms/Talent_Firearms_LetMeGetThatForYou",
@@ -293,8 +293,8 @@ export const soloTree = {
             rank: 2,
             prerequisites: ["Heavy Hitter"],
             benefits: [
-                [{value: 5, desc: "+{0}% Damage with Knives", category: "Melee_DMG"}],
-                [{value: 10, desc: "+{0}% Damage with Knives", category: "Melee_DMG"}, {value: 10, desc: "+{0}% Damage with Thrown Knives", category: "Ranged_DMG"}],
+                [{value: 5, desc: "+{0}% Damage with Knives", category: "Melee DMG"}],
+                [{value: 10, desc: "+{0}% Damage with Knives", category: "Melee DMG"}, {value: 10, desc: "+{0}% Damage with Thrown Knives", category: "Ranged DMG"}],
             ],
             position: [3, 9],
             imageName: "Blades/Talent_Blades_DeadlyStab",
@@ -305,8 +305,8 @@ export const soloTree = {
             rank: 2,
             prerequisites: ["Heavy Hitter"],
             benefits: [
-                [{value: 5, desc: "+{0}% Damage with Spears", category: "Melee_DMG"}],
-                [{value: 10, desc: "+{0}% Damage with Spears", category: "Melee_DMG"}, {value: 10, desc: "+{0}% Damage with Thrown Spears", category: "Ranged_DMG"}],
+                [{value: 5, desc: "+{0}% Damage with Spears", category: "Melee DMG"}],
+                [{value: 10, desc: "+{0}% Damage with Spears", category: "Melee DMG"}, {value: 10, desc: "+{0}% Damage with Thrown Spears", category: "Ranged DMG"}],
             ],
             position: [5, 9],
             imageName: "Spears/Talent_Spear_DeadlyThrust1",
