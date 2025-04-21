@@ -238,40 +238,47 @@ export const huntingTree = {
         }
     ]),
     fullTracks: [
-        { start: "Fine Butcher I", end: "Strong Shoulders", path: [[1, 0]] },
-        { start: "Chase 'Em Down", end: "Strong Shoulders", path: [[1, 2]] },
-        { start: "Chase 'Em Down", end: "Leather Breakdown", path: [[1, 2]] },
-        { start: "Swift Stalker", end: "Leather Breakdown", path: [[1, 4]] },
-        { start: "Swift Stalker", end: "Quick Getaway", path: [[1, 4]] },
-        { start: "Bone Collector", end: "Quick Getaway", path: [[1, 6]] },
+        { start: "Fine Butcher I", path: [[1, 0]], end: "Strong Shoulders" },
+        { start: "Chase 'Em Down", path: [[1, 2]], end: "Strong Shoulders" },
+        { start: "Chase 'Em Down", path: [[1, 2]], end: "Leather Breakdown" },
+        { start: "Swift Stalker", path: [[1, 4]], end: "Leather Breakdown" },
+        { start: "Swift Stalker", path: [[1, 4]], end: "Quick Getaway" },
+        { start: "Bone Collector", path: [[1, 6]], end: "Quick Getaway" },
 
-        { start: "Strong Shoulders", end: "Health Bars", path: [[2, 2]] },
-        { start: "Strong Shoulders", end: "Sense Small Animals", path: [[2, 2]] },
+        { start: "Strong Shoulders", path: [[2, 1]], end: "Health Bars" },
+        { start: "Strong Shoulders", end: "Sense Small Animals" },
 
-        { start: "Leather Breakdown", end: "Without A Sound", path: [[2, 3]] },
-        { start: "Leather Breakdown", end: "Trained Hunter", path: [[2, 3]] },
+        { start: "Leather Breakdown", path: [[2, 3]], end: "Without A Sound" },
+        { start: "Leather Breakdown", end: "Trained Hunter" },
 
         { start: "Quick Getaway", end: "Without A Sound" },
         { start: "Sense Small Animals", end: "Sense Medium Animals" },
         { start: "Trained Hunter", end: "Careful Skinner" },
 
-        { start: "Without A Sound", end: "Ghillie Armor", path: [[3, 5]] },
-        { start: "Ghillie Armor", end: "Arctic Armor", path: [[7, 6]] },
+        { start: "Without A Sound", path: [[2, 3]], end: "Trained Hunter" },
+        { start: "Without A Sound", path: [[3, 5]], end: "Ghillie Armor" },
+        { start: "Ghillie Armor", end: "Arctic Armor" },
 
-        { start: "Sense Medium Animals", end: "Sense Megafauna", path: [[5, 1]] },
-        { start: "Sense Medium Animals", end: "Quick Clean Up", path: [[5, 1]] },
+        { start: "Sense Medium Animals", path: [[5, 1]], end: "Sense Megafauna" },
+        { start: "Sense Medium Animals", path: [[5, 1]], end: "Quick Clean Up" },
 
-        { start: "Careful Skinner", end: "Quick Clean Up", path: [[5, 3]] },
-        { start: "Careful Skinner", end: "Fine Butcher II", path: [[5, 3]] },
+        { start: "Careful Skinner", path: [[5, 3]], end: "Quick Clean Up" },
+        { start: "Careful Skinner", path: [[5, 3]], end: "Fine Butcher II" },
+        { start: "Careful Skinner", path: [[6, 3]], end: "Bone Collector II" },
+        { start: "Careful Skinner", path: [[7, 3]], end: "Big Game Hunter" },
+        { start: "Careful Skinner", path: [[6, 3]], end: "Chase 'Em Down II" },
+        { start: "Careful Skinner", end: "Cold Hearted" },
 
-        { start: "Careful Skinner", end: "Bone Collector II", path: [[5, 3], [6, 3]] },
         { start: "Bone Collector II", end: "Brittle Bones" },
-        { start: "Careful Skinner", end: "Chase 'Em Down II", path: [[5, 3], [6, 3]] },
 
-        { start: "Careful Skinner", end: "Big Game Hunter", path: [[5, 3], [6, 3], [7, 3]] },
-        { start: "Quick Clean Up", end: "Big Game Hunter", path: [[5, 1], [7, 3]] },
-        { start: "Big Game Hunter", end: "Cold Hearted", path: [[7, 3]] },
-        { start: "Big Game Hunter", end: "Arctic Armor", path: [[7, 6]] }
+        { start: "Quick Clean Up", path: [[5, 3], [7, 3]], end: "Big Game Hunter" },
+        { start: "Quick Clean Up", path: [[5, 3]], end: "Cold Hearted" },
+        { start: "Quick Clean Up", path: [[5,3], [6, 3]], end: "Bone Collector II" },
+
+        { start: "Ghillie Armor", path: [[7, 6]], end: "Big Game Hunter" },
+        { start: "Big Game Hunter", path: [[7, 3]], end: "Cold Hearted" },
+        { start: "Big Game Hunter", path: [[7, 6]], end: "Arctic Armor" }
+
     ] as FullTrack[]
 
 };

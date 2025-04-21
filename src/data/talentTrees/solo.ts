@@ -326,41 +326,43 @@ export const soloTree = {
     ]),
     fullTracks: [
         { start: "Marathon Runner", end: "Lightning Recovery" },
-        { start: "Lightning Recovery", end: "Precision Logging", path: [[1, 0]] },
-        { start: "Lightning Recovery", end: "Low Maintenance", path: [[1, 2]] },
+        { start: "Lightning Recovery", path: [[1, 0]], end: "Precision Logging" },
+        { start: "Lightning Recovery", path: [[1, 2]], end: "Low Maintenance" },
 
         { start: "Precision Logging", end: "Miner Rewards" },
-        { start: "Miner Rewards", end: "The Big Three", path: [[5, 0]] },
+        { start: "Miner Rewards", path: [[5, 0]], end: "The Big Three" },
 
-        { start: "Fleet Footed", end: "'Tis But A Scratch", path: [[1, 4]] },
-        { start: "Fleet Footed", end: "Steel Ankles", path: [[1, 4]] },
-        { start: "Fleet Footed", end: "Very, Very Quiet", path: [[1, 4]] },
+        { start: "Fleet Footed", path: [[1, 4]], end: "'Tis But A Scratch" },
+        { start: "Fleet Footed", path: [[1, 4]], end: "Steel Ankles" },
+        { start: "Fleet Footed", end: "Very, Very Quiet" },
 
-        { start: "'Tis But A Scratch", end: "Low Maintenance", path: [[1, 2]] },
+        { start: "'Tis But A Scratch", path: [[1, 2]], end: "Low Maintenance" },
 
-        { start: "Low Maintenance", end: "The Big Three", path: [[5, 2]] },
-        { start: "Low Maintenance", end: "Pack Horse", path: [[5, 2], [5, 3]] },
-        { start: "Low Maintenance", end: "Lone Wolf", path: [[5, 2], [5, 3]] },
+        { start: "Low Maintenance", path: [[5, 2]], end: "The Big Three" },
+        { start: "Low Maintenance", path: [[5, 2]], end: "Pack Horse" },
+        { start: "Low Maintenance", path: [[5, 2], [5, 3]], end: "Lone Wolf" },
 
-        { start: "The Big Three", end: "Savage Hunter I", path: [[6, 1]] },
-        { start: "The Big Three", end: "More Than A Handful", path: [[6, 1]] },
+        { start: "The Big Three", path: [[5, 3]], end: "Lone Wolf" },
+        { start: "The Big Three", path: [[6, 1]], end: "Savage Hunter I" },
+        { start: "The Big Three", path: [[6, 1]], end: "More Than A Handful" },
 
         { start: "Savage Hunter I", end: "Savage Hunter II" },
         { start: "Pack Horse", end: "Mobile Stockpile" },
+        { start: "Pack Horse", path: [[5, 6]], end: "Efficient Home Maintenance" },
         { start: "Mobile Stockpile", end: "Basic Move" },
 
         { start: "Healthy Maverick", end: "Bounce Back" },
-        { start: "Bounce Back", end: "Sweet, Savoury, Satisfied", path: [[3, 6]] },
-        { start: "Bounce Back", end: "Efficient Home Maintenance", path: [[3, 6], [5, 6]] },
-        { start: "Bounce Back", end: "Pack Horse", path: [[3, 6], [5, 6]] },
+        { start: "Bounce Back", path: [[3, 6]], end: "Sweet, Savoury, Satisfied" },
+        { start: "Bounce Back", path: [[3, 6], [5, 6]], end: "Efficient Home Maintenance" },
+        { start: "Bounce Back", path: [[5, 6]], end: "Pack Horse" },
 
         { start: "Efficient Home Maintenance", end: "Gotta Damage Fast" },
 
-        { start: "Heavy Hitter", end: "Bounce Back", path: [[1, 8]] },
-        { start: "Heavy Hitter", end: "Honed Heads", path: [[1, 8], [3, 8]] },
-        { start: "Heavy Hitter", end: "Slice and Dice", path: [[1, 8], [3, 8]] },
-        { start: "Heavy Hitter", end: "Bring A Gun To A Gun Fight", path: [[1, 8], [3, 8], [5, 8]] },
-        { start: "Heavy Hitter", end: "Stick Of Destiny", path: [[1, 8], [3, 8], [5, 8]] },
-        { start: "Heavy Hitter", end: "Health Monitor", path: [[1, 8], [3, 8], [5, 8]] }
+        { start: "Heavy Hitter", path: [[1, 8]], end: "Bounce Back" },
+        { start: "Heavy Hitter", path: [[3, 8]], end: "Honed Heads" },
+        { start: "Heavy Hitter", path: [[3, 8]], end: "Slice and Dice" },
+        { start: "Heavy Hitter", path: [[5, 8]], end: "Bring A Gun To A Gun Fight" },
+        { start: "Heavy Hitter", path: [[5, 8]], end: "Stick Of Destiny" },
+        { start: "Heavy Hitter", end: "Health Monitor" }
     ] as FullTrack[]
 };
