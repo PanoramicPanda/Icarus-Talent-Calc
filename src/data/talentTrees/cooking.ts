@@ -1,8 +1,8 @@
 import {FullTrack} from "../../constants/treeStructures.ts";
 import {defineTalentTree} from "../../utils/defineTalentTree.ts";
 
-export const cookingFarmingTree = {
-    talents: defineTalentTree("Cooking/Farming", [
+export const cookingTree = {
+    talents: defineTalentTree("Cooking", [
         {
             name: "Naturally Preserved",
             description: "Slows food decay in your inventory",

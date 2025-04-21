@@ -1,8 +1,8 @@
 import {FullTrack} from "../../constants/treeStructures.ts";
 import {defineTalentTree} from "../../utils/defineTalentTree.ts";
 
-export const bowsCrossbowsTree = {
-    talents: defineTalentTree("Bows/Crossbows", [
+export const bowsTree = {
+    talents: defineTalentTree("Bows", [
         {
             name: "Bullseye",
             description: "Increased accuracy with bows",

@@ -9,10 +9,10 @@ export const pointPools: Record<TalentPool, {
     General: {
         cap: 90,
         trees: [
-            'Resources', 'Hunting', 'CookingFarming',
+            'Resources', 'Hunting', 'Cooking',
             'Exploration', 'Husbandry', 'Fishing',
             'Repairing', 'Tools', 'Building',
-            'Bows/Crossbows', 'Spears', 'Blades', 'Firearms'
+            'Bows', 'Spears', 'Blades', 'Firearms'
         ]
     },
     Solo: {
