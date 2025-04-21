@@ -4,15 +4,17 @@ import {
     Alert,
     Box,
     Button,
+    IconButton,
     Snackbar,
     Stack,
     Typography
 } from '@mui/material';
+import InfoIcon from '@mui/icons-material/Info';
 import RankProgressBar from "./components/talentTree/rankProgressBar.tsx";
 import PointTotals from './components/pointTotals';
 import {getPoolForTree, pointPools} from "./data/points.ts";
 import {GAME_VERSION} from './constants/gameVersion';
-import ChangelogDialog from './components/changelogDialog';
+import InfoDialog from './components/infoDialog.tsx';
 import {
     calculatePointsSpent, exportToQueryParam,
     importFromQueryParam,
@@ -37,7 +39,7 @@ export default function TalentTreeApp() {
     const [snackbarOpen, setSnackbarOpen] = useState(false);
     const [confirmResetAllOpen, setConfirmResetAllOpen] = useState(false);
     const [confirmResetTreeOpen, setConfirmResetTreeOpen] = useState(false);
-    const [changelogOpen, setChangelogOpen] = useState(false);
+    const [infoOpen, setInfoOpen] = useState(false);
     const [exportDialogOpen, setExportDialogOpen] = useState(false);
     const [importDialogOpen, setImportDialogOpen] = useState(false);
     const [importText, setImportText] = useState('');
@@ -148,15 +150,16 @@ export default function TalentTreeApp() {
                 Game Version: {GAME_VERSION}
             </Typography>
 
-            {/* Changelog Button */}
-            <Button
-                variant="outlined"
-                size="small"
-                color="info"
-                onClick={() => setChangelogOpen(true)}
+            {/* Info Button */}
+            <IconButton
+                aria-label="info"
+                // variant="outlined"
+                // size="small"
+                // color="info"
+                onClick={() => setInfoOpen(true)}
             >
-                View Changelog
-            </Button>
+                <InfoIcon />
+            </IconButton >
 
             {/* Summary Box */}
             <Box sx={{ width: 300, flexShrink: 0, mr: 4 }}>
@@ -331,8 +334,8 @@ export default function TalentTreeApp() {
                         </Alert>
                     </Snackbar>
 
-                    {/* Changelog Dialog */}
-                    <ChangelogDialog open={changelogOpen} onClose={() => setChangelogOpen(false)}/>
+                    {/* Info Dialog */}
+                    <InfoDialog open={infoOpen} onClose={() => setInfoOpen(false)}/>
 
                 </div>
             </Box>

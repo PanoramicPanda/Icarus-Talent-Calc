@@ -1,13 +1,13 @@
 import { Dialog, DialogTitle, DialogContent } from '@mui/material';
 import ReactMarkdown from 'react-markdown';
-import changelog from '../data/changelog.md?raw';
+import info from '../data/info.md?raw';
 
-export default function ChangelogDialog({ open, onClose }: { open: boolean; onClose: () => void }) {
+export default function InfoDialog({ open, onClose }: { open: boolean; onClose: () => void }) {
     return (
         <Dialog open={open} onClose={onClose} maxWidth="md" fullWidth>
-            <DialogTitle>Changelog</DialogTitle>
+            <DialogTitle>Info</DialogTitle>
             <DialogContent dividers>
-                <ReactMarkdown>{changelog}</ReactMarkdown>
+                <ReactMarkdown>{info}</ReactMarkdown>
             </DialogContent>
         </Dialog>
     );
