@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react';
+import {useEffect, useRef, useState} from 'react';
 import {Categories, talentTreeMap, Trees} from "./data/talentTreeMap.ts";
 import {
     Alert,
@@ -44,6 +44,8 @@ export default function TalentTreeApp() {
     const [exportText, setExportText] = useState('');
     // @ts-ignore
     const [blockingTalents, setBlockingTalents] = useState<Set<string>>(new Set());
+    const hasImportedRef = useRef(false);
+
 
     // Keep track of Blocking talents
     useEffect(() => {
@@ -52,22 +54,6 @@ export default function TalentTreeApp() {
             delete (window as any).setBlockingTalents;
         };
     }, []);
-
-    // Dynamically update the URL with the talent points
-    useEffect(() => {
-        const hasPoints = Object.values(talentPoints).some(tree =>
-            Object.values(tree).some(points => points > 0)
-        );
-
-        if (hasPoints) {
-            const param = exportToQueryParam(talentPoints);
-            const newUrl = `${window.location.pathname}?build=${param}`;
-            window.history.replaceState({}, '', newUrl);
-        } else {
-            // Remove `build` parameter if no points are spent
-            window.history.replaceState({}, '', window.location.pathname);
-        }
-    }, [talentPoints]);
 
     // Preload all talent images after the first paint
     useEffect(() => {
@@ -99,7 +85,27 @@ export default function TalentTreeApp() {
                 setTalentPointsSpent(calculatePointsSpent(imported.talentPoints));
             }
         }
+
+        hasImportedRef.current = true;
     }, []);
+
+    // Dynamically update the URL with the talent points
+    useEffect(() => {
+        if (!hasImportedRef.current) return;
+
+        const hasPoints = Object.values(talentPoints).some(tree =>
+            Object.values(tree).some(points => points > 0)
+        );
+
+        if (hasPoints) {
+            const param = exportToQueryParam(talentPoints);
+            const newUrl = `${window.location.pathname}?build=${param}`;
+            window.history.replaceState({}, '', newUrl);
+        } else {
+            window.history.replaceState({}, '', window.location.pathname);
+        }
+    }, [talentPoints]);
+
 
     // Set initial state for selected category and tree
     useEffect(() => {
