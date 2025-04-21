@@ -18,7 +18,7 @@ export function preloadAllTalentImages() {
         for (const talent of tree.talents) {
             const imageName = sanitizeTalentName(talent.name);
             if (!seen.has(imageName)) {
-                preloadImage(`images/talent_icons/${imageName}.webp`);
+                preloadImage(`images/talentIcons/${imageName}.webp`);
                 seen.add(imageName);
             }
         }

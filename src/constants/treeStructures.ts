@@ -13,7 +13,7 @@ export interface TalentData {
     description: string
     rank: number
     prerequisites: (string | string[])[]
-    benefits: { value: string; desc?: string }[][];
+    benefits: { value: number; desc: string; category: string }[][];
     tree: keyof typeof Trees
     position: [number, number],
     imageName?: string

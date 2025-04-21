@@ -4,59 +4,145 @@ import {defineTalentTree} from "../../utils/defineTalentTree.ts";
 export const soloTree = {
     talents: defineTalentTree("Solo", [
         {
-            name: "Marathon Runner",
-            description: "Increased maximum stamina",
-            rank: 1,
-            prerequisites: [],
+            name: "Lone Wolf",
+            description: "Increased XP gain when not in a party",
+            rank: 4,
+            prerequisites: ["The Big Three", "Pack Horse"],
             benefits: [
-                [{value: "+20", desc: "Maximum Stamina"}],
-                [{value: "+50"}]
+                [{value: 8, desc: "+{0}% Experience Gained", category: "Experience"}],
+                [{value: 15, desc: "+{0}% Experience Gained", category: "Experience"}],
             ],
-            position: [0, 1]
-        },
-        {
-            name: "Fleet Footed",
-            description: "Increased movement speed",
-            rank: 1,
-            prerequisites: [],
-            benefits: [
-                [{value: "%5", desc: "Increased movement speed"}],
-                [{value: "+10%"}]
-            ],
-            position: [0, 4]
+            position: [7, 3],
+            imageName: "Exploration/Talent_Exploration_LoneWolf",
         },
         {
             name: "Healthy Maverick",
-            description: "Increased maximum health",
+            description: "Increased base health",
             rank: 1,
             prerequisites: [],
             benefits: [
-                [{value: "+50", desc: "Maximum Health"}],
-                [{value: "+100"}]
+                [{value: 50, desc: "+{0} Maximum Health", category: "Health"}],
+                [{value: 100, desc: "+{0} Maximum Health", category: "Health"}],
             ],
-            position: [0, 6]
+            position: [0, 6],
+            imageName: "Solo/Talent_Solo_HealthyMaverick",
         },
         {
-            name: "Heavy Hitter",
-            description: "Increased melee damage",
+            name: "Marathon Runner",
+            description: "Increased base stamina",
             rank: 1,
             prerequisites: [],
             benefits: [
-                [{value: "+5%", desc: "Increased melee damage"}],
-                [{value: "+10%"}]
+                [{value: 20, desc: "+{0} Maximum Stamina", category: "Stamina"}],
+                [{value: 50, desc: "+{0} Maximum Stamina", category: "Stamina"}],
             ],
-            position: [0, 8]
+            position: [0, 1],
+            imageName: "Solo/Talent_Solo_MarathonRunner",
+        },
+        {
+            name: "Low Maintenance",
+            description: "Decreased oxygen, hunger and thirst costs",
+            rank: 2,
+            prerequisites: ["Lightning Recovery", "'Tis But A Scratch"],
+            benefits: [
+                [{value: -10, desc: "+{0}% Water Consumption", category: "Upkeep"}, {value: -10, desc: "+{0}% Food Consumption", category: "Upkeep"}, {value: -10, desc: "+{0}% Oxygen Consumption", category: "Upkeep"}],
+                [{value: -20, desc: "+{0}% Water Consumption", category: "Upkeep"}, {value: -20, desc: "+{0}% Food Consumption", category: "Upkeep"}, {value: -20, desc: "+{0}% Oxygen Consumption", category: "Upkeep"}],
+            ],
+            position: [3, 2],
+            imageName: "Solo/Talent_Solo_LowMaintanence",
+        },
+        {
+            name: "Fleet Footed",
+            description: "Increased base movespeed",
+            rank: 1,
+            prerequisites: [],
+            benefits: [
+                [{value: 5, desc: "+{0}% Movement Speed", category: "Movement"}],
+                [{value: 10, desc: "+{0}% Movement Speed", category: "Movement"}],
+            ],
+            position: [0, 4],
+            imageName: "Solo/Talent_Solo_GottaGoFast",
+        },
+        {
+            name: "Pack Horse",
+            description: "Increased inventory weight capacity",
+            rank: 2,
+            prerequisites: ["Low Maintenance", "Bounce Back"],
+            benefits: [
+                [{value: 25, desc: "+{0}% Weight Capacity", category: "Weight"}],
+            ],
+            position: [5, 4],
+            imageName: "Solo/Talent_Solo_PackHorse",
+        },
+        {
+            name: "Bounce Back",
+            description: "Increased base health regen",
+            rank: 1,
+            prerequisites: ["Healthy Maverick", "Heavy Hitter"],
+            benefits: [
+                [{value: 10, desc: "+{0}% Health Regeneration", category: "Health"}],
+                [{value: 20, desc: "+{0}% Health Regeneration", category: "Health"}],
+            ],
+            position: [1, 6],
+            imageName: "Solo/Talent_Solo_QuickHealer",
         },
         {
             name: "Lightning Recovery",
-            description: "Increased stamina regeneration",
+            description: "Increased base stamina regen",
             rank: 1,
             prerequisites: ["Marathon Runner"],
             benefits: [
-                [{value: "+10%", desc: "Stamina Regeneration"}],
-                [{value: "+20%"}]
+                [{value: 10, desc: "+{0}% Stamina Regeneration", category: "Stamina"}],
+                [{value: 20, desc: "+{0}% Stamina Regeneration", category: "Stamina"}],
             ],
-            position: [1, 1]
+            position: [1, 1],
+            imageName: "Solo/Talent_Solo_LightningRecovery",
+        },
+        {
+            name: "Mobile Stockpile",
+            description: "Stone, wood and metal weigh less in inventory",
+            rank: 3,
+            prerequisites: ["Pack Horse"],
+            benefits: [
+                [{value: -20, desc: "+{0}% Carry Weight of Wood", category: "Weight"}, {value: -20, desc: "+{0}% Carry Weight of Stone", category: "Weight"}, {value: -20, desc: "+{0}% Carry Weight of Ores", category: "Weight"}],
+            ],
+            position: [6, 4],
+            imageName: "Solo/Talent_Solo_MobileStockpile",
+        },
+        {
+            name: "Savage Hunter II",
+            description: "Increased yields from hunting",
+            rank: 4,
+            prerequisites: ["Savage Hunter I"],
+            benefits: [
+                [{value: 25, desc: "+{0}% Yield from Skinning Leather", category: "Hunting"}, {value: 25, desc: "+{0}% Yield from Skinning Fur", category: "Hunting"}],
+                [{value: 50, desc: "+{0}% Yield from Skinning Leather", category: "Hunting"}, {value: 50, desc: "+{0}% Yield from Skinning Fur", category: "Hunting"}],
+            ],
+            position: [7, 0],
+            imageName: "Solo/Talent_Solo_SavageHunter",
+        },
+        {
+            name: "The Big Three",
+            description: "Increased wood, stone and fiber yield",
+            rank: 2,
+            prerequisites: ["Low Maintenance", "Miner Rewards"],
+            benefits: [
+                [{value: 15, desc: "+{0}% Yield from Felling Trees", category: "Felling"}, {value: 15, desc: "+{0}% Yield from Mining Stone", category: "Mining"}, {value: 15, desc: "+{0}% Yield from Harvesting", category: "Generic_Harvesting"}],
+            ],
+            position: [5, 1],
+            imageName: "Solo/Talent_Solo_TheBig3",
+        },
+        {
+            name: "Basic Move",
+            description: "All buildables weigh less in your inventory",
+            rank: 4,
+            prerequisites: ["Mobile Stockpile"],
+            benefits: [
+                [{value: -15, desc: "+{0}% Carry Weight of Stone Building Pieces", category: "Weight"}, {value: -15, desc: "+{0}% Carry Weight of Concrete Building Pieces", category: "Weight"}, {value: -15, desc: "+{0}% Carry Weight of Wood Building Pieces", category: "Weight"}, {value: -15, desc: "+{0}% Carry Weight of Thatch Building Pieces", category: "Weight"}],
+                [{value: -30, desc: "+{0}% Carry Weight of Stone Building Pieces", category: "Weight"}, {value: -30, desc: "+{0}% Carry Weight of Concrete Building Pieces", category: "Weight"}, {value: -30, desc: "+{0}% Carry Weight of Wood Building Pieces", category: "Weight"}, {value: -30, desc: "+{0}% Carry Weight of Thatch Building Pieces", category: "Weight"}],
+            ],
+            position: [7, 4],
+            imageName: "Solo/Talent_Solo_BaseOnTheMove",
         },
         {
             name: "'Tis But A Scratch",
@@ -64,11 +150,35 @@ export const soloTree = {
             rank: 1,
             prerequisites: ["Fleet Footed"],
             benefits: [
-                [{value: "+5", desc: "Reduced damage from animals"}],
-                [{value: "+10"}],
-                [{value: "+15"}]
+                [{value: 5, desc: "+{0} Physical Resistance", category: "Resistance"}],
+                [{value: 10, desc: "+{0} Physical Resistance", category: "Resistance"}],
+                [{value: 15, desc: "+{0} Physical Resistance", category: "Resistance"}],
             ],
-            position: [1, 3]
+            position: [1, 3],
+            imageName: "Solo/Talent_Solo_TisButAScratch",
+        },
+        {
+            name: "Very, Very Quiet",
+            description: "Harder to detect when sneaking",
+            rank: 2,
+            prerequisites: ["Fleet Footed"],
+            benefits: [
+                [{value: -15, desc: "+{0}% Perceived Threat while Stealthed", category: "Stealth"}],
+            ],
+            position: [3, 4],
+            imageName: "Solo/Talent_Solo_VeryVeryQuiet",
+        },
+        {
+            name: "Savage Hunter I",
+            description: "Increased yields from hunting",
+            rank: 3,
+            prerequisites: ["The Big Three"],
+            benefits: [
+                [{value: 25, desc: "+{0}% Yield from Butchering Animals", category: "Butchery"}, {value: 25, desc: "+{0}% Yield from Creature Bones", category: "Hunting"}],
+                [{value: 50, desc: "+{0}% Yield from Butchering Animals", category: "Butchery"}, {value: 50, desc: "+{0}% Yield from Creature Bones", category: "Hunting"}],
+            ],
+            position: [6, 0],
+            imageName: "Solo/Talent_Solo_SavageHunter",
         },
         {
             name: "Steel Ankles",
@@ -76,178 +186,24 @@ export const soloTree = {
             rank: 1,
             prerequisites: ["Fleet Footed"],
             benefits: [
-                [{value: "5%", desc: "Less chance of sprain from fall damage"}],
-                [{value: "10%"}],
-                [{value: "20%"}]
+                [{value: 5, desc: "{0}% chance to avoid Sprain when taking Fall Damage", category: "Environmental"}],
+                [{value: 10, desc: "{0}% chance to avoid Sprain when taking Fall Damage", category: "Environmental"}],
+                [{value: 20, desc: "{0}% chance to avoid Sprain when taking Fall Damage", category: "Environmental"}],
             ],
-            position: [1, 5]
+            position: [1, 5],
+            imageName: "Exploration/Talent_Exploration_CushionedFall",
         },
         {
-            name: "Bounce Back",
-            description: "Increased health regeneration",
+            name: "Heavy Hitter",
+            description: "A general increase to melee damage",
             rank: 1,
-            prerequisites: ["Healthy Maverick", "Heavy Hitter"],
+            prerequisites: [],
             benefits: [
-                [{value: "+10%", desc: "Health Regeneration"}],
-                [{value: "+20%"}]
+                [{value: 5, desc: "+{0}% Melee Damage", category: "Melee_DMG"}],
+                [{value: 10, desc: "+{0}% Melee Damage", category: "Melee_DMG"}],
             ],
-            position: [1, 6]
-        },
-        {
-            name: "Precision Logging",
-            description: "Increased yield from felling trees",
-            rank: 2,
-            prerequisites: ["Lightning Recovery"],
-            benefits: [
-                [{value: "+5%", desc: "Yield from felling trees"}],
-                [{value: "+10%"}]
-            ],
-            position: [2, 0]
-        },
-        {
-            name: "Low Maintenance",
-            description: "Decreased Water, Food, and Oxygen consumption",
-            rank: 2,
-            prerequisites: ["Lightning Recovery", "'Tis But A Scratch"],
-            benefits: [
-                [
-                    {value: '-10%', desc: 'Water Consumption'},
-                    {value: '-10%', desc: 'Food Consumption'},
-                    {value: '-10%', desc: 'Oxygen Consumption'}
-                ],
-                [
-                    {value: '-20%', desc: 'Water Consumption'},
-                    {value: '-20%', desc: 'Food Consumption'},
-                    {value: '-20%', desc: 'Oxygen Consumption'}
-                ]
-            ],
-            position: [3, 2]
-        },
-        {
-            name: "Very, Very Quiet",
-            description: "-15% Perceived threat while stealthed",
-            rank: 2,
-            prerequisites: ["Fleet Footed"],
-            benefits: [
-                [{value: "-15%", desc: "Perceived threat while stealthed"}]
-            ],
-            position: [3, 4]
-        },
-        {
-            name: "Sweet, Savoury, Satisfied",
-            description: "+10% Food Effects Duration ",
-            rank: 2,
-            prerequisites: ["Bounce Back"],
-            benefits: [
-                [{value: "+10%", desc: "Food Effects Duration"}]
-            ],
-            position: [3, 5]
-        },
-        {
-            name: "Honed Heads",
-            description: "Increased Damage with Bows/Crossbows",
-            rank: 2,
-            prerequisites: ["Heavy Hitter"],
-            benefits: [
-                [{value: "+5%", desc: "Damage and Reload Speed with Bows/Crossbows"}],
-                [{value: "+10%"}]
-            ],
-            position: [3, 7]
-        },
-        {
-            name: "Slice and Dice",
-            description: "Increased Damage with Knives",
-            rank: 2,
-            prerequisites: ["Heavy Hitter"],
-            benefits: [
-                [{value: "+5%", desc: "Damage with Knives"}],
-                [{value: "+10%"}]
-            ],
-            position: [3, 9]
-        },
-        {
-            name: "Miner Rewards",
-            description: "Increased yield from mining ore deposits",
-            rank: 2,
-            prerequisites: ["Precision Logging"],
-            benefits: [
-                [{value: "+5%", desc: "Yield from mining ore deposits"}],
-                [{value: "+10%", desc: "Yield from mining ore deposits"}]
-            ],
-            position: [4, 0]
-        },
-        {
-            name: "The Big Three",
-            description: "Increased Yield from felling trees, mining and harvesting ",
-            rank: 2,
-            prerequisites: ["Miner Rewards", "Low Maintenance"],
-            benefits: [
-                [
-                    {value: '+15%', desc: 'Yield from felling trees'},
-                    {value: '+15%', desc: 'Yield from mining'},
-                    {value: '+15%', desc: 'Yield from harvesting'}
-                ]
-            ],
-            position: [5, 1]
-        },
-        {
-            name: "Pack Horse",
-            description: "More Weight capacity",
-            rank: 2,
-            prerequisites: ["Low Maintenance", "Bounce Back"],
-            benefits: [
-                [{value: "+25%", desc: "Weight capacity"}]
-            ],
-            position: [5, 4]
-        },
-        {
-            name: "Bring A Gun To A Gun Fight",
-            description: "Increased Damage with Firearms",
-            rank: 2,
-            prerequisites: ["Heavy Hitter"],
-            benefits: [
-                [{value: '+5%', desc: 'Damage with Firearms'}],
-                [
-                    {value: '+10%', desc: 'Damage with Firearms'},
-                    {value: '+10%', desc: 'Reload Speed with Firearms'}
-                ]
-            ],
-            position: [5, 7]
-        },
-        {
-            name: "Stick Of Destiny",
-            description: "Increased Damage with Spears",
-            rank: 2,
-            prerequisites: ["Heavy Hitter"],
-            benefits: [
-                [{value: "+5%", desc: "Damage with Spears"}],
-                [{value: "+10%"}]
-            ],
-            position: [5, 9]
-        },
-        {
-            name: "Efficient Home Maintenance",
-            description: "Decreased stamina cost for Firewhacker use and faster repair time with hammers",
-            rank: 2,
-            prerequisites: ["Bounce Back", "Pack Horse"],
-            benefits: [
-                [
-                    {value: "+5%", desc: "Staming Regeration with a Fire Whacker Equipped"},
-                    {value: "-5%", desc: "Repair Tool Action Hold Time"}
-                ]
-            ],
-            position: [6, 6]
-        },
-        {
-            name: "Savage Hunter I",
-            description: "Increased yield from Butchering Animals and Creature Bones",
-            rank: 3,
-            prerequisites: ["The Big Three"],
-            benefits: [
-                [{value: "+25%", desc: "Yield from Butchering Animals and Creature Bones"}],
-                [{value: "+50%"}]
-            ],
-            position: [6, 0]
+            position: [0, 8],
+            imageName: "Tools/Talent_Tools_StrongBack",
         },
         {
             name: "More Than A Handful",
@@ -255,74 +211,128 @@ export const soloTree = {
             rank: 3,
             prerequisites: ["The Big Three"],
             benefits: [
-                [{value: "+5%", desc: "Yield from harvesting by hand"}],
-                [{value: "+10%"}]
+                [{value: 5, desc: "+{0}% Yield from Foraging", category: "Foraging"}],
+                [{value: 10, desc: "+{0}% Yield from Foraging", category: "Foraging"}],
             ],
-            position: [6, 2]
+            position: [6, 2],
+            imageName: "Resources/Talent_Resources_SkilledPicker",
         },
         {
-            name: "Mobile Stockpile",
-            description: "Reduce Carry Weight of Wood, Stone and Ores",
-            rank: 3,
-            prerequisites: ["Pack Horse"],
+            name: "Precision Logging",
+            description: "Increased wood from felling",
+            rank: 2,
+            prerequisites: ["Lightning Recovery"],
             benefits: [
-                [{value: "-20%", desc: "Carry Weight of Wood, Stone and Ores"}]
+                [{value: 5, desc: "+{0}% Yield from Felling Trees", category: "Felling"}],
+                [{value: 10, desc: "+{0}% Yield from Felling Trees", category: "Felling"}],
             ],
-            position: [6, 4]
+            position: [2, 0],
+            imageName: "Resources/Talent_Resources_LumberYield",
+        },
+        {
+            name: "Miner Rewards",
+            description: "Increased yield from mining ore deposits",
+            rank: 2,
+            prerequisites: ["Precision Logging"],
+            benefits: [
+                [{value: 5, desc: "+{0}% Yield from Mining", category: "Mining"}],
+                [{value: 10, desc: "+{0}% Yield from Mining", category: "Mining"}],
+            ],
+            position: [4, 0],
+            imageName: "Resources/Talent_Resources_MetalMiner",
+        },
+        {
+            name: "Efficient Home Maintenance",
+            description: "Decreased stamina cost for Firewhacker use and faster repair time with hammers",
+            rank: 2,
+            prerequisites: ["Bounce Back", "Pack Horse"],
+            benefits: [
+                [{value: 5, desc: "+{0}% Stamina Regeneration with a Fire Whacker Equipped", category: "Stamina"}, {value: -5, desc: "+{0}% Repair Tool Action Hold Time", category: "Building"}],
+            ],
+            position: [6, 6],
+            imageName: "Repairing/Talent_Repairing_HammerTime",
         },
         {
             name: "Gotta Damage Fast",
-            description: "Increased Damage of Crafted Hedgehogs",
+            description: "Hedgehogs deal more damage",
             rank: 3,
             prerequisites: ["Efficient Home Maintenance"],
             benefits: [
-                [{value: "+25%", desc: "Damage of Crafted Hedgehogs"}]
+                [{value: 1, desc: "No description", category: "Misc"}],
             ],
-            position: [7, 6]
+            position: [7, 6],
+            imageName: "Building/Talent_Building_EnhancedDefences",
+        },
+        {
+            name: "Honed Heads",
+            description: "Adds a bonus to arrow damage",
+            rank: 2,
+            prerequisites: ["Heavy Hitter"],
+            benefits: [
+                [{value: 5, desc: "+{0}% Damage with Bows/Crossbows", category: "Ranged_Weapon"}],
+                [{value: 10, desc: "+{0}% Damage with Bows/Crossbows", category: "Ranged_Weapon"}, {value: 10, desc: "+{0}% Reload Speed of Bows/Crossbows", category: "Ranged_Weapon"}],
+            ],
+            position: [3, 7],
+            imageName: "Bows/Talent_Bow_IncreasedArrowDamage1",
+        },
+        {
+            name: "Bring A Gun To A Gun Fight",
+            description: "Increased firearm projectile damage",
+            rank: 2,
+            prerequisites: ["Heavy Hitter"],
+            benefits: [
+                [{value: 5, desc: "+{0}% Damage with Firearms", category: "Ranged_Weapon"}],
+                [{value: 10, desc: "+{0}% Damage with Firearms", category: "Ranged_Weapon"}, {value: 10, desc: "+{0}% Reload Speed of Firearms", category: "Ranged_Weapon"}],
+            ],
+            position: [5, 7],
+            imageName: "Firearms/Talent_Firearms_LetMeGetThatForYou",
+        },
+        {
+            name: "Slice And Dice",
+            description: "Increased knife melee and thrown knife damage",
+            rank: 2,
+            prerequisites: ["Heavy Hitter"],
+            benefits: [
+                [{value: 5, desc: "+{0}% Damage with Knives", category: "Melee_DMG"}],
+                [{value: 10, desc: "+{0}% Damage with Knives", category: "Melee_DMG"}, {value: 10, desc: "+{0}% Damage with Thrown Knives", category: "Ranged_DMG"}],
+            ],
+            position: [3, 9],
+            imageName: "Blades/Talent_Blades_DeadlyStab",
+        },
+        {
+            name: "Stick Of Destiny",
+            description: "Increased spear melee and thrown spear damage",
+            rank: 2,
+            prerequisites: ["Heavy Hitter"],
+            benefits: [
+                [{value: 5, desc: "+{0}% Damage with Spears", category: "Melee_DMG"}],
+                [{value: 10, desc: "+{0}% Damage with Spears", category: "Melee_DMG"}, {value: 10, desc: "+{0}% Damage with Thrown Spears", category: "Ranged_DMG"}],
+            ],
+            position: [5, 9],
+            imageName: "Spears/Talent_Spear_DeadlyThrust1",
         },
         {
             name: "Health Monitor",
-            description: "Can see Creature Alert Level and Health",
+            description: "See animal health bars",
             rank: 3,
             prerequisites: ["Heavy Hitter"],
             benefits: [
-                [{value: "Can see Creature Alert Level and Health"}]
+                [{value: 1, desc: "Can see Creature Alert Level and Health", category: "Hunting"}],
             ],
-            position: [6, 8]
+            position: [6, 8],
+            imageName: "Hunting/Talent_Hunting_HealthBars",
         },
         {
-            name: "Savage Hunter II",
-            description: "Increased yield from Skinning Leather and Skinning Fur",
-            rank: 4,
-            prerequisites: ["Savage Hunter I"],
+            name: "Sweet, Savoury, Satisfied",
+            description: "Food buffs persist longer",
+            rank: 2,
+            prerequisites: ["Bounce Back"],
             benefits: [
-                [{value: "+25%", desc: "Yield from Skinning Leather and Skinning Fur"}],
-                [{value: "+50%"}]
+                [{value: 10, desc: "+{0}% Food Effects Duration", category: "Modifiers"}],
             ],
-            position: [7, 0]
+            position: [3, 5],
+            imageName: "Cooking/Talent_Cooking_LongLastingEffects",
         },
-        {
-            name: "Lone Wolf",
-            description: "Increased XP gain when not in a party",
-            rank: 4,
-            prerequisites: ["The Big Three", "Pack Horse"],
-            benefits: [
-                [{value: "+8%", desc: "XP gain when not in a party"}],
-                [{value: "+15%"}]
-            ],
-            position: [7, 3]
-        },
-        {
-            name: "Basic Move",
-            description: "Thatch, Wood, Stone, and Concrete building pieces weigh less in your inventory",
-            rank: 4,
-            prerequisites: ["Mobile Stockpile"],
-            benefits: [
-                [{value: "-15%", desc: "Thatch, Wood, Stone, and Concrete building pieces weight"}],
-                [{value: "-30%"}]
-            ],
-            position: [7, 4]
-        }
     ]),
     fullTracks: [
         {start: "Marathon Runner", end: "Lightning Recovery"},
@@ -360,7 +370,7 @@ export const soloTree = {
 
         {start: "Heavy Hitter", path: [[1, 8]], end: "Bounce Back"},
         {start: "Heavy Hitter", path: [[3, 8]], end: "Honed Heads"},
-        {start: "Heavy Hitter", path: [[3, 8]], end: "Slice and Dice"},
+        {start: "Heavy Hitter", path: [[3, 8]], end: "Slice And Dice"},
         {start: "Heavy Hitter", path: [[5, 8]], end: "Bring A Gun To A Gun Fight"},
         {start: "Heavy Hitter", path: [[5, 8]], end: "Stick Of Destiny"},
         {start: "Heavy Hitter", end: "Health Monitor"}

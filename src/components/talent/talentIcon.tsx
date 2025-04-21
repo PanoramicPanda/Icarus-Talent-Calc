@@ -190,7 +190,7 @@ export default function TalentIcon({
             {/* Talent Image */}
             <Box
                 component="img"
-                src={`images/talent_icons/${imageName}.webp`}
+                src={`images/talentIcons/${imageName}.webp`}
                 alt={talent.name}
                 sx={{
                     width: '100%',

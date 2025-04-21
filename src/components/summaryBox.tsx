@@ -34,32 +34,31 @@ export default function SummaryBox({ allTalents, talentPoints }: SummaryBoxProps
     return (
         <Box sx={{ px: 2, py: 1 }}>
             {Object.entries(poolToTalents).map(([poolName, talents]) => {
-                // Group benefits by description
-                const benefitMap: Record<string, string[]> = {};
-                const soloBenefits: string[] = [];
+                const categoryMap: Record<string, { desc: string; values: number[] }[]> = {};
 
                 for (const talent of talents) {
                     const spent = talentPoints[talent.tree]?.[talent.name] || 0;
                     if (spent === 0) continue;
 
-                    const normalized = normalizeBenefits(talent.benefits);
-                    const tier = normalized[spent - 1] || [];
-                    tier.forEach(({ value, desc }) => {
-                        if (desc) {
-                            if (!benefitMap[desc]) benefitMap[desc] = [];
-                            benefitMap[desc].push(value);
-                        } else {
-                            soloBenefits.push(value);
-                        }
-                    });
-                }
+                    const normalized = normalizeBenefits(talent.benefits ?? []);
+                    const tier = normalized[spent - 1] ?? [];
 
-                const benefitLines = [
-                    ...Object.entries(benefitMap).map(([desc, benefits]) => {
-                        return `${combineBenefits(benefits)} ${desc}`;
-                    }),
-                    ...soloBenefits
-                ];
+                    for (const benefit of tier) {
+                        const { value, desc, category } = benefit;
+                        const categoryKey = category ?? "Uncategorized";
+
+
+                        if (!categoryMap[categoryKey]) categoryMap[categoryKey] = [];
+
+                        const existing = categoryMap[categoryKey].find(b => b.desc === desc);
+                        if (existing) {
+                            existing.values.push(value);
+                        } else {
+                            categoryMap[categoryKey].push({ desc, values: [value] });
+                        }
+
+                    }
+                }
 
                 return (
                     <Box key={poolName} sx={{ mb: 2 }}>
@@ -68,26 +67,36 @@ export default function SummaryBox({ allTalents, talentPoints }: SummaryBoxProps
                                 {poolName}
                             </Typography>
                         )}
-                        {benefitLines.map((line, idx) => (
-                            <Typography key={idx} variant="body2" sx={{ color: '#ccc' }}>
-                                • {line}
-                            </Typography>
+
+                        {Object.entries(categoryMap)
+                            .sort(([a], [b]) => {
+                                if (a === "Flag") return 1;
+                                if (b === "Flag") return -1;
+                                return a.localeCompare(b);
+                            })
+                            .map(([category, benefits]) => (
+                                <Box key={category} sx={{ mb: 1 }}>
+                                <Typography variant="subtitle2" sx={{ color: '#999', fontWeight: 600 }}>
+                                    {category}
+                                </Typography>
+                                {benefits.map(({ desc, values }, idx) => {
+                                    const total = values.reduce((sum, v) => sum + v, 0);
+                                    const formatted = desc.replace("{0}", Math.abs(total).toString());
+                                    const flipped = total < 0 && desc.startsWith("+") ? formatted.replace("+", "-") : formatted;
+
+                                    return (
+                                        <Typography key={idx} variant="body2" sx={{ color: '#ccc' }}>
+                                            • {flipped}
+                                        </Typography>
+                                    );
+                                })}
+                            </Box>
                         ))}
+
                     </Box>
                 );
             })}
         </Box>
     );
-}
 
-// Combine benefits like "+5%", "+10%" into "+15%" if possible
-function combineBenefits(benefits: string[]): string {
-    const numeric = benefits.every(b => /^[-+]?[\d.]+%$/.test(b.trim()));
-
-    if (numeric) {
-        const total = benefits.reduce((sum, b) => sum + parseFloat(b), 0);
-        return `${total}%`;
-    }
-
-    return benefits.join(', ');
 }
