@@ -1,34 +1,45 @@
 import { Box } from '@mui/material';
-import {TalentData, Track} from '../../constants/treeStructures.ts';
+import { TalentData, FullTrack } from '../../constants/treeStructures.ts';
 import { getPoolForTree, pointPools } from '../../data/points.ts';
 import { getPointsSpentInPool } from '../../utils/pointsSpent.ts';
-import {getGateRequirement} from "../../data/ranks.ts";
-
-type Coord = [number, number];
+import { getGateRequirement } from '../../data/ranks.ts';
 
 interface TalentTrackProps {
-    tracks: Track[];
+    fullTracks: FullTrack[];
     talents: TalentData[];
     talentPoints: Record<string, Record<string, number>>;
     treeKey: string;
 }
 
-export default function TalentTrack({ tracks, talents, talentPoints, treeKey }: TalentTrackProps) {
-    const getTalentByName = (name: string) =>
-        talents.find(t => t.name === name);
+export default function TalentTrack({ fullTracks, talents, talentPoints, treeKey }: TalentTrackProps) {
+    const treeTalentPoints = talentPoints[treeKey] || {};
+    const pointsSpentInTree = Object.values(treeTalentPoints).reduce((sum, pts) => sum + pts, 0);
 
-    const resolveCoord = (endpoint: string | Coord): Coord => {
-        if (Array.isArray(endpoint)) return endpoint;
-        return getTalentByName(endpoint)?.position ?? [0, 0];
+    const talentMap = Object.fromEntries(talents.map(t => [t.name, t]));
+    const hasPointsIn = (name: string) => (treeTalentPoints[name] || 0) > 0;
+
+    const isTalentReachable = (talent: TalentData): boolean => {
+        const requiredPoints = getGateRequirement(talent.rank);
+        if (pointsSpentInTree < requiredPoints) return false;
+
+        const pool = getPoolForTree(treeKey as keyof typeof pointPools);
+        if (pool) {
+            const unspentPoints = pointPools[pool].cap - getPointsSpentInPool(pool, talentPoints);
+            if (unspentPoints <= 0) return false;
+        }
+
+        const prereqs = talent.prerequisites ?? [];
+        return prereqs.length === 0 || prereqs.some(req => {
+            if (typeof req === 'string') {
+                return hasPointsIn(req);
+            } else if (Array.isArray(req)) {
+                return req.every(inner => hasPointsIn(inner));
+            }
+            return false;
+        });
     };
 
-    const getCoordString = ([row, col]: Coord) => `${row},${col}`;
-
-    const getTalentCenter = (endpoint: string | Coord): [number, number] => {
-        const [row, col] = Array.isArray(endpoint)
-            ? endpoint
-            : getTalentByName(endpoint)?.position ?? [0, 0];
-
+    const getTalentCenter = ([row, col]: [number, number]): [number, number] => {
         const ICON_WIDTH = 55;
         const ICON_HEIGHT = 55;
         const CELL_WIDTH = 60;
@@ -37,141 +48,53 @@ export default function TalentTrack({ tracks, talents, talentPoints, treeKey }: 
 
         const x = col * (CELL_WIDTH + GAP) + ICON_WIDTH / 2;
         const y = row * (CELL_HEIGHT + GAP) + ICON_HEIGHT / 2;
-
         return [x, y];
     };
 
-    const coordToTrackIndices = new Map<string, number[]>();
-    tracks.forEach((track, idx) => {
-        const from = resolveCoord(track.from);
-        const to = resolveCoord(track.to);
-        const fromStr = getCoordString(from);
-        const toStr = getCoordString(to);
-        if (!coordToTrackIndices.has(fromStr)) coordToTrackIndices.set(fromStr, []);
-        if (!coordToTrackIndices.has(toStr)) coordToTrackIndices.set(toStr, []);
-        coordToTrackIndices.get(fromStr)!.push(idx);
-        coordToTrackIndices.get(toStr)!.push(idx);
-    });
+    const drawTrack = (track: FullTrack, color: string, index: number) => {
+        const startPos = talentMap[track.start]?.position;
+        const endPos = talentMap[track.end]?.position;
+        if (!startPos || !endPos) return null;
 
-    const treeTalentPoints = talentPoints[treeKey] || {};
-    const activeTalentCoords = new Set<string>();
-    talents.forEach(t => {
-        if ((treeTalentPoints[t.name] || 0) > 0) {
-            activeTalentCoords.add(getCoordString(t.position));
-        }
-    });
+        const pathCoords = track.path
+            ? [startPos, ...track.path, endPos]
+            : [startPos, endPos];
 
-    const highlightedTrackIndices = new Set<number>();
-    const visitedCoords = new Set<string>();
-    const queue: string[] = [...activeTalentCoords];
-    const talentNameToCoord: Record<string, [number, number]> = {};
-    for (const talent of talents) {
-        talentNameToCoord[talent.name] = talent.position;
+
+        const [start, ...rest] = pathCoords.map(getTalentCenter);
+        const pathD = rest.reduce(
+            (d, [x, y]) => `${d} L${x},${y}`,
+            `M${start[0]},${start[1]}`
+        );
+
+        return (
+            <path
+                key={index}
+                d={pathD}
+                fill="none"
+                stroke={color}
+                strokeWidth={3}
+                strokeLinecap="round"
+            />
+        );
+    };
+
+    const dimmed: FullTrack[] = [];
+    const highlighted: FullTrack[] = [];
+
+    for (const track of fullTracks) {
+        const fromTaken = hasPointsIn(track.start);
+        const toReachable = isTalentReachable(talentMap[track.end]);
+
+        (fromTaken && toReachable ? highlighted : dimmed).push(track);
     }
-
-    const pointsSpentInTree = Object.values(treeTalentPoints).reduce((sum, pts) => sum + pts, 0);
-
-    const isTalentReachable = (talent: TalentData): boolean => {
-        const pointsInTree = talentPoints[treeKey] || {};
-        const requiredPoints = getGateRequirement(talent.rank);
-
-        // 🔒 Not enough spent to unlock by rank?
-        if (pointsSpentInTree < requiredPoints) return false;
-
-        // 🔒 No points available to actually spend in this pool
-        const pool = getPoolForTree(treeKey as keyof typeof pointPools);
-        if (pool) {
-            const unspentPoints = pool ? pointPools[pool].cap - getPointsSpentInPool(pool, talentPoints) : 0;
-            if (unspentPoints <= 0) return false; // 🛑 No points left in this pool
-        }
-
-        // ✅ Prerequisite logic
-        const prereqs = talent.prerequisites ?? [];
-        return prereqs.length === 0 || prereqs.some(req => {
-            if (typeof req === 'string') {
-                return (pointsInTree[req] || 0) > 0;
-            } else if (Array.isArray(req)) {
-                return req.every(inner => (pointsInTree[inner] || 0) > 0);
-            }
-            return false;
-        });
-    };
-
-
-    const leadsToReachableTalent = (coordStr: string, visited = new Set<string>()): boolean => {
-        if (visited.has(coordStr)) return false;
-        visited.add(coordStr);
-
-        const talent = talents.find(t => getCoordString(t.position) === coordStr);
-        const pointsInTree = talentPoints[treeKey] || {};
-        if (talent) {
-            const owned = (pointsInTree[talent.name] || 0) > 0;
-            if (owned || isTalentReachable(talent)) {
-                return true;
-            } else {
-                return false; // 🧠 KEY CHANGE: don't walk past a valid but unowned talent
-            }
-        }
-
-        const downstreamTracks = tracks.filter(t => getCoordString(resolveCoord(t.from)) === coordStr);
-        for (const t of downstreamTracks) {
-            const nextCoord = getCoordString(resolveCoord(t.to));
-            if (leadsToReachableTalent(nextCoord, visited)) return true;
-        }
-
-        return false;
-    };
-
-
-
-    while (queue.length > 0) {
-        const current = queue.shift()!;
-        visitedCoords.add(current);
-
-        for (let idx = 0; idx < tracks.length; idx++) {
-            const { from, to } = tracks[idx];
-            const fromStr = getCoordString(typeof from === 'string' ? talentNameToCoord[from] : from);
-            const toStr = getCoordString(typeof to === 'string' ? talentNameToCoord[to] : to);
-
-            if (current === fromStr && !highlightedTrackIndices.has(idx)) {
-                // Only highlight if `toStr` eventually leads to something valid
-                if (leadsToReachableTalent(toStr)) {
-                    highlightedTrackIndices.add(idx);
-                    if (!visitedCoords.has(toStr)) {
-                        queue.push(toStr);
-                    }
-                }
-            }
-        }
-    }
-
-    const drawElbowPath = (x1: number, y1: number, x2: number, y2: number): string => {
-        return `M${x1},${y1} L${x2},${y1} L${x2},${y2}`;
-    };
 
     return (
         <Box sx={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0, pointerEvents: 'none' }}>
             <svg width="100%" height="100%">
-                {tracks.map((track, idx) => {
-                    const fromCoord = resolveCoord(track.from);
-                    const toCoord = resolveCoord(track.to);
-                    const [x1, y1] = getTalentCenter(fromCoord);
-                    const [x2, y2] = getTalentCenter(toCoord);
-                    const strokeColor = highlightedTrackIndices.has(idx) ? '#ffffff' : '#444';
-
-                    return (
-                        <path
-                            key={idx}
-                            d={drawElbowPath(x1, y1, x2, y2)}
-                            fill="none"
-                            stroke={strokeColor}
-                            strokeWidth={3}
-                            strokeLinecap="round"
-                        />
-                    );
-                })}
+                {dimmed.map((t, i) => drawTrack(t, '#444', i))}
+                {highlighted.map((t, i) => drawTrack(t, '#fff', i + dimmed.length))}
             </svg>
         </Box>
     );
 }
-

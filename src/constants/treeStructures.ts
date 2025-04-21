@@ -2,9 +2,10 @@ import {Trees} from "../data/talentTreeMap.ts";
 
 export type TrackEndpoint = string | [number, number]
 
-export interface Track {
-    from: TrackEndpoint
-    to: TrackEndpoint
+export interface FullTrack {
+    start: string;                     // Name of the starting talent
+    end: string;                       // Name of the ending talent
+    path?: [number, number][];         // Optional path override
 }
 
 export interface TalentData {

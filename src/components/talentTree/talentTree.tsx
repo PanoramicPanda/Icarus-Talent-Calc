@@ -10,7 +10,7 @@ import {getGateRequirement} from "../../data/ranks.ts";
 export function TalentTree({
                                treeKey,
                                talents,
-                               tracks,
+                               fullTracks,
                                pointsSpent,
                                talentPoints,
                                onRankChange,
@@ -20,7 +20,7 @@ export function TalentTree({
                            }: {
     treeKey: keyof typeof Trees,
     talents: TalentData[],
-    tracks: any[],
+    fullTracks: any[],
     pointsSpent: number,
     talentPoints: Record<string, Record<string, number>>,
     onRankChange: (talentName: string, rank: number) => void,
@@ -52,7 +52,7 @@ export function TalentTree({
     return (
         <Box sx={{position: 'relative'}} ref={gridRef}>
             <TalentTrack
-                tracks={tracks}
+                fullTracks={fullTracks}
                 talents={talents}
                 talentPoints={talentPoints}
                 treeKey={treeKey}

@@ -255,7 +255,7 @@ export default function TalentTreeApp() {
                         <TalentTree
                             treeKey={selectedTree}
                             talents={talentTreeMap[selectedTree]!.talents}
-                            tracks={talentTreeMap[selectedTree]!.tracks}
+                            fullTracks={talentTreeMap[selectedTree]!.fullTracks}
                             pointsSpent={talentPointsSpent[selectedTree] || 0}
                             talentPoints={talentPoints}
                             onShowError={setSnackbarMessage}

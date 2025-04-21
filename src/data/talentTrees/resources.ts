@@ -1,4 +1,4 @@
-import { Track } from "../../constants/treeStructures.ts";
+import { FullTrack } from "../../constants/treeStructures.ts";
 import { defineTalentTree } from "../../utils/defineTalentTree.ts";
 
 export const resourcesTree = {
@@ -230,31 +230,29 @@ export const resourcesTree = {
             position: [6, 4],
         },
     ]),
-    tracks: [
-        { from: "Lumber Yield", to: "Wood Breakdown" },
-        { from: "Wood Breakdown", to: [3, 0] },
-        { from: [3, 0], to: "Movin' Wood" },
-        { from: [3, 0], to: "Seasoned Logsman" },
-        { from: "Seasoned Logsman", to: "Friend Of The Trees" },
-        { from: "Seasoned Logsman", to: "Peerless Lumberjack" },
-        { from: "Skilled Picker", to: "All The Good Stuff" },
-        { from: "Rock Star", to: [2, 4] },
-        { from: [2, 4], to: "Oxygen Thief" },
-        { from: [2, 4], to: "Waste Not" },
-        { from: [2, 4], to: "Slinging Stone" },
-        { from: "Slinging Stone", to: [4, 4] },
-        { from: [4, 4], to: "Unburdened" },
-        { from: [4, 4], to: "Iron Miner" },
-        { from: "Unburdened", to: [6, 3] },
-        { from: "Iron Miner", to: [6, 5] },
-        { from: [6, 3], to: "Lucky Strike" },
-        { from: [6, 5], to: "Lucky Strike" },
-        { from: "Dense Packing I", to: [1, 6] },
-        { from: [1, 6], to: "Carry On" },
-        { from: [1, 6], to: [2, 6] },
-        { from: [2, 6], to: "Exotic Power" },
-        { from: [2, 6], to: "Dense Packing II" },
-        { from: "Dense Packing II", to: [3, 7] },
-        { from: [3, 7], to: "Exotic Sprinter" },
-    ] as Track[],
+    fullTracks: [
+        { start: "Lumber Yield", end: "Wood Breakdown" },
+        { start: "Wood Breakdown",  path: [[3, 0]], end: "Movin' Wood" },
+        { start: "Wood Breakdown", path: [[3, 0]], end: "Seasoned Logsman" },
+        { start: "Seasoned Logsman", end: "Friend Of The Trees" },
+        { start: "Seasoned Logsman", end: "Peerless Lumberjack" },
+
+        { start: "Skilled Picker", end: "All The Good Stuff" },
+
+        { start: "Rock Star", path: [[2, 4]], end: "Oxygen Thief" },
+        { start: "Rock Star", path: [[2, 4]], end: "Waste Not" },
+        { start: "Rock Star", path: [[2, 4]], end: "Slinging Stone" },
+
+        { start: "Slinging Stone", path: [[4, 4]], end: "Unburdened" },
+        { start: "Slinging Stone", path: [[4, 4]], end: "Iron Miner" },
+
+        { start: "Unburdened", path: [[6, 3]], end: "Lucky Strike" },
+        { start: "Iron Miner", path: [[6, 5]] , end: "Lucky Strike"},
+
+        { start: "Dense Packing I", path: [[1, 6]], end: "Carry On" },
+        { start: "Dense Packing I", path: [[2, 6]], end: "Exotic Power" },
+        { start: "Dense Packing I", end: "Dense Packing II" },
+
+        { start: "Dense Packing II", path: [[3, 7]], end: "Exotic Sprinter" },
+    ] as FullTrack[],
 };

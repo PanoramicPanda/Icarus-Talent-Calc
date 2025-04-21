@@ -1,8 +1,8 @@
-import {TalentData} from "../constants/treeStructures.ts";
+import {TalentData, FullTrack} from "../constants/treeStructures.ts";
 import {resourcesTree} from "./talentTrees/resources.ts";
-import {explorationTree} from "./talentTrees/exploration.ts";
 import {huntingTree} from "./talentTrees/hunting.ts";
 import {cookingFarmingTree} from "./talentTrees/cookingFarming.ts";
+import {explorationTree} from "./talentTrees/exploration.ts";
 import {husbandryTree} from "./talentTrees/husbandry.ts";
 import {fishingTree} from "./talentTrees/fishing.ts";
 import {repairingTree} from "./talentTrees/reparing.ts";
@@ -57,7 +57,7 @@ export const Trees: Record<string, TreeInfo> = {
     Solo: {name: "Solo", category: Categories.Solo},
 }
 
-export const talentTreeMap: Partial<Record<keyof typeof Trees, { talents: TalentData[]; tracks: any[] }>> = {
+export const talentTreeMap: Partial<Record<keyof typeof Trees, { talents: TalentData[]; fullTracks: FullTrack[] }>> = {
     Resources: resourcesTree,
     Hunting: huntingTree,
     CookingFarming: cookingFarmingTree,

@@ -1,10 +1,10 @@
 import { Box, Typography } from '@mui/material';
 import { getPoolForTree } from '../data/points.ts';
-import {TalentData} from "../constants/treeStructures.ts";
+import {FullTrack, TalentData} from "../constants/treeStructures.ts";
 import { normalizeBenefits } from '../utils/normalizeBenefits';
 
 interface SummaryBoxProps {
-    allTalents: Partial<Record<string, { talents: TalentData[]; tracks: any[] }>>;
+    allTalents: Partial<Record<string, { talents: TalentData[]; fullTracks: FullTrack[] }>>;
     talentPoints: Record<string, Record<string, number>>;
 }
 
