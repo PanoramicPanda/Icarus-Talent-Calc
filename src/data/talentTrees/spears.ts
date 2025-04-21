@@ -1,10 +1,250 @@
 import {FullTrack} from "../../constants/treeStructures.ts";
-
 import {defineTalentTree} from "../../utils/defineTalentTree.ts";
 
 export const spearsTree = {
     talents: defineTalentTree("Spears", [
-        // Add TalentData objects here
+        {
+            name: "Quick Thrust",
+            description: "Increased melee attack speed",
+            rank: 1,
+            prerequisites: ["Strong Thrust I", "Efficient Crafter I"],
+            benefits: [
+                [{value: 10, desc: "+{0}% Attack Speed with Spears", category: "Melee_Weapon"}],
+                [{value: 15, desc: "+{0}% Attack Speed with Spears", category: "Melee_Weapon"}],
+                [{value: 20, desc: "+{0}% Attack Speed with Spears", category: "Melee_Weapon"}],
+            ],
+            position: [1, 1],
+            imageName: "Spears/Talent_Spear_QuickThrust",
+        },
+        {
+            name: "Strong Thrust I",
+            description: "Increased melee attack damage",
+            rank: 1,
+            prerequisites: [],
+            benefits: [
+                [{value: 3, desc: "+{0}% Damage with Spears", category: "Melee_DMG"}],
+                [{value: 5, desc: "+{0}% Damage with Spears", category: "Melee_DMG"}],
+                [{value: 10, desc: "+{0}% Damage with Spears", category: "Melee_DMG"}],
+            ],
+            position: [0, 0],
+            imageName: "Spears/Talent_Spear_StrongThrust1",
+        },
+        {
+            name: "Strong Thrust II",
+            description: "Increased melee attack damage",
+            rank: 2,
+            prerequisites: ["Quick Thrust"],
+            benefits: [
+                [{value: 5, desc: "+{0}% Damage with Spears", category: "Melee_DMG"}],
+                [{value: 10, desc: "+{0}% Damage with Spears", category: "Melee_DMG"}],
+                [{value: 15, desc: "+{0}% Damage with Spears", category: "Melee_DMG"}],
+            ],
+            position: [2, 0],
+            imageName: "Spears/Talent_Spear_StrongThrust2",
+        },
+        {
+            name: "Deadly Thrust I",
+            description: "Increased critical hit multiplier on spears",
+            rank: 2,
+            prerequisites: ["Quick Thrust", "From Afar I"],
+            benefits: [
+                [{value: 5, desc: "+{0}% Critical Damage with Spears", category: "Generic_Damage"}],
+                [{value: 20, desc: "+{0}% Critical Damage with Spears", category: "Generic_Damage"}],
+            ],
+            position: [2, 3],
+            imageName: "Spears/Talent_Spear_DeadlyThrust1",
+        },
+        {
+            name: "Deadly Thrust II",
+            description: "Increased critical hit multiplier on spears",
+            rank: 2,
+            prerequisites: ["Deadly Thrust I"],
+            benefits: [
+                [{value: 15, desc: "+{0}% Critical Damage with Spears", category: "Generic_Damage"}],
+                [{value: 30, desc: "+{0}% Critical Damage with Spears", category: "Generic_Damage"}],
+            ],
+            position: [3, 4],
+            imageName: "Spears/Talent_Spear_DeadlyThrust2",
+        },
+        {
+            name: "Spear Quick Draw",
+            description: "Increased aim speed",
+            rank: 1,
+            prerequisites: [],
+            benefits: [
+                [{value: 5, desc: "+{0}% Aim Speed with Spears", category: "Ranged_Weapon"}],
+                [{value: 10, desc: "+{0}% Aim Speed with Spears", category: "Ranged_Weapon"}],
+                [{value: 15, desc: "+{0}% Aim Speed with Spears", category: "Ranged_Weapon"}],
+            ],
+            position: [0, 6],
+            imageName: "Spears/Talent_Spear_QuickDraw",
+        },
+        {
+            name: "From Afar I",
+            description: "Increased ranged damage",
+            rank: 1,
+            prerequisites: ["Spear Quick Draw", "Seasoned Spearman"],
+            benefits: [
+                [{value: 5, desc: "+{0}% Damage with Thrown Spears", category: "Ranged_DMG"}],
+                [{value: 8, desc: "+{0}% Damage with Thrown Spears", category: "Ranged_DMG"}],
+            ],
+            position: [1, 5],
+            imageName: "Spears/Talent_Spear_FromAfar1",
+        },
+        {
+            name: "From Afar II",
+            description: "Increased ranged damage",
+            rank: 2,
+            prerequisites: ["From Afar I"],
+            benefits: [
+                [{value: 10, desc: "+{0}% Damage with Thrown Spears", category: "Ranged_DMG"}],
+                [{value: 12, desc: "+{0}% Damage with Thrown Spears", category: "Ranged_DMG"}],
+            ],
+            position: [2, 7],
+            imageName: "Spears/Talent_Spear_FromAfar2",
+        },
+        {
+            name: "Long Reach I",
+            description: "Increased throw distance",
+            rank: 3,
+            prerequisites: ["There It Is"],
+            benefits: [
+                [{value: 5, desc: "+{0}% Speed of Thrown Spears", category: "Misc"}],
+                [{value: 10, desc: "+{0}% Speed of Thrown Spears", category: "Misc"}],
+            ],
+            position: [5, 5],
+            imageName: "Spears/Talent_Spear_LongReach1",
+        },
+        {
+            name: "Long Reach II",
+            description: "Increased throw distance",
+            rank: 4,
+            prerequisites: ["Long Reach I"],
+            benefits: [
+                [{value: 10, desc: "+{0}% Speed of Thrown Spears", category: "Misc"}],
+                [{value: 15, desc: "+{0}% Speed of Thrown Spears", category: "Misc"}],
+            ],
+            position: [6, 7],
+            imageName: "Spears/Talent_Spear_LongReach2",
+        },
+        {
+            name: "Quick Step",
+            description: "Increased movespeed while aiming",
+            rank: 1,
+            prerequisites: ["From Afar II"],
+            benefits: [
+                [{value: 5, desc: "+{0}% Movement Speed while Aiming a Spear", category: "Character"}],
+                [{value: 10, desc: "+{0}% Movement Speed while Aiming a Spear", category: "Character"}],
+                [{value: 15, desc: "+{0}% Movement Speed while Aiming a Spear", category: "Character"}],
+            ],
+            position: [3, 7],
+            imageName: "Spears/Talent_Spear_QuickStep",
+        },
+        {
+            name: "Seasoned Spearman",
+            description: "Decreased stamina usage with spears",
+            rank: 1,
+            prerequisites: [],
+            benefits: [
+                [{value: -5, desc: "+{0}% Stamina Consumed by Spear Actions", category: "Stamina"}],
+                [{value: -10, desc: "+{0}% Stamina Consumed by Spear Actions", category: "Stamina"}],
+                [{value: -15, desc: "+{0}% Stamina Consumed by Spear Actions", category: "Stamina"}],
+            ],
+            position: [0, 4],
+            imageName: "Spears/Talent_Spears_SeasonedSpearman",
+        },
+        {
+            name: "Efficient Crafter II",
+            description: "Cheaper spear crafting",
+            rank: 3,
+            prerequisites: ["Could Go All Day"],
+            benefits: [
+                [{value: -20, desc: "+{0}% Resource Cost of Crafted Spears", category: "Crafting"}],
+            ],
+            position: [4, 1],
+            imageName: "Spears/Talent_Spear_EfficientCrafter2",
+        },
+        {
+            name: "Excellent Crafter I",
+            description: "Crafted spears have increased durability",
+            rank: 3,
+            prerequisites: ["Deadly Thrust I"],
+            benefits: [
+                [{value: 1, desc: "No description", category: "Misc"}],
+            ],
+            position: [4, 3],
+            imageName: "Spears/Talent_Spear_ExcellentCrafter",
+        },
+        {
+            name: "Spear Parry",
+            description: "Take less melee damage when spear equipped",
+            rank: 4,
+            prerequisites: ["Efficient Crafter II"],
+            benefits: [
+                [{value: 15, desc: "+{0}% Melee Resistance with a Spear Equipped", category: "Resistance"}],
+                [{value: 20, desc: "+{0}% Melee Resistance with a Spear Equipped", category: "Resistance"}],
+            ],
+            position: [5, 1],
+            imageName: "Spears/Talent_Spear_SpearParry",
+        },
+        {
+            name: "There It Is",
+            description: "Thrown spears highlight in world",
+            rank: 3,
+            prerequisites: ["Deadly Thrust I", "From Afar II", "From Afar I"],
+            benefits: [
+                [{value: 1, desc: "Thrown Spears are highlighted", category: "Character"}],
+            ],
+            position: [4, 5],
+            imageName: "Spears/Talent_Spear_ThereItIs",
+        },
+        {
+            name: "Could Go All Day",
+            description: "Increased stamina regen when spear equipped",
+            rank: 3,
+            prerequisites: ["Quick Thrust", "Deadly Thrust I"],
+            benefits: [
+                [{value: 10, desc: "+{0}% Stamina Regeneration with a Spear Equipped", category: "Stamina"}],
+                [{value: 20, desc: "+{0}% Stamina Regeneration with a Spear Equipped", category: "Stamina"}],
+            ],
+            position: [3, 1],
+            imageName: "Spears/Talent_Spear_CouldGoAllDay",
+        },
+        {
+            name: "Deep Wounds",
+            description: "Spear strikes cause bleeding over time",
+            rank: 4,
+            prerequisites: ["Long Reach I"],
+            benefits: [
+                [{value: 5, desc: "{0}% chance to Wound on Hit with Spears", category: "Modifiers"}],
+                [{value: 10, desc: "{0}% chance to Wound on Hit with Spears", category: "Modifiers"}],
+                [{value: 15, desc: "{0}% chance to Wound on Hit with Spears", category: "Modifiers"}],
+            ],
+            position: [6, 4],
+            imageName: "Spears/Talent_Spear_DeepWounds",
+        },
+        {
+            name: "Efficient Crafter I",
+            description: "Cheaper spear crafting",
+            rank: 1,
+            prerequisites: [],
+            benefits: [
+                [{value: -20, desc: "+{0}% Resource Cost of Crafted Spears", category: "Crafting"}],
+            ],
+            position: [0, 2],
+            imageName: "Spears/Talent_Spear_EfficientCrafter",
+        },
+        {
+            name: "Excellent Crafter II",
+            description: "Crafted spears have increased durability",
+            rank: 4,
+            prerequisites: ["Excellent Crafter I"],
+            benefits: [
+                [{value: 1, desc: "No description", category: "Misc"}],
+            ],
+            position: [5, 3],
+            imageName: "Spears/Talent_Spear_ExcellentCrafter2",
+        },
     ]),
     fullTracks: [] as FullTrack[]
 };

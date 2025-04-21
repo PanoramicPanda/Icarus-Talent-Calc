@@ -1,10 +1,238 @@
 import {FullTrack} from "../../constants/treeStructures.ts";
-
 import {defineTalentTree} from "../../utils/defineTalentTree.ts";
 
 export const husbandryTree = {
     talents: defineTalentTree("Husbandry", [
-        // Add TalentData objects here
+        {
+            name: "Nurturing Presence",
+            description: "Nearby juvenile creatures tame faster",
+            rank: 3,
+            prerequisites: ["Adaptive Training"],
+            benefits: [
+                [{value: 1, desc: "Nearby Juveniles Tame Faster", category: "Mounts"}],
+            ],
+            position: [6, 1],
+            imageName: "Cooking/Talent_GatheringGuru",
+        },
+        {
+            name: "Like the wind",
+            description: "Tamed creatures move faster",
+            rank: 4,
+            prerequisites: ["Long Haul"],
+            benefits: [
+                [{value: 5, desc: "+{0}% Tamed Creature Movement Speed", category: "Mounts"}],
+            ],
+            position: [7, 7],
+            imageName: "Hunting/Talent_Hunting_SwiftStalker",
+        },
+        {
+            name: "Efficient Feeding",
+            description: "Tamed creatures need less food and water",
+            rank: 1,
+            prerequisites: ["Well Cared For", "Grazing for the herd"],
+            benefits: [
+                [{value: -15, desc: "+{0}% Tamed Creature Water Consumption", category: "Mounts"}, {value: -15, desc: "+{0}% Tamed Creature Food Consumption", category: "Mounts"}],
+                [{value: -30, desc: "+{0}% Tamed Creature Water Consumption", category: "Mounts"}, {value: -30, desc: "+{0}% Tamed Creature Food Consumption", category: "Mounts"}],
+            ],
+            position: [1, 2],
+            imageName: "Cooking/Talent_Cooking_FreshIsBest",
+        },
+        {
+            name: "Energetic Encouragement",
+            description: "Tamed creatures have faster stamina regeneration and require less sleep when taming",
+            rank: 1,
+            prerequisites: ["Back in the Saddle"],
+            benefits: [
+                [{value: 5, desc: "+{0}% Tamed Creature Stamina Regen", category: "Mounts"}, {value: -10, desc: "+{0}% Juvenile Creature Sleep Requirement", category: "Mounts"}],
+                [{value: 10, desc: "+{0}% Tamed Creature Stamina Regen", category: "Mounts"}, {value: -20, desc: "+{0}% Juvenile Creature Sleep Requirement", category: "Mounts"}],
+            ],
+            position: [1, 7],
+            imageName: "Solo/Talent_Solo_LightningRecovery",
+        },
+        {
+            name: "Beasts Endurance",
+            description: "Increase tamed creature stamina",
+            rank: 3,
+            prerequisites: ["Long Haul"],
+            benefits: [
+                [{value: 5, desc: "+{0}% Tamed Creature Maximum Stamina", category: "Mounts"}],
+                [{value: 10, desc: "+{0}% Tamed Creature Maximum Stamina", category: "Mounts"}],
+            ],
+            position: [6, 6],
+            imageName: "Hunting/Talent_Hunting_ChaseEmDown",
+        },
+        {
+            name: "Long Haul",
+            description: "Increase tamed creature carrying capacity",
+            rank: 3,
+            prerequisites: ["Relaxed Rider", "Hardy Diet"],
+            benefits: [
+                [{value: 2, desc: "+{0}% Tamed Creature Weight Capacity", category: "Mounts"}],
+                [{value: 5, desc: "+{0}% Tamed Creature Weight Capacity", category: "Mounts"}],
+                [{value: 10, desc: "+{0}% Tamed Creature Weight Capacity", category: "Mounts"}],
+            ],
+            position: [5, 7],
+            imageName: "Resources/Talent_Resources_DensePacking",
+        },
+        {
+            name: "Back in the Saddle",
+            description: "Reduced crafting cost of Saddles",
+            rank: 1,
+            prerequisites: [],
+            benefits: [
+                [{value: -20, desc: "+{0}% Saddle Crafting Cost", category: "Mounts"}],
+                [{value: -40, desc: "+{0}% Saddle Crafting Cost", category: "Mounts"}],
+            ],
+            position: [0, 6],
+            imageName: "Hunting/Talent_Hunting_CarefulSkinner",
+        },
+        {
+            name: "(Still) One With Nature",
+            description: "Juvenile creatures are not attacked by hostile wildlife",
+            rank: 4,
+            prerequisites: ["Nurturing Presence"],
+            benefits: [
+                [{value: 1, desc: "Juvenile Creature Does Not Pose Any Threat To Predators", category: "Mounts"}],
+            ],
+            position: [8, 4],
+            imageName: "Hunting/Talent_Hunting_ColdHearted",
+        },
+        {
+            name: "Adaptive Training",
+            description: "Greater temperature range for taming",
+            rank: 2,
+            prerequisites: ["Efficient Feeding"],
+            benefits: [
+                [{value: -200, desc: "+{0} Minimum Taming Temperature", category: "CreatureTaming"}, {value: 200, desc: "+{0} Maximum Taming Temperature", category: "CreatureTaming"}],
+                [{value: -400, desc: "+{0} Minimum Taming Temperature", category: "CreatureTaming"}, {value: 400, desc: "+{0} Maximum Taming Temperature", category: "CreatureTaming"}],
+            ],
+            position: [1, 0],
+            imageName: "Exploration/Talent_Exploration_ForestMaster",
+        },
+        {
+            name: "Relaxed Rider",
+            description: "Decreased oxygen, food and water costs while riding",
+            rank: 2,
+            prerequisites: ["Energetic Encouragement"],
+            benefits: [
+                [{value: -15, desc: "+{0}% Oxygen Consumption while Mounted", category: "Mounts"}, {value: -15, desc: "+{0}% Food Consumption while Mounted", category: "Mounts"}, {value: -15, desc: "+{0}% Water Consumption while Mounted", category: "Mounts"}],
+                [{value: -30, desc: "+{0}% Oxygen Consumption while Mounted", category: "Mounts"}, {value: -30, desc: "+{0}% Food Consumption while Mounted", category: "Mounts"}, {value: -30, desc: "+{0}% Water Consumption while Mounted", category: "Mounts"}],
+            ],
+            position: [2, 7],
+            imageName: "Solo/Talent_Solo_LowMaintanence",
+        },
+        {
+            name: "In Your Element",
+            description: "Increased Exposure Resistance while riding",
+            rank: 4,
+            prerequisites: ["Desert Training", "Arctic Training"],
+            benefits: [
+                [{value: 5, desc: "+{0}% Exposure Resistance while Mounted", category: "Mounts"}],
+                [{value: 10, desc: "+{0}% Exposure Resistance while Mounted", category: "Mounts"}],
+            ],
+            position: [8, 1],
+            imageName: "Exploration/Talent_Exploration_StormChaser",
+        },
+        {
+            name: "Hardy Diet",
+            description: "Increase tamed creature health and health regeneration",
+            rank: 2,
+            prerequisites: ["Relaxed Rider", "Rapid Adoption", "Efficient Feeding"],
+            benefits: [
+                [{value: 10, desc: "+{0}% Tamed Creature Maximum Health", category: "Mounts"}, {value: 15, desc: "+{0}% Tamed Creature Health Regeneration", category: "Mounts"}],
+                [{value: 20, desc: "+{0}% Tamed Creature Maximum Health", category: "Mounts"}, {value: 30, desc: "+{0}% Tamed Creature Health Regeneration", category: "Mounts"}],
+                [{value: 30, desc: "+{0}% Tamed Creature Maximum Health", category: "Mounts"}, {value: 45, desc: "+{0}% Tamed Creature Health Regeneration", category: "Mounts"}],
+            ],
+            position: [3, 5],
+            imageName: "Hunting/Talent_Hunting_HealthBars",
+        },
+        {
+            name: "Arctic Training",
+            description: "Juvenile and tamed creatures better tolerate colder environments",
+            rank: 3,
+            prerequisites: ["Nurturing Presence"],
+            benefits: [
+                [{value: -500, desc: "+{0} Minimum Taming Temperature", category: "CreatureTaming"}],
+                [{value: -1000, desc: "+{0} Minimum Taming Temperature", category: "CreatureTaming"}],
+            ],
+            position: [7, 0],
+            imageName: "Exploration/Talent_Exploration_ArcticMaster",
+        },
+        {
+            name: "Desert Training",
+            description: "Juvenile and tamed creatures better tolerate warmer environments",
+            rank: 3,
+            prerequisites: ["Nurturing Presence"],
+            benefits: [
+                [{value: 500, desc: "+{0} Maximum Taming Temperature", category: "CreatureTaming"}],
+                [{value: 1000, desc: "+{0} Maximum Taming Temperature", category: "CreatureTaming"}],
+            ],
+            position: [7, 2],
+            imageName: "Exploration/Talent_Exploration_DesertMaster",
+        },
+        {
+            name: "Well Cared For",
+            description: "Reduced crafting cost of taming equipment",
+            rank: 1,
+            prerequisites: [],
+            benefits: [
+                [{value: -20, desc: "+{0}% Taming Equipment Crafting Cost", category: "Mounts"}],
+                [{value: -40, desc: "+{0}% Taming Equipment Crafting Cost", category: "Mounts"}],
+            ],
+            position: [0, 1],
+            imageName: "Resources/Talent_Resources_EfficientLogsman",
+        },
+        {
+            name: "Rapid Adoption",
+            description: "Increased damage from stealth",
+            rank: 2,
+            prerequisites: ["Grazing for the herd", "Back in the Saddle"],
+            benefits: [
+                [{value: 10, desc: "+{0}% Stealth Damage", category: "Stealth"}],
+            ],
+            position: [1, 5],
+            imageName: "Hunting/Talent_Hunting_TrainedHunter",
+        },
+        {
+            name: "Act Natural",
+            description: "Reduced tamed creature threat and threat while riding",
+            rank: 3,
+            prerequisites: ["Hardy Diet"],
+            benefits: [
+                [{value: -10, desc: "+{0}% Perceived Threat while Mounted", category: "Mounts"}, {value: -10, desc: "+{0}% Tamed Creature Perceived Threat", category: "Mounts"}],
+                [{value: -20, desc: "+{0}% Perceived Threat while Mounted", category: "Mounts"}, {value: -20, desc: "+{0}% Tamed Creature Perceived Threat", category: "Mounts"}],
+                [{value: -30, desc: "+{0}% Perceived Threat while Mounted", category: "Mounts"}, {value: -30, desc: "+{0}% Tamed Creature Perceived Threat", category: "Mounts"}],
+            ],
+            position: [3, 2],
+            imageName: "Hunting/Talent_Hunting_RefinedGhillerArmour",
+        },
+        {
+            name: "Grazing for the herd",
+            description: "Increases foraging yield",
+            rank: 1,
+            prerequisites: [],
+            benefits: [
+                [{value: 2, desc: "+{0}% Yield from Foraging", category: "Foraging"}],
+                [{value: 5, desc: "+{0}% Yield from Foraging", category: "Foraging"}],
+                [{value: 10, desc: "+{0}% Yield from Foraging", category: "Foraging"}],
+            ],
+            position: [0, 3],
+            imageName: "Cooking/Talent_Cooking_AllFoodGroups",
+        },
+        {
+            name: "Kill Command",
+            description: "Increased tamed creature melee damage",
+            rank: 3,
+            prerequisites: ["Hardy Diet"],
+            benefits: [
+                [{value: 5, desc: "+{0}% Tamed Creature Melee Damage", category: "Mounts"}],
+                [{value: 10, desc: "+{0}% Tamed Creature Melee Damage", category: "Mounts"}],
+                [{value: 15, desc: "+{0}% Tamed Creature Melee Damage", category: "Mounts"}],
+                [{value: 20, desc: "+{0}% Tamed Creature Melee Damage", category: "Mounts"}],
+            ],
+            position: [4, 2],
+            imageName: "Companion/T_Talent_Moa_Attack",
+        },
     ]),
     fullTracks: [] as FullTrack[]
 };

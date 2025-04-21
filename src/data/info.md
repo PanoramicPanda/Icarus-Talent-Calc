@@ -43,9 +43,5 @@ Want to contribute, suggest a feature, or report a bug? Visit the project on [Gi
 
 ## Changelog
 
-**v1.0.0**
-- Initial public release!
-- Fully functional Solo, Hunting, and Resources trees
-- Dynamic track highlighting based on path + requirements
-- Export/Import via URL encoding
-- Build summary box to view selected talent bonuses
+**ALPHA**
+Things are constantly in flux, I'm not even bothering with version numbers yet or the changelog. Just know that I am working on it and will be adding more features and fixes as I go.

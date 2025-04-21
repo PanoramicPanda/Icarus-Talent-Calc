@@ -1,10 +1,214 @@
 import {FullTrack} from "../../constants/treeStructures.ts";
-
 import {defineTalentTree} from "../../utils/defineTalentTree.ts";
 
 export const firearmsTree = {
     talents: defineTalentTree("Firearms", [
-        // Add TalentData objects here
+        {
+            name: "Featherweight",
+            description: "Firearms weigh less in your inventory",
+            rank: 1,
+            prerequisites: [],
+            benefits: [
+                [{value: -25, desc: "+{0}% Carry Weight of Firearms", category: "Weight"}],
+            ],
+            position: [0, 6],
+            imageName: "Firearms/Talent_Firearms_Featherweight",
+        },
+        {
+            name: "Light Firearm Powerup",
+            description: "Increased damage with pistols",
+            rank: 2,
+            prerequisites: ["Light Firearm Handling"],
+            benefits: [
+                [{value: 3, desc: "+{0}% Damage with Pistols & SMGs", category: "Ranged_Weapon"}],
+                [{value: 5, desc: "+{0}% Damage with Pistols & SMGs", category: "Ranged_Weapon"}],
+                [{value: 10, desc: "+{0}% Damage with Pistols & SMGs", category: "Ranged_Weapon"}],
+            ],
+            position: [2, 0],
+            imageName: "Firearms/Talent_Firearms_PistolDamage",
+        },
+        {
+            name: "Rifle Redress",
+            description: "Increased damage with rifles",
+            rank: 2,
+            prerequisites: ["Rifle Re-Up"],
+            benefits: [
+                [{value: 3, desc: "+{0}% Damage with Rifles", category: "Ranged_Weapon"}],
+                [{value: 5, desc: "+{0}% Damage with Rifles", category: "Ranged_Weapon"}],
+                [{value: 10, desc: "+{0}% Damage with Rifles", category: "Ranged_Weapon"}],
+            ],
+            position: [2, 4],
+            imageName: "Firearms/Talent_Firearms_RifleDamage",
+        },
+        {
+            name: "Shotgun Sovereign",
+            description: "Increased damage with shotguns",
+            rank: 2,
+            prerequisites: ["Shotgun Handling"],
+            benefits: [
+                [{value: 3, desc: "+{0}% Damage with Shotguns", category: "Ranged_Weapon"}],
+                [{value: 5, desc: "+{0}% Damage with Shotguns", category: "Ranged_Weapon"}],
+                [{value: 10, desc: "+{0}% Damage with Shotguns", category: "Ranged_Weapon"}],
+            ],
+            position: [2, 2],
+            imageName: "Firearms/Talent_Firearms_ShotgunDamage",
+        },
+        {
+            name: "Focus Fire",
+            description: "Reduced bullet spread",
+            rank: 3,
+            prerequisites: ["Freebies", "Gun Runner"],
+            benefits: [
+                [{value: 10, desc: "+{0}% Accuracy with Firearms", category: "Ranged_Weapon"}],
+                [{value: 25, desc: "+{0}% Accuracy with Firearms", category: "Ranged_Weapon"}],
+            ],
+            position: [4, 5],
+            imageName: "Firearms/Talent_Firearms_FocusFire",
+        },
+        {
+            name: "Light Firearm Handling",
+            description: "Faster pistol reloading",
+            rank: 1,
+            prerequisites: ["Light Firearm Proficiency"],
+            benefits: [
+                [{value: 10, desc: "+{0}% Reload Speed of Pistols & SMGs", category: "Ranged_Weapon"}],
+                [{value: 15, desc: "+{0}% Reload Speed of Pistols & SMGs", category: "Ranged_Weapon"}],
+                [{value: 20, desc: "+{0}% Reload Speed of Pistols & SMGs", category: "Ranged_Weapon"}],
+            ],
+            position: [1, 0],
+            imageName: "Firearms/Talent_Firearms_PistolHandling",
+        },
+        {
+            name: "Shotgun Handling",
+            description: "Faster shotgun reloading",
+            rank: 1,
+            prerequisites: ["Shotgun Slash"],
+            benefits: [
+                [{value: 10, desc: "+{0}% Reload Speed of Shotguns", category: "Ranged_Weapon"}],
+                [{value: 15, desc: "+{0}% Reload Speed of Shotguns", category: "Ranged_Weapon"}],
+                [{value: 20, desc: "+{0}% Reload Speed of Shotguns", category: "Ranged_Weapon"}],
+            ],
+            position: [1, 2],
+            imageName: "Firearms/Talent_Firearms_ShotgunHandling",
+        },
+        {
+            name: "Rifle Re-Up",
+            description: "Faster rifle reloading",
+            rank: 1,
+            prerequisites: ["Rifle Reduction"],
+            benefits: [
+                [{value: 10, desc: "+{0}% Reload Speed of Rifles", category: "Ranged_Weapon"}],
+                [{value: 15, desc: "+{0}% Reload Speed of Rifles", category: "Ranged_Weapon"}],
+                [{value: 20, desc: "+{0}% Reload Speed of Rifles", category: "Ranged_Weapon"}],
+            ],
+            position: [1, 4],
+            imageName: "Firearms/Talent_Firearms_RifleHandling",
+        },
+        {
+            name: "Rifle Reduction",
+            description: "Cheaper bulk rifle ammo crafting",
+            rank: 1,
+            prerequisites: [],
+            benefits: [
+                [{value: -25, desc: "+{0}% Crafted Rifle Ammo Resource Cost", category: "Crafting"}],
+            ],
+            position: [0, 4],
+            imageName: "Firearms/Talent_Firearms_RifleAmmunitions",
+        },
+        {
+            name: "Shotgun Slash",
+            description: "Cheaper bulk shotgun ammo crafting",
+            rank: 1,
+            prerequisites: [],
+            benefits: [
+                [{value: -25, desc: "+{0}% Crafted Shotgun Ammo Resource Cost", category: "Crafting"}],
+            ],
+            position: [0, 2],
+            imageName: "Firearms/Talent_Firearms_ShotgunAmmunitions",
+        },
+        {
+            name: "Gunsmith",
+            description: "Reduced firearm durability loss",
+            rank: 3,
+            prerequisites: ["Light Firearm Powerup", "Freebies"],
+            benefits: [
+                [{value: -10, desc: "+{0}% Wear Rate of Firearms", category: "Item"}],
+                [{value: -15, desc: "+{0}% Wear Rate of Firearms", category: "Item"}],
+                [{value: -20, desc: "+{0}% Wear Rate of Firearms", category: "Item"}],
+            ],
+            position: [4, 1],
+            imageName: "Firearms/Talent_Firearms_GunMaintanence",
+        },
+        {
+            name: "Gun Runner",
+            description: "Faster movespeed with firearms",
+            rank: 1,
+            prerequisites: ["Featherweight"],
+            benefits: [
+                [{value: 5, desc: "+{0}% Movement Speed with a Firearm Equipped", category: "Movement"}],
+                [{value: 10, desc: "+{0}% Movement Speed with a Firearm Equipped", category: "Movement"}],
+            ],
+            position: [2, 6],
+            imageName: "Firearms/Talent_Firearms_GunRunner",
+        },
+        {
+            name: "Sharpshooter",
+            description: "Increased critical hit multiplier on firearms",
+            rank: 4,
+            prerequisites: ["Freebies", "Gunsmith", "Focus Fire"],
+            benefits: [
+                [{value: 5, desc: "+{0}% Critical Damage with Firearms", category: "Generic_Damage"}],
+                [{value: 10, desc: "+{0}% Critical Damage with Firearms", category: "Generic_Damage"}],
+                [{value: 15, desc: "+{0}% Critical Damage with Firearms", category: "Generic_Damage"}],
+            ],
+            position: [5, 3],
+            imageName: "Firearms/Talent_Firearms_Sharpshooter",
+        },
+        {
+            name: "How Many Shots Did You Count?",
+            description: "Chance to not consume ammo",
+            rank: 4,
+            prerequisites: ["Gunsmith", "Sharpshooter"],
+            benefits: [
+                [{value: 5, desc: "{0}% chance to not consume Ammo when Firing a Projectile Weapon", category: "Ranged_Weapon"}],
+                [{value: 10, desc: "{0}% chance to not consume Ammo when Firing a Projectile Weapon", category: "Ranged_Weapon"}],
+            ],
+            position: [6, 1],
+            imageName: "Firearms/Talent_Firearms_HowManyShotsDidYouCount",
+        },
+        {
+            name: "Freebies",
+            description: "Chance to craft double ammo",
+            rank: 2,
+            prerequisites: ["Shotgun Sovereign", "Rifle Redress"],
+            benefits: [
+                [{value: 5, desc: "{0}% chance to Craft additional Ammo", category: "Crafting"}],
+            ],
+            position: [3, 3],
+            imageName: "Firearms/Talent_Firearms_Freebies",
+        },
+        {
+            name: "New Life",
+            description: "Chance that gun gains durability on a breaking shot",
+            rank: 4,
+            prerequisites: ["Focus Fire", "Sharpshooter"],
+            benefits: [
+                [{value: 30, desc: "{0}% for Firearms to Recover Durability Instead of Breaking", category: "Item"}],
+            ],
+            position: [6, 5],
+            imageName: "Firearms/Talent_Firearms_NewLife",
+        },
+        {
+            name: "Light Firearm Proficiency",
+            description: "Cheaper bulk pistol ammo crafting",
+            rank: 1,
+            prerequisites: [],
+            benefits: [
+                [{value: -25, desc: "+{0}% Crafted Pistol & SMG Ammo Resource Cost", category: "Crafting"}],
+            ],
+            position: [0, 0],
+            imageName: "Firearms/Talent_Firearms_PistolAmmunitions",
+        },
     ]),
     fullTracks: [] as FullTrack[]
 };

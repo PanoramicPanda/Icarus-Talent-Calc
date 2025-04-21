@@ -1,5 +1,4 @@
 import {FullTrack} from "../../constants/treeStructures.ts";
-
 import {defineTalentTree} from "../../utils/defineTalentTree.ts";
 
 export const huntingTree = {
