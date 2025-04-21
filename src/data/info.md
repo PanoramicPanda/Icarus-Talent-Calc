@@ -4,14 +4,6 @@ A lightweight and offline-friendly tool to map out your **talent builds** for *I
 
 ---
 
-## 🔗 Table of Contents
-- [What is Icarus and this site?](#what-is-icarus-and-this-site)
-- [About the Creator](#about-the-creator)
-- [How to Use the Site](#how-to-use-the-site)
-- [Changelog](#changelog)
-
----
-
 ## What is Icarus and this site?
 
 **Icarus** is a PvE-focused survival game set on a terraformed alien world. You descend to the surface, complete missions, gather resources, survive storms, and return before time runs out.
