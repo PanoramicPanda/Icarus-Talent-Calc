@@ -233,7 +233,7 @@ export const toolsTree = {
             imageName: "Tools/Talent_Tools_DiscountAxes1",
         },
         {
-            name: "Careful Hits",
+            name: "Careful Hits II",
             description: "Reduced durability loss on pickaxes",
             rank: 1,
             prerequisites: ["Strong Pick"],

@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, assert } from 'vitest';
 import { talentTreeMap } from '../talentTreeMap.ts';
 import { FullTrack, TalentData } from '../../constants/treeStructures.ts';
 
@@ -76,7 +76,7 @@ describe('Talent Tree Validation', () => {
                 if (result.hasCycle) {
                     console.error('❌ Prerequisite cycle detected:', result.path?.join(' → '));
                 }
-                expect(result.hasCycle).toBe(false);
+                assert(!result.hasCycle, `Cycle found in prerequisites: ${result.path?.join(" → ")}`);
             });
 
             it('does not have circular track paths', () => {
