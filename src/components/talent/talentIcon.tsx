@@ -1,5 +1,4 @@
 import { Box } from "@mui/material";
-import { sanitizeTalentName } from "../../utils/imagePreload.ts";
 import { TalentData } from "../../constants/treeStructures.ts";
 import { useState } from "react";
 import {TALENT_ICON_HEIGHT, TALENT_ICON_WIDTH} from "../../data/dimension.ts";
@@ -10,6 +9,10 @@ interface TalentIconProps {
     isUnlocked: boolean;
     hasPointsToSpend: boolean;
     isBlocking?: boolean;
+}
+
+function sanitizeTalentName(name: string): string {
+    return name.replace(/[^a-zA-Z0-9 ]/g, '').replace(/ /g, '_');
 }
 
 export default function TalentIcon({
