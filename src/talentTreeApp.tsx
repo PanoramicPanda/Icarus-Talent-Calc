@@ -21,7 +21,6 @@ import {
     isVersionMismatch
 } from './utils/exportImport';
 import SummaryBox from "./components/summaryBox.tsx";
-import {preloadAllTalentImages} from './utils/imagePreload';
 import './talentTree.css'
 import {TalentTree} from "./components/talentTree/talentTree.tsx";
 import ResetButtons from "./components/resetButtons.tsx";
@@ -55,21 +54,6 @@ export default function TalentTreeApp() {
         return () => {
             delete (window as any).setBlockingTalents;
         };
-    }, []);
-
-    // Preload all talent images after the first paint
-    useEffect(() => {
-        const runAfterPaint = () => {
-            if ('requestIdleCallback' in window) {
-                requestIdleCallback(() => preloadAllTalentImages());
-            } else {
-                setTimeout(() => preloadAllTalentImages(), 500); // Slight delay to let UI paint
-            }
-        };
-
-        requestAnimationFrame(() => {
-            requestAnimationFrame(runAfterPaint);
-        });
     }, []);
 
     // Import Talent Points from URL

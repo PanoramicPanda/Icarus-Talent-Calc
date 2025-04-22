@@ -7,6 +7,27 @@ export interface ExportedTalentState {
     talentPoints: Record<string, Record<string, number>>; // treeKey -> talentName -> points
 }
 
+export function cleanTalentPoints(talentPoints: Record<string, Record<string, number>>): Record<string, Record<string, number>> {
+    const cleaned: Record<string, Record<string, number>> = {};
+
+    for (const [treeKey, talents] of Object.entries(talentPoints)) {
+        const filteredTalents: Record<string, number> = {};
+
+        for (const [talentName, points] of Object.entries(talents)) {
+            if (points > 0) {
+                filteredTalents[talentName] = points;
+            }
+        }
+
+        if (Object.keys(filteredTalents).length > 0) {
+            cleaned[treeKey] = filteredTalents;
+        }
+    }
+
+    return cleaned;
+}
+
+
 // Converts flat structure to nested by tree
 export function nestTalentPoints(talentPoints: Record<string, number>): Record<string, Record<string, number>> {
     const nested: Record<string, Record<string, number>> = {};
@@ -25,18 +46,19 @@ export function nestTalentPoints(talentPoints: Record<string, number>): Record<s
 
 // Export to JSON string
 export function exportToJson(talentPoints: Record<string, Record<string, number>>): string {
+    const cleanedPoints = cleanTalentPoints(talentPoints);
     const exportData: ExportedTalentState = {
         gameVersion: GAME_VERSION,
-        talentPoints
+        talentPoints: cleanedPoints
     };
     return JSON.stringify(exportData, null, 2);
 }
 
-// Export to compressed query param
 export function exportToQueryParam(talentPoints: Record<string, Record<string, number>>): string {
+    const cleanedPoints = cleanTalentPoints(talentPoints);
     const data: ExportedTalentState = {
         gameVersion: GAME_VERSION,
-        talentPoints
+        talentPoints: cleanedPoints
     };
     const json = JSON.stringify(data);
     return compressToEncodedURIComponent(json);
