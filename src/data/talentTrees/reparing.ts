@@ -13,7 +13,7 @@ export const repairingTree = {
                 [{value: -25, desc: "+{0}% Wear Rate of Fire Whackers", category: "Item"}],
                 [{value: -50, desc: "+{0}% Wear Rate of Fire Whackers", category: "Item"}],
             ],
-            position: [3, 4],
+            position: [3, 6.0],
             imageName: "Repairing/Talent_Repairing_HardyFlapper",
         },
         {
@@ -26,7 +26,7 @@ export const repairingTree = {
                 [{value: 20, desc: "+{0}% Fire Extinguishing Speed", category: "Fire"}],
                 [{value: 30, desc: "+{0}% Fire Extinguishing Speed", category: "Fire"}],
             ],
-            position: [1, 4],
+            position: [1, 6.0],
             imageName: "Repairing/Talent_Repairing_FastFlapping",
         },
         {
@@ -37,7 +37,7 @@ export const repairingTree = {
             benefits: [
                 [{value: 10, desc: "+{0}% Movement Speed with a Fire Whacker", category: "Movement"}],
             ],
-            position: [1, 2],
+            position: [1, 4.0],
             imageName: "Repairing/Talent_Repairing_FirstResponder",
         },
         {
@@ -50,7 +50,7 @@ export const repairingTree = {
                 [{value: -30, desc: "+{0}% Repair Tool Action Hold Time", category: "Building"}],
                 [{value: -50, desc: "+{0}% Repair Tool Action Hold Time", category: "Building"}],
             ],
-            position: [1, 0],
+            position: [1, 0.0],
             imageName: "Repairing/Talent_Repairing_HammerTime",
         },
         {
@@ -62,7 +62,7 @@ export const repairingTree = {
                 [{value: -25, desc: "+{0}% Wear Rate of Hammers", category: "Item"}],
                 [{value: -50, desc: "+{0}% Wear Rate of Hammers", category: "Item"}],
             ],
-            position: [3, 0],
+            position: [3, 0.0],
             imageName: "Repairing/Talent_Repairing_HardyHammer",
         },
         {
@@ -73,7 +73,7 @@ export const repairingTree = {
             benefits: [
                 [{value: 25, desc: "+{0}% Chance to Repair a Building Piece Instantly", category: "Building"}],
             ],
-            position: [4, 1],
+            position: [4, 2.0],
             imageName: "Repairing/Talent_Repairing_WithOneSwing",
         },
         {
@@ -85,7 +85,7 @@ export const repairingTree = {
                 [{value: 15, desc: "+{0}% Stamina Regeneration with a Fire Whacker Equipped", category: "Stamina"}],
                 [{value: 30, desc: "+{0}% Stamina Regeneration with a Fire Whacker Equipped", category: "Stamina"}],
             ],
-            position: [3, 2],
+            position: [3, 4.0],
             imageName: "Repairing/Talent_Repairing_FlapperEndurance",
         },
         {
@@ -96,7 +96,7 @@ export const repairingTree = {
             benefits: [
                 [{value: 10, desc: "Extinguished Building Pieces have Reduced Burn Chance for {0} seconds", category: "Building"}],
             ],
-            position: [4, 3],
+            position: [4, 5.0],
             imageName: "Repairing/Talent_Repairing_LingeringExtinguish",
         },
         {
@@ -107,7 +107,7 @@ export const repairingTree = {
             benefits: [
                 [{value: 1, desc: "Can Throw Your Fire Whacker", category: "Misc"}],
             ],
-            position: [5, 3],
+            position: [5, 5.0],
             imageName: "Repairing/Talent_Repairing_HardToReachPlaces",
         },
         {
@@ -118,7 +118,7 @@ export const repairingTree = {
             benefits: [
                 [{value: 10, desc: "Repaired Building Pieces have Increased Wind Damage Resistance for {0} seconds", category: "Building"}],
             ],
-            position: [4, 0],
+            position: [4, 0.0],
             imageName: "Repairing/Talent_Repairing_BetterThanNew",
         },
         {
@@ -130,7 +130,7 @@ export const repairingTree = {
                 [{value: -10, desc: "+{0}% Repair Tool Action Hold Time", category: "Building"}],
                 [{value: -25, desc: "+{0}% Repair Tool Action Hold Time", category: "Building"}],
             ],
-            position: [5, 0],
+            position: [5, 0.0],
             imageName: "Repairing/Talent_Repairing_HammerTime",
         },
         {
@@ -143,7 +143,7 @@ export const repairingTree = {
                 [{value: 15, desc: "+{0}% Stamina Regeneration", category: "Stamina"}],
                 [{value: 30, desc: "+{0}% Stamina Regeneration", category: "Stamina"}],
             ],
-            position: [0, 1],
+            position: [0, 2.0],
             imageName: "Bows/Talent_Bow_EasyDraw",
         },
         {
@@ -155,9 +155,27 @@ export const repairingTree = {
                 [{value: 10, desc: "+{0}% Damage vs Creature Bones", category: "Generic Damage"}],
                 [{value: 20, desc: "+{0}% Damage vs Creature Bones", category: "Generic Damage"}],
             ],
-            position: [2, 1],
+            position: [2, 2.0],
             imageName: "Repairing/Talent_Repairing_BluntForceTrauma",
         },
     ]),
-    fullTracks: [] as FullTrack[]
+    fullTracks: [
+        { start: "Speedy Whacks", end: "Hardy Whacker" },
+        { start: "Ready To Work", path: [[0, 6.0]], end: "Speedy Whacks" },
+        { start: "Ready To Work", path: [[0, 4.0]], end: "First Responder" },
+        { start: "Ready To Work", path: [[0, 0.0]], end: "Hammer Time I" },
+        { start: "Hammer Time I", end: "Hardy Hammer" },
+        { start: "Boneshatter", path: [[2, 0.0]], end: "Hardy Hammer" },
+        { start: "Whacker Endurance", path: [[3, 2.0]], end: "With One Swing" },
+        { start: "Hardy Hammer", path: [[3, 2.0]], end: "With One Swing" },
+        { start: "First Responder", end: "Whacker Endurance" },
+        { start: "Boneshatter", path: [[2, 4.0]], end: "Whacker Endurance" },
+        { start: "Hardy Whacker", path: [[4, 6.0]], end: "Lingering Extinguishing" },
+        { start: "Whacker Endurance", path: [[4, 4.0]], end: "Lingering Extinguishing" },
+        { start: "Lingering Extinguishing", end: "Hard to Reach" },
+        { start: "Hardy Hammer", end: "Better Than New" },
+        { start: "Better Than New", end: "Hammer Time II" },
+        { start: "First Responder", path: [[2, 4.0]], end: "Boneshatter" },
+        { start: "Hammer Time I", path: [[2, 0.0]], end: "Boneshatter" },
+    ] as FullTrack[],
 };

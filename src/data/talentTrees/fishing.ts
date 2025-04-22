@@ -12,7 +12,7 @@ export const fishingTree = {
                 [{value: -20, desc: "+{0}% Crafted Fishing Rod Resource Cost", category: "Fishing"}],
                 [{value: -40, desc: "+{0}% Crafted Fishing Rod Resource Cost", category: "Fishing"}],
             ],
-            position: [0, 3],
+            position: [0, 2.0],
             imageName: "Fishing/Talent_AnglersTechnique",
         },
         {
@@ -24,7 +24,7 @@ export const fishingTree = {
                 [{value: -15, desc: "+{0}% Speed of Fish while Fishing", category: "Fishing"}],
                 [{value: -30, desc: "+{0}% Speed of Fish while Fishing", category: "Fishing"}],
             ],
-            position: [1, 0],
+            position: [1, 0.0],
             imageName: "Fishing/Talent_CallersWater",
         },
         {
@@ -35,7 +35,7 @@ export const fishingTree = {
             benefits: [
                 [{value: 25, desc: "+{0} Physical Resistance while Fishing", category: "Fishing"}],
             ],
-            position: [2, 0],
+            position: [2, 0.0],
             imageName: "Fishing/Talent_FishFlu",
         },
         {
@@ -47,7 +47,7 @@ export const fishingTree = {
                 [{value: 5, desc: "+{0}% Exposure Resistance", category: "Exposure"}],
                 [{value: 10, desc: "+{0}% Exposure Resistance", category: "Exposure"}],
             ],
-            position: [4, 0],
+            position: [4, 0.0],
             imageName: "Fishing/Talent_NiceDayForFishinAintIt",
         },
         {
@@ -60,7 +60,7 @@ export const fishingTree = {
                 [{value: -20, desc: "+{0}% Wear Rate of Lures while Fishing", category: "Fishing"}],
                 [{value: -30, desc: "+{0}% Wear Rate of Lures while Fishing", category: "Fishing"}],
             ],
-            position: [3, 5],
+            position: [3, 3.5],
             imageName: "Fishing/Talent_EfficientFisher",
         },
         {
@@ -71,7 +71,7 @@ export const fishingTree = {
             benefits: [
                 [{value: 10, desc: "+{0}% Weight of Caught Fish", category: "Misc"}],
             ],
-            position: [5, 3],
+            position: [5, 2.0],
             imageName: "Fishing/Talent_HeftCatch",
         },
         {
@@ -82,7 +82,7 @@ export const fishingTree = {
             benefits: [
                 [{value: 10, desc: "+{0}% Length of Caught Fish", category: "Misc"}],
             ],
-            position: [5, 7],
+            position: [5, 5.0],
             imageName: "Fishing/Talent_ThatsABigOne",
         },
         {
@@ -93,7 +93,7 @@ export const fishingTree = {
             benefits: [
                 [{value: -25, desc: "+{0}% Carry Weight of Fish", category: "Fishing"}],
             ],
-            position: [6, 5],
+            position: [6, 3.5],
             imageName: "Fishing/Talent_FishersHaul",
         },
         {
@@ -105,7 +105,7 @@ export const fishingTree = {
                 [{value: -10, desc: "+{0}% Oxygen Consumption", category: "Upkeep"}],
                 [{value: -15, desc: "+{0}% Oxygen Consumption", category: "Upkeep"}],
             ],
-            position: [6, 2],
+            position: [6, 1.5],
             imageName: "Fishing/Talent_SteadyBreathing",
         },
         {
@@ -117,7 +117,7 @@ export const fishingTree = {
                 [{value: -10, desc: "+{0}% Water Consumption", category: "Upkeep"}],
                 [{value: -15, desc: "+{0}% Water Consumption", category: "Upkeep"}],
             ],
-            position: [6, 8],
+            position: [6, 5.5],
             imageName: "Fishing/Talent_OneWithTheWater",
         },
         {
@@ -128,7 +128,7 @@ export const fishingTree = {
             benefits: [
                 [{value: 5, desc: "+{0}% caught Saltwater Fish Quality", category: "Misc"}],
             ],
-            position: [7, 1],
+            position: [7, 0.5],
             imageName: "Fishing/Talent_SaltiestCatch",
         },
         {
@@ -139,7 +139,7 @@ export const fishingTree = {
             benefits: [
                 [{value: 5, desc: "+{0}% caught Freshwater Fish Quality", category: "Misc"}],
             ],
-            position: [7, 9],
+            position: [7, 6.5],
             imageName: "Fishing/Talent_FreshestCatch",
         },
         {
@@ -151,7 +151,7 @@ export const fishingTree = {
                 [{value: 15, desc: "+{0}% Fish Food Modifier Effectiveness", category: "Fishing"}],
                 [{value: 30, desc: "+{0}% Fish Food Modifier Effectiveness", category: "Fishing"}],
             ],
-            position: [8, 6],
+            position: [8, 4.5],
             imageName: "Fishing/Talent_Pescatarian",
         },
         {
@@ -162,7 +162,7 @@ export const fishingTree = {
             benefits: [
                 [{value: 10, desc: "+{0}% Quality of Caught Fish while in a Storm", category: "Misc"}],
             ],
-            position: [8, 4],
+            position: [8, 2.5],
             imageName: "Fishing/Talent_DeadliestCatch",
         },
         {
@@ -175,7 +175,7 @@ export const fishingTree = {
                 [{value: 15, desc: "+{0}% Fishing Capture Zone Size", category: "Fishing"}],
                 [{value: 30, desc: "+{0}% Fishing Capture Zone Size", category: "Fishing"}],
             ],
-            position: [9, 5],
+            position: [9, 3.5],
             imageName: "Fishing/Talent_GoldenZone",
         },
         {
@@ -187,7 +187,7 @@ export const fishingTree = {
                 [{value: 10, desc: "+{0}% chance to catch Uncommon Fish", category: "Misc"}, {value: -2, desc: "+{0}% chance to catch Common Fish", category: "Misc"}],
                 [{value: 25, desc: "+{0}% chance to catch Uncommon Fish", category: "Misc"}, {value: -5, desc: "+{0}% chance to catch Common Fish", category: "Misc"}],
             ],
-            position: [10, 7],
+            position: [10, 5.0],
             imageName: "Fishing/Talent_MediumGameFisher",
         },
         {
@@ -199,7 +199,7 @@ export const fishingTree = {
                 [{value: 10, desc: "+{0}% chance to catch Rare Fish", category: "Misc"}, {value: 10, desc: "+{0}% chance to catch Unique Fish", category: "Misc"}, {value: -2, desc: "+{0}% chance to catch Common Fish", category: "Misc"}],
                 [{value: 20, desc: "+{0}% chance to catch Rare Fish", category: "Misc"}, {value: 20, desc: "+{0}% chance to catch Unique Fish", category: "Misc"}, {value: -5, desc: "+{0}% chance to catch Common Fish", category: "Misc"}],
             ],
-            position: [10, 3],
+            position: [10, 2.0],
             imageName: "Fishing/Talent_BigGameFisher",
         },
         {
@@ -211,9 +211,29 @@ export const fishingTree = {
                 [{value: 10, desc: "+{0}% Fishing Capture Zone Size", category: "Fishing"}],
                 [{value: 20, desc: "+{0}% Fishing Capture Zone Size", category: "Fishing"}],
             ],
-            position: [0, 7],
+            position: [0, 5.0],
             imageName: "Fishing/Talent_NaturalAngler",
         },
     ]),
-    fullTracks: [] as FullTrack[]
+    fullTracks: [
+        { start: "Angler's Technique", path: [], end: "Calmer Waters" },
+        { start: "Calmer Waters", end: "Fish Fu" },
+        { start: "Fish Fu", end: "Nice day for fishing ain't it?" },
+        { start: "Natural Angler", path: [[0, 3.5]], end: "Efficient Fisher" },
+        { start: "Angler's Technique", path: [[0, 3.5]], end: "Efficient Fisher" },
+        { start: "Efficient Fisher", path: [[3, 2.0]], end: "Hefty catch" },
+        { start: "Efficient Fisher", path: [[3, 5.0]], end: "That's a big one" },
+        { start: "Hefty catch", path: [[5, 3.5]], end: "Fisher's Haul" },
+        { start: "That's a big one", path: [[5, 3.5]], end: "Fisher's Haul" },
+        { start: "Fisher's Haul", end: "Steady Breathing" },
+        { start: "Fisher's Haul", end: "One with the water" },
+        { start: "Steady Breathing", path: [[6, 0.5]], end: "Saltiest Catch" },
+        { start: "One with the water", path: [[6, 6.5]], end: "Freshest Catch" },
+        { start: "Fisher's Haul", path: [[6, 4.5]], end: "Pescatarian" },
+        { start: "Fisher's Haul", path: [[6, 2.5]], end: "Deadliest Catch" },
+        { start: "Deadliest Catch", path: [[8, 3.5]], end: "The Golden Zone" },
+        { start: "Pescatarian", path: [[8, 3.5]], end: "The Golden Zone" },
+        { start: "The Golden Zone", path: [[9, 5.0]], end: "Medium Game Fisher" },
+        { start: "The Golden Zone", path: [[9, 2.0]], end: "Big Game Fisher" },
+    ] as FullTrack[],
 };

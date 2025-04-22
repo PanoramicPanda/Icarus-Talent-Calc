@@ -13,7 +13,7 @@ export const buildingTree = {
                 [{value: -15, desc: "+{0}% Carry Weight of Wood Building Pieces", category: "Weight"}],
                 [{value: -20, desc: "+{0}% Carry Weight of Wood Building Pieces", category: "Weight"}],
             ],
-            position: [1, 3],
+            position: [1, 6.0],
             imageName: "Building/Talent_Building_WoodStorage",
         },
         {
@@ -26,7 +26,7 @@ export const buildingTree = {
                 [{value: -20, desc: "+{0}% Carry Weight of Stone Building Pieces", category: "Weight"}],
                 [{value: -40, desc: "+{0}% Carry Weight of Stone Building Pieces", category: "Weight"}],
             ],
-            position: [2, 3],
+            position: [2, 6.0],
             imageName: "Building/Talent_Building_StoneCarrying",
         },
         {
@@ -39,7 +39,7 @@ export const buildingTree = {
                 [{value: -15, desc: "+{0}% Carry Weight of Concrete Building Pieces", category: "Weight"}],
                 [{value: -20, desc: "+{0}% Carry Weight of Concrete Building Pieces", category: "Weight"}],
             ],
-            position: [3, 3],
+            position: [3, 6.0],
             imageName: "Building/Talent_Building_ConcreteCarrying",
         },
         {
@@ -51,7 +51,7 @@ export const buildingTree = {
                 [{value: -10, desc: "+{0}% Resource Cost of Crafted Wood Building Pieces", category: "Crafting"}],
                 [{value: -25, desc: "+{0}% Resource Cost of Crafted Wood Building Pieces", category: "Crafting"}],
             ],
-            position: [1, 1],
+            position: [1, 2.0],
             imageName: "Building/Talent_Building_DiscountWoodBuilding",
         },
         {
@@ -63,7 +63,7 @@ export const buildingTree = {
                 [{value: -10, desc: "+{0}% Resource Cost of Crafted Stone Building Pieces", category: "Crafting"}],
                 [{value: -25, desc: "+{0}% Resource Cost of Crafted Stone Building Pieces", category: "Crafting"}],
             ],
-            position: [2, 1],
+            position: [2, 2.0],
             imageName: "Building/Talent_Building_DiscountStoneBuilding",
         },
         {
@@ -75,7 +75,7 @@ export const buildingTree = {
                 [{value: -10, desc: "+{0}% Resource Cost of Crafted Concrete Building Pieces", category: "Crafting"}],
                 [{value: -25, desc: "+{0}% Resource Cost of Crafted Concrete Building Pieces", category: "Crafting"}],
             ],
-            position: [3, 1],
+            position: [3, 2.0],
             imageName: "Building/Talent_Building_DiscountConcreteBuilding",
         },
         {
@@ -86,7 +86,7 @@ export const buildingTree = {
             benefits: [
                 [{value: 25, desc: "+{0}% Crafting Speed of Deployable Items", category: "Crafting"}],
             ],
-            position: [5, 3],
+            position: [5, 6.0],
             imageName: "Building/Talent_Building_DeployableEngineering",
         },
         {
@@ -95,10 +95,10 @@ export const buildingTree = {
             rank: 1,
             prerequisites: [],
             benefits: [
-                [{value: 3, desc: "+{0} Extra Space in crafted Deployables", category: "Misc"}],
-                [{value: 5, desc: "+{0} Extra Space in crafted Deployables", category: "Misc"}],
+                [{value: 3, desc: "+{0} Generic Inventory Slots", category: "Misc"}],
+                [{value: 5, desc: "+{0} Generic Inventory Slots", category: "Misc"}],
             ],
-            position: [4, 2],
+            position: [4, 4.0],
             imageName: "Building/Talent_Building_ExtraSpace",
         },
         {
@@ -107,9 +107,9 @@ export const buildingTree = {
             rank: 4,
             prerequisites: ["Weatherproof Cladding"],
             benefits: [
-                [{value: -25, desc: "-{0}% Chance for Crafted Wood Buildables to set Fire", category: "Misc"}],
+                [{value: -25, desc: "{0}% chance to set Fire", category: "Fire"}],
             ],
-            position: [3, 0],
+            position: [3, 0.0],
             imageName: "Building/Talent_Building_FireproofingSealant",
         },
         {
@@ -118,9 +118,9 @@ export const buildingTree = {
             rank: 3,
             prerequisites: ["Fortified Wood"],
             benefits: [
-                [{value: 25, desc: "+{0}% Wind Resistance for Crafted Wood Buildables", category: "Misc"}],
+                [{value: 25, desc: "+{0}% Wind Resistance", category: "Resistance"}],
             ],
-            position: [2, 0],
+            position: [2, 0.0],
             imageName: "Building/Talent_Building_WeatherProofCladding",
         },
         {
@@ -129,9 +129,9 @@ export const buildingTree = {
             rank: 3,
             prerequisites: ["Deployable Engineering"],
             benefits: [
-                [{value: 25, desc: "+{0}% Damage of Crafted Hedgehogs", category: "Misc"}],
+                [{value: 25, desc: "+{0}% Damage of Crafted Hedgehogs", category: "Deployable"}],
             ],
-            position: [6, 3],
+            position: [6, 6.0],
             imageName: "Building/Talent_Building_EnhancedDefences",
         },
         {
@@ -140,11 +140,11 @@ export const buildingTree = {
             rank: 3,
             prerequisites: ["Discount Rod"],
             benefits: [
-                [{value: 100, desc: "+{0}% Durability of Crafted Lightning Rods", category: "Misc"}],
-                [{value: 300, desc: "+{0}% Durability of Crafted Lightning Rods", category: "Misc"}],
-                [{value: 500, desc: "+{0}% Durability of Crafted Lightning Rods", category: "Misc"}],
+                [{value: 100, desc: "+{0}% Maximum Health for Lightning Rods", category: "Crafting"}],
+                [{value: 300, desc: "+{0}% Maximum Health for Lightning Rods", category: "Crafting"}],
+                [{value: 500, desc: "+{0}% Maximum Health for Lightning Rods", category: "Crafting"}],
             ],
-            position: [6, 1],
+            position: [6, 2.0],
             imageName: "Building/Talent_Building_FortifiedRod",
         },
         {
@@ -155,7 +155,7 @@ export const buildingTree = {
             benefits: [
                 [{value: -50, desc: "+{0}% Resource Cost of Crafted Lightning Rods", category: "Crafting"}],
             ],
-            position: [5, 1],
+            position: [5, 2.0],
             imageName: "Building/Talent_Building_DiscountedRod",
         },
         {
@@ -164,10 +164,10 @@ export const buildingTree = {
             rank: 2,
             prerequisites: ["Discount Wood"],
             benefits: [
-                [{value: 10, desc: "+{0}% Durability of Crafted Wood Buildables", category: "Misc"}],
-                [{value: 20, desc: "+{0}% Durability of Crafted Wood Buildables", category: "Misc"}],
+                [{value: 10, desc: "+{0}% Maximum Health for Crafted Wood Buildables", category: "Crafting"}],
+                [{value: 20, desc: "+{0}% Maximum Health for Crafted Wood Buildables", category: "Crafting"}],
             ],
-            position: [1, 0],
+            position: [1, 0.0],
             imageName: "Building/Talent_Building_FortifiedWood",
         },
         {
@@ -176,10 +176,10 @@ export const buildingTree = {
             rank: 1,
             prerequisites: ["Extra Space I"],
             benefits: [
-                [{value: 10, desc: "+{0}% Smelting Speed of Crafted Furnaces", category: "Misc"}],
-                [{value: 15, desc: "+{0}% Smelting Speed of Crafted Furnaces", category: "Misc"}],
+                [{value: 10, desc: "+{0}% Smelting Speed", category: "Crafting"}],
+                [{value: 15, desc: "+{0}% Smelting Speed", category: "Crafting"}],
             ],
-            position: [5, 2],
+            position: [5, 4.0],
             imageName: "Building/Talent_Building_StokingTheFlames",
         },
         {
@@ -192,7 +192,7 @@ export const buildingTree = {
                 [{value: -5, desc: "+{0}% Carry Weight of Wood Building Pieces", category: "Weight"}],
                 [{value: -8, desc: "+{0}% Carry Weight of Wood Building Pieces", category: "Weight"}],
             ],
-            position: [1, 4],
+            position: [1, 8.0],
             imageName: "Building/Talent_Building_WoodStorage2",
         },
         {
@@ -205,7 +205,7 @@ export const buildingTree = {
                 [{value: -10, desc: "+{0}% Carry Weight of Stone Building Pieces", category: "Weight"}],
                 [{value: -15, desc: "+{0}% Carry Weight of Stone Building Pieces", category: "Weight"}],
             ],
-            position: [2, 4],
+            position: [2, 8.0],
             imageName: "Building/Talent_Building_StoneCarrying2",
         },
         {
@@ -218,7 +218,7 @@ export const buildingTree = {
                 [{value: -15, desc: "+{0}% Carry Weight of Concrete Building Pieces", category: "Weight"}],
                 [{value: -20, desc: "+{0}% Carry Weight of Concrete Building Pieces", category: "Weight"}],
             ],
-            position: [3, 4],
+            position: [3, 8.0],
             imageName: "Building/Talent_Building_ConcreteCarrying2",
         },
         {
@@ -227,10 +227,10 @@ export const buildingTree = {
             rank: 3,
             prerequisites: ["Stoking the Flames"],
             benefits: [
-                [{value: 3, desc: "+{0} Extra Space in crafted Deployables", category: "Misc"}],
-                [{value: 5, desc: "+{0} Extra Space in crafted Deployables", category: "Misc"}],
+                [{value: 3, desc: "+{0} Generic Inventory Slots", category: "Misc"}],
+                [{value: 5, desc: "+{0} Generic Inventory Slots", category: "Misc"}],
             ],
-            position: [6, 2],
+            position: [6, 4.0],
             imageName: "Building/Talent_Building_ExtraSpace2",
         },
         {
@@ -242,7 +242,7 @@ export const buildingTree = {
                 [{value: -10, desc: "+{0}% Resource Cost of Crafted Thatch Building Pieces", category: "Crafting"}],
                 [{value: -25, desc: "+{0}% Resource Cost of Crafted Thatch Building Pieces", category: "Crafting"}],
             ],
-            position: [0, 1],
+            position: [0, 2.0],
             imageName: "Building/Talent_Building_DiscountWoodBuilding",
         },
         {
@@ -254,9 +254,22 @@ export const buildingTree = {
                 [{value: -10, desc: "+{0}% Resource Cost of Crafted Glass Building Pieces", category: "Crafting"}],
                 [{value: -25, desc: "+{0}% Resource Cost of Crafted Glass Building Pieces", category: "Crafting"}],
             ],
-            position: [4, 1],
+            position: [4, 2.0],
             imageName: "Building/Talent_Building_DiscountConcreteBuilding",
         },
     ]),
-    fullTracks: [] as FullTrack[]
+    fullTracks: [
+        { start: "Stoking the Flames", end: "Deployable Engineering" },
+        { start: "Weatherproof Cladding", end: "Fireproofing Sealant" },
+        { start: "Fortified Wood", end: "Weatherproof Cladding" },
+        { start: "Deployable Engineering", end: "Enhanced Defences" },
+        { start: "Discount Rod", end: "Fortified Rod" },
+        { start: "Stoking the Flames", end: "Discount Rod" },
+        { start: "Discount Wood", end: "Fortified Wood" },
+        { start: "Extra Space I", end: "Stoking the Flames" },
+        { start: "Wood Hauling", end: "Wood Hauling II" },
+        { start: "Stone Hauling I", end: "Stone Hauling II" },
+        { start: "Concrete Hauling", end: "Concrete Hauling II" },
+        { start: "Stoking the Flames", end: "Extra Space II" },
+    ] as FullTrack[],
 };

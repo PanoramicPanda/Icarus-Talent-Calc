@@ -11,7 +11,7 @@ export const resourcesTree = {
             benefits: [
                 [{value: 50, desc: "+{0}% Falling Tree Resistance", category: "Resistance"}],
             ],
-            position: [5, 2],
+            position: [5, 2.0],
             imageName: "Exploration/Talent_Exploration_FriendOfTheTrees",
         },
         {
@@ -24,7 +24,7 @@ export const resourcesTree = {
                 [{value: 15, desc: "+{0}% Yield from Mining Stone", category: "Mining"}],
                 [{value: 20, desc: "+{0}% Yield from Mining Stone", category: "Mining"}],
             ],
-            position: [0, 4],
+            position: [0, 4.0],
             imageName: "Resources/Talent_Resources_StoneYield",
         },
         {
@@ -37,7 +37,7 @@ export const resourcesTree = {
                 [{value: 8, desc: "{0}% chance to find additional Stone while Mining", category: "Mining"}],
                 [{value: 10, desc: "{0}% chance to find additional Stone while Mining", category: "Mining"}],
             ],
-            position: [2, 5],
+            position: [2, 5.0],
             imageName: "Resources/Talent_Resources_WasteNot",
         },
         {
@@ -50,7 +50,7 @@ export const resourcesTree = {
                 [{value: 20, desc: "{0}% chance to find additional Resources in Plants", category: "Generic Harvesting"}],
                 [{value: 30, desc: "{0}% chance to find additional Resources in Plants", category: "Generic Harvesting"}],
             ],
-            position: [1, 2],
+            position: [1, 2.0],
             imageName: "Resources/Talent_Resources_AllThGoodStuff",
         },
         {
@@ -63,7 +63,7 @@ export const resourcesTree = {
                 [{value: 10, desc: "+{0}% Yield from Felling Trees", category: "Felling"}],
                 [{value: 20, desc: "+{0}% Yield from Felling Trees", category: "Felling"}],
             ],
-            position: [0, 0],
+            position: [0, 0.0],
             imageName: "Resources/Talent_Resources_LumberYield",
         },
         {
@@ -74,7 +74,7 @@ export const resourcesTree = {
             benefits: [
                 [{value: 1, desc: "+{0}% to Instantly Break Mineral or Ore Deposits while Mining", category: "Mining"}],
             ],
-            position: [6, 4],
+            position: [6, 4.0],
             imageName: "Resources/Talent_Resources_LuckyStrike",
         },
         {
@@ -87,7 +87,7 @@ export const resourcesTree = {
                 [{value: 8, desc: "+{0}% Movement Speed while Carrying Exotics", category: "Modifiers"}],
                 [{value: 10, desc: "+{0}% Movement Speed while Carrying Exotics", category: "Modifiers"}],
             ],
-            position: [4, 7],
+            position: [4, 7.0],
             imageName: "Resources/Talent_Resources_ExoticSprinter",
         },
         {
@@ -98,7 +98,7 @@ export const resourcesTree = {
             benefits: [
                 [{value: 1, desc: "{0}% chance to Instantly Fell Trees", category: "Felling"}],
             ],
-            position: [6, 0],
+            position: [6, 0.0],
             imageName: "Resources/Talent_Resources_OutstandingLumberjack",
         },
         {
@@ -112,7 +112,7 @@ export const resourcesTree = {
                 [{value: 15, desc: "+{0}% Yield from Foraging", category: "Foraging"}],
                 [{value: 20, desc: "+{0}% Yield from Foraging", category: "Foraging"}],
             ],
-            position: [0, 2],
+            position: [0, 2.0],
             imageName: "Resources/Talent_Resources_SkilledPicker",
         },
         {
@@ -125,7 +125,7 @@ export const resourcesTree = {
                 [{value: 15, desc: "+{0}% Yield from Mining Oxite", category: "Mining"}],
                 [{value: 20, desc: "+{0}% Yield from Mining Oxite", category: "Mining"}],
             ],
-            position: [2, 3],
+            position: [2, 3.0],
             imageName: "Resources/Talent_Resources_OxygenThief",
         },
         {
@@ -139,7 +139,7 @@ export const resourcesTree = {
                 [{value: -15, desc: "+{0}% Carry Weight of Wood", category: "Weight"}],
                 [{value: -30, desc: "+{0}% Carry Weight of Wood", category: "Weight"}],
             ],
-            position: [3, 1],
+            position: [3, 1.0],
             imageName: "Resources/Talent_Resources_MobileTimber",
         },
         {
@@ -153,7 +153,7 @@ export const resourcesTree = {
                 [{value: -15, desc: "+{0}% Carry Weight of Stone", category: "Weight"}],
                 [{value: -25, desc: "+{0}% Carry Weight of Stone", category: "Weight"}],
             ],
-            position: [3, 4],
+            position: [3, 4.0],
             imageName: "Resources/Talent_Resources_MobileMasonry",
         },
         {
@@ -167,7 +167,7 @@ export const resourcesTree = {
                 [{value: -15, desc: "+{0}% Carry Weight of Exotics", category: "Weight"}],
                 [{value: -25, desc: "+{0}% Carry Weight of Exotics", category: "Weight"}],
             ],
-            position: [2, 7],
+            position: [2, 7.0],
             imageName: "Resources/Talent_Resources_ExoticStrongman",
         },
         {
@@ -180,7 +180,7 @@ export const resourcesTree = {
                 [{value: 15, desc: "+{0}% Yield from Mining Iron", category: "Mining"}],
                 [{value: 20, desc: "+{0}% Yield from Mining Iron", category: "Mining"}],
             ],
-            position: [4, 5],
+            position: [4, 5.0],
             imageName: "Resources/Talent_Resources_MetalMiner",
         },
         {
@@ -194,7 +194,7 @@ export const resourcesTree = {
                 [{value: -15, desc: "+{0}% Carry Weight of Ores", category: "Weight"}],
                 [{value: -25, desc: "+{0}% Carry Weight of Ores", category: "Weight"}],
             ],
-            position: [4, 3],
+            position: [4, 3.0],
             imageName: "Resources/Talent_Resources_MetallicLogistics",
         },
         {
@@ -208,7 +208,7 @@ export const resourcesTree = {
                 [{value: -15, desc: "+{0}% Over-Encumberance Penalty", category: "Weight"}],
                 [{value: -25, desc: "+{0}% Over-Encumberance Penalty", category: "Weight"}],
             ],
-            position: [1, 5],
+            position: [1, 5.0],
             imageName: "Resources/Talent_Resources_StrongBack",
         },
         {
@@ -221,7 +221,7 @@ export const resourcesTree = {
                 [{value: 10, desc: "+{0}% Weight Capacity", category: "Weight"}],
                 [{value: 20, desc: "+{0}% Weight Capacity", category: "Weight"}],
             ],
-            position: [0, 6],
+            position: [0, 6.0],
             imageName: "Resources/Talent_Resources_DensePacking",
         },
         {
@@ -232,7 +232,7 @@ export const resourcesTree = {
             benefits: [
                 [{value: 1, desc: "Wood is automatically gathered from chopping trees", category: "Felling"}],
             ],
-            position: [5, 0],
+            position: [5, 0.0],
             imageName: "Resources/Talent_Resources_EfficientLogsman",
         },
         {
@@ -243,7 +243,7 @@ export const resourcesTree = {
             benefits: [
                 [{value: 1, desc: "Unlocks the ability to turn wood into sticks", category: "Flag"}],
             ],
-            position: [1, 0],
+            position: [1, 0.0],
             imageName: "Resources/Talent_Resources_LuckyLumberjack",
         },
         {
@@ -256,33 +256,27 @@ export const resourcesTree = {
                 [{value: 10, desc: "+{0}% Weight Capacity", category: "Weight"}],
                 [{value: 20, desc: "+{0}% Weight Capacity", category: "Weight"}],
             ],
-            position: [3, 6],
+            position: [3, 6.0],
             imageName: "Resources/Talent_Resources_DensePacking",
         },
     ]),
     fullTracks: [
-        {start: "Lumber Yield", end: "Wood Breakdown"},
-        {start: "Wood Breakdown", path: [[3, 0]], end: "Movin' Wood"},
-        {start: "Wood Breakdown", path: [[3, 0]], end: "Seasoned Logsman"},
-        {start: "Seasoned Logsman", end: "Friend Of The Trees"},
-        {start: "Seasoned Logsman", end: "Peerless Lumberjack"},
-
-        {start: "Skilled Picker", end: "All The Good Stuff"},
-
-        {start: "Rock Star", path: [[2, 4]], end: "Oxygen Thief"},
-        {start: "Rock Star", path: [[2, 4]], end: "Waste Not"},
-        {start: "Rock Star", path: [[2, 4]], end: "Slinging Stone"},
-
-        {start: "Slinging Stone", path: [[4, 4]], end: "Unburdened"},
-        {start: "Slinging Stone", path: [[4, 4]], end: "Iron Miner"},
-
-        {start: "Unburdened", path: [[6, 3]], end: "Lucky Strike"},
-        {start: "Iron Miner", path: [[6, 5]], end: "Lucky Strike"},
-
-        {start: "Dense Packing I", path: [[1, 6]], end: "Carry On"},
-        {start: "Dense Packing I", path: [[2, 6]], end: "Exotic Power"},
-        {start: "Dense Packing I", end: "Dense Packing II"},
-
-        {start: "Dense Packing II", path: [[3, 7]], end: "Exotic Sprinter"},
+        { start: "Seasoned Logsman", end: "Friend Of The Trees" },
+        { start: "Rock Star", path: [[2, 4.0]], end: "Waste Not" },
+        { start: "Skilled Picker", end: "All The Good Stuff" },
+        { start: "Unburdened", path: [[6, 3.0]], end: "Lucky Strike" },
+        { start: "Iron Miner", path: [[6, 5.0]], end: "Lucky Strike" },
+        { start: "Dense Packing II", path: [[3, 7.0]], end: "Exotic Sprinter" },
+        { start: "Seasoned Logsman", end: "Peerless Lumberjack" },
+        { start: "Rock Star", path: [[2, 4.0]], end: "Oxygen Thief" },
+        { start: "Wood Breakdown", path: [[3, 0.0]], end: "Movin' Wood" },
+        { start: "Rock Star", end: "Slinging Stone" },
+        { start: "Dense Packing I", path: [[2, 6.0]], end: "Exotic Power" },
+        { start: "Slinging Stone", path: [[4, 4.0]], end: "Iron Miner" },
+        { start: "Slinging Stone", path: [[4, 4.0]], end: "Unburdened" },
+        { start: "Dense Packing I", path: [[1, 6.0]], end: "Carry On" },
+        { start: "Wood Breakdown", end: "Seasoned Logsman" },
+        { start: "Lumber Yield", end: "Wood Breakdown" },
+        { start: "Dense Packing I", end: "Dense Packing II" },
     ] as FullTrack[],
 };

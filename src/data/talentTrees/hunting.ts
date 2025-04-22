@@ -11,7 +11,7 @@ export const huntingTree = {
             benefits: [
                 [{value: 1, desc: "Double Yield from Skinning Baby Animals", category: "Butchery"}],
             ],
-            position: [8, 3],
+            position: [8, 3.0],
             imageName: "Hunting/Talent_Hunting_ColdHearted",
         },
         {
@@ -24,7 +24,7 @@ export const huntingTree = {
                 [{value: 25, desc: "+{0} Maximum Stamina", category: "Stamina"}],
                 [{value: 40, desc: "+{0} Maximum Stamina", category: "Stamina"}],
             ],
-            position: [0, 2],
+            position: [0, 2.0],
             imageName: "Hunting/Talent_Hunting_ChaseEmDown",
         },
         {
@@ -36,7 +36,7 @@ export const huntingTree = {
                 [{value: 10, desc: "+{0}% Yield from Skinning Leather", category: "Hunting"}],
                 [{value: 20, desc: "+{0}% Yield from Skinning Leather", category: "Hunting"}],
             ],
-            position: [4, 3],
+            position: [4, 3.0],
             imageName: "Hunting/Talent_Hunting_CarefulSkinner",
         },
         {
@@ -47,7 +47,7 @@ export const huntingTree = {
             benefits: [
                 [{value: 1, desc: "Grants access to Arctic Armor blueprints", category: "Flag"}],
             ],
-            position: [8, 7],
+            position: [8, 6.0],
             imageName: "Hunting/Talent_Hunting_PolarBearArmour",
         },
         {
@@ -58,7 +58,7 @@ export const huntingTree = {
             benefits: [
                 [{value: 1, desc: "Small Creatures are Highlighted when Aiming", category: "Hunting"}],
             ],
-            position: [3, 1],
+            position: [3, 1.0],
             imageName: "Hunting/Talent_Hunting_SmallAnimalSenses",
         },
         {
@@ -69,7 +69,7 @@ export const huntingTree = {
             benefits: [
                 [{value: 1, desc: "Medium Creatures are Highlighted when Aiming", category: "Hunting"}],
             ],
-            position: [4, 1],
+            position: [4, 1.0],
             imageName: "Hunting/Talent_Hunting_MediumAnimalSense",
         },
         {
@@ -80,7 +80,7 @@ export const huntingTree = {
             benefits: [
                 [{value: 1, desc: "Large Creatures are Highlighted when Aiming", category: "Hunting"}],
             ],
-            position: [5, 0],
+            position: [5, 0.0],
             imageName: "Hunting/Talent_Hunting_LargeAnimalSenses",
         },
         {
@@ -93,7 +93,7 @@ export const huntingTree = {
                 [{value: 5, desc: "+{0}% Crouching Movement Speed", category: "Movement"}],
                 [{value: 10, desc: "+{0}% Crouching Movement Speed", category: "Movement"}],
             ],
-            position: [0, 4],
+            position: [0, 4.0],
             imageName: "Hunting/Talent_Hunting_SwiftStalker",
         },
         {
@@ -106,7 +106,7 @@ export const huntingTree = {
                 [{value: -10, desc: "+{0}% Perceived Threat while Stealthed", category: "Stealth"}],
                 [{value: -15, desc: "+{0}% Perceived Threat while Stealthed", category: "Stealth"}],
             ],
-            position: [2, 6],
+            position: [2, 5.0],
             imageName: "Hunting/Talent_Hunting_WithoutASound",
         },
         {
@@ -117,7 +117,7 @@ export const huntingTree = {
             benefits: [
                 [{value: 5, desc: "+{0}% Movement Speed while Carrying", category: "Modifiers"}],
             ],
-            position: [1, 1],
+            position: [1, 1.0],
             imageName: "Hunting/Talent_Hunting_StrongShoulders",
         },
         {
@@ -128,7 +128,7 @@ export const huntingTree = {
             benefits: [
                 [{value: 25, desc: "+{0}% Yield from Butchering Animals", category: "Butchery"}],
             ],
-            position: [0, 0],
+            position: [0, 0.0],
             imageName: "Hunting/Talent_Hunting_SkilledButcher",
         },
         {
@@ -139,7 +139,7 @@ export const huntingTree = {
             benefits: [
                 [{value: 15, desc: "+{0}% Yield from Creature Bones", category: "Hunting"}],
             ],
-            position: [0, 7],
+            position: [0, 6.0],
             imageName: "Hunting/Talent_Hunting_BoneCollector",
         },
         {
@@ -150,7 +150,7 @@ export const huntingTree = {
             benefits: [
                 [{value: 1, desc: "Grants access to Ghillie Armor blueprints", category: "Flag"}],
             ],
-            position: [3, 7],
+            position: [3, 6.0],
             imageName: "Hunting/Talent_Hunting_GillieArmour",
         },
         {
@@ -161,7 +161,7 @@ export const huntingTree = {
             benefits: [
                 [{value: 1, desc: "Trigger 5 seconds of increased Stamina Regeneration when Damaged", category: "Modifiers"}],
             ],
-            position: [1, 6],
+            position: [1, 5.0],
             imageName: "Hunting/Talent_Hunting_QuickGetaway",
         },
         {
@@ -172,7 +172,7 @@ export const huntingTree = {
             benefits: [
                 [{value: 1, desc: "Unlocks the blueprint to turn leather into rope on Character", category: "Flag"}],
             ],
-            position: [1, 3],
+            position: [1, 3.0],
             imageName: "Cooking/Talent_Cooking_BlueprintAdvancedFoodRecipe",
         },
         {
@@ -184,7 +184,7 @@ export const huntingTree = {
                 [{value: 10, desc: "+{0}% Yield from Butchering Animals", category: "Butchery"}],
                 [{value: 25, desc: "+{0}% Yield from Butchering Animals", category: "Butchery"}],
             ],
-            position: [5, 5],
+            position: [5, 4.5],
             imageName: "Hunting/Talent_Hunting_SkilledButcher2",
         },
         {
@@ -196,7 +196,7 @@ export const huntingTree = {
                 [{value: 8, desc: "+{0}% Yield from Creature Bones", category: "Hunting"}],
                 [{value: 15, desc: "+{0}% Yield from Creature Bones", category: "Hunting"}],
             ],
-            position: [6, 1],
+            position: [6, 1.0],
             imageName: "Hunting/Talent_Hunting_BoneCollector2",
         },
         {
@@ -207,7 +207,7 @@ export const huntingTree = {
             benefits: [
                 [{value: 1, desc: "Can see Creature Alert Level and Health", category: "Hunting"}],
             ],
-            position: [2, 0],
+            position: [2, 0.0],
             imageName: "Hunting/Talent_Hunting_HealthBars",
         },
         {
@@ -220,7 +220,7 @@ export const huntingTree = {
                 [{value: 25, desc: "+{0} Maximum Stamina", category: "Stamina"}],
                 [{value: 40, desc: "+{0} Maximum Stamina", category: "Stamina"}],
             ],
-            position: [6, 5],
+            position: [6, 4.5],
             imageName: "Hunting/Talent_Hunting_ChaseEmDown",
         },
         {
@@ -231,7 +231,7 @@ export const huntingTree = {
             benefits: [
                 [{value: 1, desc: "Can see World Bosses on the Map", category: "Map"}],
             ],
-            position: [7, 5],
+            position: [7, 4.5],
             imageName: "Hunting/Talent_Hunting_RefinedGhillerArmour",
         },
         {
@@ -244,7 +244,7 @@ export const huntingTree = {
                 [{value: -20, desc: "+{0}% Wear Rate of Knives while Skinning", category: "Skinning"}],
                 [{value: -40, desc: "+{0}% Wear Rate of Knives while Skinning", category: "Skinning"}],
             ],
-            position: [3, 3],
+            position: [3, 3.0],
             imageName: "Hunting/Talent_Hunting_TrainedHunter",
         },
         {
@@ -255,7 +255,7 @@ export const huntingTree = {
             benefits: [
                 [{value: 20, desc: "+{0}% Chance to Instantly Gather Bone", category: "Skinning"}],
             ],
-            position: [7, 1],
+            position: [7, 1.0],
             imageName: "Repairing/Talent_Repairing_BluntForceTrauma",
         },
         {
@@ -267,52 +267,42 @@ export const huntingTree = {
                 [{value: 15, desc: "+{0}% Damage vs Creature Bones", category: "Generic Damage"}],
                 [{value: 30, desc: "+{0}% Damage vs Creature Bones", category: "Generic Damage"}],
             ],
-            position: [5, 2],
+            position: [5, 2.0],
             imageName: "Tools/Talent_Tools_StrongBack",
         },
     ]),
     fullTracks: [
-        {start: "Fine Butcher I", path: [[1, 0]], end: "Strong Shoulders"},
-        {start: "Chase 'em Down", path: [[1, 2]], end: "Strong Shoulders"},
-        {start: "Chase 'em Down", path: [[1, 2]], end: "Leather Breakdown"},
-        {start: "Swift Stalker", path: [[1, 4]], end: "Leather Breakdown"},
-        {start: "Swift Stalker", path: [[1, 4]], end: "Quick Getaway"},
-        {start: "Bone Collector", path: [[1, 7]], end: "Quick Getaway"},
-
-        {start: "Strong Shoulders", path: [[2, 1]], end: "Health Bars"},
-        {start: "Strong Shoulders", end: "Sense Small Animals"},
-
-        {start: "Leather Breakdown", path: [[2, 3]], end: "Without a Sound"},
-        {start: "Leather Breakdown", end: "Trained Hunter"},
-
-        {start: "Quick Getaway", end: "Without a Sound"},
-        {start: "Sense Small Animals", end: "Sense Medium Animals"},
-        {start: "Trained Hunter", end: "Careful Skinner"},
-
-        {start: "Without a Sound", path: [[2, 3]], end: "Trained Hunter"},
-        {start: "Without a Sound", path: [[3, 6]], end: "Blueprint: Ghillie Armor"},
-        {start: "Blueprint: Ghillie Armor", end: "Blueprint: Arctic Armor"},
-
-        {start: "Sense Medium Animals", path: [[5, 1]], end: "Sense Megafauna"},
-        {start: "Sense Medium Animals", path: [[5, 1]], end: "Quick Clean Up"},
-
-        {start: "Careful Skinner", path: [[5, 3]], end: "Quick Clean Up"},
-        {start: "Careful Skinner", path: [[5, 3]], end: "Fine Butcher II"},
-        {start: "Careful Skinner", path: [[6, 3]], end: "Bone Collector II"},
-        {start: "Careful Skinner", path: [[7, 3]], end: "Big Game Hunter"},
-        {start: "Careful Skinner", path: [[6, 3]], end: "Chase 'em Down II"},
-        {start: "Careful Skinner", end: "Cold Hearted"},
-
-        {start: "Bone Collector II", end: "Brittle Bones"},
-
-        {start: "Quick Clean Up", path: [[5, 3], [7, 3]], end: "Big Game Hunter"},
-        {start: "Quick Clean Up", path: [[5, 3]], end: "Cold Hearted"},
-        {start: "Quick Clean Up", path: [[5, 3], [6, 3]], end: "Bone Collector II"},
-
-        {start: "Blueprint: Ghillie Armor", path: [[7, 7]], end: "Big Game Hunter"},
-        {start: "Big Game Hunter", path: [[7, 3]], end: "Cold Hearted"},
-        {start: "Big Game Hunter", path: [[7, 7]], end: "Blueprint: Arctic Armor"}
-
-    ] as FullTrack[]
-
+        { start: "Big Game Hunter", path: [[7, 3.0]], end: "Cold Hearted" },
+        { start: "Careful Skinner", end: "Cold Hearted" },
+        { start: "Quick Clean Up", path: [[5, 3.0]], end: "Cold Hearted" },
+        { start: "Trained Hunter", end: "Careful Skinner" },
+        { start: "Blueprint: Ghillie Armor", end: "Blueprint: Arctic Armor" },
+        { start: "Big Game Hunter", path: [[7, 6.0]], end: "Blueprint: Arctic Armor" },
+        { start: "Strong Shoulders", end: "Sense Small Animals" },
+        { start: "Sense Small Animals", end: "Sense Medium Animals" },
+        { start: "Sense Medium Animals", path: [[5, 1.0]], end: "Sense Megafauna" },
+        { start: "Quick Getaway", end: "Without a Sound" },
+        { start: "Leather Breakdown", path: [[2, 3.0]], end: "Without a Sound" },
+        { start: "Chase 'em Down", path: [[1, 2.0]], end: "Strong Shoulders" },
+        { start: "Fine Butcher I", path: [[1, 0.0]], end: "Strong Shoulders" },
+        { start: "Without a Sound", path: [[3, 5.0]], end: "Blueprint: Ghillie Armor" },
+        { start: "Bone Collector", path: [[1, 6.0]], end: "Quick Getaway" },
+        { start: "Swift Stalker", path: [[1, 4.0]], end: "Quick Getaway" },
+        { start: "Swift Stalker", path: [[1, 4.0]], end: "Leather Breakdown" },
+        { start: "Chase 'em Down", path: [[1, 2.0]], end: "Leather Breakdown" },
+        { start: "Careful Skinner", path: [[5, 3.0]], end: "Fine Butcher II" },
+        { start: "Careful Skinner", path: [[6, 3.0]], end: "Bone Collector II" },
+        { start: "Quick Clean Up", path: [[5,3.0],[6, 3.0]], end: "Bone Collector II" },
+        { start: "Strong Shoulders", path: [[2, 1.0]], end: "Health Bars" },
+        { start: "Careful Skinner", path: [[6, 3.0]], end: "Chase 'em Down II" },
+        { start: "Quick Clean Up", path: [[5,3.0],[6, 3.0]], end: "Chase 'em Down II" },
+        { start: "Blueprint: Ghillie Armor", path: [[7, 6.0]], end: "Big Game Hunter" },
+        { start: "Careful Skinner", path: [[7, 3.0]], end: "Big Game Hunter" },
+        { start: "Quick Clean Up", path: [[5,3.0],[7, 3.0]], end: "Big Game Hunter" },
+        { start: "Leather Breakdown", end: "Trained Hunter" },
+        { start: "Without a Sound", path: [[2, 3.0]], end: "Trained Hunter" },
+        { start: "Bone Collector II", end: "Brittle Bones" },
+        { start: "Careful Skinner", path: [[5, 3.0]], end: "Quick Clean Up" },
+        { start: "Sense Medium Animals", path: [[5, 1.0]], end: "Quick Clean Up" },
+    ] as FullTrack[],
 };

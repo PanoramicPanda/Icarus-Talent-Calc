@@ -11,7 +11,7 @@ export const husbandryTree = {
             benefits: [
                 [{value: 1, desc: "Nearby Juveniles Tame Faster", category: "Mounts"}],
             ],
-            position: [6, 1],
+            position: [6, 1.0],
             imageName: "Cooking/Talent_GatheringGuru",
         },
         {
@@ -22,7 +22,7 @@ export const husbandryTree = {
             benefits: [
                 [{value: 5, desc: "+{0}% Tamed Creature Movement Speed", category: "Mounts"}],
             ],
-            position: [7, 7],
+            position: [7, 6.0],
             imageName: "Hunting/Talent_Hunting_SwiftStalker",
         },
         {
@@ -34,7 +34,7 @@ export const husbandryTree = {
                 [{value: -15, desc: "+{0}% Tamed Creature Water Consumption", category: "Mounts"}, {value: -15, desc: "+{0}% Tamed Creature Food Consumption", category: "Mounts"}],
                 [{value: -30, desc: "+{0}% Tamed Creature Water Consumption", category: "Mounts"}, {value: -30, desc: "+{0}% Tamed Creature Food Consumption", category: "Mounts"}],
             ],
-            position: [1, 2],
+            position: [1, 2.0],
             imageName: "Cooking/Talent_Cooking_FreshIsBest",
         },
         {
@@ -46,7 +46,7 @@ export const husbandryTree = {
                 [{value: 5, desc: "+{0}% Tamed Creature Stamina Regen", category: "Mounts"}, {value: -10, desc: "+{0}% Juvenile Creature Sleep Requirement", category: "Mounts"}],
                 [{value: 10, desc: "+{0}% Tamed Creature Stamina Regen", category: "Mounts"}, {value: -20, desc: "+{0}% Juvenile Creature Sleep Requirement", category: "Mounts"}],
             ],
-            position: [1, 7],
+            position: [1, 6.0],
             imageName: "Solo/Talent_Solo_LightningRecovery",
         },
         {
@@ -58,7 +58,7 @@ export const husbandryTree = {
                 [{value: 5, desc: "+{0}% Tamed Creature Maximum Stamina", category: "Mounts"}],
                 [{value: 10, desc: "+{0}% Tamed Creature Maximum Stamina", category: "Mounts"}],
             ],
-            position: [6, 6],
+            position: [6, 5.0],
             imageName: "Hunting/Talent_Hunting_ChaseEmDown",
         },
         {
@@ -71,7 +71,7 @@ export const husbandryTree = {
                 [{value: 5, desc: "+{0}% Tamed Creature Weight Capacity", category: "Mounts"}],
                 [{value: 10, desc: "+{0}% Tamed Creature Weight Capacity", category: "Mounts"}],
             ],
-            position: [5, 7],
+            position: [5, 6.0],
             imageName: "Resources/Talent_Resources_DensePacking",
         },
         {
@@ -83,7 +83,7 @@ export const husbandryTree = {
                 [{value: -20, desc: "+{0}% Saddle Crafting Cost", category: "Mounts"}],
                 [{value: -40, desc: "+{0}% Saddle Crafting Cost", category: "Mounts"}],
             ],
-            position: [0, 6],
+            position: [0, 5.0],
             imageName: "Hunting/Talent_Hunting_CarefulSkinner",
         },
         {
@@ -94,7 +94,7 @@ export const husbandryTree = {
             benefits: [
                 [{value: 1, desc: "Juvenile Creature Does Not Pose Any Threat To Predators", category: "Mounts"}],
             ],
-            position: [8, 4],
+            position: [8, 3.5],
             imageName: "Hunting/Talent_Hunting_ColdHearted",
         },
         {
@@ -106,7 +106,7 @@ export const husbandryTree = {
                 [{value: -200, desc: "+{0} Minimum Taming Temperature", category: "CreatureTaming"}, {value: 200, desc: "+{0} Maximum Taming Temperature", category: "CreatureTaming"}],
                 [{value: -400, desc: "+{0} Minimum Taming Temperature", category: "CreatureTaming"}, {value: 400, desc: "+{0} Maximum Taming Temperature", category: "CreatureTaming"}],
             ],
-            position: [1, 0],
+            position: [1, 0.0],
             imageName: "Exploration/Talent_Exploration_ForestMaster",
         },
         {
@@ -118,7 +118,7 @@ export const husbandryTree = {
                 [{value: -15, desc: "+{0}% Oxygen Consumption while Mounted", category: "Mounts"}, {value: -15, desc: "+{0}% Food Consumption while Mounted", category: "Mounts"}, {value: -15, desc: "+{0}% Water Consumption while Mounted", category: "Mounts"}],
                 [{value: -30, desc: "+{0}% Oxygen Consumption while Mounted", category: "Mounts"}, {value: -30, desc: "+{0}% Food Consumption while Mounted", category: "Mounts"}, {value: -30, desc: "+{0}% Water Consumption while Mounted", category: "Mounts"}],
             ],
-            position: [2, 7],
+            position: [2, 6.0],
             imageName: "Solo/Talent_Solo_LowMaintanence",
         },
         {
@@ -130,7 +130,7 @@ export const husbandryTree = {
                 [{value: 5, desc: "+{0}% Exposure Resistance while Mounted", category: "Mounts"}],
                 [{value: 10, desc: "+{0}% Exposure Resistance while Mounted", category: "Mounts"}],
             ],
-            position: [8, 1],
+            position: [8, 1.0],
             imageName: "Exploration/Talent_Exploration_StormChaser",
         },
         {
@@ -143,7 +143,7 @@ export const husbandryTree = {
                 [{value: 20, desc: "+{0}% Tamed Creature Maximum Health", category: "Mounts"}, {value: 30, desc: "+{0}% Tamed Creature Health Regeneration", category: "Mounts"}],
                 [{value: 30, desc: "+{0}% Tamed Creature Maximum Health", category: "Mounts"}, {value: 45, desc: "+{0}% Tamed Creature Health Regeneration", category: "Mounts"}],
             ],
-            position: [3, 5],
+            position: [3, 4.0],
             imageName: "Hunting/Talent_Hunting_HealthBars",
         },
         {
@@ -155,7 +155,7 @@ export const husbandryTree = {
                 [{value: -500, desc: "+{0} Minimum Taming Temperature", category: "CreatureTaming"}],
                 [{value: -1000, desc: "+{0} Minimum Taming Temperature", category: "CreatureTaming"}],
             ],
-            position: [7, 0],
+            position: [7, 0.0],
             imageName: "Exploration/Talent_Exploration_ArcticMaster",
         },
         {
@@ -167,7 +167,7 @@ export const husbandryTree = {
                 [{value: 500, desc: "+{0} Maximum Taming Temperature", category: "CreatureTaming"}],
                 [{value: 1000, desc: "+{0} Maximum Taming Temperature", category: "CreatureTaming"}],
             ],
-            position: [7, 2],
+            position: [7, 2.0],
             imageName: "Exploration/Talent_Exploration_DesertMaster",
         },
         {
@@ -179,7 +179,7 @@ export const husbandryTree = {
                 [{value: -20, desc: "+{0}% Taming Equipment Crafting Cost", category: "Mounts"}],
                 [{value: -40, desc: "+{0}% Taming Equipment Crafting Cost", category: "Mounts"}],
             ],
-            position: [0, 1],
+            position: [0, 1.0],
             imageName: "Resources/Talent_Resources_EfficientLogsman",
         },
         {
@@ -190,7 +190,7 @@ export const husbandryTree = {
             benefits: [
                 [{value: 10, desc: "+{0}% Stealth Damage", category: "Stealth"}],
             ],
-            position: [1, 5],
+            position: [1, 4.0],
             imageName: "Hunting/Talent_Hunting_TrainedHunter",
         },
         {
@@ -203,7 +203,7 @@ export const husbandryTree = {
                 [{value: -20, desc: "+{0}% Perceived Threat while Mounted", category: "Mounts"}, {value: -20, desc: "+{0}% Tamed Creature Perceived Threat", category: "Mounts"}],
                 [{value: -30, desc: "+{0}% Perceived Threat while Mounted", category: "Mounts"}, {value: -30, desc: "+{0}% Tamed Creature Perceived Threat", category: "Mounts"}],
             ],
-            position: [3, 2],
+            position: [3, 2.0],
             imageName: "Hunting/Talent_Hunting_RefinedGhillerArmour",
         },
         {
@@ -216,7 +216,7 @@ export const husbandryTree = {
                 [{value: 5, desc: "+{0}% Yield from Foraging", category: "Foraging"}],
                 [{value: 10, desc: "+{0}% Yield from Foraging", category: "Foraging"}],
             ],
-            position: [0, 3],
+            position: [0, 3.0],
             imageName: "Cooking/Talent_Cooking_AllFoodGroups",
         },
         {
@@ -230,9 +230,32 @@ export const husbandryTree = {
                 [{value: 15, desc: "+{0}% Tamed Creature Melee Damage", category: "Mounts"}],
                 [{value: 20, desc: "+{0}% Tamed Creature Melee Damage", category: "Mounts"}],
             ],
-            position: [4, 2],
+            position: [4, 2.0],
             imageName: "Companion/T_Talent_Moa_Attack",
         },
     ]),
-    fullTracks: [] as FullTrack[]
+    fullTracks: [
+        { start: "Adaptive Training", path: [[6, 0.0]], end: "Nurturing Presence" },
+        { start: "Long Haul", end: "Like the wind" },
+        { start: "Well Cared For", path: [[0, 2.0]], end: "Efficient Feeding" },
+        { start: "Grazing for the herd", path: [[0, 2.0]], end: "Efficient Feeding" },
+        { start: "Back in the Saddle", path: [[0, 6.0]], end: "Energetic Encouragement" },
+        { start: "Long Haul", path: [[6, 6.0]], end: "Beasts Endurance" },
+        { start: "Relaxed Rider", end: "Long Haul" },
+        { start: "Hardy Diet", path: [[3, 6.0]], end: "Long Haul" },
+        { start: "Nurturing Presence", path: [[6, 3.5]], end: "(Still) One With Nature" },
+        { start: "Efficient Feeding", end: "Adaptive Training" },
+        { start: "Energetic Encouragement", end: "Relaxed Rider" },
+        { start: "Desert Training", path: [[8, 2.0]], end: "In Your Element" },
+        { start: "Arctic Training", path: [[8, 0.0]], end: "In Your Element" },
+        { start: "Relaxed Rider", path: [[3, 6.0]], end: "Hardy Diet" },
+        { start: "Rapid Adoption", end: "Hardy Diet" },
+        { start: "Efficient Feeding", path: [[3, 2.0]], end: "Hardy Diet" },
+        { start: "Nurturing Presence", path: [[7, 1.0]], end: "Arctic Training" },
+        { start: "Nurturing Presence", path: [[7, 1.0]], end: "Desert Training" },
+        { start: "Grazing for the herd", path: [[0, 4.0]], end: "Rapid Adoption" },
+        { start: "Back in the Saddle", path: [[0, 4.0]], end: "Rapid Adoption" },
+        { start: "Hardy Diet", end: "Act Natural" },
+        { start: "Hardy Diet", path: [[3, 2.0]], end: "Kill Command" },
+    ] as FullTrack[],
 };

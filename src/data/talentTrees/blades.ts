@@ -13,7 +13,7 @@ export const bladesTree = {
                 [{value: 10, desc: "+{0}% Attack Speed with Knives", category: "Melee Weapon"}],
                 [{value: 15, desc: "+{0}% Attack Speed with Knives", category: "Melee Weapon"}],
             ],
-            position: [0, 5],
+            position: [0, 6.5],
             imageName: "Blades/Talent_Blades_QuickStab",
         },
         {
@@ -26,7 +26,7 @@ export const bladesTree = {
                 [{value: 10, desc: "+{0}% Damage with Knives", category: "Melee DMG"}],
                 [{value: 15, desc: "+{0}% Damage with Knives", category: "Melee DMG"}],
             ],
-            position: [1, 5],
+            position: [1, 6.5],
             imageName: "Blades/Talent_Blades_StrongStab",
         },
         {
@@ -39,7 +39,7 @@ export const bladesTree = {
                 [{value: 20, desc: "+{0}% Critical Damage with Knives", category: "Generic Damage"}],
                 [{value: 30, desc: "+{0}% Critical Damage with Knives", category: "Generic Damage"}],
             ],
-            position: [3, 5],
+            position: [3, 6.5],
             imageName: "Blades/Talent_Blades_DeadlyStab",
         },
         {
@@ -52,7 +52,7 @@ export const bladesTree = {
                 [{value: 15, desc: "+{0}% Aim Speed with Knives", category: "Ranged Weapon"}],
                 [{value: 20, desc: "+{0}% Aim Speed with Knives", category: "Ranged Weapon"}],
             ],
-            position: [0, 1],
+            position: [0, 1.0],
             imageName: "Blades/Talent_Blades_DeftHands",
         },
         {
@@ -65,7 +65,7 @@ export const bladesTree = {
                 [{value: 8, desc: "+{0}% Damage with Thrown Knives", category: "Ranged DMG"}],
                 [{value: 10, desc: "+{0}% Damage with Thrown Knives", category: "Ranged DMG"}],
             ],
-            position: [3, 1],
+            position: [3, 1.0],
             imageName: "Blades/Talent_Blades_RangeDamage1",
         },
         {
@@ -78,7 +78,7 @@ export const bladesTree = {
                 [{value: 8, desc: "+{0}% Speed of Thrown Knives", category: "Misc"}],
                 [{value: 10, desc: "+{0}% Speed of Thrown Knives", category: "Misc"}],
             ],
-            position: [6, 0],
+            position: [6, 0.0],
             imageName: "Blades/Talent_Blades_StrongArm",
         },
         {
@@ -91,7 +91,7 @@ export const bladesTree = {
                 [{value: -8, desc: "+{0}% Perceived Threat while Stealthed with a Knife Equipped", category: "Stealth"}],
                 [{value: -12, desc: "+{0}% Perceived Threat while Stealthed with a Knife Equipped", category: "Stealth"}],
             ],
-            position: [7, 5],
+            position: [7, 6.5],
             imageName: "Blades/Talent_Blades_SilentKnife",
         },
         {
@@ -104,7 +104,7 @@ export const bladesTree = {
                 [{value: 5, desc: "+{0}% Movement Speed with a Knife Equipped", category: "Movement"}],
                 [{value: 10, desc: "+{0}% Movement Speed with a Knife Equipped", category: "Movement"}],
             ],
-            position: [0, 2],
+            position: [0, 2.75],
             imageName: "Blades/Talent_Blades_RunningWithAKnife",
         },
         {
@@ -117,7 +117,7 @@ export const bladesTree = {
                 [{value: -15, desc: "+{0}% Stamina Cost by Knife Actions", category: "Stamina"}],
                 [{value: -20, desc: "+{0}% Stamina Cost by Knife Actions", category: "Stamina"}],
             ],
-            position: [1, 1],
+            position: [1, 1.0],
             imageName: "Blades/Talent_Blades_1000Cuts",
         },
         {
@@ -128,7 +128,7 @@ export const bladesTree = {
             benefits: [
                 [{value: -25, desc: "+{0}% Resource Cost of Crafted Knives", category: "Crafting"}],
             ],
-            position: [2, 2],
+            position: [2, 2.75],
             imageName: "Blades/Talent_Blades_DiscountBlade",
         },
         {
@@ -141,7 +141,7 @@ export const bladesTree = {
                 [{value: -10, desc: "+{0}% Wear Rate of Knives while Skinning", category: "Skinning"}],
                 [{value: -20, desc: "+{0}% Wear Rate of Knives while Skinning", category: "Skinning"}],
             ],
-            position: [3, 3],
+            position: [3, 4.5],
             imageName: "Blades/Talent_Blades_TrainedSkinner",
         },
         {
@@ -154,7 +154,7 @@ export const bladesTree = {
                 [{value: -15, desc: "+{0}% Wear Rate of Knives", category: "Item"}],
                 [{value: -20, desc: "+{0}% Wear Rate of Knives", category: "Item"}],
             ],
-            position: [1, 3],
+            position: [1, 4.5],
             imageName: "Blades/Talent_Blades_HardyBlade",
         },
         {
@@ -167,7 +167,7 @@ export const bladesTree = {
                 [{value: 10, desc: "+{0}% Skinning Speed", category: "Skinning"}],
                 [{value: 20, desc: "+{0}% Skinning Speed", category: "Skinning"}],
             ],
-            position: [6, 3],
+            position: [6, 4.5],
             imageName: "Blades/Talent_Blades_ThatWasQuick",
         },
         {
@@ -178,7 +178,7 @@ export const bladesTree = {
             benefits: [
                 [{value: 5, desc: "{0}% chance to Kill Instantly with a Knife while Crouching", category: "Stealth"}],
             ],
-            position: [8, 0],
+            position: [8, 0.0],
             imageName: "Blades/Talent_Blades_DeadlyThrow",
         },
         {
@@ -189,7 +189,7 @@ export const bladesTree = {
             benefits: [
                 [{value: 100, desc: "{0}% Chance for Thrown Knife Critical Hits to Immobilise Targets", category: "Ranged Weapon"}],
             ],
-            position: [8, 5],
+            position: [8, 6.5],
             imageName: "Blades/Talent_Blades_StayRightThere",
         },
         {
@@ -200,7 +200,7 @@ export const bladesTree = {
             benefits: [
                 [{value: 1, desc: "Thrown Knives are highlighted", category: "Character"}],
             ],
-            position: [2, 0],
+            position: [2, 0.0],
             imageName: "Blades/Talent_Blades_Wheredidthatthinggo",
         },
         {
@@ -209,9 +209,9 @@ export const bladesTree = {
             rank: 3,
             prerequisites: ["Trained Skinner", "Deadly Stab"],
             benefits: [
-                [{value: 20, desc: "Felling damage with crafted knives", category: "Misc"}],
+                [{value: 20, desc: "+{0} Felling Damage", category: "Felling"}],
             ],
-            position: [5, 4],
+            position: [5, 5.5],
             imageName: "Blades/Talent_Blades_IfItWorks",
         },
         {
@@ -220,9 +220,9 @@ export const bladesTree = {
             rank: 1,
             prerequisites: ["Running with Knives"],
             benefits: [
-                [{value: 25, desc: "+{0}% Maximum durability of crafted knives", category: "Misc"}],
+                [{value: 25, desc: "+{0}% Maximum Health for Crafted Knives", category: "Crafting"}],
             ],
-            position: [1, 2],
+            position: [1, 2.75],
             imageName: "Blades/Talent_Blades_DiscountBlades2",
         },
         {
@@ -235,7 +235,7 @@ export const bladesTree = {
                 [{value: 15, desc: "+{0}% Damage with Thrown Knives", category: "Ranged DMG"}],
                 [{value: 20, desc: "+{0}% Damage with Thrown Knives", category: "Ranged DMG"}],
             ],
-            position: [4, 1],
+            position: [4, 1.0],
             imageName: "Blades/Talent_Blades_RangeDamage2",
         },
         {
@@ -248,7 +248,7 @@ export const bladesTree = {
                 [{value: 18, desc: "+{0}% Speed of Thrown Knives", category: "Misc"}],
                 [{value: 20, desc: "+{0}% Speed of Thrown Knives", category: "Misc"}],
             ],
-            position: [7, 1],
+            position: [7, 1.0],
             imageName: "Blades/Talent_Blades_StrongArm2",
         },
         {
@@ -259,9 +259,37 @@ export const bladesTree = {
             benefits: [
                 [{value: -25, desc: "+{0}% Resource Cost of Crafted Knives", category: "Crafting"}],
             ],
-            position: [6, 2],
+            position: [6, 2.75],
             imageName: "Blades/Talent_Blades_DiscountBlades3",
         },
     ]),
-    fullTracks: [] as FullTrack[]
+    fullTracks: [
+        { start: "Swift Stab", end: "Heavy Hand" },
+        { start: "Heavy Hand", end: "Deadly Stab" },
+        { start: "Where'd that go?", path: [[2, 1.0]], end: "Range Damage I" },
+        { start: "Discount Blades I", path: [[2, 1.0]], end: "Range Damage I" },
+        { start: "1000 cuts", end: "Range Damage I" },
+        { start: "Where'd that go?", end: "Strong Arm" },
+        { start: "If It Works", path: [[5, 6.5]], end: "Silent Blade" },
+        { start: "Deadly Stab", end: "Silent Blade" },
+        { start: "Deft Hands", end: "1000 cuts" },
+        { start: "Hardy Blade", path: [[2, 4.5]], end: "Discount Blades I" },
+        { start: "Reinforced Blades", end: "Discount Blades I" },
+        { start: "1000 cuts", path: [[2, 1.0]], end: "Discount Blades I" },
+        { start: "Hardy Blade", end: "Trained Skinner" },
+        { start: "Discount Blades I", path: [[2, 4.5]], end: "Trained Skinner" },
+        { start: "Swift Stab", path: [[0, 4.5]], end: "Hardy Blade" },
+        { start: "Running with Knives", path: [[0, 4.5]], end: "Hardy Blade" },
+        { start: "Trained Skinner", end: "That Was Quick" },
+        { start: "If It Works", path: [[5, 4.5]], end: "That Was Quick" },
+        { start: "Strong Arm", end: "Killer Throw" },
+        { start: "Silent Blade", end: "Stay Right There" },
+        { start: "1000 cuts", path: [[2, 1.0]], end: "Where'd that go?" },
+        { start: "Trained Skinner", path: [[5, 4.5]], end: "If It Works" },
+        { start: "Deadly Stab", path: [[5, 6.5]], end: "If It Works" },
+        { start: "Running with Knives", end: "Reinforced Blades" },
+        { start: "Range Damage I", end: "Range Damage II" },
+        { start: "Strong Arm", path: [[6, 1.0]], end: "Strong Arm II" },
+        { start: "Discount Blades I", end: "Discount Blades II" },
+    ] as FullTrack[],
 };

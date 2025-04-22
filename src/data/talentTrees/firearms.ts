@@ -11,7 +11,7 @@ export const firearmsTree = {
             benefits: [
                 [{value: -25, desc: "+{0}% Carry Weight of Firearms", category: "Weight"}],
             ],
-            position: [0, 6],
+            position: [0, 6.0],
             imageName: "Firearms/Talent_Firearms_Featherweight",
         },
         {
@@ -24,7 +24,7 @@ export const firearmsTree = {
                 [{value: 5, desc: "+{0}% Damage with Pistols & SMGs", category: "Ranged Weapon"}],
                 [{value: 10, desc: "+{0}% Damage with Pistols & SMGs", category: "Ranged Weapon"}],
             ],
-            position: [2, 0],
+            position: [2, 0.0],
             imageName: "Firearms/Talent_Firearms_PistolDamage",
         },
         {
@@ -37,7 +37,7 @@ export const firearmsTree = {
                 [{value: 5, desc: "+{0}% Damage with Rifles", category: "Ranged Weapon"}],
                 [{value: 10, desc: "+{0}% Damage with Rifles", category: "Ranged Weapon"}],
             ],
-            position: [2, 4],
+            position: [2, 4.0],
             imageName: "Firearms/Talent_Firearms_RifleDamage",
         },
         {
@@ -50,7 +50,7 @@ export const firearmsTree = {
                 [{value: 5, desc: "+{0}% Damage with Shotguns", category: "Ranged Weapon"}],
                 [{value: 10, desc: "+{0}% Damage with Shotguns", category: "Ranged Weapon"}],
             ],
-            position: [2, 2],
+            position: [2, 2.0],
             imageName: "Firearms/Talent_Firearms_ShotgunDamage",
         },
         {
@@ -62,7 +62,7 @@ export const firearmsTree = {
                 [{value: 10, desc: "+{0}% Accuracy with Firearms", category: "Ranged Weapon"}],
                 [{value: 25, desc: "+{0}% Accuracy with Firearms", category: "Ranged Weapon"}],
             ],
-            position: [4, 5],
+            position: [4, 5.0],
             imageName: "Firearms/Talent_Firearms_FocusFire",
         },
         {
@@ -75,7 +75,7 @@ export const firearmsTree = {
                 [{value: 15, desc: "+{0}% Reload Speed of Pistols & SMGs", category: "Ranged Weapon"}],
                 [{value: 20, desc: "+{0}% Reload Speed of Pistols & SMGs", category: "Ranged Weapon"}],
             ],
-            position: [1, 0],
+            position: [1, 0.0],
             imageName: "Firearms/Talent_Firearms_PistolHandling",
         },
         {
@@ -88,7 +88,7 @@ export const firearmsTree = {
                 [{value: 15, desc: "+{0}% Reload Speed of Shotguns", category: "Ranged Weapon"}],
                 [{value: 20, desc: "+{0}% Reload Speed of Shotguns", category: "Ranged Weapon"}],
             ],
-            position: [1, 2],
+            position: [1, 2.0],
             imageName: "Firearms/Talent_Firearms_ShotgunHandling",
         },
         {
@@ -101,7 +101,7 @@ export const firearmsTree = {
                 [{value: 15, desc: "+{0}% Reload Speed of Rifles", category: "Ranged Weapon"}],
                 [{value: 20, desc: "+{0}% Reload Speed of Rifles", category: "Ranged Weapon"}],
             ],
-            position: [1, 4],
+            position: [1, 4.0],
             imageName: "Firearms/Talent_Firearms_RifleHandling",
         },
         {
@@ -112,7 +112,7 @@ export const firearmsTree = {
             benefits: [
                 [{value: -25, desc: "+{0}% Crafted Rifle Ammo Resource Cost", category: "Crafting"}],
             ],
-            position: [0, 4],
+            position: [0, 4.0],
             imageName: "Firearms/Talent_Firearms_RifleAmmunitions",
         },
         {
@@ -123,7 +123,7 @@ export const firearmsTree = {
             benefits: [
                 [{value: -25, desc: "+{0}% Crafted Shotgun Ammo Resource Cost", category: "Crafting"}],
             ],
-            position: [0, 2],
+            position: [0, 2.0],
             imageName: "Firearms/Talent_Firearms_ShotgunAmmunitions",
         },
         {
@@ -136,7 +136,7 @@ export const firearmsTree = {
                 [{value: -15, desc: "+{0}% Wear Rate of Firearms", category: "Item"}],
                 [{value: -20, desc: "+{0}% Wear Rate of Firearms", category: "Item"}],
             ],
-            position: [4, 1],
+            position: [4, 1.0],
             imageName: "Firearms/Talent_Firearms_GunMaintanence",
         },
         {
@@ -148,7 +148,7 @@ export const firearmsTree = {
                 [{value: 5, desc: "+{0}% Movement Speed with a Firearm Equipped", category: "Movement"}],
                 [{value: 10, desc: "+{0}% Movement Speed with a Firearm Equipped", category: "Movement"}],
             ],
-            position: [2, 6],
+            position: [2, 6.0],
             imageName: "Firearms/Talent_Firearms_GunRunner",
         },
         {
@@ -161,7 +161,7 @@ export const firearmsTree = {
                 [{value: 10, desc: "+{0}% Critical Damage with Firearms", category: "Generic Damage"}],
                 [{value: 15, desc: "+{0}% Critical Damage with Firearms", category: "Generic Damage"}],
             ],
-            position: [5, 3],
+            position: [5, 3.0],
             imageName: "Firearms/Talent_Firearms_Sharpshooter",
         },
         {
@@ -173,7 +173,7 @@ export const firearmsTree = {
                 [{value: 5, desc: "{0}% chance to not consume Ammo when Firing a Projectile Weapon", category: "Ranged Weapon"}],
                 [{value: 10, desc: "{0}% chance to not consume Ammo when Firing a Projectile Weapon", category: "Ranged Weapon"}],
             ],
-            position: [6, 1],
+            position: [6, 1.0],
             imageName: "Firearms/Talent_Firearms_HowManyShotsDidYouCount",
         },
         {
@@ -184,7 +184,7 @@ export const firearmsTree = {
             benefits: [
                 [{value: 5, desc: "{0}% chance to Craft additional Ammo", category: "Crafting"}],
             ],
-            position: [3, 3],
+            position: [3, 3.0],
             imageName: "Firearms/Talent_Firearms_Freebies",
         },
         {
@@ -195,7 +195,7 @@ export const firearmsTree = {
             benefits: [
                 [{value: 30, desc: "{0}% for Firearms to Recover Durability Instead of Breaking", category: "Item"}],
             ],
-            position: [6, 5],
+            position: [6, 5.0],
             imageName: "Firearms/Talent_Firearms_NewLife",
         },
         {
@@ -206,9 +206,30 @@ export const firearmsTree = {
             benefits: [
                 [{value: -25, desc: "+{0}% Crafted Pistol & SMG Ammo Resource Cost", category: "Crafting"}],
             ],
-            position: [0, 0],
+            position: [0, 0.0],
             imageName: "Firearms/Talent_Firearms_PistolAmmunitions",
         },
     ]),
-    fullTracks: [] as FullTrack[]
+    fullTracks: [
+        { start: "Light Firearm Handling", end: "Light Firearm Powerup" },
+        { start: "Rifle Re-Up", end: "Rifle Redress" },
+        { start: "Shotgun Handling", end: "Shotgun Sovereign" },
+        { start: "Freebies", path: [[4, 3.0]], end: "Focus Fire" },
+        { start: "Gun Runner", path: [[4, 6.0]], end: "Focus Fire" },
+        { start: "Light Firearm Proficiency", end: "Light Firearm Handling" },
+        { start: "Shotgun Slash", end: "Shotgun Handling" },
+        { start: "Rifle Reduction", end: "Rifle Re-Up" },
+        { start: "Light Firearm Powerup", path: [[4, 0.0]], end: "Gunsmith" },
+        { start: "Freebies", path: [[4, 3.0]], end: "Gunsmith" },
+        { start: "Featherweight", end: "Gun Runner" },
+        { start: "Freebies", end: "Sharpshooter" },
+        { start: "Gunsmith", path: [[4, 3.0]], end: "Sharpshooter" },
+        { start: "Focus Fire", path: [[4, 3.0]], end: "Sharpshooter" },
+        { start: "Gunsmith", end: "How Many Shots Did You Count?" },
+        { start: "Sharpshooter", path: [[6, 3.0]], end: "How Many Shots Did You Count?" },
+        { start: "Shotgun Sovereign", path: [[3, 2.0]], end: "Freebies" },
+        { start: "Rifle Redress", path: [[3, 4.0]], end: "Freebies" },
+        { start: "Focus Fire", end: "New Life" },
+        { start: "Sharpshooter", path: [[6, 3.0]], end: "New Life" },
+    ] as FullTrack[],
 };

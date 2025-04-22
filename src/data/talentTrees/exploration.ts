@@ -13,7 +13,7 @@ export const explorationTree = {
                 [{value: 25, desc: "+{0} Maximum Health", category: "Health"}],
                 [{value: 50, desc: "+{0} Maximum Health", category: "Health"}],
             ],
-            position: [0, 1],
+            position: [0, 1.0],
             imageName: "Exploration/Talent_Exploration_HealthyExplorer",
         },
         {
@@ -24,7 +24,7 @@ export const explorationTree = {
             benefits: [
                 [{value: 10, desc: "+{0}% Movement Speed during final moments of the Mission", category: "Time"}],
             ],
-            position: [5, 4],
+            position: [5, 4.0],
             imageName: "Exploration/Talent_Exploration_CuttingItClose",
         },
         {
@@ -37,7 +37,7 @@ export const explorationTree = {
                 [{value: -15, desc: "+{0}% Oxygen Consumption", category: "Upkeep"}],
                 [{value: -25, desc: "+{0}% Oxygen Consumption", category: "Upkeep"}],
             ],
-            position: [1, 0],
+            position: [1, 0.0],
             imageName: "Exploration/Talent_Exploration_SteadyBreathing",
         },
         {
@@ -50,7 +50,7 @@ export const explorationTree = {
                 [{value: -15, desc: "+{0}% Food Consumption", category: "Upkeep"}],
                 [{value: -25, desc: "+{0}% Food Consumption", category: "Upkeep"}],
             ],
-            position: [1, 2],
+            position: [1, 2.0],
             imageName: "Exploration/Talent_Exploration_CarboLoaded",
         },
         {
@@ -63,7 +63,7 @@ export const explorationTree = {
                 [{value: -15, desc: "+{0}% Water Consumption", category: "Upkeep"}],
                 [{value: -25, desc: "+{0}% Water Consumption", category: "Upkeep"}],
             ],
-            position: [1, 4],
+            position: [1, 4.0],
             imageName: "Exploration/Talent_Exploration_WaterRetention",
         },
         {
@@ -76,7 +76,7 @@ export const explorationTree = {
                 [{value: 10, desc: "+{0}% Exposure Resistance", category: "Exposure"}],
                 [{value: 15, desc: "+{0}% Exposure Resistance", category: "Exposure"}],
             ],
-            position: [1, 8],
+            position: [1, 7.0],
             imageName: "Exploration/Talent_Exploration_WeatheringTheStorm",
         },
         {
@@ -89,7 +89,7 @@ export const explorationTree = {
                 [{value: 10, desc: "+{0}% Exposure Recovery Rate", category: "Exposure"}],
                 [{value: 15, desc: "+{0}% Exposure Recovery Rate", category: "Exposure"}],
             ],
-            position: [3, 8],
+            position: [3, 7.0],
             imageName: "Exploration/Talent_Exploration_QuickRefresh",
         },
         {
@@ -101,7 +101,7 @@ export const explorationTree = {
                 [{value: 25, desc: "+{0}% Health Restored to Revived Incapacitated Player", category: "Health"}],
                 [{value: 50, desc: "+{0}% Health Restored to Revived Incapacitated Player", category: "Health"}],
             ],
-            position: [2, 3],
+            position: [2, 3.0],
             imageName: "Exploration/Talent_Exploration_FieldMedic",
         },
         {
@@ -112,7 +112,7 @@ export const explorationTree = {
             benefits: [
                 [{value: 1, desc: "Trigger Additional Health Regeneration when Reviving a Player", category: "Modifiers"}],
             ],
-            position: [5, 2],
+            position: [5, 2.0],
             imageName: "Exploration/Talent_Exploration_SomeForMe",
         },
         {
@@ -125,7 +125,7 @@ export const explorationTree = {
                 [{value: -25, desc: "+{0}% Stamina Consumed by Jumping", category: "Stamina"}],
                 [{value: -50, desc: "+{0}% Stamina Consumed by Jumping", category: "Stamina"}],
             ],
-            position: [2, 1],
+            position: [2, 1.0],
             imageName: "Exploration/Talent_Exploration_Plyometrics",
         },
         {
@@ -137,7 +137,7 @@ export const explorationTree = {
                 [{value: 25, desc: "{0}% chance to avoid Sprain when taking Fall Damage", category: "Environmental"}],
                 [{value: 50, desc: "{0}% chance to avoid Sprain when taking Fall Damage", category: "Environmental"}],
             ],
-            position: [6, 1],
+            position: [6, 1.0],
             imageName: "Exploration/Talent_Exploration_CushionedFall",
         },
         {
@@ -150,7 +150,7 @@ export const explorationTree = {
                 [{value: 15, desc: "+{0}% Falling Resistance", category: "Resistance"}],
                 [{value: 25, desc: "+{0}% Falling Resistance", category: "Resistance"}],
             ],
-            position: [4, 1],
+            position: [4, 1.0],
             imageName: "Exploration/Talent_Exploration_3PointLanding",
         },
         {
@@ -161,7 +161,7 @@ export const explorationTree = {
             benefits: [
                 [{value: 5, desc: "+{0}% Movement Speed in the Arctic", category: "Movement"}, {value: 15, desc: "+{0}% Cold Resistance in the Arctic", category: "Temperature"}],
             ],
-            position: [7, 7],
+            position: [7, 6.5],
             imageName: "Exploration/Talent_Exploration_ArcticMaster",
         },
         {
@@ -172,7 +172,7 @@ export const explorationTree = {
             benefits: [
                 [{value: 5, desc: "+{0}% Movement Speed in the Desert", category: "Movement"}, {value: -25, desc: "+{0}% Water Consumed in the Desert", category: "Consumption"}],
             ],
-            position: [8, 6],
+            position: [8, 5.5],
             imageName: "Exploration/Talent_Exploration_DesertMaster",
         },
         {
@@ -183,7 +183,7 @@ export const explorationTree = {
             benefits: [
                 [{value: 5, desc: "+{0}% Movement Speed in the Forest", category: "Movement"}, {value: 10, desc: "+{0}% Health Regeneration in the Forest", category: "Health"}],
             ],
-            position: [7, 5],
+            position: [7, 4.5],
             imageName: "Exploration/Talent_Exploration_ForestMaster",
         },
         {
@@ -196,7 +196,7 @@ export const explorationTree = {
                 [{value: -25, desc: "+{0}% Sprain Duration", category: "Modifiers"}],
                 [{value: -40, desc: "+{0}% Sprain Duration", category: "Modifiers"}],
             ],
-            position: [7, 1],
+            position: [7, 1.0],
             imageName: "Exploration/Talent_Exploration_StrongBones",
         },
         {
@@ -209,7 +209,7 @@ export const explorationTree = {
                 [{value: 20, desc: "+{0}% Stamina Regeneration during a Storm", category: "Stamina"}],
                 [{value: 30, desc: "+{0}% Stamina Regeneration during a Storm", category: "Stamina"}],
             ],
-            position: [0, 8],
+            position: [0, 7.0],
             imageName: "Exploration/Talent_Exploration_StormChaser",
         },
         {
@@ -220,7 +220,7 @@ export const explorationTree = {
             benefits: [
                 [{value: -15, desc: "+{0}% Food Consumed at Night", category: "Consumption"}, {value: -15, desc: "+{0}% Oxygen Consumed at Night", category: "Consumption"}, {value: -15, desc: "+{0}% Water Consumed at Night", category: "Consumption"}],
             ],
-            position: [5, 7],
+            position: [5, 6.5],
             imageName: "Exploration/Talent_Exploration_LikeItWithTheLightsOff",
         },
         {
@@ -231,7 +231,7 @@ export const explorationTree = {
             benefits: [
                 [{value: 15, desc: "+{0}% Shared Experience Gained", category: "Experience"}],
             ],
-            position: [8, 3],
+            position: [8, 3.0],
             imageName: "Exploration/Talent_Exploration_MakesTheDreamWork",
         },
         {
@@ -242,7 +242,7 @@ export const explorationTree = {
             benefits: [
                 [{value: 1, desc: "Nearby Allies have reduced Oxygen Consumption", category: "Modifiers"}],
             ],
-            position: [3, 0],
+            position: [3, 0.0],
             imageName: "Exploration/Talent_Exploration_CalmingPresence",
         },
         {
@@ -254,7 +254,7 @@ export const explorationTree = {
                 [{value: 3, desc: "+{0}% Movement Speed at Night", category: "Movement"}],
                 [{value: 6, desc: "+{0}% Movement Speed at Night", category: "Movement"}],
             ],
-            position: [4, 7],
+            position: [4, 6.5],
             imageName: "Exploration/Talent_Exploration_NightOwl",
         },
         {
@@ -266,7 +266,7 @@ export const explorationTree = {
                 [{value: 10, desc: "+{0}% Swimming Speed", category: "Movement"}],
                 [{value: 15, desc: "+{0}% Swimming Speed", category: "Movement"}],
             ],
-            position: [3, 5],
+            position: [3, 4.5],
             imageName: "Exploration/Talent_Exploration_GoWithTheFlow",
         },
         {
@@ -277,7 +277,7 @@ export const explorationTree = {
             benefits: [
                 [{value: -10, desc: "+{0}% Oxygen Consumed while Swimming", category: "Consumption"}],
             ],
-            position: [4, 5],
+            position: [4, 4.5],
             imageName: "Exploration/Talent_Exploration_Amphibious",
         },
         {
@@ -290,7 +290,7 @@ export const explorationTree = {
                 [{value: 5, desc: "+{0}% Movement Speed", category: "Movement"}],
                 [{value: 10, desc: "+{0}% Movement Speed", category: "Movement"}],
             ],
-            position: [0, 3],
+            position: [0, 3.0],
             imageName: "Exploration/Talent_Exploration_SwiftSurvival",
         },
         {
@@ -303,9 +303,34 @@ export const explorationTree = {
                 [{value: 5, desc: "+{0}% Weight Capacity", category: "Weight"}],
                 [{value: 10, desc: "+{0}% Weight Capacity", category: "Weight"}],
             ],
-            position: [2, 6],
+            position: [2, 5.5],
             imageName: "Solo/Talent_Solo_PackHorse",
         },
     ]),
-    fullTracks: [] as FullTrack[]
+    fullTracks: [
+        { start: "Field Medic", path: [[5, 3.0]], end: "Cutting It Close" },
+        { start: "Robust Explorer", path: [[0, 0.0]], end: "Steady Breathing" },
+        { start: "Robust Explorer", path: [[0, 2.0]], end: "Carbo Loaded" },
+        { start: "Swift Survivor", path: [[0, 2.0]], end: "Carbo Loaded" },
+        { start: "Swift Survivor", path: [[0, 4.0]], end: "Water Retention" },
+        { start: "Storm Chaser", end: "Weathering The Storm" },
+        { start: "Weathering The Storm", end: "Quick Refresh" },
+        { start: "Carbo Loaded", path: [[2, 2.0]], end: "Field Medic" },
+        { start: "Water Retention", path: [[2, 4.0]], end: "Field Medic" },
+        { start: "Field Medic", path: [[5, 3.0]], end: "And Some For Me" },
+        { start: "Carbo Loaded", path: [[2, 2.0]], end: "Plyometrics" },
+        { start: "Steady Breathing", path: [[2, 0.0]], end: "Plyometrics" },
+        { start: "Three Point Landing", end: "Cushioned Fall" },
+        { start: "Plyometrics", end: "Three Point Landing" },
+        { start: "Pack Lightly", path: [[7, 5.5]], end: "Arctic Master" },
+        { start: "Pack Lightly", end: "Desert Master" },
+        { start: "Pack Lightly", path: [[7, 5.5]], end: "Forest Master" },
+        { start: "Cushioned Fall", end: "Strong Bones" },
+        { start: "Night Owl", end: "Like It With the Lights Off" },
+        { start: "Field Medic", end: "Makes the Dream Work" },
+        { start: "Steady Breathing", end: "Calming Presence" },
+        { start: "Pack Lightly", path: [[4, 5.5]], end: "Night Owl" },
+        { start: "Pack Lightly", path: [[3, 5.5]], end: "Go With The Flow" },
+        { start: "Go With The Flow", end: "Amphibian" },
+    ] as FullTrack[],
 };

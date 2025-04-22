@@ -12,7 +12,7 @@ export const soloTree = {
                 [{value: 8, desc: "+{0}% Experience Gained", category: "Experience"}],
                 [{value: 15, desc: "+{0}% Experience Gained", category: "Experience"}],
             ],
-            position: [7, 3],
+            position: [7, 6.0],
             imageName: "Exploration/Talent_Exploration_LoneWolf",
         },
         {
@@ -24,7 +24,7 @@ export const soloTree = {
                 [{value: 50, desc: "+{0} Maximum Health", category: "Health"}],
                 [{value: 100, desc: "+{0} Maximum Health", category: "Health"}],
             ],
-            position: [0, 6],
+            position: [0, 12.0],
             imageName: "Solo/Talent_Solo_HealthyMaverick",
         },
         {
@@ -36,7 +36,7 @@ export const soloTree = {
                 [{value: 20, desc: "+{0} Maximum Stamina", category: "Stamina"}],
                 [{value: 50, desc: "+{0} Maximum Stamina", category: "Stamina"}],
             ],
-            position: [0, 1],
+            position: [0, 2.0],
             imageName: "Solo/Talent_Solo_MarathonRunner",
         },
         {
@@ -48,7 +48,7 @@ export const soloTree = {
                 [{value: -10, desc: "+{0}% Water Consumption", category: "Upkeep"}, {value: -10, desc: "+{0}% Food Consumption", category: "Upkeep"}, {value: -10, desc: "+{0}% Oxygen Consumption", category: "Upkeep"}],
                 [{value: -20, desc: "+{0}% Water Consumption", category: "Upkeep"}, {value: -20, desc: "+{0}% Food Consumption", category: "Upkeep"}, {value: -20, desc: "+{0}% Oxygen Consumption", category: "Upkeep"}],
             ],
-            position: [3, 2],
+            position: [3, 4.0],
             imageName: "Solo/Talent_Solo_LowMaintanence",
         },
         {
@@ -60,7 +60,7 @@ export const soloTree = {
                 [{value: 5, desc: "+{0}% Movement Speed", category: "Movement"}],
                 [{value: 10, desc: "+{0}% Movement Speed", category: "Movement"}],
             ],
-            position: [0, 4],
+            position: [0, 8.0],
             imageName: "Solo/Talent_Solo_GottaGoFast",
         },
         {
@@ -71,7 +71,7 @@ export const soloTree = {
             benefits: [
                 [{value: 25, desc: "+{0}% Weight Capacity", category: "Weight"}],
             ],
-            position: [5, 4],
+            position: [5, 8.0],
             imageName: "Solo/Talent_Solo_PackHorse",
         },
         {
@@ -83,7 +83,7 @@ export const soloTree = {
                 [{value: 10, desc: "+{0}% Health Regeneration", category: "Health"}],
                 [{value: 20, desc: "+{0}% Health Regeneration", category: "Health"}],
             ],
-            position: [1, 6],
+            position: [1, 12.0],
             imageName: "Solo/Talent_Solo_QuickHealer",
         },
         {
@@ -95,7 +95,7 @@ export const soloTree = {
                 [{value: 10, desc: "+{0}% Stamina Regeneration", category: "Stamina"}],
                 [{value: 20, desc: "+{0}% Stamina Regeneration", category: "Stamina"}],
             ],
-            position: [1, 1],
+            position: [1, 2.0],
             imageName: "Solo/Talent_Solo_LightningRecovery",
         },
         {
@@ -106,7 +106,7 @@ export const soloTree = {
             benefits: [
                 [{value: -20, desc: "+{0}% Carry Weight of Wood", category: "Weight"}, {value: -20, desc: "+{0}% Carry Weight of Stone", category: "Weight"}, {value: -20, desc: "+{0}% Carry Weight of Ores", category: "Weight"}],
             ],
-            position: [6, 4],
+            position: [6, 8.0],
             imageName: "Solo/Talent_Solo_MobileStockpile",
         },
         {
@@ -118,7 +118,7 @@ export const soloTree = {
                 [{value: 25, desc: "+{0}% Yield from Skinning Leather", category: "Hunting"}, {value: 25, desc: "+{0}% Yield from Skinning Fur", category: "Hunting"}],
                 [{value: 50, desc: "+{0}% Yield from Skinning Leather", category: "Hunting"}, {value: 50, desc: "+{0}% Yield from Skinning Fur", category: "Hunting"}],
             ],
-            position: [7, 0],
+            position: [7, 0.0],
             imageName: "Solo/Talent_Solo_SavageHunter",
         },
         {
@@ -129,7 +129,7 @@ export const soloTree = {
             benefits: [
                 [{value: 15, desc: "+{0}% Yield from Felling Trees", category: "Felling"}, {value: 15, desc: "+{0}% Yield from Mining Stone", category: "Mining"}, {value: 15, desc: "+{0}% Yield from Harvesting", category: "Generic Harvesting"}],
             ],
-            position: [5, 1],
+            position: [5, 2.0],
             imageName: "Solo/Talent_Solo_TheBig3",
         },
         {
@@ -141,7 +141,7 @@ export const soloTree = {
                 [{value: -15, desc: "+{0}% Carry Weight of Stone Building Pieces", category: "Weight"}, {value: -15, desc: "+{0}% Carry Weight of Concrete Building Pieces", category: "Weight"}, {value: -15, desc: "+{0}% Carry Weight of Wood Building Pieces", category: "Weight"}, {value: -15, desc: "+{0}% Carry Weight of Thatch Building Pieces", category: "Weight"}],
                 [{value: -30, desc: "+{0}% Carry Weight of Stone Building Pieces", category: "Weight"}, {value: -30, desc: "+{0}% Carry Weight of Concrete Building Pieces", category: "Weight"}, {value: -30, desc: "+{0}% Carry Weight of Wood Building Pieces", category: "Weight"}, {value: -30, desc: "+{0}% Carry Weight of Thatch Building Pieces", category: "Weight"}],
             ],
-            position: [7, 4],
+            position: [7, 8.0],
             imageName: "Solo/Talent_Solo_BaseOnTheMove",
         },
         {
@@ -154,7 +154,7 @@ export const soloTree = {
                 [{value: 10, desc: "+{0} Physical Resistance", category: "Resistance"}],
                 [{value: 15, desc: "+{0} Physical Resistance", category: "Resistance"}],
             ],
-            position: [1, 3],
+            position: [1, 6.0],
             imageName: "Solo/Talent_Solo_TisButAScratch",
         },
         {
@@ -165,7 +165,7 @@ export const soloTree = {
             benefits: [
                 [{value: -15, desc: "+{0}% Perceived Threat while Stealthed", category: "Stealth"}],
             ],
-            position: [3, 4],
+            position: [3, 8.0],
             imageName: "Solo/Talent_Solo_VeryVeryQuiet",
         },
         {
@@ -177,7 +177,7 @@ export const soloTree = {
                 [{value: 25, desc: "+{0}% Yield from Butchering Animals", category: "Butchery"}, {value: 25, desc: "+{0}% Yield from Creature Bones", category: "Hunting"}],
                 [{value: 50, desc: "+{0}% Yield from Butchering Animals", category: "Butchery"}, {value: 50, desc: "+{0}% Yield from Creature Bones", category: "Hunting"}],
             ],
-            position: [6, 0],
+            position: [6, 0.0],
             imageName: "Solo/Talent_Solo_SavageHunter",
         },
         {
@@ -190,7 +190,7 @@ export const soloTree = {
                 [{value: 10, desc: "{0}% chance to avoid Sprain when taking Fall Damage", category: "Environmental"}],
                 [{value: 20, desc: "{0}% chance to avoid Sprain when taking Fall Damage", category: "Environmental"}],
             ],
-            position: [1, 5],
+            position: [1, 10.0],
             imageName: "Exploration/Talent_Exploration_CushionedFall",
         },
         {
@@ -202,7 +202,7 @@ export const soloTree = {
                 [{value: 5, desc: "+{0}% Melee Damage", category: "Melee DMG"}],
                 [{value: 10, desc: "+{0}% Melee Damage", category: "Melee DMG"}],
             ],
-            position: [0, 8],
+            position: [0, 15.5],
             imageName: "Tools/Talent_Tools_StrongBack",
         },
         {
@@ -214,7 +214,7 @@ export const soloTree = {
                 [{value: 5, desc: "+{0}% Yield from Foraging", category: "Foraging"}],
                 [{value: 10, desc: "+{0}% Yield from Foraging", category: "Foraging"}],
             ],
-            position: [6, 2],
+            position: [6, 4.0],
             imageName: "Resources/Talent_Resources_SkilledPicker",
         },
         {
@@ -226,7 +226,7 @@ export const soloTree = {
                 [{value: 5, desc: "+{0}% Yield from Felling Trees", category: "Felling"}],
                 [{value: 10, desc: "+{0}% Yield from Felling Trees", category: "Felling"}],
             ],
-            position: [2, 0],
+            position: [2, 0.0],
             imageName: "Resources/Talent_Resources_LumberYield",
         },
         {
@@ -238,7 +238,7 @@ export const soloTree = {
                 [{value: 5, desc: "+{0}% Yield from Mining", category: "Mining"}],
                 [{value: 10, desc: "+{0}% Yield from Mining", category: "Mining"}],
             ],
-            position: [4, 0],
+            position: [4, 0.0],
             imageName: "Resources/Talent_Resources_MetalMiner",
         },
         {
@@ -249,7 +249,7 @@ export const soloTree = {
             benefits: [
                 [{value: 5, desc: "+{0}% Stamina Regeneration with a Fire Whacker Equipped", category: "Stamina"}, {value: -5, desc: "+{0}% Repair Tool Action Hold Time", category: "Building"}],
             ],
-            position: [6, 6],
+            position: [6, 12.0],
             imageName: "Repairing/Talent_Repairing_HammerTime",
         },
         {
@@ -258,9 +258,9 @@ export const soloTree = {
             rank: 3,
             prerequisites: ["Efficient Home Maintenance"],
             benefits: [
-                [{value: 25, desc: "+{0}% Damage of Crafted Hedgehogs", category: "Misc"}],
+                [{value: 25, desc: "+{0}% Damage of Crafted Hedgehogs", category: "Deployable"}],
             ],
-            position: [7, 6],
+            position: [7, 12.0],
             imageName: "Building/Talent_Building_EnhancedDefences",
         },
         {
@@ -272,7 +272,7 @@ export const soloTree = {
                 [{value: 5, desc: "+{0}% Damage with Bows/Crossbows", category: "Ranged Weapon"}],
                 [{value: 10, desc: "+{0}% Damage with Bows/Crossbows", category: "Ranged Weapon"}, {value: 10, desc: "+{0}% Reload Speed of Bows/Crossbows", category: "Ranged Weapon"}],
             ],
-            position: [3, 7],
+            position: [3, 14.0],
             imageName: "Bows/Talent_Bow_IncreasedArrowDamage1",
         },
         {
@@ -284,7 +284,7 @@ export const soloTree = {
                 [{value: 5, desc: "+{0}% Damage with Firearms", category: "Ranged Weapon"}],
                 [{value: 10, desc: "+{0}% Damage with Firearms", category: "Ranged Weapon"}, {value: 10, desc: "+{0}% Reload Speed of Firearms", category: "Ranged Weapon"}],
             ],
-            position: [5, 7],
+            position: [5, 14.0],
             imageName: "Firearms/Talent_Firearms_LetMeGetThatForYou",
         },
         {
@@ -296,7 +296,7 @@ export const soloTree = {
                 [{value: 5, desc: "+{0}% Damage with Knives", category: "Melee DMG"}],
                 [{value: 10, desc: "+{0}% Damage with Knives", category: "Melee DMG"}, {value: 10, desc: "+{0}% Damage with Thrown Knives", category: "Ranged DMG"}],
             ],
-            position: [3, 9],
+            position: [3, 17.0],
             imageName: "Blades/Talent_Blades_DeadlyStab",
         },
         {
@@ -308,7 +308,7 @@ export const soloTree = {
                 [{value: 5, desc: "+{0}% Damage with Spears", category: "Melee DMG"}],
                 [{value: 10, desc: "+{0}% Damage with Spears", category: "Melee DMG"}, {value: 10, desc: "+{0}% Damage with Thrown Spears", category: "Ranged DMG"}],
             ],
-            position: [5, 9],
+            position: [5, 17.0],
             imageName: "Spears/Talent_Spear_DeadlyThrust1",
         },
         {
@@ -319,7 +319,7 @@ export const soloTree = {
             benefits: [
                 [{value: 1, desc: "Can see Creature Alert Level and Health", category: "Hunting"}],
             ],
-            position: [6, 8],
+            position: [6, 15.5],
             imageName: "Hunting/Talent_Hunting_HealthBars",
         },
         {
@@ -330,49 +330,40 @@ export const soloTree = {
             benefits: [
                 [{value: 10, desc: "+{0}% Food Effects Duration", category: "Modifiers"}],
             ],
-            position: [3, 5],
+            position: [3, 10.0],
             imageName: "Cooking/Talent_Cooking_LongLastingEffects",
         },
     ]),
     fullTracks: [
-        {start: "Marathon Runner", end: "Lightning Recovery"},
-        {start: "Lightning Recovery", path: [[1, 0]], end: "Precision Logging"},
-        {start: "Lightning Recovery", path: [[1, 2]], end: "Low Maintenance"},
-
-        {start: "Precision Logging", end: "Miner Rewards"},
-        {start: "Miner Rewards", path: [[5, 0]], end: "The Big Three"},
-
-        {start: "Fleet Footed", path: [[1, 4]], end: "'Tis But A Scratch"},
-        {start: "Fleet Footed", path: [[1, 4]], end: "Steel Ankles"},
-        {start: "Fleet Footed", end: "Very, Very Quiet"},
-
-        {start: "'Tis But A Scratch", path: [[1, 2]], end: "Low Maintenance"},
-
-        {start: "Low Maintenance", path: [[5, 2]], end: "The Big Three"},
-        {start: "Low Maintenance", path: [[5, 2]], end: "Pack Horse"},
-        {start: "Low Maintenance", path: [[5, 2], [5, 3]], end: "Lone Wolf"},
-
-        {start: "The Big Three", path: [[5, 3]], end: "Lone Wolf"},
-        {start: "The Big Three", path: [[6, 1]], end: "Savage Hunter I"},
-        {start: "The Big Three", path: [[6, 1]], end: "More Than A Handful"},
-
-        {start: "Savage Hunter I", end: "Savage Hunter II"},
-        {start: "Pack Horse", end: "Mobile Stockpile"},
-        {start: "Pack Horse", path: [[5, 6]], end: "Efficient Home Maintenance"},
-        {start: "Mobile Stockpile", end: "Basic Move"},
-
-        {start: "Healthy Maverick", end: "Bounce Back"},
-        {start: "Bounce Back", path: [[3, 6]], end: "Sweet, Savoury, Satisfied"},
-        {start: "Bounce Back", path: [[3, 6], [5, 6]], end: "Efficient Home Maintenance"},
-        {start: "Bounce Back", path: [[5, 6]], end: "Pack Horse"},
-
-        {start: "Efficient Home Maintenance", end: "Gotta Damage Fast"},
-
-        {start: "Heavy Hitter", path: [[1, 8]], end: "Bounce Back"},
-        {start: "Heavy Hitter", path: [[3, 8]], end: "Honed Heads"},
-        {start: "Heavy Hitter", path: [[3, 8]], end: "Slice And Dice"},
-        {start: "Heavy Hitter", path: [[5, 8]], end: "Bring A Gun To A Gun Fight"},
-        {start: "Heavy Hitter", path: [[5, 8]], end: "Stick Of Destiny"},
-        {start: "Heavy Hitter", end: "Health Monitor"}
-    ] as FullTrack[]
+        { start: "The Big Three", path: [[5, 6.0]], end: "Lone Wolf" },
+        { start: "Pack Horse", path: [[5, 6.0]], end: "Lone Wolf" },
+        { start: "Lightning Recovery", path: [[1, 4.0]], end: "Low Maintenance" },
+        { start: "'Tis But A Scratch", path: [[1, 4.0]], end: "Low Maintenance" },
+        { start: "Low Maintenance", path: [[5, 4.0]], end: "Pack Horse" },
+        { start: "Bounce Back", path: [[5, 12.0]], end: "Pack Horse" },
+        { start: "Healthy Maverick", end: "Bounce Back" },
+        { start: "Heavy Hitter", path: [[1, 15.5]], end: "Bounce Back" },
+        { start: "Marathon Runner", end: "Lightning Recovery" },
+        { start: "Pack Horse", end: "Mobile Stockpile" },
+        { start: "Savage Hunter I", end: "Savage Hunter II" },
+        { start: "Low Maintenance", path: [[5, 4.0]], end: "The Big Three" },
+        { start: "Miner Rewards", path: [[5, 0.0]], end: "The Big Three" },
+        { start: "Mobile Stockpile", end: "Basic Move" },
+        { start: "Fleet Footed", path: [[1, 8.0]], end: "'Tis But A Scratch" },
+        { start: "Fleet Footed", end: "Very, Very Quiet" },
+        { start: "The Big Three", path: [[6, 2.0]], end: "Savage Hunter I" },
+        { start: "Fleet Footed", path: [[1, 8.0]], end: "Steel Ankles" },
+        { start: "The Big Three", path: [[6, 2.0]], end: "More Than A Handful" },
+        { start: "Lightning Recovery", path: [[1, 0.0]], end: "Precision Logging" },
+        { start: "Precision Logging", end: "Miner Rewards" },
+        { start: "Bounce Back", end: "Efficient Home Maintenance" },
+        { start: "Pack Horse", path: [[5, 12.0]], end: "Efficient Home Maintenance" },
+        { start: "Efficient Home Maintenance", end: "Gotta Damage Fast" },
+        { start: "Heavy Hitter", path: [[3, 15.5]], end: "Honed Heads" },
+        { start: "Heavy Hitter", path: [[5, 15.5]], end: "Bring A Gun To A Gun Fight" },
+        { start: "Heavy Hitter", path: [[3, 15.5]], end: "Slice And Dice" },
+        { start: "Heavy Hitter", path: [[5, 15.5]], end: "Stick Of Destiny" },
+        { start: "Heavy Hitter", end: "Health Monitor" },
+        { start: "Bounce Back", path: [[3, 12.0]], end: "Sweet, Savoury, Satisfied" },
+    ] as FullTrack[],
 };

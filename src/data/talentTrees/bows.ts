@@ -12,7 +12,7 @@ export const bowsTree = {
                 [{value: 15, desc: "+{0}% Accuracy with Bows/Crossbows", category: "Ranged Weapon"}],
                 [{value: 30, desc: "+{0}% Accuracy with Bows/Crossbows", category: "Ranged Weapon"}],
             ],
-            position: [2, 3],
+            position: [2, 6.0],
             imageName: "Bows/Talent_Bow_IncreasedBowAccuracy",
         },
         {
@@ -25,7 +25,7 @@ export const bowsTree = {
                 [{value: -20, desc: "+{0}% Wear Rate of Bows/Crossbows", category: "Item"}],
                 [{value: -30, desc: "+{0}% Wear Rate of Bows/Crossbows", category: "Item"}],
             ],
-            position: [2, 2],
+            position: [2, 4.0],
             imageName: "Bows/Talent_Bow_TrainedBowman",
         },
         {
@@ -38,7 +38,7 @@ export const bowsTree = {
                 [{value: 10, desc: "+{0}% Reload Speed of Bows/Crossbows", category: "Ranged Weapon"}],
                 [{value: 15, desc: "+{0}% Reload Speed of Bows/Crossbows", category: "Ranged Weapon"}],
             ],
-            position: [0, 3],
+            position: [0, 6.0],
             imageName: "Bows/Talent_Bow_QuickReload",
         },
         {
@@ -51,7 +51,7 @@ export const bowsTree = {
                 [{value: -10, desc: "+{0}% Stamina Consumed by Bow Actions", category: "Stamina"}],
                 [{value: -15, desc: "+{0}% Stamina Consumed by Bow Actions", category: "Stamina"}],
             ],
-            position: [0, 2],
+            position: [0, 4.0],
             imageName: "Bows/Talent_Bow_EasyDraw",
         },
         {
@@ -64,7 +64,7 @@ export const bowsTree = {
                 [{value: 10, desc: "+{0}% Aim Speed with Bows/Crossbows", category: "Ranged Weapon"}],
                 [{value: 15, desc: "+{0}% Aim Speed with Bows/Crossbows", category: "Ranged Weapon"}],
             ],
-            position: [1, 2],
+            position: [1, 4.0],
             imageName: "Bows/Talent_Bow_OverThoseMountains",
         },
         {
@@ -75,7 +75,7 @@ export const bowsTree = {
             benefits: [
                 [{value: 1, desc: "Fired Arrows will lock on to Targets", category: "Ranged Weapon"}, {value: 1, desc: "Fired Crossbow Bolts will lock on to Targets", category: "Ranged Weapon"}],
             ],
-            position: [7, 2],
+            position: [7, 4.0],
             imageName: "Bows/Talent_Bow_HomingArrows",
         },
         {
@@ -87,7 +87,7 @@ export const bowsTree = {
                 [{value: 5, desc: "{0}% chance to fire an additional Arrow/Bolt", category: "Ranged Weapon"}],
                 [{value: 15, desc: "{0}% chance to fire an additional Arrow/Bolt", category: "Ranged Weapon"}],
             ],
-            position: [5, 3],
+            position: [5, 6.0],
             imageName: "Bows/Talent_Bow_TwiceTheFun",
         },
         {
@@ -100,7 +100,7 @@ export const bowsTree = {
                 [{value: 10, desc: "{0}% chance to Slow on Hit with Bows/Crossbows", category: "Modifiers"}],
                 [{value: 15, desc: "{0}% chance to Slow on Hit with Bows/Crossbows", category: "Modifiers"}],
             ],
-            position: [5, 1],
+            position: [5, 2.0],
             imageName: "Bows/Talent_Bow_HinderingShot",
         },
         {
@@ -111,7 +111,7 @@ export const bowsTree = {
             benefits: [
                 [{value: 5, desc: "{0}% chance to Immobilize on Hit with Bows/Crossbows", category: "Modifiers"}],
             ],
-            position: [7, 3],
+            position: [7, 6.0],
             imageName: "Bows/Talent_Bow_PinningShot",
         },
         {
@@ -123,7 +123,7 @@ export const bowsTree = {
                 [{value: 5, desc: "+{0}% Critical Damage with Bows/Crossbows", category: "Generic Damage"}],
                 [{value: 15, desc: "+{0}% Critical Damage with Bows/Crossbows", category: "Generic Damage"}],
             ],
-            position: [4, 2],
+            position: [4, 4.0],
             imageName: "Bows/Talent_Bow_SoftSpot1",
         },
         {
@@ -135,7 +135,7 @@ export const bowsTree = {
                 [{value: 10, desc: "+{0}% Critical Damage with Bows/Crossbows", category: "Generic Damage"}],
                 [{value: 25, desc: "+{0}% Critical Damage with Bows/Crossbows", category: "Generic Damage"}],
             ],
-            position: [6, 3],
+            position: [6, 6.0],
             imageName: "Bows/Talent_Bow_SoftSpot2",
         },
         {
@@ -144,9 +144,9 @@ export const bowsTree = {
             rank: 2,
             prerequisites: ["Increased Arrow Damage I", "Bow Quick Draw", "More For Less I"],
             benefits: [
-                [{value: 15, desc: "+{0}% Durability of crafted Bows", category: "Misc"}],
+                [{value: 1, desc: "Alters Crafted Bows to Provide a Bonus to Health", category: "Misc"}],
             ],
-            position: [2, 1],
+            position: [2, 2.0],
             imageName: "Bows/Talent_Bow_CraftyFletcher1",
         },
         {
@@ -157,7 +157,7 @@ export const bowsTree = {
             benefits: [
                 [{value: 10, desc: "{0}% chance to Craft an additional Arrow/Bolt", category: "Crafting"}],
             ],
-            position: [3, 0],
+            position: [3, 0.0],
             imageName: "Bows/Talent_Bow_CraftyFletcher2",
         },
         {
@@ -170,7 +170,7 @@ export const bowsTree = {
                 [{value: 8, desc: "+{0}% Movement Speed with a Bow/Crossbow Equipped", category: "Movement"}],
                 [{value: 10, desc: "+{0}% Movement Speed with a Bow/Crossbow Equipped", category: "Movement"}],
             ],
-            position: [0, 0],
+            position: [0, 0.0],
             imageName: "Bows/Talent_Bow_BowAgility",
         },
         {
@@ -183,7 +183,7 @@ export const bowsTree = {
                 [{value: 5, desc: "+{0}% Arrow Speed", category: "Misc"}],
                 [{value: 10, desc: "+{0}% Arrow Speed", category: "Misc"}],
             ],
-            position: [1, 3],
+            position: [1, 6.0],
             imageName: "Bows/Talent_Bow_SwiftFlight",
         },
         {
@@ -196,7 +196,7 @@ export const bowsTree = {
                 [{value: 5, desc: "+{0}% Damage with Bows/Crossbows", category: "Ranged Weapon"}],
                 [{value: 10, desc: "+{0}% Damage with Bows/Crossbows", category: "Ranged Weapon"}],
             ],
-            position: [1, 0],
+            position: [1, 0.0],
             imageName: "Bows/Talent_Bow_IncreasedArrowDamage1",
         },
         {
@@ -209,7 +209,7 @@ export const bowsTree = {
                 [{value: 5, desc: "+{0}% Damage with Bows/Crossbows", category: "Ranged Weapon"}],
                 [{value: 10, desc: "+{0}% Damage with Bows/Crossbows", category: "Ranged Weapon"}],
             ],
-            position: [2, 0],
+            position: [2, 0.0],
             imageName: "Bows/Talent_Bow_IncreasedArrowDamage2",
         },
         {
@@ -220,7 +220,7 @@ export const bowsTree = {
             benefits: [
                 [{value: -25, desc: "+{0}% Resource Cost of Crafted Bows/Crossbows", category: "Crafting"}],
             ],
-            position: [4, 0],
+            position: [4, 0.0],
             imageName: "Bows/Talent_Bow_MoreForLess2",
         },
         {
@@ -231,7 +231,7 @@ export const bowsTree = {
             benefits: [
                 [{value: -25, desc: "+{0}% Resource Cost of Crafted Bows/Crossbows", category: "Crafting"}],
             ],
-            position: [0, 1],
+            position: [0, 2.0],
             imageName: "Bows/Talent_Bow_MoreForLess",
         },
         {
@@ -244,7 +244,7 @@ export const bowsTree = {
                 [{value: 10, desc: "{0}% chance to Wound on Hit with Bows/Crossbows", category: "Modifiers"}],
                 [{value: 15, desc: "{0}% chance to Wound on Hit with Bows/Crossbows", category: "Modifiers"}],
             ],
-            position: [7, 1],
+            position: [7, 2.0],
             imageName: "Bows/Talent_Bow_WoundingShot",
         },
         {
@@ -253,13 +253,39 @@ export const bowsTree = {
             rank: 4,
             prerequisites: ["Hindering Shot"],
             benefits: [
-                [{value: 2, desc: "+{0}% Crafted arrow/bolt damage", category: "Misc"}],
-                [{value: 5, desc: "+{0}% Crafted arrow/bolt damage", category: "Misc"}],
-                [{value: 10, desc: "+{0}% Crafted arrow/bolt damage", category: "Misc"}],
+                [{value: 2, desc: "+{0}% Projectile Damage", category: "Ranged DMG"}],
+                [{value: 5, desc: "+{0}% Projectile Damage", category: "Ranged DMG"}],
+                [{value: 10, desc: "+{0}% Projectile Damage", category: "Ranged DMG"}],
             ],
-            position: [7, 0],
+            position: [7, 0.0],
             imageName: "Bows/Talent_Bow_SupplyDemand",
         },
     ]),
-    fullTracks: [] as FullTrack[]
+    fullTracks: [
+        { start: "Swift Flight", end: "Bullseye" },
+        { start: "Bow Quick Draw", end: "Trained Bowman" },
+        { start: "Easy Draw", end: "Bow Quick Draw" },
+        { start: "More For Less I", path: [[1, 2.0]], end: "Bow Quick Draw" },
+        { start: "Soft Spot II", path: [[6, 4.0]], end: "Homing Instinct" },
+        { start: "Soft Spot I", path: [[4, 6.0]], end: "Twice the Fun" },
+        { start: "Bullseye", end: "Twice the Fun" },
+        { start: "Trained Bowsmith", end: "Hindering Shot" },
+        { start: "Soft Spot I", path: [[4, 2.0]], end: "Hindering Shot" },
+        { start: "Soft Spot II", end: "Pinning Shot" },
+        { start: "Bullseye", path: [[4, 6.0]], end: "Soft Spot I" },
+        { start: "Trained Bowsmith", path: [[4, 2.0]], end: "Soft Spot I" },
+        { start: "Trained Bowman", end: "Soft Spot I" },
+        { start: "Twice the Fun", end: "Soft Spot II" },
+        { start: "Increased Arrow Damage I", path: [[1, 2.0]], end: "Trained Bowsmith" },
+        { start: "Bow Quick Draw", path: [[1, 2.0]], end: "Trained Bowsmith" },
+        { start: "More For Less I", end: "Trained Bowsmith" },
+        { start: "Trained Bowsmith", path: [[3, 2.0]], end: "Crafty Fletcher" },
+        { start: "Quick Load", end: "Swift Flight" },
+        { start: "Bow Agility", end: "Increased Arrow Damage I" },
+        { start: "More For Less I", path: [[1, 2.0]], end: "Increased Arrow Damage I" },
+        { start: "Increased Arrow Damage I", end: "Increased Arrow Damage II" },
+        { start: "Trained Bowsmith", path: [[4, 2.0]], end: "More For Less II" },
+        { start: "Hindering Shot", end: "Wounding Shot" },
+        { start: "Hindering Shot", path: [[5, 0.0]], end: "Supply and Demand" },
+    ] as FullTrack[],
 };

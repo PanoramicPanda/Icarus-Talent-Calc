@@ -13,7 +13,7 @@ export const cookingTree = {
                 [{value: -30, desc: "+{0}% Rate of Food Spoiling", category: "Decay"}],
                 [{value: -50, desc: "+{0}% Rate of Food Spoiling", category: "Decay"}],
             ],
-            position: [0, 0],
+            position: [0, 0.0],
             imageName: "Cooking/Talent_Cooking_NaturallyPreserved",
         },
         {
@@ -26,7 +26,7 @@ export const cookingTree = {
                 [{value: 15, desc: "+{0}% Food Effects Duration", category: "Modifiers"}],
                 [{value: 20, desc: "+{0}% Food Effects Duration", category: "Modifiers"}],
             ],
-            position: [2, 2],
+            position: [2, 3.0],
             imageName: "Cooking/Talent_Cooking_LongLastingEffects",
         },
         {
@@ -37,7 +37,7 @@ export const cookingTree = {
             benefits: [
                 [{value: 1, desc: "Can Eat Spoiled Food", category: "Consumption"}],
             ],
-            position: [6, 1],
+            position: [6, 1.5],
             imageName: "Cooking/Talent_Cooking_AreYouGonnaEatThat",
         },
         {
@@ -49,7 +49,7 @@ export const cookingTree = {
                 [{value: 10, desc: "+{0}% Nutrition from Spoiled Food", category: "Consumption"}],
                 [{value: 15, desc: "+{0}% Nutrition from Spoiled Food", category: "Consumption"}],
             ],
-            position: [7, 1],
+            position: [7, 1.5],
             imageName: "Cooking/Talent_Cooking_ItsBetterThanIThought",
         },
         {
@@ -61,7 +61,7 @@ export const cookingTree = {
                 [{value: 20, desc: "+{0}% Nutrition from Raw Foods", category: "Consumption"}],
                 [{value: 40, desc: "+{0}% Nutrition from Raw Foods", category: "Consumption"}],
             ],
-            position: [5, 1],
+            position: [5, 1.5],
             imageName: "Cooking/Talent_Cooking_HealthSuperfood",
         },
         {
@@ -73,7 +73,7 @@ export const cookingTree = {
                 [{value: 10, desc: "+{0}% Nutrition from Food", category: "Consumption"}],
                 [{value: 25, desc: "+{0}% Nutrition from Food", category: "Consumption"}],
             ],
-            position: [0, 2],
+            position: [0, 3.0],
             imageName: "Cooking/Talent_Cooking_FillingMeals",
         },
         {
@@ -84,7 +84,7 @@ export const cookingTree = {
             benefits: [
                 [{value: 1, desc: "+{0} Space in Stomach", category: "Character"}],
             ],
-            position: [8, 2],
+            position: [8, 3.0],
             imageName: "Cooking/Talent_Cooking_AllFoodGroups",
         },
         {
@@ -93,10 +93,10 @@ export const cookingTree = {
             rank: 1,
             prerequisites: [],
             benefits: [
-                [{value: 10, desc: "+{0}% Crop Growth Speed", category: "Farming"}],
-                [{value: 25, desc: "+{0}% Crop Growth Speed", category: "Farming"}],
+                [{value: 10, desc: "+{0}% Planted Crop Growth Speed", category: "Farming"}],
+                [{value: 20, desc: "+{0}% Planted Crop Growth Speed", category: "Farming"}],
             ],
-            position: [0, 4],
+            position: [0, 5.5],
             imageName: "Cooking/Talent_Cooking_GreenThumb",
         },
         {
@@ -107,7 +107,7 @@ export const cookingTree = {
             benefits: [
                 [{value: 1, desc: "Created Crop Plot Crops will not Wither", category: "Farming"}],
             ],
-            position: [7, 4],
+            position: [7, 5.5],
             imageName: "Cooking/Talent_Cooking_FresherCrops",
         },
         {
@@ -116,10 +116,10 @@ export const cookingTree = {
             rank: 1,
             prerequisites: ["Filling Meals"],
             benefits: [
-                [{value: -25, desc: "+{0}% Fuel Consumption of Crafted Campfires", category: "Misc"}],
-                [{value: -50, desc: "+{0}% Fuel Consumption of Crafted Campfires", category: "Misc"}],
+                [{value: -25, desc: "+{0}% Energy Transmutation Resource Cost", category: "Transmutation"}],
+                [{value: -50, desc: "+{0}% Energy Transmutation Resource Cost", category: "Transmutation"}],
             ],
-            position: [1, 1],
+            position: [1, 1.5],
             imageName: "Cooking/Talent_Cooking_WellMadeFire",
         },
         {
@@ -128,10 +128,10 @@ export const cookingTree = {
             rank: 1,
             prerequisites: ["Green Thumb"],
             benefits: [
-                [{value: 15, desc: "+{0}% Crop Growth Speed at Night", category: "Farming"}],
-                [{value: 30, desc: "+{0}% Crop Growth Speed at Night", category: "Farming"}],
+                [{value: 15, desc: "+{0}% Growth Rate of Crops at Night", category: "Farming"}],
+                [{value: 30, desc: "+{0}% Growth Rate of Crops at Night", category: "Farming"}],
             ],
-            position: [1, 3],
+            position: [1, 4.5],
             imageName: "Cooking/Talent_AllNighter",
         },
         {
@@ -143,7 +143,7 @@ export const cookingTree = {
                 [{value: 15, desc: "+{0}% Dried Meat Modifier Effectiveness", category: "Misc"}],
                 [{value: 30, desc: "+{0}% Dried Meat Modifier Effectiveness", category: "Misc"}],
             ],
-            position: [3, 1],
+            position: [3, 1.5],
             imageName: "Hunting/Talent_Hunting_HealthBars",
         },
         {
@@ -155,7 +155,7 @@ export const cookingTree = {
                 [{value: 15, desc: "+{0}% Fruit and Vegetable Modifier Effectiveness", category: "Misc"}],
                 [{value: 30, desc: "+{0}% Fruit and Vegetable Modifier Effectiveness", category: "Misc"}],
             ],
-            position: [4, 0],
+            position: [4, 0.0],
             imageName: "Cooking/Talent_HealthyDiet",
         },
         {
@@ -168,7 +168,7 @@ export const cookingTree = {
                 [{value: 5, desc: "+{0}% Maximum Stamina", category: "Stamina"}],
                 [{value: 10, desc: "+{0}% Maximum Stamina", category: "Stamina"}],
             ],
-            position: [3, 3],
+            position: [3, 4.5],
             imageName: "Cooking/Talent_GetUpAndGo",
         },
         {
@@ -181,7 +181,7 @@ export const cookingTree = {
                 [{value: 5, desc: "+{0}% Melee Damage", category: "Melee DMG"}],
                 [{value: 10, desc: "+{0}% Melee Damage", category: "Melee DMG"}],
             ],
-            position: [4, 3],
+            position: [4, 4.5],
             imageName: "Cooking/Talent_TheOldOneTwo",
         },
         {
@@ -194,7 +194,7 @@ export const cookingTree = {
                 [{value: 5, desc: "+{0}% Yield from Foraging", category: "Foraging"}],
                 [{value: 10, desc: "+{0}% Yield from Foraging", category: "Foraging"}],
             ],
-            position: [5, 3],
+            position: [5, 4.5],
             imageName: "Cooking/Talent_GatheringGuru",
         },
         {
@@ -205,7 +205,7 @@ export const cookingTree = {
             benefits: [
                 [{value: 1, desc: "Grants the recipe to make gunpowder from fertilizer on the Mortar and Pestle", category: "Flag"}],
             ],
-            position: [3, 5],
+            position: [3, 7.0],
             imageName: "Cooking/Talent_ShootTheBreeze",
         },
         {
@@ -216,7 +216,7 @@ export const cookingTree = {
             benefits: [
                 [{value: 1, desc: "Grants the recipe to make the Rusty Shotgun on the Machining Bench", category: "Flag"}],
             ],
-            position: [4, 5],
+            position: [4, 7.0],
             imageName: "Cooking/Talent_GetOffMyLawn",
         },
         {
@@ -225,9 +225,9 @@ export const cookingTree = {
             rank: 1,
             prerequisites: ["Green Thumb"],
             benefits: [
-                [{value: 50, desc: "+{0}% Duration of Fertilizer", category: "Misc"}],
+                [{value: 50, desc: "+{0}% Duration of Fertilizer", category: "Farming"}],
             ],
-            position: [2, 5],
+            position: [2, 7.0],
             imageName: "Cooking/Talent_NeatAndTidy",
         },
         {
@@ -236,10 +236,10 @@ export const cookingTree = {
             rank: 3,
             prerequisites: ["Green Thumb"],
             benefits: [
-                [{value: 10, desc: "+{0}% Crop Growth Speed", category: "Farming"}],
-                [{value: 15, desc: "+{0}% Crop Growth Speed", category: "Farming"}],
+                [{value: 10, desc: "+{0}% Planted Crop Growth Speed", category: "Farming"}],
+                [{value: 20, desc: "+{0}% Planted Crop Growth Speed", category: "Farming"}],
             ],
-            position: [5, 5],
+            position: [5, 7.0],
             imageName: "Cooking/Talent_SpeedGro",
         },
         {
@@ -251,7 +251,7 @@ export const cookingTree = {
                 [{value: 15, desc: "+{0}% Planted Crop Yield", category: "Farming"}],
                 [{value: 30, desc: "+{0}% Planted Crop Yield", category: "Farming"}],
             ],
-            position: [6, 3],
+            position: [6, 4.5],
             imageName: "Cooking/Talent_BumperCrop",
         },
         {
@@ -260,10 +260,10 @@ export const cookingTree = {
             rank: 1,
             prerequisites: ["Fresh is Best"],
             benefits: [
-                [{value: +20, desc: "+{0}% Time before harvested planted crops spoil", category: "Misc"}],
-                [{value: +45, desc: "+{0}% Time before harvested planted crops spoil", category: "Misc"}],
+                [{value: 20, desc: "+{0}% Spoil Time of Harvested Items", category: "Farming"}],
+                [{value: 40, desc: "+{0}% Spoil Time of Harvested Items", category: "Farming"}],
             ],
-            position: [8, 5],
+            position: [8, 7.0],
             imageName: "Cooking/Talent_SturdyStalks",
         },
         {
@@ -272,10 +272,10 @@ export const cookingTree = {
             rank: 3,
             prerequisites: ["Green Thumb"],
             benefits: [
-                [{value: 25, desc: "+{0}% Yield of Seeds from Planted Crops", category: "Farming"}],
-                [{value: 50, desc: "+{0}% Yield of Seeds from Planted Crops", category: "Farming"}],
+                [{value: 25, desc: "+{0}% Yield of Seeds From Planted Crops", category: "Farming"}],
+                [{value: 50, desc: "+{0}% Yield of Seeds From Planted Crops", category: "Farming"}],
             ],
-            position: [6, 5],
+            position: [6, 7.0],
             imageName: "Cooking/T_Talent_Farming_ProlificCrop",
         },
         {
@@ -287,9 +287,35 @@ export const cookingTree = {
                 [{value: 100, desc: "+{0}% Seed Yield", category: "Farming"}],
                 [{value: 200, desc: "+{0}% Seed Yield", category: "Farming"}],
             ],
-            position: [1, 5],
+            position: [1, 7.0],
             imageName: "Cooking/T_Talent_Farming_SeedMaster",
         },
     ]),
-    fullTracks: [] as FullTrack[]
+    fullTracks: [
+        { start: "Naturally Preserved", path: [[2, 0.0]], end: "Long Lasting Effects" },
+        { start: "Filling Meals", end: "Long Lasting Effects" },
+        { start: "Superfoods", end: "You Gonna Eat That?" },
+        { start: "You Gonna Eat That?", end: "It's Better Than I Thought" },
+        { start: "Long Lasting Effects", path: [[5, 3.0]], end: "Superfoods" },
+        { start: "Fresh is Best", path: [[8, 5.5]], end: "Food Pyramid" },
+        { start: "Long Lasting Effects", end: "Food Pyramid" },
+        { start: "Green Thumb", end: "Fresh is Best" },
+        { start: "Gathering Guru", path: [[5, 5.5]], end: "Fresh is Best" },
+        { start: "Filling Meals", path: [[1, 3.0]], end: "Well Laid Fire" },
+        { start: "Green Thumb", path: [[1, 5.5]], end: "All-Nighter" },
+        { start: "Naturally Preserved", path: [[3, 0.0]], end: "Carnivore" },
+        { start: "Naturally Preserved", end: "Vegetarian" },
+        { start: "Green Thumb", path: [[3, 5.5]], end: "Get up and go" },
+        { start: "Long Lasting Effects", path: [[4, 3.0]], end: "The Old One-Two" },
+        { start: "Long Lasting Effects", path: [[5, 3.0]], end: "Gathering Guru" },
+        { start: "Green Thumb", path: [[5, 5.5]], end: "Gathering Guru" },
+        { start: "Neat and Tidy", end: "Shoot the Breeze" },
+        { start: "Shoot the Breeze", end: "Get off my Lawn" },
+        { start: "Green Thumb", path: [[2, 5.5]], end: "Neat and Tidy" },
+        { start: "Green Thumb", path: [[5, 5.5]], end: "Speed-Gro" },
+        { start: "Green Thumb", path: [[6, 5.5]], end: "Bumper Crop" },
+        { start: "Fresh is Best", path: [[8, 5.5]], end: "Sturdy Stalks" },
+        { start: "Green Thumb", path: [[6, 5.5]], end: "Prolific Crop" },
+        { start: "Green Thumb", path: [[1, 5.5]], end: "Seed Master" },
+    ] as FullTrack[],
 };

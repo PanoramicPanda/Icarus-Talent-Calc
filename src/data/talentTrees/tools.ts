@@ -11,7 +11,7 @@ export const toolsTree = {
             benefits: [
                 [{value: 25, desc: "{0}% for Pickaxes to Recover Durability Instead of Breaking", category: "Item"}],
             ],
-            position: [6, 0],
+            position: [6, 0.0],
             imageName: "Tools/Talent_Tools_GoodAsNew",
         },
         {
@@ -24,20 +24,20 @@ export const toolsTree = {
                 [{value: 10, desc: "+{0}% Attack Speed with Pickaxes", category: "Melee Weapon"}],
                 [{value: 20, desc: "+{0}% Attack Speed with Pickaxes", category: "Melee Weapon"}],
             ],
-            position: [1, 1],
+            position: [1, 2.0],
             imageName: "Tools/Talent_Tools_SpeedyPick",
         },
         {
             name: "Miner Damage",
             description: "Increased pickaxe melee damage",
             rank: 1,
-            prerequisites: ["Careful Hits", "Speedy Mining"],
+            prerequisites: ["Careful Hits II", "Speedy Mining"],
             benefits: [
                 [{value: 20, desc: "+{0}% Pickaxe Melee Damage", category: "Melee DMG"}],
                 [{value: 40, desc: "+{0}% Pickaxe Melee Damage", category: "Melee DMG"}],
                 [{value: 60, desc: "+{0}% Pickaxe Melee Damage", category: "Melee DMG"}],
             ],
-            position: [1, 0],
+            position: [1, 0.0],
             imageName: "Tools/Talent_Tools_MinerDamage",
         },
         {
@@ -50,7 +50,7 @@ export const toolsTree = {
                 [{value: 10, desc: "+{0}% Attack Speed with Axes", category: "Melee Weapon"}],
                 [{value: 20, desc: "+{0}% Attack Speed with Axes", category: "Melee Weapon"}],
             ],
-            position: [1, 3],
+            position: [1, 4.0],
             imageName: "Tools/Talent_Tools_SpeedChopper",
         },
         {
@@ -62,7 +62,7 @@ export const toolsTree = {
                 [{value: 10, desc: "+{0}% Mining Radius", category: "Mining"}],
                 [{value: 20, desc: "+{0}% Mining Radius", category: "Mining"}],
             ],
-            position: [2, 0],
+            position: [2, 0.0],
             imageName: "Tools/Talent_Tools_StrongPick",
         },
         {
@@ -73,7 +73,7 @@ export const toolsTree = {
             benefits: [
                 [{value: -25, desc: "+{0}% Resource Cost of Crafted Pickaxes", category: "Crafting"}],
             ],
-            position: [4, 0],
+            position: [4, 0.0],
             imageName: "Tools/Talent_Tools_Picksmith1",
         },
         {
@@ -82,10 +82,10 @@ export const toolsTree = {
             rank: 3,
             prerequisites: ["Picksmith II"],
             benefits: [
-                [{value: 10, desc: "+{0}% Durability of Crafted Pickaxes", category: "Misc"}],
-                [{value: 20, desc: "+{0}% Durability of Crafted Pickaxes", category: "Misc"}],
+                [{value: 10, desc: "+{0}% Maximum Health for Crafted Pickaxes", category: "Crafting"}],
+                [{value: 20, desc: "+{0}% Maximum Health for Crafted Pickaxes", category: "Crafting"}],
             ],
-            position: [5, 0],
+            position: [5, 0.0],
             imageName: "Tools/Talent_Tools_Picksmith2",
         },
         {
@@ -98,11 +98,11 @@ export const toolsTree = {
                 [{value: -10, desc: "+{0}% Stamina Consumed by Pickaxe Actions", category: "Stamina"}],
                 [{value: -15, desc: "+{0}% Stamina Consumed by Pickaxe Actions", category: "Stamina"}],
             ],
-            position: [2, 1],
+            position: [2, 2.0],
             imageName: "Tools/Talent_Tools_MinerEndurance",
         },
         {
-            name: "Careful Hits",
+            name: "Careful Hits II",
             description: "Reduced durability loss on pickaxes",
             rank: 1,
             prerequisites: [],
@@ -111,7 +111,7 @@ export const toolsTree = {
                 [{value: -10, desc: "+{0}% Wear Rate of Pickaxes", category: "Item"}],
                 [{value: -15, desc: "+{0}% Wear Rate of Pickaxes", category: "Item"}],
             ],
-            position: [0, 0],
+            position: [0, 0.0],
             imageName: "Tools/Talent_Tools_CarefulHits",
         },
         {
@@ -122,7 +122,7 @@ export const toolsTree = {
             benefits: [
                 [{value: 150, desc: "+{0}% Axe Melee Damage", category: "Melee DMG"}, {value: 10, desc: "+{0}% Attack Speed with Axes", category: "Melee Weapon"}, {value: 50, desc: "+{0}% Stamina Consumed by Axe Actions", category: "Stamina"}, {value: 100, desc: "+{0}% Wear Rate of Axes", category: "Item"}],
             ],
-            position: [4, 3],
+            position: [4, 4.0],
             imageName: "Tools/Talent_Tools_Tomahawk",
         },
         {
@@ -135,7 +135,7 @@ export const toolsTree = {
                 [{value: -10, desc: "+{0}% Wear Rate of Axes", category: "Item"}],
                 [{value: -15, desc: "+{0}% Wear Rate of Axes", category: "Item"}],
             ],
-            position: [0, 4],
+            position: [0, 6.0],
             imageName: "Tools/Talent_Tools_HardyAxeHeads",
         },
         {
@@ -148,7 +148,7 @@ export const toolsTree = {
                 [{value: 10, desc: "+{0}% Felling Damage", category: "Felling"}],
                 [{value: 25, desc: "+{0}% Felling Damage", category: "Felling"}],
             ],
-            position: [2, 4],
+            position: [2, 6.0],
             imageName: "Tools/Talent_Tools_ExtraSharp",
         },
         {
@@ -159,7 +159,7 @@ export const toolsTree = {
             benefits: [
                 [{value: -50, desc: "+{0}% Wear Rate of Axes", category: "Item"}, {value: -10, desc: "+{0}% Stamina Consumed by Axe Actions", category: "Stamina"}, {value: 30, desc: "+{0}% Yield from Felling Trees", category: "Felling"}],
             ],
-            position: [4, 1],
+            position: [4, 2.0],
             imageName: "Tools/Talent_Tools_OhWaitIneedThat",
         },
         {
@@ -170,7 +170,7 @@ export const toolsTree = {
             benefits: [
                 [{value: -25, desc: "+{0}% Resource Cost of Crafted Axes", category: "Crafting"}],
             ],
-            position: [4, 4],
+            position: [4, 6.0],
             imageName: "Tools/Talent_Tools_DiscountAxes3",
         },
         {
@@ -179,10 +179,10 @@ export const toolsTree = {
             rank: 3,
             prerequisites: ["Discount Axes II"],
             benefits: [
-                [{value: 10, desc: "+{0}% Durability of Crafted Axes", category: "Misc"}],
-                [{value: 25, desc: "+{0}% Durability of Crafted Axes", category: "Misc"}],
+                [{value: 10, desc: "+{0}% Maximum Health for Crafted Axes", category: "Crafting"}],
+                [{value: 25, desc: "+{0}% Maximum Health for Crafted Axes", category: "Crafting"}],
             ],
-            position: [5, 4],
+            position: [5, 6.0],
             imageName: "Tools/Talent_Tools_DiscountAxes2",
         },
         {
@@ -194,7 +194,7 @@ export const toolsTree = {
                 [{value: -25, desc: "+{0}% Wear Rate of Sickles", category: "Item"}],
                 [{value: -50, desc: "+{0}% Wear Rate of Sickles", category: "Item"}],
             ],
-            position: [3, 2],
+            position: [3, 3.0],
             imageName: "Tools/Talent_Tools_ThinkOfAllTheFibre",
         },
         {
@@ -207,7 +207,7 @@ export const toolsTree = {
                 [{value: -10, desc: "+{0}% Stamina Consumed by Axe Actions", category: "Stamina"}],
                 [{value: -15, desc: "+{0}% Stamina Consumed by Axe Actions", category: "Stamina"}],
             ],
-            position: [2, 3],
+            position: [2, 4.0],
             imageName: "Tools/Talent_Tools_LumberjackEndurance",
         },
         {
@@ -218,7 +218,7 @@ export const toolsTree = {
             benefits: [
                 [{value: -25, desc: "+{0}% Resource Cost of Crafted Pickaxes", category: "Crafting"}],
             ],
-            position: [0, 1],
+            position: [0, 2.0],
             imageName: "Tools/Talent_Tools_Picksmith1",
         },
         {
@@ -229,11 +229,11 @@ export const toolsTree = {
             benefits: [
                 [{value: -25, desc: "+{0}% Resource Cost of Crafted Axes", category: "Crafting"}],
             ],
-            position: [0, 3],
+            position: [0, 4.0],
             imageName: "Tools/Talent_Tools_DiscountAxes1",
         },
         {
-            name: "Careful Hits II",
+            name: "Careful Hits",
             description: "Reduced durability loss on pickaxes",
             rank: 1,
             prerequisites: ["Strong Pick"],
@@ -242,7 +242,7 @@ export const toolsTree = {
                 [{value: -10, desc: "+{0}% Wear Rate of Pickaxes", category: "Item"}],
                 [{value: -20, desc: "+{0}% Wear Rate of Pickaxes", category: "Item"}],
             ],
-            position: [5, 1],
+            position: [5, 2.0],
             imageName: "Tools/Talent_Tools_CarefulHits",
         },
         {
@@ -255,7 +255,7 @@ export const toolsTree = {
                 [{value: -10, desc: "+{0}% Wear Rate of Axes", category: "Item"}],
                 [{value: -20, desc: "+{0}% Wear Rate of Axes", category: "Item"}],
             ],
-            position: [5, 3],
+            position: [5, 4.0],
             imageName: "Tools/Talent_Tools_HardyAxeHeads2",
         },
         {
@@ -268,9 +268,31 @@ export const toolsTree = {
                 [{value: -10, desc: "+{0}% Stamina Consumed by Pickaxe Actions", category: "Stamina"}],
                 [{value: -15, desc: "+{0}% Stamina Consumed by Pickaxe Actions", category: "Stamina"}],
             ],
-            position: [6, 1],
+            position: [6, 2.0],
             imageName: "Tools/Talent_Tools_MinerEndurance2",
         },
     ]),
-    fullTracks: [] as FullTrack[]
+    fullTracks: [
+        { start: "Strong Pick", end: "Good As New" },
+        { start: "Picksmith I", end: "Speedy Mining" },
+        { start: "Careful Hits II", end: "Miner Damage" },
+        { start: "Speedy Mining", end: "Miner Damage" },
+        { start: "Discount Axes I", end: "Speed Chopper" },
+        { start: "Hardy Axe Heads I", path: [[0, 4.0]], end: "Speed Chopper" },
+        { start: "Miner Damage", end: "Big Pick" },
+        { start: "Big Pick", end: "Picksmith II" },
+        { start: "Picksmith II", end: "Strong Pick" },
+        { start: "Speedy Mining", end: "Miner Endurance I" },
+        { start: "Discount Axes II", end: "Berserker" },
+        { start: "Speed Chopper", path: [[1, 6.0]], end: "Extra Sharp" },
+        { start: "Berserker", end: "Controlled Rage" },
+        { start: "Extra Sharp", end: "Discount Axes II" },
+        { start: "Discount Axes II", end: "Hard Axe" },
+        { start: "Speed Chopper", path: [[1, 3.0]], end: "Think of All the Fiber" },
+        { start: "Speedy Mining", path: [[1, 3.0]], end: "Think of All the Fiber" },
+        { start: "Speed Chopper", end: "Lumberjack Endurance" },
+        { start: "Strong Pick", end: "Careful Hits" },
+        { start: "Hard Axe", end: "Hardy Axe Heads II" },
+        { start: "Careful Hits", end: "Miner Endurance II" },
+    ] as FullTrack[],
 };
