@@ -3,6 +3,7 @@ import { TalentData, FullTrack } from '../../constants/treeStructures.ts';
 import { getPoolForTree, pointPools } from '../../data/points.ts';
 import { getPointsSpentInPool } from '../../utils/pointsSpent.ts';
 import { getGateRequirement } from '../../data/ranks.ts';
+import {TALENT_ICON_HEIGHT, TALENT_ICON_WIDTH, TREE_COLUMN_WIDTH, TREE_ROW_HEIGHT} from "../../data/dimension.ts";
 
 interface TalentTrackProps {
     fullTracks: FullTrack[];
@@ -40,14 +41,8 @@ export default function TalentTrack({ fullTracks, talents, talentPoints, treeKey
     };
 
     const getTalentCenter = ([row, col]: [number, number]): [number, number] => {
-        const ICON_WIDTH = 55;
-        const ICON_HEIGHT = 55;
-        const CELL_WIDTH = 60;
-        const CELL_HEIGHT = 100;
-        const GAP = 8;
-
-        const x = col * (CELL_WIDTH + GAP) + ICON_WIDTH / 2;
-        const y = row * (CELL_HEIGHT + GAP) + ICON_HEIGHT / 2;
+        const x = col * TREE_COLUMN_WIDTH + TALENT_ICON_WIDTH / 2;
+        const y = row * TREE_ROW_HEIGHT + TALENT_ICON_HEIGHT / 2;
         return [x, y];
     };
 

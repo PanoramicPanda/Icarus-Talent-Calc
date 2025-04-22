@@ -6,6 +6,7 @@ import {Box} from "@mui/material";
 import TalentTrack from "./talentTrack.tsx";
 import Talent from "../talent/talent.tsx";
 import {getGateRequirement} from "../../data/ranks.ts";
+import {TREE_COLUMN_WIDTH, TREE_ROW_HEIGHT} from "../../data/dimension.ts";
 
 export function TalentTree({
                                treeKey,
@@ -78,8 +79,9 @@ export function TalentTree({
                                 tileRefs.current[talent.name] = el
                             }}
                             style={{
-                                gridRow: talent.position[0] + 1,
-                                gridColumn: talent.position[1] + 1
+                                position: 'absolute',
+                                top: `${talent.position[0] * TREE_ROW_HEIGHT}px`,
+                                left: `${talent.position[1] * TREE_COLUMN_WIDTH}px`,
                             }}
                         >
                             <Talent

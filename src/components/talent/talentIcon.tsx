@@ -2,6 +2,7 @@ import { Box } from "@mui/material";
 import { sanitizeTalentName } from "../../utils/imagePreload.ts";
 import { TalentData } from "../../constants/treeStructures.ts";
 import { useState } from "react";
+import {TALENT_ICON_HEIGHT, TALENT_ICON_WIDTH} from "../../data/dimension.ts";
 
 interface TalentIconProps {
     talent: TalentData;
@@ -40,8 +41,8 @@ export default function TalentIcon({
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
             sx={{
-                width: 55,
-                height: 55,
+                width: TALENT_ICON_WIDTH,
+                height: TALENT_ICON_HEIGHT,
                 border: 2,
                 borderColor,
                 borderStyle: 'ridge',
