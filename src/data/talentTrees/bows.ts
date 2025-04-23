@@ -144,7 +144,7 @@ export const bowsTree = {
             rank: 2,
             prerequisites: ["Increased Arrow Damage I", "Bow Quick Draw", "More For Less I"],
             benefits: [
-                [{value: 1, desc: "Alters Crafted Bows to Provide a Bonus to Health", category: "Misc"}],
+                [{value: 15, desc: "+{0}% Maximum Health for Crafted Bows", category: "Crafting"}],
             ],
             position: [2, 2.0],
             imageName: "Bows/Talent_Bow_CraftyFletcher1",
