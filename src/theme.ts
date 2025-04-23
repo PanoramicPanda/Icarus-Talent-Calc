@@ -15,6 +15,6 @@ export const darkTheme = createTheme({
         },
     },
     typography: {
-        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+        fontFamily: '"Tomorrow", "Roboto", "Helvetica", "Arial", sans-serif',
     },
 });

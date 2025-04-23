@@ -26,6 +26,8 @@ import {TalentTree} from "./components/talentTree/talentTree.tsx";
 import ResetButtons from "./components/resetButtons.tsx";
 import ImportExportButtons from './components/importExportButtons.tsx';
 import CategoryRibbon from "./components/categoryRibbon.tsx";
+import '@fontsource/barlow';
+import '@fontsource/tomorrow';
 
 
 export default function TalentTreeApp() {
