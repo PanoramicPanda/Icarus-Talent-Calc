@@ -8,5 +8,5 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom'
   },
-  base: '/Icarus-Talent-Calc/'
+  base: '/'
 })
