@@ -241,7 +241,7 @@ export default function TalentTreeApp() {
 
 
                     {/*Rank Progress Bar*/}
-                    {selectedTree && (
+                    {selectedTree && selectedCategory != 'Pets' && selectedCategory != 'Mounts' && (
                         <RankProgressBar pointsSpent={talentPointsSpent[selectedTree] || 0}/>
                     )}
 

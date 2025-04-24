@@ -2,7 +2,7 @@ import {FullTrack} from "../../constants/treeStructures.ts";
 import {defineTalentTree} from "../../utils/defineTalentTree.ts";
 
 export const arcticmoaTree = {
-	talents: defineTalentTree("Arctic Moa", [
+	talents: defineTalentTree("Arctic_Moa", [
 		{
 			name: "Wild Fortitude",
 			description: "Increased Maximum Health",

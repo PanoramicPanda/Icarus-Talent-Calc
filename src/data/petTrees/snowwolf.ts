@@ -2,7 +2,7 @@ import {FullTrack} from "../../constants/treeStructures.ts";
 import {defineTalentTree} from "../../utils/defineTalentTree.ts";
 
 export const snowwolfTree = {
-	talents: defineTalentTree("Snow Wolf", [
+	talents: defineTalentTree("Snow_Wolf", [
 		{
 			name: "Aura of Warmth",
 			description: "Increases Health Regeneration in the Arctic, at max rank grants Hypothermia Resistance Aura",

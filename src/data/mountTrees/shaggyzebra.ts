@@ -2,7 +2,7 @@ import {FullTrack} from "../../constants/treeStructures.ts";
 import {defineTalentTree} from "../../utils/defineTalentTree.ts";
 
 export const shaggyzebraTree = {
-	talents: defineTalentTree("Shaggy Zebra", [
+	talents: defineTalentTree("Shaggy_Zebra", [
 		{
 			name: "Aura of Warmth",
 			description: "Increases Health Regeneration in the Arctic, at max rank grants Hypothermia Resistance Aura",

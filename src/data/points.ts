@@ -1,10 +1,11 @@
 import {Trees} from "./talentTreeMap.ts";
 
-export type TalentPool = 'General' | 'Solo';
+export type TalentPool = 'General' | 'Solo' | 'Pets' | 'Mounts';
 
 export const pointPools: Record<TalentPool, {
     cap: number;
     trees: (keyof typeof Trees)[];
+    perTreeCap?: boolean;
 }> = {
     General: {
         cap: 90,
@@ -18,6 +19,24 @@ export const pointPools: Record<TalentPool, {
     Solo: {
         cap: 30,
         trees: ['Solo']
+    },
+    Pets: {
+        cap: 26,
+        trees: [
+            'Boar', 'Cat', 'Chicken', 'Cow',
+            'Hyena', 'Dog', 'Rooster',
+            'Sheep', 'Snow_Wolf', 'Wolf'
+        ],
+        perTreeCap: true
+    },
+    Mounts: {
+        cap: 51,
+        trees:[
+            'Arctic_Moa', 'Blueback', 'Buffalo',
+            'Horse', 'Moa', 'Stryder', 'Terrenus',
+            'Tusker', 'Shaggy_Zebra', 'Zebra'
+        ],
+        perTreeCap: true
     }
 };
 

@@ -13,7 +13,26 @@ import {spearsTree} from "./talentTrees/spears.ts";
 import {bladesTree} from "./talentTrees/blades.ts";
 import {firearmsTree} from "./talentTrees/firearms.ts";
 import {soloTree} from "./talentTrees/solo.ts";
-// import {wolfTree} from "./petTrees/wolf.ts";
+import {boarTree} from "./petTrees/boar.ts";
+import {wolfTree} from "./petTrees/wolf.ts";
+import {catTree} from "./petTrees/cat.ts";
+import {chickenTree} from "./petTrees/chicken.ts";
+import {cowTree} from "./petTrees/cow.ts";
+import {hyenaTree} from "./petTrees/hyena.ts";
+import {dogTree} from "./petTrees/dog.ts";
+import {roosterTree} from "./petTrees/rooster.ts";
+import {sheepTree} from "./petTrees/sheep.ts";
+import {snowwolfTree} from "./petTrees/snowwolf.ts";
+import {arcticmoaTree} from "./mountTrees/arcticmoa.ts";
+import {bluebackTree} from "./mountTrees/blueback.ts";
+import {buffaloTree} from "./mountTrees/buffalo.ts";
+import {horseTree} from "./mountTrees/horse.ts";
+import {moaTree} from "./mountTrees/moa.ts";
+import {shaggyzebraTree} from "./mountTrees/shaggyzebra.ts";
+import {stryderTree} from "./mountTrees/stryder.ts";
+import {terrenusTree} from "./mountTrees/terrenus.ts";
+import {tuskerTree} from "./mountTrees/tusker.ts";
+import {zebraTree} from "./mountTrees/zebra.ts";
 
 export interface TreeInfo {
     name: string
@@ -27,7 +46,8 @@ export enum Categories {
     Habitation = "Habitation",
     Combat = "Combat",
     Solo = "Solo",
-    // Pets = "Pets",
+    Pets = "Pets",
+    Mounts = "Mounts",
 }
 
 export const CategoryIcons: Record<string, string> = {
@@ -57,7 +77,26 @@ export const Trees: Record<string, TreeInfo> = {
     Blades: {name: "Blades", category: Categories.Combat},
     Firearms: {name: "Firearms", category: Categories.Combat},
     Solo: {name: "Solo", category: Categories.Solo},
-    // Wolf: {name: "Wolf", category: Categories.Pets},
+    Boar: {name: "Boar", category: Categories.Pets},
+    Cat: {name: "Cat", category: Categories.Pets},
+    Chicken: {name: "Chicken", category: Categories.Pets},
+    Cow: {name: "Cow", category: Categories.Pets},
+    Dog: {name: "Dog", category: Categories.Pets},
+    Hyena: {name: "Hyena", category: Categories.Pets},
+    Rooster: {name: "Rooster", category: Categories.Pets},
+    Sheep: {name: "Sheep", category: Categories.Pets},
+    Snow_Wolf: {name: "Snow Wolf", category: Categories.Pets},
+    Wolf: {name: "Wolf", category: Categories.Pets},
+    Arctic_Moa: {name: "Arctic Moa", category: Categories.Mounts},
+    Blueback: {name: "Blueback", category: Categories.Mounts},
+    Buffalo: {name: "Buffalo", category: Categories.Mounts},
+    Horse: {name: "Horse", category: Categories.Mounts},
+    Moa: {name: "Moa", category: Categories.Mounts},
+    Shaggy_Zebra: {name: "Shaggy Zebra", category: Categories.Mounts},
+    Stryder: {name: "Stryder", category: Categories.Mounts},
+    Terrenus: {name: "Terrenus", category: Categories.Mounts},
+    Tusker: {name: "Tusker", category: Categories.Mounts},
+    Zebra: {name: "Zebra", category: Categories.Mounts},
 }
 
 export const talentTreeMap: Partial<Record<keyof typeof Trees, { talents: TalentData[]; fullTracks: FullTrack[] }>> = {
@@ -75,5 +114,24 @@ export const talentTreeMap: Partial<Record<keyof typeof Trees, { talents: Talent
     Blades: bladesTree,
     Firearms: firearmsTree,
     Solo: soloTree,
-    // Wolf: wolfTree
+    Boar: boarTree,
+    Cat: catTree,
+    Chicken: chickenTree,
+    Cow: cowTree,
+    Dog: dogTree,
+    Hyena: hyenaTree,
+    Rooster: roosterTree,
+    Sheep: sheepTree,
+    Snow_Wolf: snowwolfTree,
+    Wolf: wolfTree,
+    Arctic_Moa: arcticmoaTree,
+    Blueback: bluebackTree,
+    Buffalo: buffaloTree,
+    Horse: horseTree,
+    Moa: moaTree,
+    Shaggy_Zebra: shaggyzebraTree,
+    Stryder: stryderTree,
+    Terrenus: terrenusTree,
+    Tusker: tuskerTree,
+    Zebra: zebraTree,
 };
