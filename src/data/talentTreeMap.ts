@@ -13,6 +13,7 @@ import {spearsTree} from "./talentTrees/spears.ts";
 import {bladesTree} from "./talentTrees/blades.ts";
 import {firearmsTree} from "./talentTrees/firearms.ts";
 import {soloTree} from "./talentTrees/solo.ts";
+// import {wolfTree} from "./petTrees/wolf.ts";
 
 export interface TreeInfo {
     name: string
@@ -25,7 +26,8 @@ export enum Categories {
     Adventure = "Adventure",
     Habitation = "Habitation",
     Combat = "Combat",
-    Solo = "Solo"
+    Solo = "Solo",
+    // Pets = "Pets",
 }
 
 export const CategoryIcons: Record<string, string> = {
@@ -55,6 +57,7 @@ export const Trees: Record<string, TreeInfo> = {
     Blades: {name: "Blades", category: Categories.Combat},
     Firearms: {name: "Firearms", category: Categories.Combat},
     Solo: {name: "Solo", category: Categories.Solo},
+    // Wolf: {name: "Wolf", category: Categories.Pets},
 }
 
 export const talentTreeMap: Partial<Record<keyof typeof Trees, { talents: TalentData[]; fullTracks: FullTrack[] }>> = {
@@ -72,4 +75,5 @@ export const talentTreeMap: Partial<Record<keyof typeof Trees, { talents: Talent
     Blades: bladesTree,
     Firearms: firearmsTree,
     Solo: soloTree,
+    // Wolf: wolfTree
 };
