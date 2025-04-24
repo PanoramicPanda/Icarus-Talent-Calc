@@ -5,8 +5,8 @@ import PointsLabel from './pointsLabel.tsx';
 import TooltipWrapper from './tooltipWrapper.tsx';
 import {canRefundTalent} from '../../utils/refund.ts';
 import {TalentData} from "../../constants/treeStructures.ts";
-import {getPoolForTree, pointPools} from '../../data/points.ts';
-import { getPointsSpentInPool } from '../../utils/pointsSpent.ts';
+import {getPoolForTree, isPoolPerTreeCap, pointPools} from '../../data/points.ts';
+import {getPointsSpentInPool, getPointsSpentInTree} from '../../utils/pointsSpent.ts';
 import {Trees} from "../../data/talentTreeMap.ts";
 
 interface TalentProps {
@@ -153,8 +153,10 @@ export default function Talent({
 
     // Get the pool this talent belongs to
     const pool = getPoolForTree(talent.tree);
-    const unspentPoints = pool ? pointPools[pool].cap - getPointsSpentInPool(pool, talentPoints) : 0;
-    const hasPointsToSpend = unspentPoints > 0;
+    const perTreePoints = isPoolPerTreeCap(pool);
+    const poolCap = pool ? pointPools[pool].cap : 0;
+    const unspentPoints = pool ? poolCap - getPointsSpentInPool(pool, talentPoints) : 0;
+    const hasPointsToSpend = perTreePoints ? getPointsSpentInTree(treeKey, talentPoints) < poolCap : unspentPoints > 0;
 
 
     return (

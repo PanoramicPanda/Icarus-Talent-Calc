@@ -12,7 +12,7 @@ import {
 import InfoIcon from '@mui/icons-material/Info';
 import RankProgressBar from "./components/talentTree/rankProgressBar.tsx";
 import PointTotals from './components/pointTotals';
-import {getPoolForTree, pointPools} from "./data/points.ts";
+import {getPoolForTree, isPoolPerTreeCap, pointPools} from "./data/points.ts";
 import {GAME_VERSION} from './constants/gameVersion';
 import InfoDialog from './components/infoDialog.tsx';
 import {
@@ -28,6 +28,7 @@ import ImportExportButtons from './components/importExportButtons.tsx';
 import CategoryRibbon from "./components/categoryRibbon.tsx";
 import '@fontsource/barlow';
 import '@fontsource/tomorrow';
+import {getPointsSpentInPool, getPointsSpentInTree} from "./utils/pointsSpent.ts";
 
 
 export default function TalentTreeApp() {
@@ -260,12 +261,17 @@ export default function TalentTreeApp() {
 
                                 const pool = getPoolForTree(talent.tree);
                                 if (!pool) return;
+                                const perTreePoints = isPoolPerTreeCap(pool);
 
                                 const poolCap = pointPools[pool].cap;
 
-                                const totalPointsInPool = Object.entries(talentPointsSpent)
-                                    .filter(([tree]) => pointPools[pool].trees.includes(tree as keyof typeof Trees))
-                                    .reduce((sum, [, pts]) => sum + pts, 0);
+                                const totalPointsInPool = getPointsSpentInPool(pool, talentPoints);
+
+                                const spentInTree = getPointsSpentInTree(selectedTree, talentPoints);
+
+                                // const totalPointsInPool = Object.entries(talentPointsSpent)
+                                //     .filter(([tree]) => pointPools[pool].trees.includes(tree as keyof typeof Trees))
+                                //     .reduce((sum, [, pts]) => sum + pts, 0);
 
                                 const isSpending = delta > 0;
                                 const currentTalentPoints = talentPoints[selectedTree!]?.[talentName] || 0;
@@ -273,9 +279,16 @@ export default function TalentTreeApp() {
 
                                 if (isSpending) {
                                     if (currentTalentPoints >= maxPoints) return; // already maxed
-                                    if (totalPointsInPool >= poolCap) {
-                                        setSnackbarMessage(`You’ve reached the ${pool} pool cap of ${poolCap} points.`);
-                                        return;
+                                    if (perTreePoints) {
+                                        if (spentInTree >= poolCap) {
+                                            setSnackbarMessage(`You’ve reached the ${selectedTree} tree cap of ${poolCap} points.`);
+                                            return;
+                                        }
+                                    }else {
+                                        if (totalPointsInPool >= poolCap) {
+                                            setSnackbarMessage(`You’ve reached the ${pool} pool cap of ${poolCap} points.`);
+                                            return;
+                                        }
                                     }
                                 }
 

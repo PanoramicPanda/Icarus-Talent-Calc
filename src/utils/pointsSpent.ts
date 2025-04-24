@@ -10,3 +10,10 @@ export function getPointsSpentInPool(pool: TalentPool, talentPoints: Record<stri
         .flatMap(([, treeTalents]) => Object.values(treeTalents))
         .reduce((a, b) => a + b, 0);
 }
+
+export function getPointsSpentInTree(
+    tree: keyof typeof Trees,
+    talentPoints: Record<string, Record<string, number>>
+): number {
+    return Object.values(talentPoints[tree] || {}).reduce((a, b) => a + b, 0);
+}

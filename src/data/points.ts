@@ -46,3 +46,8 @@ export function getPoolForTree(tree: keyof typeof Trees): TalentPool | null {
     }
     return null;
 }
+
+export function isPoolPerTreeCap(pool: TalentPool| null): boolean {
+    if (!pool) return false;
+    return pointPools[pool].perTreeCap || false;
+}

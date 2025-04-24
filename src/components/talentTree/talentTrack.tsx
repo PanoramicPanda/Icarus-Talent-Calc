@@ -1,7 +1,7 @@
 import { Box } from '@mui/material';
 import { TalentData, FullTrack } from '../../constants/treeStructures.ts';
-import { getPoolForTree, pointPools } from '../../data/points.ts';
-import { getPointsSpentInPool } from '../../utils/pointsSpent.ts';
+import {getPoolForTree, isPoolPerTreeCap, pointPools} from '../../data/points.ts';
+import {getPointsSpentInPool, getPointsSpentInTree} from '../../utils/pointsSpent.ts';
 import { getGateRequirement } from '../../data/ranks.ts';
 import {TALENT_ICON_HEIGHT, TALENT_ICON_WIDTH, TREE_COLUMN_WIDTH, TREE_ROW_HEIGHT} from "../../data/dimension.ts";
 
@@ -24,9 +24,15 @@ export default function TalentTrack({ fullTracks, talents, talentPoints, treeKey
         if (pointsSpentInTree < requiredPoints) return false;
 
         const pool = getPoolForTree(treeKey as keyof typeof pointPools);
+        const perTreePoints = isPoolPerTreeCap(pool);
         if (pool) {
-            const unspentPoints = pointPools[pool].cap - getPointsSpentInPool(pool, talentPoints);
-            if (unspentPoints <= 0) return false;
+            if (perTreePoints) {
+                const spentInTree = getPointsSpentInTree(treeKey, talentPoints);
+                if (spentInTree >= pointPools[pool].cap) return false;
+            }else{
+                const unspentPoints = pointPools[pool].cap - getPointsSpentInPool(pool, talentPoints);
+                if (unspentPoints <= 0) return false;
+            }
         }
 
         const prereqs = talent.prerequisites ?? [];

@@ -1,6 +1,6 @@
 // src/components/PointTotals.tsx
 import { Box, Typography } from '@mui/material';
-import { pointPools, TalentPool } from '../data/points.ts';
+import { pointPools, TalentPool} from '../data/points.ts';
 import { getPointsSpentInPool } from '../utils/pointsSpent.ts';
 
 interface PointTotalsProps {
@@ -12,6 +12,8 @@ export default function PointTotals({ talentPoints }: PointTotalsProps) {
         <Box sx={{ display: 'flex', gap: 2, mt: 1 }}>
             {Object.entries(pointPools).map(([poolKey, pool]) => {
                 const spent = getPointsSpentInPool(poolKey as TalentPool, talentPoints);
+                const isPerTreeCap = pool.perTreeCap || false
+                const pointRender = isPerTreeCap ? `${pool.cap} per Tree` : `${spent} / ${pool.cap}`
 
                 return (
                     <Box
@@ -36,10 +38,10 @@ export default function PointTotals({ talentPoints }: PointTotalsProps) {
                             variant="body1"
                             sx={{
                                 fontWeight: 'bold',
-                                color: spent >= pool.cap ? 'red' : '#ffba27'
+                                color: isPerTreeCap ? '#ffba27' : spent >= pool.cap ? 'red' : '#ffba27'
                             }}
                         >
-                            {spent} / {pool.cap}
+                            {pointRender}
                         </Typography>
                     </Box>
                 );
