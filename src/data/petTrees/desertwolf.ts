@@ -63,7 +63,7 @@ export const desertwolfTree = {
 			rank: 1,
 			prerequisites: [],
 			benefits: [
-				[{value: 1, desc: "Can be specialized into defensive or supportive combat roles.", category: "Flag"}],
+				[{value: 1, desc: "Can be specialized into defensive or supportive combat roles.", category: "Desert Wolf - Flag"}],
 			],
 			position: [2, 4.0],
 			imageName: "Companion/T_Talent_Base_Hyena",

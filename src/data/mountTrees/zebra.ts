@@ -65,7 +65,7 @@ export const zebraTree = {
 			rank: 1,
 			prerequisites: [],
 			benefits: [
-				[{value: 1, desc: "Can be specialised into desert bonuses or general bonuses.", category: "Flag"}],
+				[{value: 1, desc: "Can be specialised into desert bonuses or general bonuses.", category: "Zebra - Flag"}],
 			],
 			position: [2, 4.0],
 			imageName: "Companion/T_Talent_Base_Zebra",

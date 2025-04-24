@@ -65,7 +65,7 @@ export const moaTree = {
 			rank: 1,
 			prerequisites: [],
 			benefits: [
-				[{value: 1, desc: "Can be specialized into further speed, or to become more well rounded.", category: "Flag"}],
+				[{value: 1, desc: "Can be specialized into further speed, or to become more well rounded.", category: "Moa - Flag"}],
 			],
 			position: [2, 4.0],
 			imageName: "Companion/T_Talent_Base_Moa",

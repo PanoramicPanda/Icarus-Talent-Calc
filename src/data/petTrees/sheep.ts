@@ -63,7 +63,7 @@ export const sheepTree = {
 			rank: 1,
 			prerequisites: [],
 			benefits: [
-				[{value: 1, desc: "Can be specialized into further wool growth or defensive bonuses.", category: "Flag"}],
+				[{value: 1, desc: "Can be specialized into further wool growth or defensive bonuses.", category: "Sheep - Flag"}],
 			],
 			position: [3, 4.0],
 			imageName: "Companion/T_Talent_Base_Sheep",

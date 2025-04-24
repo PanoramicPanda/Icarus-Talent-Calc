@@ -102,7 +102,7 @@ export const snowwolfTree = {
 			rank: 1,
 			prerequisites: [],
 			benefits: [
-				[{value: 1, desc: "Can be specialized into aggressive combat roles or specific afflictions.", category: "Flag"}],
+				[{value: 1, desc: "Can be specialized into aggressive combat roles or specific afflictions.", category: "Snow Wolf - Flag"}],
 			],
 			position: [3, 4.0],
 			imageName: "Companion/T_Talent_Base_SnowWolf",

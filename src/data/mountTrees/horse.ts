@@ -143,7 +143,7 @@ export const horseTree = {
 			rank: 1,
 			prerequisites: [],
 			benefits: [
-				[{value: 1, desc: "Can be specialized into endurance, speed, or to become more well rounded.", category: "Flag"}],
+				[{value: 1, desc: "Can be specialized into endurance, speed, or to become more well rounded.", category: "Horse - Flag"}],
 			],
 			position: [2, 4.0],
 			imageName: "Companion/T_Talent_Base_HorseNormal",

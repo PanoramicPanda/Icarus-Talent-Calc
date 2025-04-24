@@ -65,7 +65,7 @@ export const bluebackTree = {
 			rank: 1,
 			prerequisites: [],
 			benefits: [
-				[{value: 1, desc: "Can be specialized into defensive or hauling bonuses.", category: "Flag"}],
+				[{value: 1, desc: "Can be specialized into defensive or hauling bonuses.", category: "Blueback - Flag"}],
 			],
 			position: [2, 4.0],
 			imageName: "Companion/T_Talent_Base_BlueBack",

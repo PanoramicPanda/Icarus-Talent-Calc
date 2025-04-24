@@ -65,7 +65,7 @@ export const stryderTree = {
 			rank: 1,
 			prerequisites: [],
 			benefits: [
-				[{value: 1, desc: "Can be specialized into defensive or swamp bonuses.", category: "Flag"}],
+				[{value: 1, desc: "Can be specialized into defensive or swamp bonuses.", category: "Stryder - Flag"}],
 			],
 			position: [2, 4.0],
 			imageName: "Companion/T_Talent_Base_Stryder",

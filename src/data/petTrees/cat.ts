@@ -89,7 +89,7 @@ export const catTree = {
 			rank: 1,
 			prerequisites: [],
 			benefits: [
-				[{value: 1, desc: "Can be specialized into different bonuses for your base.", category: "Flag"}],
+				[{value: 1, desc: "Can be specialized into different bonuses for your base.", category: "Cat - Flag"}],
 			],
 			position: [3, 4.0],
 			imageName: "Companion/T_Talent_Base_Cat",

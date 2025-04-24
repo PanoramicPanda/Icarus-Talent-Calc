@@ -78,7 +78,7 @@ export const woolyzebraTree = {
 			rank: 1,
 			prerequisites: [],
 			benefits: [
-				[{value: 1, desc: "Can be specialized into defensive or arctic bonuses.", category: "Flag"}],
+				[{value: 1, desc: "Can be specialized into defensive or arctic bonuses.", category: "Wooly Zebra - Flag"}],
 			],
 			position: [2, 4.0],
 			imageName: "Companion/T_Talent_Base_WoolyZebra",

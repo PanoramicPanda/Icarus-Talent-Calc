@@ -63,7 +63,7 @@ export const chickenTree = {
 			rank: 1,
 			prerequisites: [],
 			benefits: [
-				[{value: 1, desc: "Can be specialized into further egg laying bonuses, or grown for feasting.", category: "Flag"}],
+				[{value: 1, desc: "Can be specialized into further egg laying bonuses, or grown for feasting.", category: "Chicken - Flag"}],
 			],
 			position: [3, 4.0],
 			imageName: "Companion/T_Talent_Base_Chicken",

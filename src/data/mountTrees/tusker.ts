@@ -143,7 +143,7 @@ export const tuskerTree = {
 			rank: 1,
 			prerequisites: [],
 			benefits: [
-				[{value: 1, desc: "Can be specialized into hauling, combat or arctic bonuses.", category: "Flag"}],
+				[{value: 1, desc: "Can be specialized into hauling, combat or arctic bonuses.", category: "Tusker - Flag"}],
 			],
 			position: [2, 4.0],
 			imageName: "Companion/T_Talent_Base_Tusker",
