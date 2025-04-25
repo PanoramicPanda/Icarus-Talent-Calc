@@ -171,6 +171,7 @@ export default function TalentTreeApp() {
 
                         const talentsInTree = treeData.talents;
                         setTalentPoints(prev => {
+                            if (!prev?.[treeKey]) return prev;
                             const updated = {...prev};
                             for (const talent of talentsInTree) {
                                 delete updated[treeKey][talent.name];
