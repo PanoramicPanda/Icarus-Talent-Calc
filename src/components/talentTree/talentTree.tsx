@@ -51,7 +51,12 @@ export function TalentTree({
     const tileRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
     return (
-        <Box sx={{position: 'relative'}} ref={gridRef}>
+        <Box sx={{
+            position: 'relative',
+            width: 'max-content',
+            marginInline: 'auto',
+            alignItems: 'center',
+        }} ref={gridRef}>
             <TalentTrack
                 fullTracks={fullTracks}
                 talents={talents}
