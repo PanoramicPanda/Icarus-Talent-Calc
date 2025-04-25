@@ -1,4 +1,4 @@
-import { Button } from "@mui/material";
+import {Box, Button} from "@mui/material";
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
 import ConfirmDialog from "./confirmDialog";
 import { Trees } from "../data/talentTreeMap";
@@ -23,7 +23,7 @@ export default function ResetButtons({
                                          setConfirmResetTreeOpen
                                      }: ResetButtonsProps) {
     return (
-        <>
+        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, mt: 1 }}>
             {/* Reset All Button */}
             <Button
                 variant="outlined"
@@ -73,6 +73,6 @@ export default function ResetButtons({
                 }}
                 onCancel={() => setConfirmResetTreeOpen(false)}
             />
-        </>
+        </Box>
     );
 }

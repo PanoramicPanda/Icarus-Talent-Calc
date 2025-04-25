@@ -140,10 +140,8 @@ export default function TalentTreeApp() {
             {/* Info Button */}
             <IconButton
                 aria-label="info"
-                // variant="outlined"
-                // size="small"
-                // color="info"
                 onClick={() => setInfoOpen(true)}
+                sx={{position: 'absolute', top: 20, right: 12, color: '#aaa'}}
             >
                 <InfoIcon />
             </IconButton >
@@ -153,7 +151,7 @@ export default function TalentTreeApp() {
                 <SummaryBox talentPoints={talentPoints} allTalents={talentTreeMap} />
             </Box>
 
-            <Box sx={{width: 600}}>
+            <Box sx={{width: '100%'}}>
                 {/* Point Totals */}
                 <PointTotals talentPoints={talentPoints}/>
 
@@ -221,10 +219,7 @@ export default function TalentTreeApp() {
                     {/*Tree Selection*/}
                     {selectedCategory && Object.keys(Trees)
                         .filter(tree => Trees[tree as keyof typeof Trees].category === selectedCategory).length > 1 && (
-                        <Box sx={{mb: 2}}>
-                            <Typography variant="h6" gutterBottom>
-                                Select a Tree
-                            </Typography>
+                        <Box sx={{display: 'flex', alignItems: 'center', justifyContent: 'center', mb: 2}}>
                             <Stack direction="row" spacing={2} flexWrap="wrap">
                                 {Object.keys(Trees)
                                     .filter(tree => Trees[tree as keyof typeof Trees].category === selectedCategory)

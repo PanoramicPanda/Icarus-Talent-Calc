@@ -17,7 +17,7 @@ export default function CategoryRibbon({
     if (allCategories.length <= 1) return null;
 
     return (
-        <Box sx={{ mb: 3 }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', mb: 3 }}>
             <Stack direction="row" spacing={2}>
                 {allCategories.map(category => (
                     <Button

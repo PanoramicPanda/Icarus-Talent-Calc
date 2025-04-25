@@ -9,7 +9,7 @@ interface PointTotalsProps {
 
 export default function PointTotals({ talentPoints }: PointTotalsProps) {
     return (
-        <Box sx={{ display: 'flex', gap: 2, mt: 1 }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, mt: 1 }}>
             {Object.entries(pointPools).map(([poolKey, pool]) => {
                 const spent = getPointsSpentInPool(poolKey as TalentPool, talentPoints);
                 const isPerTreeCap = pool.perTreeCap || false

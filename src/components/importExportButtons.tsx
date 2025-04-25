@@ -84,7 +84,7 @@ export default function ImportExportButtons({
 
     return (
         <>
-            <Box sx={{ display: 'flex', gap: 2, mb: 2 }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 2, mb: 2 }}>
                 <Button startIcon={<Upload />} onClick={() => setImportDialogOpen(true)}>
                     Import Build
                 </Button>
